@@ -26,7 +26,7 @@ git rm -r --cached otros
 
 git add .
 
-git commit -m "Moriah - N0020k | Alfa L7.30.4"
+git commit -m "Biblos - A01 | Alfa L8.38"
 
 ## git push -u origin master
 git push -u origin master --force

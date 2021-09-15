@@ -5,14 +5,14 @@ git init
 git add README.md
 git commit -m "Init Commit"
 git remote add origin https://github.com/HCarlos/Biblos.git
-## Token      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
+## Token      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
 git push -u origin master
 
 echo "" > .gitignore
 git add .gitignore
 git commit -m "message" .gitignore
 
-git remote set-url origin https://github.com/HCarlos/Moriah.git
+git remote set-url origin https://github.com/HCarlos/Biblos.git
 git config --global user.email "r0@tecnointel.mx"
 git config --global user.name "HCarlos"
 git config --global color.ui true
