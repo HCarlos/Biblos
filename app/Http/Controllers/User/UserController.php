@@ -183,6 +183,9 @@ class UserController extends Controller{
 
     }
 
+
+
+
     protected function viewSearchModal(){
 
         $user = Auth::user();
