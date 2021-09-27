@@ -4,6 +4,7 @@ use App\Http\Controllers\Catalogos\Alumnos\AlumnosController;
 use App\Http\Controllers\Catalogos\Familias\FamiliasController;
 use App\Http\Controllers\Catalogos\Profesores\ProfesorController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SIGEBI\TipoMaterialController;
 use App\Http\Controllers\Storage\ProfileStorageController;
 use App\Http\Controllers\Storage\StorageExternalFilesController;
 use App\Http\Controllers\Storage\StorageListaCatalogosController;
@@ -46,15 +47,24 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('updateFotodUser',[ProfileStorageController::class,'subirArchivoProfile'])->name('updateFotodUser');
 
     // ALUMNOS
-    Route::get('listaAlumnos/{Id}',[AlumnosController::class,'index'])->name('listaAlumnos');
-    Route::get('editAlumno/{Id}',[AlumnosController::class,'editItem'])->name('editAlumno');
-    Route::put('updateAlumno',[AlumnosController::class,'updateItem'])->name('updateAlumno');
-    Route::get('removeAlumno/{Id}/{Dato1}/{Dato2}',[AlumnosController::class,'removeItem'])->name('removeAlumno');
+//    Route::get('listaAlumnos/{Id}',[AlumnosController::class,'index'])->name('listaAlumnos');
+//    Route::get('editAlumno/{Id}',[AlumnosController::class,'editItem'])->name('editAlumno');
+//    Route::put('updateAlumno',[AlumnosController::class,'updateItem'])->name('updateAlumno');
+//    Route::get('removeAlumno/{Id}/{Dato1}/{Dato2}',[AlumnosController::class,'removeItem'])->name('removeAlumno');
 
     // PROFESORES
-    Route::get('listaProfesores/{Id}',[ProfesorController::class,'index'])->name('listaProfesores');
-    Route::get('editProfesor/{Id}',[ProfesorController::class,'editItem'])->name('editProfesor');
-    Route::get('removeProfesor/{Id}/{Dato1}/{Dato2}',[ProfesorController::class,'removeItem'])->name('removeProfesor');
+//    Route::get('listaProfesores/{Id}',[ProfesorController::class,'index'])->name('listaProfesores');
+//    Route::get('editProfesor/{Id}',[ProfesorController::class,'editItem'])->name('editProfesor');
+//    Route::get('removeProfesor/{Id}/{Dato1}/{Dato2}',[ProfesorController::class,'removeItem'])->name('removeProfesor');
+
+    Route::get('listaTipoMaterial',[TipoMaterialController::class,'index'])->name('listaTipoMaterial');
+    Route::get('newTipoMaterial',[TipoMaterialController::class,'newItem'])->name('newTipoMaterial');
+    Route::post('createTipoMaterial',[TipoMaterialController::class,'createItem'])->name('createTipoMaterial');
+    Route::get('editTipoMaterial/{Id}',[TipoMaterialController::class,'editItem'])->name('editTipoMaterial');
+    Route::put('updateTipoMaterial',[TipoMaterialController::class,'updateItem'])->name('updateTipoMaterial');
+    Route::get('removeTipoMaterial/{Id}/{Dato1}/{Dato2}',[TipoMaterialController::class,'removeItem'])->name('removeTipoMaterial');
+
+
 
     // USUARIOS
     Route::get('listaUsuarios',[UserController::class,'index'])->name('listaUsuarios');

@@ -23,6 +23,32 @@
 
                     <li class="nav-item">
                         <a href="#" class="nav-link dropdown-toggle">
+                            <i class="nav-icon fa fa-list"></i>
+                            <span class="nav-text fadeable">
+                    	        <span>Catálogos</span>
+                            </span>
+                        </a>
+
+                        <div class=" submenu  {{
+                                                url()->current() == route('listaTipoMaterial') ||
+                                                url()->current() == route('listaTipoMaterial') ?
+                                                'active' : 'collapse' }}  ">
+                            <ul class="submenu-inner has-active-border">
+
+                                <li class="nav-item {{ url()->current() == route('listaTipoMaterial') ? 'active': '' }}">
+                                    <a class="nav-link" href="{{route('listaTipoMaterial')}}">
+                                        <i class="nav-icon fa fa-dot-circle"></i>
+                                        <span class="nav-text fadeable">Tipo de Material</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <b class="sub-arrow"></b>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link dropdown-toggle">
                             <i class="nav-icon fa fa-cogs"></i>
                             <span class="nav-text fadeable">
                     	        <span>Configuraciones</span>

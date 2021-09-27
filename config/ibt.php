@@ -82,12 +82,16 @@ return [
         ],
 
         'biblos' => [
-            'codigo_lenguaje_paises'       => 'codigo_lenguaje_paises',
-            'editoriales'       => 'editoriales',
-            'fichas'       => 'fichas',
-            'editoriale_ficha'       => 'editoriale_ficha',
-            'ficha_portada'       => 'ficha_portada',
-            'portadas' => 'portadas',
+            'codigopaises'            => 'codigopaises',
+            'editoriales'             => 'editoriales',
+            'fichas'                  => 'fichas',
+            'editoriale_libro'        => 'editoriale_libro',
+            'inventariolibro_portada' => 'inventariolibro_portada',
+            'portadas'                => 'portadas',
+            'libros'                  => 'libros',
+            'inventariolibros'        => 'inventariolibros',
+            'historiallibros'         => 'historiallibros',
+            'tipomaterial'            => 'tipomaterial',
 
         ],
 
