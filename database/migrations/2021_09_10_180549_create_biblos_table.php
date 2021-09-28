@@ -52,11 +52,10 @@ class CreateBiblosTable extends Migration
         if (!Schema::hasTable($tableBiblos['editoriales'])) {
             Schema::create($tableBiblos['editoriales'], function (Blueprint $table) use ($tableCatalogos){
                 $table->id();
-                $table->unsignedInteger('no')->nullable();
                 $table->string('editorial',100)->default('')->unique();
                 $table->string('representante',150)->default('')->nullable();
                 $table->string('telefonos',100)->default('')->nullable();
-                $table->string('email',150)->default()->nullable();
+                $table->string('email',150)->default('')->nullable();
                 $table->boolean('predeterminado')->default(false)->nonullable();
                 $table->unsignedSmallInteger('status_editorial')->default(1)->nullable();
                 $table->unsignedTinyInteger('empresa_id')->default(1)->nullable();
@@ -381,9 +380,9 @@ class CreateBiblosTable extends Migration
 
         // CAMPO ESPECIAL PARA editoriales
         DB::statement("ALTER TABLE editoriales ADD COLUMN searchtext TSVECTOR");
-        DB::statement("UPDATE editoriales SET searchtext = to_tsvector('spanish', coalesce(trim(editorial),'') )");
+        DB::statement("UPDATE editoriales SET searchtext = to_tsvector('spanish', coalesce(trim(editorial),'') || ' ' || coalesce(trim(representante),'') || ' ' || coalesce(trim(telefonos),'') || ' ' || coalesce(trim(email),'') )");
         DB::statement("CREATE INDEX editoriales_searchtext_gin ON editoriales USING GIN(searchtext)");
-        DB::statement("CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON editoriales FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.spanish', 'editorial')");
+        DB::statement("CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON editoriales FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.spanish', 'editorial', 'representante', 'telefonos', 'email')");
 
 
     }

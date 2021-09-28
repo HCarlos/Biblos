@@ -16,11 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(InitializeUserRolesPermissionsBiblosSeeder::class);
         $this->call(InitializeCatalogosBiblosSeeder::class);
 
-//        $this->call(ImportUsers01Seeder::class);
-//        $this->call(ImportUsers02Seeder::class);
-//        $this->call(ImportUsers03Seeder::class);
-//        $this->call(ImportUsers04Seeder::class);
-//        $this->call(ImportUsers05Seeder::class);
 
     }
 

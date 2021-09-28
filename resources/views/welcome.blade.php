@@ -23,6 +23,7 @@
     <link rel="icon" type="image/png" href="{{ asset('assets/favicon.png') }}" />
 
     <link rel="stylesheet" type="text/css" href="{{ asset('views/pages/page-login/page-style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/ibt.css') }}">
 </head>
 
 <body>
@@ -41,7 +42,7 @@
     </nav>
     <div class="container">
         <div class="main-content ">
-            <div class="page-content m-1 ">
+            <div class="page-content m-0 p-0">
                 <div class="card">
                     <div class="card-body">
                         @include('layouts.partials.welcome')

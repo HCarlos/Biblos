@@ -3,6 +3,10 @@
 
 return [
 
+    'empresa_id' => 1,
+    'nombre_software' => env('NOMBRE_SOFTWARE',''),
+    'pagina_facebook' => env('FACEBOOK',''),
+
     'images_type_validate' => 'jpg,jpeg,gif,png,svg,bmp,JPG,JPEG,GIF,PNG,SVG,BMP',
     'images_type_extension' => ['jpg','jpeg','gif','png','svg','bmp','JPG','JPEG','GIF','PNG','SVG','BMP'],
     'videos_type_extension' => ['mp4','3gp','bin'],

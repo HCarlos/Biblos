@@ -428,3 +428,19 @@
     object-fit: contain !important;
     object-position: center !important;
 }
+
+.parallax {
+    background-image: url("images/biblos/welcome.png");
+    height: 1000px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.homeimgbarber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+}
+

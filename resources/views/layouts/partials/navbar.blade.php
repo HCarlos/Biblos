@@ -9,7 +9,7 @@
                 </button><!-- mobile sidebar toggler button -->
 
                 <a class="navbar-brand text-white" href="#">
-                    <i class="fa fa-cross"></i>
+                    <i class="fa fa-book"></i>
                     {{ config('app.name') }}
                 </a><!-- /.navbar-brand -->
 

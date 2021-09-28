@@ -5,7 +5,7 @@
         <div class="mt-n4 bgc-white-tp2 px-3 py-1 text-secondary-d3 text-90">Síguenos en nuestras redes sociales</div>
 
         <div class="my-2">
-            <a href="https://www.facebook.com/Instituto-B%C3%ADblico-Cristo-Rey-102423034712979/"
+            <a href="https://www.facebook.com/{{config('ibt.pagina_facebook')}}"
                class="btn btn-bgc-white btn-lighter-primary btn-h-primary btn-a-primary border-2 radius-round btn-lg mx-1"
                target="_blank">
                 <i class="fab fa-facebook-f text-110"></i>

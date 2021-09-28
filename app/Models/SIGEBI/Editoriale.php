@@ -2,6 +2,8 @@
 
 namespace App\Models\SIGEBI;
 
+use App\Filters\SIGEBI\EditorialFilter;
+use App\Filters\SIGEBI\TipoMaterialFilter;
 use App\Models\Catalogos\Empresa;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -20,11 +22,16 @@ class Editoriale extends Model{
 
     protected $fillable = [
         'id',
-        'no', 'editorial', 'representante','telefonos','email','status_editorial',
+        'editorial', 'representante','telefonos','email','status_editorial','predeterminado',
         'empresa_id','migration_id', 'creado_por_id',
     ];
 
     protected $casts = ['predeterminado'=>'boolean'];
+
+    public function scopeFilterBySearch($query, $filters){
+        return (new EditorialFilter())->applyTo($query, $filters);
+    }
+
 
     public function Empresa(){
         return $this->belongsTo(Empresa::class);
