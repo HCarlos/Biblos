@@ -2,7 +2,7 @@
 
 @section('contenedor')
 
-    <div class="card" style="background-color:red;">
+    <div class="card" >
         <div class="card-header">Bienvenid{{ Auth::user()->IsFemale() ? 'a' : 'o'  }}! </div>
         <div class="card-body">
             @if (session('status'))
