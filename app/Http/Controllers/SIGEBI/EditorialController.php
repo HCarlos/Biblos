@@ -55,7 +55,7 @@ class EditorialController extends Controller{
             'editItem'     => 'editEditorial',
             'removeItem'   => 'removeEditorial',
             'listItems'    => 'listaEditorial',
-
+            'IsModal'      => true,
         ]);
     }
 
@@ -64,22 +64,22 @@ class EditorialController extends Controller{
 
         $user = Auth::user();
         //dd($roles);
-        return view('SIGEBI.com.editorial._editorial_edit',[
-            "item"     => null,
-            "User"     => $user,
-            "titulo"   => "Nuevo registro ",
-            'Route'    => 'createEditorial',
-            'Method'   => 'POST',
-            'msg'      => $this->msg,
-            'IsUpload' => false,
-            'IsNew'    => true,
+        return view('SIGEBI.com.editorial._editorial_edit_modal',[
+            "item"        => null,
+            "User"        => $user,
+            "TituloModal" => "Nuevo registro ",
+            'RouteModal'  => 'createEditorial',
+            'Method'      => 'POST',
+            'msg'         => $this->msg,
+            'IsUpload'    => false,
+            'IsNew'       => true,
         ]);
 
     }
 
     protected function createItem(EditorialRequest $request) {
         //dd($request);
-        $Obj = $request->manageUser();
+        $Obj = $request->manage();
         if (!is_object($Obj)) {
             $id = 0;
             return redirect('newEditorial')
@@ -88,18 +88,7 @@ class EditorialController extends Controller{
         }else{
             $id = $Obj->id;
         }
-        $user = Auth::user();
-        session(['msg' => 'value']);
-        return view('SIGEBI.com.editorial._editorial_edit',[
-            "item"     => $Obj,
-            "User"     => $user,
-            "titulo"   => "Editando el registro: ".$id,
-            'Route'    => 'updateEditorial',
-            'Method'   => 'POST',
-            'msg'      => $this->msg,
-            'IsUpload' => false,
-            'IsNew'    => false,
-        ]);
+        return redirect()->route('listaEditorial');
 
     }
 
@@ -109,23 +98,23 @@ class EditorialController extends Controller{
         $Item = Editoriale::find($Id);
         $user = Auth::user();
 
-        return view('SIGEBI.com.editorial._editorial_edit',[
-            "item"       => $Item,
-            "User"       => $user,
-            "titulo"     => "Editando el registro: ".$Id,
-            'Route'      => 'updateEditorial',
-            'Method'     => 'POST',
-            'msg'        => $this->msg,
-            'IsUpload'   => false,
-            'IsNew'      => false,
-            'createItem' => 'addRoleItem',
-            'removeItem' => 'removeRoleUsuario',
+        return view('SIGEBI.com.editorial._editorial_edit_modal',[
+            "item"        => $Item,
+            "User"        => $user,
+            "TituloModal" => "Editando el registro: ".$Id,
+            'RouteModal'  => 'updateEditorial',
+            'Method'      => 'POST',
+            'msg'         => $this->msg,
+            'IsUpload'    => false,
+            'IsNew'       => false,
         ]);
 
     }
 
     protected function updateItem(EditorialRequest $request) {
-        $Obj = $request->manageUser();
+        //dd($request->all(['predeterminado']));
+
+        $Obj = $request->manage();
         if (!is_object($Obj)) {
             $id = 0;
             return redirect('editEditorial')
@@ -134,18 +123,8 @@ class EditorialController extends Controller{
         }else{
             $id = $Obj->id;
         }
-        $user = Auth::user();
-        session(['msg' => 'value']);
-        return view('SIGEBI.com.editorial._editorial_edit',[
-            "item"     => $Obj,
-            "User"     => $user,
-            "titulo"   => "Editando el registro: ".$id,
-            'Route'    => 'updateEditorial',
-            'Method'   => 'POST',
-            'msg'      => $this->msg,
-            'IsUpload' => false,
-            'IsNew'    => false,
-        ]);
+        return redirect()->route('listaEditorial');
+
 
     }
 

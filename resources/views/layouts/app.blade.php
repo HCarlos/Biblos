@@ -63,14 +63,21 @@
     @endauth
 </div>
 
-<div class="modal fade" id="modalFull" data-backdrop-bg="bgc-grey-tp4" data-blur="true" tabindex="-1" role="dialog" aria-labelledby="modalFull" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content border-0 shadow radius-1">
+<div class="modal fade " id="modalFull" data-backdrop-bg="bgc-grey-tp4" data-blur="true" tabindex="-1" role="dialog" aria-labelledby="modalFull" aria-hidden="true"  >
+    <div class="modal-dialog " role="document"  >
+        <div class="modal-content border-0 shadow radius-1"  >
             @yield('ModalBlurred')
         </div>
     </div>
 </div>
 
+<div class="modal fade " id="modalFullScreen" tabindex="-1" role="dialog" data-backdrop-bg="bgc-grey-tp4"  data-blur="true"  aria-labelledby="modalFullScreen" aria-hidden="true">
+    <div class="modal-dialog " role="document"  >
+        <div class="modal-content border-0 shadow radius-1"  style="width: 800px !important;">
+            @yield('ModalBlurredFS')
+        </div>
+    </div>
+</div>
 
 
 

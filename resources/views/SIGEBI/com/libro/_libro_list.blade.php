@@ -9,7 +9,8 @@
     @slot('removeItem',$removeItem)
     @slot('listItems',$listItems ?? '')
     @slot('IsModal', $IsModal ?? false )
+    @slot('FullScreen',$FullScreen ?? false)
     @slot('Tabla')
-        @include('SIGEBI.lay.editorial.__editorial_list')
+        @include('SIGEBI.lay.libro.__libro_list')
     @endslot
 </x-catalogo-list>

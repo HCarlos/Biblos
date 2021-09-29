@@ -31,6 +31,7 @@
 
                         <div class=" submenu  {{
                                                 url()->current() == route('listaTipoMaterial') ||
+                                                url()->current() == route('listaLibro') ||
                                                 url()->current() == route('listaEditorial') ?
                                                 'active' : 'collapse' }}  ">
                             <ul class="submenu-inner has-active-border">
@@ -46,6 +47,13 @@
                                     <a class="nav-link" href="{{route('listaEditorial')}}">
                                         <i class="nav-icon fa fa-dot-circle"></i>
                                         <span class="nav-text fadeable">Editoriales</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item {{ url()->current() == route('listaLibro') ? 'active': '' }}">
+                                    <a class="nav-link" href="{{route('listaLibro')}}">
+                                        <i class="nav-icon fa fa-dot-circle"></i>
+                                        <span class="nav-text fadeable">Libros</span>
                                     </a>
                                 </li>
 

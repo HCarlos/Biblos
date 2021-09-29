@@ -10,9 +10,8 @@
     <div class="col-sm-4"></div>
 </div>
 <div class="form-group row">
-    <x-inputs.check-box cols="4" tipo="checkbox" nombre="predeterminado" nombrees="predeterminado Editorial" valor="{{old('predeterminado',$item->predeterminado)}}"></x-inputs.check-box>
-    <x-inputs.check-box cols="4" tipo="checkbox" nombre="status_editorial" nombrees="Estatus Editorial" valor="{{old('status_editorial',$item->status_editorial)}}"></x-inputs.check-box>
-    <div class="col-sm-4"></div>
+    <x-inputs.check-box cols="4" tipo="checkbox" nombre="predeterminado" valor="{{old('predeterminado',$item->predeterminado )}}"></x-inputs.check-box>
+    <x-inputs.check-box cols="4" tipo="checkbox" nombre="status_editorial" nombrees="Estatus"  valor="{{old('status_editorial',$item->status_editorial)}}"></x-inputs.check-box>
 </div>
 
 <input type="hidden" name="id" id="id" value="{{$item->id}}">

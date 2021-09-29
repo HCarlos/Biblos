@@ -26,7 +26,7 @@ class Editoriale extends Model{
         'empresa_id','migration_id', 'creado_por_id',
     ];
 
-    protected $casts = ['predeterminado'=>'boolean'];
+    protected $casts = ['predeterminado'=>'boolean','status_editorial'=>'boolean'];
 
     public function scopeFilterBySearch($query, $filters){
         return (new EditorialFilter())->applyTo($query, $filters);

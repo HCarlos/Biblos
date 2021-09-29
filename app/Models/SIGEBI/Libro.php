@@ -2,6 +2,7 @@
 
 namespace App\Models\SIGEBI;
 
+use App\Filters\SIGEBI\LibroFilter;
 use App\Models\Catalogos\Empresa;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -20,12 +21,16 @@ class Libro extends Model{
     protected $fillable = [
         'id',
         'ficha_no', 'isbn', 'etiqueta_smarth','titulo','autor',
-        'datos_fijos', 'tipo_material', 'clasificacion','no_coleccion','codebar',
+        'datos_fijos', 'tipo_material_id', 'clasificacion','no_coleccion','codebar',
         'observaciones', 'status_libro',
         'empresa_id','editorial_id', 'creado_por_id',
     ];
 
     protected $casts = ['predeterminado'=>'boolean'];
+
+    public function scopeFilterBySearch($query, $filters){
+        return (new LibroFilter())->applyTo($query, $filters);
+    }
 
     public function Empresa(){
         return $this->belongsTo(Empresa::class);
@@ -37,6 +42,10 @@ class Libro extends Model{
 
     public function Editorial(){
         return $this->belongsToMany(Editoriale::class);
+    }
+
+    public function TipoMaterial(){
+        return $this->hasOne(TipoMaterial::class,'tipo_material_id');
     }
 
 

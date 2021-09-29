@@ -1,4 +1,4 @@
-<div class="form-group row">
+<div class="form-group row has-error form-error">
     <x-inputs.text-field cols="12" tipo="text" nombre="tipo material" nombrees="Tipo de Material" valor="{{old('tipo_material',$item->tipo_material)}}"></x-inputs.text-field>
 </div>
 

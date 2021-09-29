@@ -56,6 +56,7 @@ class TipoMaterialController extends Controller{
             'editItem'     => 'editTipoMaterial',
             'removeItem'   => 'removeTipoMaterial',
             'listItems'    => 'listaTipoMaterial',
+            'IsModal'      => true,
 
         ]);
     }
@@ -65,22 +66,22 @@ class TipoMaterialController extends Controller{
 
         $user = Auth::user();
         //dd($roles);
-        return view('SIGEBI.com.tipo_material._tipo_material_edit',[
-            "item"     => null,
-            "User"     => $user,
-            "titulo"   => "Nuevo registro ",
-            'Route'    => 'createTipoMaterial',
-            'Method'   => 'POST',
-            'msg'      => $this->msg,
-            'IsUpload' => false,
-            'IsNew'    => true,
+        return view('SIGEBI.com.tipo_material._tipo_material_edit_modal',[
+            "item"        => null,
+            "User"        => $user,
+            "TituloModal" => "Nuevo registro ",
+            'RouteModal'  => 'createTipoMaterial',
+            'Method'      => 'POST',
+            'msg'         => $this->msg,
+            'IsUpload'    => false,
+            'IsNew'       => true,
         ]);
 
     }
 
     protected function createItem(TipoMaterialRequest $request) {
         //dd($request);
-        $Obj = $request->manageUser();
+        $Obj = $request->manage();
         if (!is_object($Obj)) {
             $id = 0;
             return redirect('newTipoMaterial')
@@ -89,19 +90,7 @@ class TipoMaterialController extends Controller{
         }else{
             $id = $Obj->id;
         }
-        $user = Auth::user();
-        session(['msg' => 'value']);
-        return view('SIGEBI.com.tipo_material._tipo_material_edit',[
-            "item"     => $Obj,
-            "User"     => $user,
-            "titulo"   => "Editando el registro: ".$id,
-            'Route'    => 'updateTipoMaterial',
-            'Method'   => 'POST',
-            'msg'      => $this->msg,
-            'IsUpload' => false,
-            'IsNew'    => false,
-        ]);
-
+        return redirect()->route('listaTipoMaterial');
     }
 
 
@@ -110,23 +99,21 @@ class TipoMaterialController extends Controller{
         $Item = TipoMaterial::find($Id);
         $user = Auth::user();
 
-        return view('SIGEBI.com.tipo_material._tipo_material_edit',[
-            "item"       => $Item,
-            "User"       => $user,
-            "titulo"     => "Editando el registro: ".$Id,
-            'Route'      => 'updateTipoMaterial',
-            'Method'     => 'POST',
-            'msg'        => $this->msg,
-            'IsUpload'   => false,
-            'IsNew'      => false,
-            'createItem' => 'addRoleItem',
-            'removeItem' => 'removeRoleUsuario',
+        return view('SIGEBI.com.tipo_material._tipo_material_edit_modal',[
+            "item"        => $Item,
+            "User"        => $user,
+            "TituloModal" => "Editando el registro: ".$Id,
+            'RouteModal'  => 'updateTipoMaterial',
+            'Method'      => 'POST',
+            'msg'         => $this->msg,
+            'IsUpload'    => false,
+            'IsNew'       => false,
         ]);
 
     }
 
     protected function updateItem(TipoMaterialRequest $request) {
-        $Obj = $request->manageUser();
+        $Obj = $request->manage();
         if (!is_object($Obj)) {
             $id = 0;
             return redirect('editTipoMaterial')
@@ -135,18 +122,7 @@ class TipoMaterialController extends Controller{
         }else{
             $id = $Obj->id;
         }
-        $user = Auth::user();
-        session(['msg' => 'value']);
-        return view('SIGEBI.com.tipo_material._tipo_material_edit',[
-            "item"     => $Obj,
-            "User"     => $user,
-            "titulo"   => "Editando el registro: ".$id,
-            'Route'    => 'updateTipoMaterial',
-            'Method'   => 'POST',
-            'msg'      => $this->msg,
-            'IsUpload' => false,
-            'IsNew'    => false,
-        ]);
+        return redirect()->route('listaTipoMaterial');
 
     }
 

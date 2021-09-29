@@ -8,6 +8,7 @@
     @slot('editItem',$editItem)
     @slot('removeItem',$removeItem)
     @slot('listItems',$listItems ?? '')
+    @slot('IsModal', $IsModal ?? false )
     @slot('Tabla')
         @include('SIGEBI.lay.tipo_material.__tipo_material_list')
     @endslot

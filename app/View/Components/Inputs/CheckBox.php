@@ -23,13 +23,13 @@ class CheckBox extends Component
 
 
         $this->tipo          = $tipo ?? 'text';
-        $this->nombre        = $nombre ?? 'TextField_'.time();
+        $this->nombre        = $nombre ?? 'CheckBox_'.time();
         $this->nombrees      = $nombrees ?? $this->nombre;
         $this->cols          = $cols ?? 2;
         $this->cols1         = $cols1 ?? null;
         $this->class         = $class ?? '';
         $this->class1        = $class1 ?? '';
-        $this->valor         = $valor ?? '';
+        $this->valor         = $valor ?? 0;
         $this->deshabilitado = $deshabilitado ?? '';
         $this->sololectura   = $sololectura ?? '';
 

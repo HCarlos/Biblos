@@ -8,6 +8,7 @@
     @slot('editItem',$editItem)
     @slot('removeItem',$removeItem)
     @slot('listItems',$listItems ?? '')
+    @slot('IsModal',$IsModal ?? false)
     @slot('Tabla')
         @include('share.Catalogos.User.__users_list')
     @endslot

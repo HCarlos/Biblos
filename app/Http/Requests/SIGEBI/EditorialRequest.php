@@ -4,8 +4,10 @@ namespace App\Http\Requests\SIGEBI;
 
 use App\Models\SIGEBI\Editoriale;
 use App\Models\SIGEBI\TipoMaterial;
+use Illuminate\Auth\Events\Login;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Log;
 
 class EditorialRequest extends FormRequest{
 
@@ -16,15 +18,23 @@ class EditorialRequest extends FormRequest{
         return true;
     }
 
+    public function validationData(){
+        $attributes = parent::all();
+        $attributes['editorial'] = strtoupper(trim($attributes['editorial']));
+        $this->replace($attributes);
+        return parent::all();
+    }
+
     public function rules(){
         return [
-            'editorial' => ['required','min:4'],
+            'editorial' => ['required','min:4','unique:editoriales,editorial,'.$this->id],
         ];
     }
 
     public function messages(){
         return [
             'editorial.required' => 'El :attribute requiere por lo menos de 4 caracter',
+            'editorial.unique'   => 'El :attribute ya existe.',
         ];
     }
 
@@ -34,12 +44,14 @@ class EditorialRequest extends FormRequest{
         ];
     }
 
-    public function manageUser()
+    public function manage()
     {
+
 
         try {
 
             //dd($this->all());
+
 
             $Obj0 = [
                 'editorial'        => strtoupper(trim($this->editorial)),
@@ -52,17 +64,15 @@ class EditorialRequest extends FormRequest{
                 'creado_por_id'    => strtoupper(trim($this->creado_por_id)),
             ];
 
-            //dd($Obj0);
-
             if ($this->id == 0) {
-                if ( $Obj0['predeterminado'] == true ){
+                if ( $this->predeterminado ){
                     Editoriale::where('predeterminado',true)->update(['predeterminado'=>false]);
                 }
                 $Item = Editoriale::create($Obj0);
 
             } else {
 
-                if ( $Obj0['predeterminado'] == true ){
+                if ( $this->predeterminado ){
                    Editoriale::where('predeterminado',true)->update(['predeterminado'=>false]);
                 }
 

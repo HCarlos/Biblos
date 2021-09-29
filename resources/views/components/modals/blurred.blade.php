@@ -1,8 +1,5 @@
-<!-- Blurred background/backdrop -->
-{{--<form action="{{ route($RouteModal) }}" method="GET"  accept-charset="UTF-8" >--}}
-{{--    @csrf--}}
 @include('share.otros.___erros-forms')
-<form method="{{$Method}}" action="{{ route($RouteModal) }}"  accept-charset="UTF-8" @if($IsUpload) enctype="multipart/form-data" @endif >
+<form method="{{$Method}}" action="{{ route($RouteModal) }}"  accept-charset="UTF-8" @if($IsUpload) enctype="multipart/form-data" @endif id="formFullModal">
     @csrf
     @if( !$IsNew )
         {{ method_field('PUT') }}
@@ -22,10 +19,11 @@
     </div>
 
     <div class="modal-footer bgc-dark-m1">
-        <button type="submit" class="btn btn-green">
+        <button type="submit" class="btn btn-green" id="btnSubmitFormModal">
             <i class="fas fa-search"></i>
             Aceptar
         </button>
     </div>
 
 </form>
+@include('share.code.__ajax_form_full_modal_with_errors')

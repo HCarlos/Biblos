@@ -1,6 +1,6 @@
 <div class="btn-group ms-2 mt-1">
     @if( ! is_null($newItem))
-        <a href="{{ route($newItem) }}" class="btn btn-white btn-lighter-white btn-h-red btn-a-info">
+        <a href="{{ route($newItem) }}" class="btn btn-white btn-lighter-white btn-h-red btn-a-info @if( $IsModal ) btnFullModal @endif " >
             <i class="fa fa-plus w-3"></i>
         </a>
     @endif

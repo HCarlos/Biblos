@@ -55,11 +55,32 @@ $(document).ready(function() {
                 });
             }
 
+            // Nombre del Modal Form
+
+            var htmlInit = '<div class="fa-2x m-2"><i class="fa fa-cog fa-spin"></i> Cargado datos...</div>';
 
             // Nombre del Modal Form
-            $("#modalFull .modal-content").empty();
-            $("#modalFull .modal-content").html('<div class="fa-2x m-2"><i class="fa fa-cog fa-spin"></i> Cargado datos...</div>');
-            $("#modalFull").modal('show');
+            var FS = localStorage.FullScreen;
+
+            if (FS == 1){
+                $form  = $("#modalFullScreen");
+                $formC = $("#modalFullScreen .modal-content");
+                $formC.html(htmlInit);
+            }else{
+                $form = $("#modalFull");
+                $formC = $("#modalFull .modal-content");
+                $formC.html(htmlInit);
+
+
+            }
+            $formC.empty();
+            $formC.html('<div class="fa-2x m-2"><i class="fa fa-cog fa-spin"></i> Cargado datos...</div>');
+            $form.modal('show');
+
+
+            // $("#modalFull .modal-content").empty();
+            // $("#modalFull .modal-content").html('<div class="fa-2x m-2"><i class="fa fa-cog fa-spin"></i> Cargado datos...</div>');
+            // $("#modalFull").modal('show');
             var Url = event.currentTarget.href;
             $(function () {
                 $.ajax({
@@ -67,19 +88,18 @@ $(document).ready(function() {
                     url: Url
                 })
                     .done(function (response) {
-                        $("#modalFull .modal-content").html(response);
+                        //alert(response);
+                        $formC.html(response);
                         $('[data-toggle="tooltip"]').tooltip();
-                        getMunicipiosEnabled();
 
                         // Aplica para los Select2
-                        $form = $("#modalFull .modal-content");
+                        $form = $formC;
                         $form.find('.select2').each(function() {
                             $(this).select2({
                                 dropdownParent: $('#modalFull')
                             });
                         });
 
-                        // Aplica para los Checkbox en dataTable
                         if ( localStorage.Input!=="" ) {
                             $("#var2").val(localStorage.Input);
                         }
@@ -355,6 +375,11 @@ $(document).ready(function() {
             });
         });
     }
+
+    if ( $("#contentPropertie") ) $("#contentPropertie").hide();
+    if ( $("#contentLevel3") ) $("#contentLevel3").hide();
+    if ( $("#contentLevel4") ) $("#contentLevel4").hide();
+    if ( $("#contentLevel5") ) $("#contentLevel5").hide();
 
 
 });
