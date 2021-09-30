@@ -15,10 +15,6 @@
         </div>
         @include('share.bars.___paginator')
     </div>
-    <div class="card bcard " id="contentPropertie"></div>
-    <div class="card bcard " id="contentLevel3"></div>
-    <div class="card bcard " id="contentLevel4"></div>
-    <div class="card bcard " id="contentLevel5"></div>
 
 @endsection
 @section('script-footer')

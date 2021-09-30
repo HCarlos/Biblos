@@ -10,7 +10,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class LibroRequest extends FormRequest{
 
 
-    protected $redirectRoute = 'editLibro';
+    protected $redirectRoute = 'newLibro';
 
     public function authorize(){
         return true;

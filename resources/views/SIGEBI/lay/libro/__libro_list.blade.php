@@ -40,7 +40,7 @@
 
                     <div class="dropdown-menu dd-slide-up dd-slide-none-lg">
                         <div class="dropdown-inner">
-                            @include('share.bars.___editItem')
+                            @include('share.bars.___edit_Item_inline')
                             @include('share.bars.___removeItem')
                         </div>
                     </div>

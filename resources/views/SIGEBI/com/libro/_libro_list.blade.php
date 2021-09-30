@@ -1,4 +1,4 @@
-<x-catalogo-list>
+<x-inline.catalogo-inline-list>
     @slot('tituloTabla',$tituloTabla)
     @slot('items',$items)
     @slot('user',$user)
@@ -9,8 +9,8 @@
     @slot('removeItem',$removeItem)
     @slot('listItems',$listItems ?? '')
     @slot('IsModal', $IsModal ?? false )
-    @slot('FullScreen',$FullScreen ?? false)
+    @slot('FormInline',$FormInline ?? 'none')
     @slot('Tabla')
         @include('SIGEBI.lay.libro.__libro_list')
     @endslot
-</x-catalogo-list>
+</x-inline.catalogo-inline-list>

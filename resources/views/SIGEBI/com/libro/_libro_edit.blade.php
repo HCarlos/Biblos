@@ -1,4 +1,4 @@
-<x-card-form-normal>
+<x-inline.card-form-inline>
     @slot('titulo', $titulo)
     @slot('User',$User ?? null)
     @slot('Route',$Route ?? '')
@@ -13,4 +13,4 @@
             @include('SIGEBI.lay.libro.__libro_edit')
         @endif
     @endslot
-</x-card-form-normal>
+</x-inline.card-form-inline>

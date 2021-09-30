@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Response;
 
 class LibroController extends Controller{
 
-
+//    Este Controlador esta basado en la metodología Form In Line, que permite que sobre un mismo targuet se instalen otros target
 
     protected $tableName = "libros";
     protected $navCat = "Libros";
@@ -57,8 +57,8 @@ class LibroController extends Controller{
             'editItem'     => 'editLibro',
             'removeItem'   => 'removeLibro',
             'listItems'    => 'listaLibro',
-            'IsModal'      => true,
-            'FullScreen'   => true,
+            'IsModal'      => false,
+            'FormInline'   => 'contentMain-contentPropertie',
         ]);
     }
 
@@ -70,13 +70,13 @@ class LibroController extends Controller{
         $TipoMaterial = TipoMaterial::query()->select('id','tipo_material as data')->orderBy('tipo_material') ->pluck('data','id')->toArray();
         $Editoriales  = Editoriale::query()->select('id','editorial as data')->orderBy('editorial') ->pluck('data','id')->toArray();
         //dd($TipoMaterial);
-        return view('SIGEBI.com.libro._libro_edit_modal',[
+        return view('SIGEBI.com.libro._libro_edit',[
             "item"         => null,
             "User"         => $user,
             "TipoMaterial" => $TipoMaterial,
             "Editoriales" => $Editoriales,
-            "TituloModal"  => "Nuevo registro ",
-            'RouteModal'   => 'createLibro',
+            "titulo"  => "Nuevo registro ",
+            'Route'   => 'createLibro',
             'Method'       => 'POST',
             'msg'          => $this->msg,
             'IsUpload'     => false,
@@ -96,7 +96,12 @@ class LibroController extends Controller{
         }else{
             $id = $Obj->id;
         }
-        return redirect()->route('listaLibro');
+
+        //return redirect()->route('listaLibro');
+        $code = 'OK';
+        $msg = "Registro Eliminado con éxito!";
+
+        return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
 
     }
 
@@ -108,13 +113,13 @@ class LibroController extends Controller{
         $TipoMaterial = TipoMaterial::query()->select('id','tipo_material as data')->orderBy('tipo_material') ->pluck('data','id')->toArray();
         $Editoriales  = Editoriale::query()->select('id','editorial as data')->orderBy('editorial') ->pluck('data','id')->toArray();
 
-        return view('SIGEBI.com.libro._libro_edit_modal',[
+        return view('SIGEBI.com.libro._libro_edit',[
             "item"         => $Item,
             "User"         => $user,
             "TipoMaterial" => $TipoMaterial,
             "Editoriales"  => $Editoriales,
-            "TituloModal"  => "Editando el registro: ".$Id,
-            'RouteModal'   => 'updateLibro',
+            "titulo"  => "Editando el registro: ".$Id,
+            'Route'   => 'updateLibro',
             'Method'       => 'POST',
             'msg'          => $this->msg,
             'IsUpload'     => false,
@@ -135,7 +140,10 @@ class LibroController extends Controller{
         }else{
             $id = $Obj->id;
         }
-        return redirect()->route('listaLibro');
+
+        $code = 'OK';
+        $msg = "Registro Eliminado con éxito!";
+        return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
 
 
     }
