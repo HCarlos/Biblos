@@ -6,6 +6,7 @@
     @slot('IsNew',$IsNew ?? false)
     @slot('IsUpload',$IsUpload ?? false)
     @slot('ReadOnly',$ReadOnly ?? false)
+    @slot('IsModal',$IsModal ?? false)
     @slot('items_forms')
         @if($IsNew)
             @include('share.Catalogos.User.Roles.__role_new')

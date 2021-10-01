@@ -69,6 +69,7 @@ class RoleController extends Controller{
             'newItem'      => 'newRole',
             'editItem'     => 'editRole',
             'removeItem'   => 'removeRole',
+            'IsModal'      => false,
 
         ]);
     }
@@ -86,6 +87,7 @@ class RoleController extends Controller{
             'msg'      => $this->msg,
             'IsUpload' => false,
             'IsNew'    => true,
+            'IsModal'  => false,
         ]);
 
     }
@@ -115,6 +117,7 @@ class RoleController extends Controller{
             'IsNew'    => false,
             'createItem' => 'addRoleItem',
             'removeItem' => 'removeRole',
+            'IsModal'    => false,
         ]);
 
     }
@@ -137,6 +140,7 @@ class RoleController extends Controller{
             'IsNew'      => false,
             'createItem' => 'addRoleItem',
             'removeItem' => 'removeRole',
+            'IsModal'    => false,
         ]);
 
     }
@@ -162,6 +166,7 @@ class RoleController extends Controller{
             'msg'      => $this->msg,
             'IsUpload' => false,
             'IsNew'    => false,
+            'IsModal'  => false,
         ]);
 
     }
