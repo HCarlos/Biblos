@@ -96,6 +96,7 @@ class LibroController extends Controller{
         }
         $code = 'OK';
         $msg = "Registro Eliminado con éxito!";
+        session(['msg' => 'value']);
         return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
 
     }
@@ -138,6 +139,7 @@ class LibroController extends Controller{
 
         $code = 'OK';
         $msg = "Registro Eliminado con éxito!";
+        session(['msg' => 'value']);
         return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
 
 
