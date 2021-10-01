@@ -66,10 +66,8 @@ class LibroController extends Controller{
     protected function newItem(){
 
         $user = Auth::user();
-        //$TipoMaterial = TipoMaterial::select('id','tipo_material as data')->pluck('data','id');
         $TipoMaterial = TipoMaterial::query()->select('id','tipo_material as data')->orderBy('tipo_material') ->pluck('data','id')->toArray();
         $Editoriales  = Editoriale::query()->select('id','editorial as data')->orderBy('editorial') ->pluck('data','id')->toArray();
-        //dd($TipoMaterial);
         return view('SIGEBI.com.libro._libro_edit',[
             "item"         => null,
             "User"         => $user,
@@ -87,7 +85,6 @@ class LibroController extends Controller{
     }
 
     protected function createItem(LibroRequest $request) {
-        //dd($request);
         $Obj = $request->manage();
         if (!is_object($Obj)) {
             $id = 0;
@@ -97,11 +94,8 @@ class LibroController extends Controller{
         }else{
             $id = $Obj->id;
         }
-
-        //return redirect()->route('listaLibro');
         $code = 'OK';
         $msg = "Registro Eliminado con éxito!";
-
         return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
 
     }
@@ -131,7 +125,6 @@ class LibroController extends Controller{
     }
 
     protected function updateItem(LibroRequest $request) {
-        //dd($request->all(['predeterminado']));
 
         $Obj = $request->manage();
         if (!is_object($Obj)) {
@@ -150,18 +143,13 @@ class LibroController extends Controller{
 
     }
 
-
     // ***************** ELIMINA AL USUARIO VIA AJAX ++++++++++++++++++++ //
     protected function removeItem($Id = 0, $dato1 = null, $dato2 = null){
         $code = 'OK';
         $msg = "Registro Eliminado con éxito!";
-        //dd($Id);
         $user = Libro::withTrashed()->findOrFail($Id);
         $user->forceDelete();
-
         return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
-
     }
-
 
 }
