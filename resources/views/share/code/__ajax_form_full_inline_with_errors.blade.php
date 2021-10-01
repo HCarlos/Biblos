@@ -2,6 +2,12 @@
 
     var strElements = "input, select, checkbox, textarea, radio, file, img";
 
+    let Id = $("#{{$FormInline}}").attr('id');
+    let arrId = Id.split('-');
+    let $IdAnt = $("#"+arrId[0]);
+    let $IdNxs = $("#"+arrId[1]);
+
+
     if ( $('#btnFormInlineSubmit') ){
         $('#cargando').hide();
         $('#btnFormInlineSubmit').on('click',function (event) {
@@ -24,24 +30,25 @@
                     data: formData,
                     url: Url
                 }).done(function( response ) {
-
-                    var Obj = $(".btnBackInline").attr('id');
-                    var Id = Obj.attr('id');
-                    alert(Id);
-                    var arrId = Id.split('-');
-                    var $IdAnt = $("#"+arrId[1]);
-                    var $IdNxs = $("#"+arrId[0]);
-                    $IdNxs.empty();
-                    $IdAnt.hide(function () {
-                        $IdNxs.show('slow', function () {
-                        });
-                    });
-
+                    gotoBack();
                 }).fail(function(response) {
                     sayErrors(response.responseJSON.errors, $form);
                 });
             });
         })
+        $('.btnFormInlineBack').on('click',function(event){
+            event.preventDefault();
+            gotoBack();
+        });
+
+    }
+
+    function gotoBack(){
+        $IdNxs.fadeOut('slow',function (){
+            $IdNxs.empty();
+            window.location.reload();
+            return false;
+        });
     }
 
     function sayErrors(errors, $form){

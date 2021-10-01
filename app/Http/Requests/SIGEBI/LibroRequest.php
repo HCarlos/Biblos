@@ -6,6 +6,7 @@ use App\Models\SIGEBI\Libro;
 use App\Models\SIGEBI\Libroe;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Log;
 
 class LibroRequest extends FormRequest{
 
@@ -26,21 +27,40 @@ class LibroRequest extends FormRequest{
 
     public function rules(){
         return [
-            'titulo' => ['required','min:4','unique:libros,titulo,'.$this->id],
+            'titulo'           => ['required','min:4','unique:libros,titulo,'.$this->id],
+            'isbn'             => ['required','min:4','unique:libros,isbn,'.$this->id],
+            'codebar'          => ['required','min:4','unique:libros,codebar,'.$this->id],
+            'tipo_material_id' => ['min:1'],
+            'editorial_id'     => ['min:1'],
         ];
     }
 
     public function messages(){
         return [
-            'titulo.required' => 'El :attribute requiere por lo menos de 4 caracter',
-            'titulo.min' => 'El :attribute requiere por lo menos de 4 caracter',
-            'titulo.unique'   => 'El :attribute ya existe.',
+            'titulo.required'      => 'El :attribute requiere por lo menos de 4 caracter',
+            'titulo.min'           => 'El :attribute requiere por lo menos de 4 caracter',
+            'titulo.unique'        => 'El :attribute ya existe.',
+
+            'isbn.required'        => 'El :attribute requiere por lo menos de 4 caracter',
+            'isbn.min'             => 'El :attribute requiere por lo menos de 4 caracter',
+            'isbn.unique'          => 'El :attribute ya existe.',
+
+            'codebar.required'     => 'El :attribute requiere por lo menos de 4 caracter',
+            'codebar.min'          => 'El :attribute requiere por lo menos de 4 caracter',
+            'codebar.unique'       => 'El :attribute ya existe.',
+
+            'tipo_material_id.min' => 'Debe seleccionar un :attribute',
+            'editorial_id.min'     => 'Debe seleccionar un :attribute',
         ];
     }
 
     public function attributes(){
         return [
-            'titulo' => 'Titulo',
+            'titulo'           => 'Titulo',
+            'isbn'             => 'ISBN',
+            'codebar'          => 'Código de Barras',
+            'tipo_material_id' => 'Tipo de Material',
+            'editorial_id'     => 'Editorial',
         ];
     }
 
@@ -71,24 +91,23 @@ class LibroRequest extends FormRequest{
 
                 'observaciones'    => strtoupper(trim($this->observaciones)),
             ];
-
+            //dd($Obj0);
             if ($this->id == 0) {
                 $Item = Libro::create($Obj0);
 
             } else {
-
                 $Item = Libro::find($this->id);
                 $Item->update($Obj0);
 
             }
         }catch (QueryException $e){
+            Log::alert("Ver Error => ".$e->getMessage());
             return $e->getMessage();
         }
         return $Item;
     }
 
-    protected function getRedirectUrl()
-    {
+    protected function getRedirectUrl(){
         $url = $this->redirector->getUrlGenerator();
         if ($this->id > 0){
             return $url->route($this->redirectRoute,['Id'=>$this->id]);
@@ -96,7 +115,5 @@ class LibroRequest extends FormRequest{
             return $url->route("newLibro");
         }
     }
-
-
 
 }

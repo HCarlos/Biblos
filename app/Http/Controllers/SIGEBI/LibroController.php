@@ -52,7 +52,7 @@ class LibroController extends Controller{
         return view('SIGEBI.com.libro._libro_list',[
             'items'        => $items,
             'user'         => $user,
-            'tituloTabla'  => 'Listado de Libros',
+            'tituloTabla'  => 'Catálogo de Libros',
             'newItem'      => 'newLibro',
             'editItem'     => 'editLibro',
             'removeItem'   => 'removeLibro',
@@ -81,6 +81,7 @@ class LibroController extends Controller{
             'msg'          => $this->msg,
             'IsUpload'     => false,
             'IsNew'        => true,
+            'FormInline'   => 'contentMain-contentPropertie',
         ]);
 
     }
@@ -124,6 +125,7 @@ class LibroController extends Controller{
             'msg'          => $this->msg,
             'IsUpload'     => false,
             'IsNew'        => false,
+            'FormInline'   => 'contentMain-contentPropertie',
         ]);
 
     }

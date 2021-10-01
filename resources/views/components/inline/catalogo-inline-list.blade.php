@@ -3,7 +3,7 @@
 @section('contenedor')
     @php $IsModal = $IsModal  ?? false @endphp
     <div class="card bcard" id="contentMain">
-        <div class="card-header bgc-primary-d1 text-white border-0">
+        <div class="card-header bgc-primary-d1 text-white border-0" id="{{$FormInline}}" >
             @include('share.bars.___toolbar_catalogo_inline')
             <h4 class="text-40">
                 <h3>{{$tituloTabla}}</h3>

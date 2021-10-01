@@ -3,8 +3,8 @@
     <thead class="text-dark-tp3 bgc-grey-l4 text-90 border-b-1 brc-transparent">
     <tr>
         <th>ID</th>
-        <th>titulo</th>
-        <th>author</th>
+        <th>TÍTULO</th>
+        <th>AUTOR</th>
         <th></th>
     </tr>
     </thead>
@@ -28,7 +28,7 @@
             <td>
                 <!-- action buttons -->
                 <div class='d-none d-lg-flex'>
-                    @include('share.bars.___editItem')
+                    @include('share.bars.___edit_Item_inline')
                     @include('share.bars.___removeItem')
                 </div>
 

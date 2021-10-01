@@ -4,14 +4,15 @@
     <x-inputs.text-field cols="3" tipo="text" nombre="etiqueta smarth" valor="{{old('etiqueta_smarth',$item->etiqueta_smarth)}}"></x-inputs.text-field>
 </div>
 <div class="form-group row">
-    <x-inputs.text-field cols="8" tipo="text" nombre="titulo" valor="{{old('titulo',$item->titulo)}}"></x-inputs.text-field>
+    <x-inputs.text-field cols="8" tipo="text" nombre="titulo" nombrees="Título" valor="{{old('titulo',$item->titulo)}}"></x-inputs.text-field>
     <x-inputs.text-field cols="4" tipo="text" nombre="autor" nombrees="autor" valor="{{old('autor',$item->autor)}}"></x-inputs.text-field>
     <div class="col-sm-4"></div>
 </div>
 <div class="form-group row">
-    <x-inputs.text-field cols="3" tipo="text" nombre="clasificacion" nombrees="clasificacion" valor="{{old('clasificacion',$item->clasificacion)}}"></x-inputs.text-field>
-    <x-inputs.text-field cols="3" tipo="text" nombre="no_coleccion" nombrees="no_coleccion" valor="{{old('no_coleccion',$item->no_coleccion)}}"></x-inputs.text-field>
-    <x-inputs.text-field cols="3" tipo="text" nombre="codebar" valor="{{old('codebar',$item->codebar)}}"></x-inputs.text-field>
+    <x-inputs.text-field cols="3" tipo="text" nombre="clasificacion" nombrees="Clasificación" valor="{{old('clasificacion',$item->clasificacion)}}"></x-inputs.text-field>
+    <x-inputs.text-field cols="3" tipo="text" nombre="no_coleccion" nombrees="No Colección" valor="{{old('no_coleccion',$item->no_coleccion)}}"></x-inputs.text-field>
+    <x-inputs.text-field cols="3" tipo="text" nombre="codebar" nombrees="Código de Barras" valor="{{old('codebar',$item->codebar)}}"></x-inputs.text-field>
+    <x-inputs.text-field cols="3" tipo="text" nombre="edicion" nombrees="Edición" valor="{{old('edicion',$item->edicion)}}"></x-inputs.text-field>
 </div>
 <div class="form-group row">
     <x-inputs.select-form cols="6" nombre="tipo_material_id" nombrees="tipo de material" :arr="$TipoMaterial" valor="{{old('no_coleccion',$item->tipo_material_id)}}"></x-inputs.select-form>

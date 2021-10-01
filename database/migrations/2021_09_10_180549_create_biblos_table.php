@@ -119,6 +119,7 @@ class CreateBiblosTable extends Migration
                 $table->string('clasificacion',30)->default('')->nullable();
                 $table->string('no_coleccion')->default('')->nullable();
                 $table->string('codebar',30)->default('')->nullable();
+                $table->string('edicion',30)->default('')->nullable();
                 $table->string('observaciones', 560)->default('')->nullable();
                 $table->unsignedSmallInteger('tipo_material_id')->default(1)->nullable();
                 $table->unsignedSmallInteger('status_libro')->default(1)->nullable();

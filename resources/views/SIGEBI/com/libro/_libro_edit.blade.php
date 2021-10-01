@@ -6,6 +6,7 @@
     @slot('IsNew',$IsNew ?? false)
     @slot('IsUpload',$IsUpload ?? false)
     @slot('ReadOnly',$ReadOnly ?? false)
+    @slot('FormInline',$FormInline ?? 'none')
     @slot('items_forms')
         @if($IsNew)
             @include('SIGEBI.lay.libro.__libro_new')

@@ -21,7 +21,7 @@ class Libro extends Model{
     protected $fillable = [
         'id',
         'ficha_no', 'isbn', 'etiqueta_smarth','titulo','autor',
-        'datos_fijos', 'tipo_material_id', 'clasificacion','no_coleccion','codebar',
+        'datos_fijos', 'tipo_material_id', 'clasificacion','no_coleccion','codebar','edicion',
         'observaciones', 'status_libro',
         'empresa_id','editorial_id', 'creado_por_id',
     ];
