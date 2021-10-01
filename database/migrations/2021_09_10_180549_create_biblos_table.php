@@ -110,17 +110,14 @@ class CreateBiblosTable extends Migration
         if (!Schema::hasTable($tableBiblos['libros'])) {
             Schema::create($tableBiblos['libros'], function (Blueprint $table) use ($tableBiblos, $tableCatalogos ) {
                 $table->id();
-                $table->string('ficha_no')->default('')->nullable();
-                $table->string('isbn',50)->default('')->nullable();
-                $table->string('etiqueta_smarth',150)->default('')->nullable();
+                $table->string('ficha_no',25)->default('')->nullable();
+                $table->string('etiqueta_smarth',1000)->default('')->nullable();
                 $table->string('titulo',250)->default('')->nullable();
                 $table->string('autor',250)->default('')->nullable();
-                $table->string('datos_fijos',100)->default('')->nullable();
-                $table->string('clasificacion',30)->default('')->nullable();
+                $table->string('datos_fijos',250)->default('')->nullable();
                 $table->string('no_coleccion')->default('')->nullable();
                 $table->string('codebar',30)->default('')->nullable();
-                $table->string('edicion',30)->default('')->nullable();
-                $table->string('observaciones', 560)->default('')->nullable();
+                $table->string('observaciones', 1000)->default('')->nullable();
                 $table->unsignedSmallInteger('tipo_material_id')->default(1)->nullable();
                 $table->unsignedSmallInteger('status_libro')->default(1)->nullable();
                 $table->unsignedSmallInteger('empresa_id')->default(1)->nullable();
@@ -131,8 +128,6 @@ class CreateBiblosTable extends Migration
                 $table->softDeletes();
                 $table->timestamps();
                 $table->index('tipo_material_id');
-                $table->unique('isbn');
-                $table->unique('codebar');
                 $table->index('etiqueta_smarth');
                 $table->index('editorial_id');
                 $table->index('creado_por_id');
@@ -167,14 +162,16 @@ class CreateBiblosTable extends Migration
             Schema::create($tableBiblos['inventariolibros'], function (Blueprint $table) use ($tableBiblos, $tableCatalogos){
                 $table->id();
                 $table->unsignedInteger('libro_id')->default(0)->nullable();
+                $table->string('isbn',50)->default('')->nullable();
+                $table->string('clasificacion',30)->default('')->nullable();
+                $table->string('edicion',30)->default('')->nullable();
+                $table->string('codebar',30)->default('')->nullable();
                 $table->unsignedInteger('prestado_user_id')->default(0)->nullable();
                 $table->datetime('fecha_prestamo')->nullable();
                 $table->datetime('fecha_entrega')->nullable();
                 $table->unsignedInteger('apartado_user_id')->default(0)->nullable();
                 $table->datetime('fecha_apartado')->nullable();
                 $table->unsignedInteger('editorial_id')->default(0)->nullable();
-                $table->string('isbn',50)->default('');
-                $table->string('codebar',30)->default('');
                 $table->uuid('uuid');
                 $table->string('observaciones', 500)->default('')->nullable();
                 $table->unsignedSmallInteger('empresa_id')->default(1)->nullable();
@@ -369,9 +366,15 @@ class CreateBiblosTable extends Migration
 
         // CAMPO ESPECIAL PARA LIBROS
         DB::statement("ALTER TABLE libros ADD COLUMN searchtext TSVECTOR");
-        DB::statement("UPDATE libros SET searchtext = to_tsvector('spanish', coalesce(trim(titulo),'') || ' ' || coalesce(trim(autor),'') || ' ' || coalesce(trim(isbn),'') || ' ' || coalesce(trim(etiqueta_smarth),'') || ' ' || coalesce(trim(codebar),'') )");
+        DB::statement("UPDATE libros SET searchtext = to_tsvector('spanish', coalesce(trim(titulo),'') || ' ' || coalesce(trim(autor),'') || ' ' || coalesce(trim(etiqueta_smarth),'') )");
         DB::statement("CREATE INDEX libros_searchtext_gin ON libros USING GIN(searchtext)");
-        DB::statement("CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON libros FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.spanish', 'titulo', 'autor', 'isbn', 'etiqueta_smarth', 'codebar')");
+        DB::statement("CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON libros FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.spanish', 'titulo', 'autor', 'etiqueta_smarth')");
+
+        // CAMPO ESPECIAL PARA INVENTARIO DE LIBROS
+        DB::statement("ALTER TABLE inventariolibros ADD COLUMN searchtext TSVECTOR");
+        DB::statement("UPDATE inventariolibros SET searchtext = to_tsvector('spanish', coalesce(trim(isbn),'') || ' ' || coalesce(trim(clasificacion),'') || ' ' || coalesce(trim(edicion),'') || ' ' || coalesce(trim(codebar),'') )");
+        DB::statement("CREATE INDEX inventariolibros_searchtext_gin ON inventariolibros USING GIN(searchtext)");
+        DB::statement("CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON inventariolibros FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.spanish', 'isbn', 'clasificacion', 'edicion', 'codebar')");
 
         // CAMPO ESPECIAL PARA TIPO_MATERIAL
         DB::statement("ALTER TABLE tipomaterial ADD COLUMN searchtext TSVECTOR");

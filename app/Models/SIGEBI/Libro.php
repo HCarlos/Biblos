@@ -20,12 +20,11 @@ class Libro extends Model{
 
     protected $fillable = [
         'id',
-        'ficha_no', 'isbn', 'etiqueta_smarth','titulo','autor',
-        'datos_fijos', 'tipo_material_id', 'clasificacion','no_coleccion','codebar','edicion',
+        'ficha_no',  'etiqueta_smarth','titulo','autor',
+        'datos_fijos', 'tipo_material_id','no_coleccion','codebar',
         'observaciones', 'status_libro',
         'empresa_id','editorial_id', 'creado_por_id',
     ];
-
     protected $casts = ['predeterminado'=>'boolean'];
 
     public function scopeFilterBySearch($query, $filters){

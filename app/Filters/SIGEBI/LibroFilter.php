@@ -14,7 +14,6 @@ class LibroFilter extends QueryFilter{
             'titulo'     => '',
             'autor' => '',
             'etiqueta_smarth'     => '',
-            'codebar'         => '',
             'id'         => '',
         ];
     }
@@ -44,12 +43,6 @@ class LibroFilter extends QueryFilter{
         if (is_null($search) || empty ($search) || trim($search) == "") {return $query;}
         $search = strtoupper(trim($search));
         return $query->whereRaw("etiqueta_smarth like ?", "%{$search}%");
-    }
-
-    public function codebar($query, $search){
-        if (is_null($search) || empty ($search) || trim($search) == "") {return $query;}
-        $search = strtoupper(trim($search));
-        return $query->whereRaw("codebar like ?", "%{$search}%");
     }
 
     public function id($query, $search){
