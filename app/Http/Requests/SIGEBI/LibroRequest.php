@@ -26,7 +26,7 @@ class LibroRequest extends FormRequest{
 
     public function rules(){
         return [
-            'titulo'           => ['required','min:4','unique:libros,titulo,'.$this->id],
+            'titulo'           => ['required','min:4'],
             'tipo_material_id' => ['min:1'],
             'editorial_id'     => ['min:1'],
         ];
@@ -36,7 +36,6 @@ class LibroRequest extends FormRequest{
         return [
             'titulo.required'      => 'El :attribute requiere por lo menos de 4 caracter',
             'titulo.min'           => 'El :attribute requiere por lo menos de 4 caracter',
-            'titulo.unique'        => 'El :attribute ya existe.',
 
             'tipo_material_id.min' => 'Debe seleccionar un :attribute',
             'editorial_id.min'     => 'Debe seleccionar un :attribute',
