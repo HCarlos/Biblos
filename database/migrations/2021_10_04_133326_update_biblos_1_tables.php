@@ -20,8 +20,8 @@ class UpdateBiblos1Tables extends Migration
         $tableRelaciones = config('ibt.table_names.relaciones');
         $tableBiblos = config('ibt.table_names.biblos');
 
-        if (!Schema::hasTable($tableBiblos['libros'])) {
-            Schema::table($tableBiblos['libros'], function (Blueprint $table) {
+        if (Schema::hasTable($tableBiblos['libros'])) {
+            Schema::table($tableBiblos['libros'], function (Blueprint $table) use ($tableBiblos) {
                 $table->unique(['titulo','autor']);
 
             });
@@ -46,8 +46,8 @@ class UpdateBiblos1Tables extends Migration
         $tableRelaciones = config('ibt.table_names.relaciones');
         $tableBiblos = config('ibt.table_names.biblos');
 
-        if (!Schema::hasTable($tableBiblos['libros'])) {
-            Schema::table($tableBiblos['libros'], function (Blueprint $table) {
+        if (Schema::hasTable($tableBiblos['libros'])) {
+            Schema::table($tableBiblos['libros'], function (Blueprint $table) use ($tableBiblos) {
                 $table->dropUnique(['titulo','autor']);
             });
         }
