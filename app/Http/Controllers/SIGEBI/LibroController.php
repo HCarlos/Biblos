@@ -59,6 +59,7 @@ class LibroController extends Controller{
             'listItems'    => 'listaLibro',
             'IsModal'      => false,
             'FormInline'   => 'contentMain-contentPropertie',
+            'inventarioItem' => 'inventarioLibroList'
         ]);
     }
 

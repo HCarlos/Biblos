@@ -5,6 +5,7 @@ use App\Http\Controllers\Catalogos\Familias\FamiliasController;
 use App\Http\Controllers\Catalogos\Profesores\ProfesorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SIGEBI\EditorialController;
+use App\Http\Controllers\SIGEBI\InventarioLibroController;
 use App\Http\Controllers\SIGEBI\LibroController;
 use App\Http\Controllers\SIGEBI\TipoMaterialController;
 use App\Http\Controllers\Storage\ProfileStorageController;
@@ -82,6 +83,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('editLibro/{Id}',[LibroController::class,'editItem'])->name('editLibro');
     Route::put('updateLibro',[LibroController::class,'updateItem'])->name('updateLibro');
     Route::get('removeLibro/{Id}/{Dato1}/{Dato2}',[LibroController::class,'removeItem'])->name('removeLibro');
+
+    // LIBRO
+    Route::get('inventarioLibroList/{Id}',[InventarioLibroController::class,'index'])->name('inventarioLibroList');
+    Route::get('newInventarioLibro',[InventarioLibroController::class,'newItem'])->name('newInventarioLibro');
+    Route::post('createInventarioLibro',[InventarioLibroController::class,'createItem'])->name('createInventarioLibro');
+    Route::get('editInventarioLibro/{Id}',[InventarioLibroController::class,'editItem'])->name('editInventarioLibro');
+    Route::put('updateInventarioLibro',[InventarioLibroController::class,'updateItem'])->name('updateInventarioLibro');
+    Route::get('removeInventarioLibro/{Id}/{Dato1}/{Dato2}',[InventarioLibroController::class,'removeItem'])->name('removeInventarioLibro');
 
     // USUARIOS
     Route::get('listaUsuarios',[UserController::class,'index'])->name('listaUsuarios');

@@ -1,10 +1,21 @@
+<div class="card">
+
+    <div class="card-header">
+        <h3 class=" text-120 text-left"> {{ $titulo }} </h3>
+    </div>
+    <div class="card-body">
+
+    </div>
+</div>
+
 
 <table class="table text-dark-m2 text-95 bgc-white ml-n1px m-2" id="table">
     <thead class="text-dark-tp3 bgc-grey-l4 text-90 border-b-1 brc-transparent">
     <tr>
         <th>ID</th>
-        <th>TÍTULO</th>
-        <th>AUTOR</th>
+        <th>CÓDIGO</th>
+        <th>CLASIFICACION</th>
+        <th>EDICION</th>
         <th></th>
     </tr>
     </thead>
@@ -17,16 +28,19 @@
                 {{$item->id}}
             </td>
             <td class="text-600 ">
-                {{$item->titulo}}
+                {{$item->codebar}}
             </td>
             <td class="text-600 ">
-                {{$item->autor}}
+                {{$item->clasificacion}}
+            </td>
+            <td class="text-600 ">
+                {{$item->edicion}}
             </td>
             <td>
                 <!-- action buttons -->
                 <div class='d-none d-lg-flex'>
-                    @include('share.bars.___inventario_Item_inline')
-                    @include('share.bars.___edit_Item_inline')
+{{--                    @include('share.bars.___inventario_Item_inline')--}}
+{{--                    @include('share.bars.___edit_Item_inline')--}}
                     @include('share.bars.___removeItem')
                 </div>
 
@@ -38,8 +52,8 @@
 
                     <div class="dropdown-menu dd-slide-up dd-slide-none-lg">
                         <div class="dropdown-inner">
-                            @include('share.bars.___inventario_Item_inline')
-                            @include('share.bars.___edit_Item_inline')
+{{--                            @include('share.bars.___inventario_Item_inline')--}}
+{{--                            @include('share.bars.___edit_Item_inline')--}}
                             @include('share.bars.___removeItem')
                         </div>
                     </div>

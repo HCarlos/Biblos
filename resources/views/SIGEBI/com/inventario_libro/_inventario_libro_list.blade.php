@@ -10,8 +10,7 @@
     @slot('listItems',$listItems ?? '')
     @slot('IsModal', $IsModal ?? false )
     @slot('FormInline',$FormInline ?? 'none')
-    @slot('inventarioItem' ?? null)
     @slot('Tabla')
-        @include('SIGEBI.lay.libro.__libro_list')
+        @include('SIGEBI.lay.inventario_libro.__inventario_libro_list')
     @endslot
 </x-inline.catalogo-inline-list>
