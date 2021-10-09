@@ -68,7 +68,6 @@ class LibroController extends Controller{
         $user = Auth::user();
         $TipoMaterial = TipoMaterial::query()->select('id','tipo_material as data')->orderBy('tipo_material') ->pluck('data','id')->toArray();
         $Editoriales  = Editoriale::query()->select('id','editorial as data')->orderBy('editorial') ->pluck('data','id')->toArray();
-        $this->msg = "";
         return view('SIGEBI.com.libro._libro_edit',[
             "item"         => null,
             "User"         => $user,
@@ -96,7 +95,7 @@ class LibroController extends Controller{
             $id = $Obj->id;
         }
         $code = 'OK';
-        $msg = "Registro Eliminado con éxito!";
+        $msg = "Registro Guardado con éxito!";
         session(['msg' => $this->msg]);
         return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
 
@@ -109,7 +108,6 @@ class LibroController extends Controller{
         $user = Auth::user();
         $TipoMaterial = TipoMaterial::query()->select('id','tipo_material as data')->orderBy('tipo_material') ->pluck('data','id')->toArray();
         $Editoriales  = Editoriale::query()->select('id','editorial as data')->orderBy('editorial') ->pluck('data','id')->toArray();
-        $this->msg = "";
         return view('SIGEBI.com.libro._libro_edit',[
             "item"         => $Item,
             "User"         => $user,
@@ -138,7 +136,7 @@ class LibroController extends Controller{
             $id = $Obj->id;
         }
         $code = 'OK';
-        $msg = "Registro Eliminado con éxito!";
+        $msg = "Registro Guardado con éxito!";
         session(['msg' => $this->msg]);
         return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
 

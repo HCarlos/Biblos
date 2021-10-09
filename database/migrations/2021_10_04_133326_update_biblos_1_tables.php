@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class UpdateBiblos1Tables extends Migration
@@ -50,6 +51,9 @@ class UpdateBiblos1Tables extends Migration
             Schema::table($tableBiblos['libros'], function (Blueprint $table) use ($tableBiblos) {
                 $table->dropUnique(['titulo','autor']);
             });
+
+            DB::statement("ALTER DATABASE dbbiblos set default_text_search_config = 'spanish'");
+
         }
 
     }
