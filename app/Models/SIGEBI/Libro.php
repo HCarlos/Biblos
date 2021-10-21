@@ -47,5 +47,12 @@ class Libro extends Model{
         return $this->hasOne(TipoMaterial::class,'tipo_material_id');
     }
 
+    public function portada(){
+        return $this->hasOne(Portada::class,'id','libro_id');
+    }
+
+    public function portadas(){
+        return $this->belongsToMany(Portada::class);
+    }
 
 }

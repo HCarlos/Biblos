@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SIGEBI\EditorialController;
 use App\Http\Controllers\SIGEBI\InventarioLibroController;
 use App\Http\Controllers\SIGEBI\LibroController;
+use App\Http\Controllers\SIGEBI\PortadaController;
 use App\Http\Controllers\SIGEBI\TipoMaterialController;
 use App\Http\Controllers\Storage\ProfileStorageController;
 use App\Http\Controllers\Storage\StorageExternalFilesController;
@@ -92,6 +93,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('updateInventarioLibro',[InventarioLibroController::class,'updateItem'])->name('updateInventarioLibro');
     Route::get('removeInventarioLibro/{Id}/{Dato1}/{Dato2}',[InventarioLibroController::class,'removeItem'])->name('removeInventarioLibro');
 
+
     // USUARIOS
     Route::get('listaUsuarios',[UserController::class,'index'])->name('listaUsuarios');
     Route::get('newUsuario',[UserController::class,'newItem'])->name('newUsuario');
@@ -124,6 +126,25 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('listUsuariosToXlsx',[StorageListaCatalogosController::class,'listUsuariosToXlsx'])->name('listUsuariosToXlsx');
     Route::get('listFamiliasToXlsx',[StorageListaCatalogosController::class,'listFamiliasToXlsx'])->name('listFamiliasToXlsx');
+
+
+    //PORTADAS
+    Route::get('listPortadas/{Id}', [PortadaController::class,'index'])->name('listPortadas');
+    Route::get('portadaLibroNew/{Id}',[PortadaController::class,'newItem'])->name('portadaLibroNew');
+    Route::post('portadaLibroCreate',[PortadaController::class,'createItem'])->name('portadaLibroCreate');
+    Route::get('removePortadaLibro/{Id}',[PortadaController::class,'removeItem'])->name('removePortadaLibro');
+
+    //INVENTARIO LIBROS
+    Route::get('listaInventarioLibroList/{Id}', [InventarioLibroController::class,'index'])->name('listaInventarioLibroList');
+    Route::get('inventarioLibroNew/{Id}',[InventarioLibroController::class,'newItem'])->name('inventarioLibroNew');
+    Route::post('inventarioLibroCreate',[InventarioLibroController::class,'createItem'])->name('inventarioLibroCreate');
+    Route::get('inventarioLibroEdit/{Id}',[InventarioLibroController::class,'editItem'])->name('inventarioLibroEdit');
+    Route::put('inventarioLibroUpdate',[InventarioLibroController::class,'updateItem'])->name('inventarioLibroUpdate');
+    Route::get('removeInventarioLibro/{Id}/{Dato1}/{Dato2}',[InventarioLibroController::class,'removeItem'])->name('removeInventarioLibro');
+
+
+
+
 
 
 

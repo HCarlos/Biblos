@@ -4,6 +4,7 @@ namespace App\Models\SIGEBI;
 
 use App\Models\Catalogos\Empresa;
 use App\Models\User;
+use App\Traits\SIGEBI\ImageneTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -14,6 +15,8 @@ class Portada extends Model{
 
     use SoftDeletes, Notifiable;
     use HasFactory;
+
+    use ImageneTrait;
 
     protected $guard_name = 'web';
     protected $table = 'portadas';
@@ -33,5 +36,15 @@ class Portada extends Model{
     public function Creado_Por(){
         return $this->belongsTo(User::class, 'creado_por_id');
     }
+
+    public function libro(){
+        return $this->hasOne(Libro::class,'id','libro_id');
+    }
+
+    public function libros(){
+        return $this->belongsToMany(Libro::class);
+    }
+
+
 
 }

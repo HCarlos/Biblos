@@ -80,6 +80,13 @@ return [
             'visibility' => env('EXTERNO_VISIBILITY'),
         ],
 
+        'portada' => [
+            'driver' => env('PORTADA_DRIVER'),
+            'root' => public_path().env('PORTADA_ROOT'),
+            'url' => env('APP_URL').env('PORTADA_URL'),
+            'visibility' => env('PORTADA_VISIBILITY'),
+        ],
+
         'json' => [
             'driver' => env('JSON_DRIVER'),
             'root' => public_path().env('JSON_ROOT'),

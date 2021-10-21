@@ -5,6 +5,7 @@ namespace App\Http\Controllers\SIGEBI;
 use App\Filters\User\UserFilterRules;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SIGEBI\EditorialRequest;
+use App\Http\Requests\SIGEBI\InventarioLibroRequest;
 use App\Http\Requests\SIGEBI\LibroRequest;
 use App\Models\SIGEBI\Editoriale;
 use App\Models\SIGEBI\InventarioLibro;
@@ -39,7 +40,7 @@ class InventarioLibroController extends Controller{
         @ini_set( 'max_execution_time', '960000' );
 
         $filters = ['libro_id'=>$Id];
-        //dd($filters);
+        $libro = Libro::find($Id);
         $items = InventarioLibro::query()
            ->where('libro_id',$Id)
             ->orderByDesc('id')
@@ -49,93 +50,118 @@ class InventarioLibroController extends Controller{
         $user = Auth::user();
         $Libro = Libro::find($Id);
         Session::put('items', $items);
-        return view('SIGEBI.com.libro._libro_list',[
-            'items'        => $items,
-            'user'         => $user,
-            'tituloTabla'  => 'Ejemplares de '.$Libro->titulo,
-            'newItem'      => 'newEditorial',
-            'editItem'     => 'editEditorial',
-            'removeItem'   => 'removeEditorial',
-            'listItems'    => 'listaEditorial',
-            'IsModal'      => true,
-        ]);
+        //dd ( $libro->titulo );
+        return view('SIGEBI.com.inventario_libro._inventario_libro_list',
+            [
+                'items'          => $items,
+                'user'           => $user,
+                'Id'             => $Id,
+                'tituloTabla'    => 'Ejemplares de '.$libro->titulo,
+                'listItems'      => 'listaLibro',
+                'IsModal'        => false,
+                'newItem'        => 'inventarioLibroNew/'.$Id,
+                'editItem'       => 'inventarioLibroEdit',
+                'createItem'     => 'createInventarioLibro',
+                'removeItem'     => 'removeInventarioLibro',
+                'FormInline'     => 'contentMain-contentPropertie',
+            ]
+        );
     }
 
 
 
-    protected function newItem(){
-/*
-        $user = Auth::user();
-        //dd($roles);
-        return view('SIGEBI.com.editorial._editorial_edit_modal',[
-            "item"        => null,
-            "User"        => $user,
-            "TituloModal" => "Nuevo registro ",
-            'RouteModal'  => 'createEditorial',
-            'Method'      => 'POST',
-            'msg'         => $this->msg,
-            'IsUpload'    => false,
-            'IsNew'       => true,
-        ]);
-*/
+    protected function newItem($libro_id){
+
+        $user  = Auth::user();
+        $Libro = Libro::find($libro_id);
+        $Editoriales  = Editoriale::query()->select('id','editorial as data')->orderBy('editorial') ->pluck('data','id')->toArray();
+
+        //dd($Libro);
+        return view('SIGEBI.com.inventario_libro._inventario_libro_new',
+            [
+                "Libro"        => $Libro,
+                "Editoriales"  => $Editoriales,
+                "User"         => $user,
+                "titulo"       => "Nuevo Libro",
+                'Route'        => 'inventarioLibroCreate',
+                'Method'       => 'POST',
+                'msg'          => $this->msg,
+                'IsUpload'     => true,
+                'IsNew'        => true,
+                'FormInline'   => 'contentPropertie-contentLevel3',
+            ]
+        );
 
     }
 
-    protected function createItem(EditorialRequest $request) {
-        //dd($request);
-        /*
-        $Obj = $request->manage();
+    protected function createItem(InventarioLibroRequest $request){
+
+        $Data = $request->all(['libro_id']);
+        $Obj = $request->manageInventarioLibro();
         if (!is_object($Obj)) {
             $id = 0;
-            return redirect('newEditorial')
+            return redirect()->route('inventarioLibroNew',['Id' => $Data['libro_id']] )
                 ->withErrors($Obj)
                 ->withInput();
         }else{
             $id = $Obj->id;
         }
-        return redirect()->route('listaEditorial');
-*/
-    }
+        $code = 'OK';
+        $msg = "Registro Guardado con éxito!";
+        session(['msg' => $this->msg]);
+        return redirect()->route('listaInventarioLibroList',['Id' => $Data['libro_id']] );
 
+    }
 
     protected function editItem($Id){
-/*
-        $Item = Editoriale::find($Id);
-        $user = Auth::user();
 
-        return view('SIGEBI.com.editorial._editorial_edit_modal',[
-            "item"        => $Item,
-            "User"        => $user,
-            "TituloModal" => "Editando el registro: ".$Id,
-            'RouteModal'  => 'updateEditorial',
-            'Method'      => 'POST',
-            'msg'         => $this->msg,
-            'IsUpload'    => false,
-            'IsNew'       => false,
-        ]);
-*/
+        $Item = InventarioLibro::find($Id);
+        $Libro = Libro::find($Item->libro_id);
+        $Editoriales  = Editoriale::query()->select('id','editorial as data')->orderBy('editorial') ->pluck('data','id')->toArray();
+        $user  = Auth::user();
+
+//        dd($Item);
+
+        return view('SIGEBI.com.inventario_libro._inventario_libro_new',
+            [
+                'item'         => $Item,
+                "Libro"        => $Libro,
+                "Editoriales"  => $Editoriales,
+                "User"         => $user,
+                "titulo"       => "Editando el Libro ",
+                'Route'        => 'inventarioLibroUpdate',
+                'Method'       => 'POST',
+                'msg'          => $this->msg,
+                'IsUpload'     => true,
+                'IsNew'        => false,
+                'FormInline'   => 'contentPropertie-contentLevel3',
+            ]
+        );
+
     }
 
-    protected function updateItem(EditorialRequest $request) {
-        //dd($request->all(['predeterminado']));
-/*
-        $Obj = $request->manage();
+    protected function updateItem(InventarioLibroRequest $request) {
+
+        $Data = $request->all(['id','libro_id']);
+        $Obj = $request->manageInventarioLibro();
         if (!is_object($Obj)) {
             $id = 0;
-            return redirect('editEditorial')
+            return redirect()->route('inventarioLibroEdit',['Id' => $Data['id']] )
                 ->withErrors($Obj)
                 ->withInput();
         }else{
             $id = $Obj->id;
         }
-        return redirect()->route('listaEditorial');
+        $code = 'OK';
+        $msg = "Registro Guardado con éxito!";
+        session(['msg' => $this->msg]);
+        return redirect()->route('listaInventarioLibroList',['Id' => $Data['libro_id']] );
 
-*/
     }
 
 
     // ***************** ELIMINA AL USUARIO VIA AJAX ++++++++++++++++++++ //
-    protected function removeItem($Id = 0, $dato1 = null, $dato2 = null){
+    protected function removeItem($Id = 0, $Dato1 = null, $Dato2 = null){
         $code = 'OK';
         $msg = "Registro Eliminado con éxito!";
         //dd($Id);

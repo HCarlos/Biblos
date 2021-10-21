@@ -25,6 +25,7 @@
             <td>
                 <!-- action buttons -->
                 <div class='d-none d-lg-flex'>
+                    @include('share.bars.___image_portada_Item_inline')
                     @include('share.bars.___inventario_Item_inline')
                     @include('share.bars.___edit_Item_inline')
                     @include('share.bars.___removeItem')
@@ -38,6 +39,7 @@
 
                     <div class="dropdown-menu dd-slide-up dd-slide-none-lg">
                         <div class="dropdown-inner">
+                            @include('share.bars.___image_portada_Item_inline')
                             @include('share.bars.___inventario_Item_inline')
                             @include('share.bars.___edit_Item_inline')
                             @include('share.bars.___removeItem')

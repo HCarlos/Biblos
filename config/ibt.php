@@ -96,7 +96,7 @@ return [
             'inventariolibros'        => 'inventariolibros',
             'historiallibros'         => 'historiallibros',
             'tipomaterial'            => 'tipomaterial',
-
+            'libro_portada'           => 'libro_portada',
         ],
 
     ],

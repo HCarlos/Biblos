@@ -9,8 +9,8 @@
 </div>
 <div class="form-group row">
     <x-inputs.text-field cols="4" tipo="text" nombre="no_coleccion" nombrees="No Colección" valor="{{old('no_coleccion')}}"></x-inputs.text-field>
-    <x-inputs.select-form cols="4" nombre="tipo_material_id" nombrees="tipo de material" :arr="$TipoMaterial" valor="{{old('no_coleccion')}}"></x-inputs.select-form>
-    <x-inputs.select-form cols="4" nombre="editorial_id" nombrees="Editorial" :arr="$Editoriales" valor="{{old('no_coleccion')}}"></x-inputs.select-form>
+    <x-inputs.select-form cols="4" nombre="tipo_material_id" nombrees="tipo de material" :arr="$TipoMaterial" valor="{{old('tipo_material_id')}}"></x-inputs.select-form>
+    <x-inputs.select-form cols="4" nombre="editorial_id" nombrees="Editorial" :arr="$Editoriales" valor="{{old('editorial_id')}}"></x-inputs.select-form>
 </div>
 <div class="form-group row">
     <x-inputs.text-field cols="12" tipo="text" nombre="observaciones" nombrees="observaciones" valor="{{old('observaciones')}}"></x-inputs.text-field>

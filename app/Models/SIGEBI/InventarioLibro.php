@@ -7,9 +7,11 @@ use App\Models\Catalogos\Empresa;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class InventarioLibro extends Model{
 
+    use SoftDeletes;
 
     protected $guard_name = 'web';
     protected $table = 'inventariolibros';
@@ -27,6 +29,10 @@ class InventarioLibro extends Model{
 
     public function Libro(){
         return $this->belongsTo(Libro::class);
+    }
+
+    public function portadas(){
+        return $this->belongsToMany(Portada::class,'inventariolibro_portada','inventariolibro_id','portada_id');
     }
 
     public function Empresa(){

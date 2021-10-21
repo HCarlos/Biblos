@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Request;
+use Intervention\Image\Exception\NotWritableException;
 use Intervention\Image\Facades\Image;
 
 
