@@ -11,6 +11,8 @@ use App\Models\SIGEBI\TipoMaterial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Redirect;
+use phpDocumentor\Reflection\Types\Collection;
 
 class LibroController extends Controller{
 
@@ -19,6 +21,7 @@ class LibroController extends Controller{
     protected $tableName = "libros";
     protected $navCat = "Libros";
     protected $msg = "";
+    protected $Request;
 
     public function __construct(){
         $this->middleware('auth');
@@ -30,6 +33,8 @@ class LibroController extends Controller{
         $this->lim_min_reg = config('ibt.limite_minimo_registros');
         $this->max_reg_con = config('ibt.maximo_registros_consulta');
         $this->min_reg_con = config('ibt.minimo_registros_consulta');
+
+        $this->Request = $request;
 
         @ini_set( 'upload_max_size' , '16384M' );
         @ini_set( 'post_max_size', '16384M');
@@ -50,26 +55,28 @@ class LibroController extends Controller{
         $request->session()->put('items', $items);
 
         return view('SIGEBI.com.libro._libro_list',[
-            'items'        => $items,
-            'user'         => $user,
-            'tituloTabla'  => 'Catálogo de Libros',
-            'newItem'      => 'newLibro',
-            'editItem'     => 'editLibro',
-            'removeItem'   => 'removeLibro',
-            'listItems'    => 'listaLibro',
-            'IsModal'      => false,
-            'FormInline'   => 'contentMain-contentPropertie',
-            'inventarioItem' => 'inventarioLibroList',
-            'listPortadas'   => 'listPortadas',
+            'items'           => $items,
+            'user'            => $user,
+            'tituloTabla'     => 'Catálogo de Libros',
+            'newItem'         => 'newLibro',
+            'newItemWithData' => null,
+            'breadcrumbs'     => null,
+            'editItem'        => 'editLibro',
+            'removeItem'      => 'removeLibro',
+            'listItems'       => 'listaLibro',
+            'IsModal'         => false,
+            'inventarioItem'  => 'inventarioLibroList',
+            'listPortadas'    => 'listPortadas',
         ]);
     }
-
 
     protected function newItem(){
 
         $user = Auth::user();
         $TipoMaterial = TipoMaterial::query()->select('id','tipo_material as data')->orderBy('tipo_material') ->pluck('data','id')->toArray();
         $Editoriales  = Editoriale::query()->select('id','editorial as data')->orderBy('editorial') ->pluck('data','id')->toArray();
+        $breadcrumbs[] = (object) ['titulo'=>'libros','url'=>'listaLibro', 'request'=>$this->Request];
+        //dd($breadcrumbs);
         return view('SIGEBI.com.libro._libro_edit',[
             "item"         => null,
             "User"         => $user,
@@ -81,7 +88,7 @@ class LibroController extends Controller{
             'msg'          => $this->msg,
             'IsUpload'     => false,
             'IsNew'        => true,
-            'FormInline'   => 'contentMain-contentPropertie',
+            'breadcrumbs'  => $breadcrumbs,
         ]);
 
     }
@@ -99,8 +106,9 @@ class LibroController extends Controller{
         $code = 'OK';
         $msg = "Registro Guardado con éxito!";
         session(['msg' => $this->msg]);
-        return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
-
+//        return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
+//        return Redirect::to('listaLibro');
+        return redirect()->route('listaLibro', [$request]);
     }
 
 
@@ -110,18 +118,19 @@ class LibroController extends Controller{
         $user = Auth::user();
         $TipoMaterial = TipoMaterial::query()->select('id','tipo_material as data')->orderBy('tipo_material') ->pluck('data','id')->toArray();
         $Editoriales  = Editoriale::query()->select('id','editorial as data')->orderBy('editorial') ->pluck('data','id')->toArray();
+        $breadcrumbs[] = (object) ['titulo'=>'libros','url'=>'listaLibro', 'request'=>$this->Request];
         return view('SIGEBI.com.libro._libro_edit',[
             "item"         => $Item,
             "User"         => $user,
             "TipoMaterial" => $TipoMaterial,
             "Editoriales"  => $Editoriales,
-            "titulo"  => "Editando el registro: ".$Id,
-            'Route'   => 'updateLibro',
+            "titulo"       => "Editando el registro: ".$Id,
+            'Route'        => 'updateLibro',
             'Method'       => 'POST',
             'msg'          => $this->msg,
             'IsUpload'     => false,
             'IsNew'        => false,
-            'FormInline'   => 'contentMain-contentPropertie',
+            'breadcrumbs'  => $breadcrumbs,
         ]);
 
     }
@@ -140,7 +149,8 @@ class LibroController extends Controller{
         $code = 'OK';
         $msg = "Registro Guardado con éxito!";
         session(['msg' => $this->msg]);
-        return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
+//        return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
+        return Redirect::to('listaLibro');
 
 
     }

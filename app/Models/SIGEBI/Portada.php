@@ -37,10 +37,6 @@ class Portada extends Model{
         return $this->belongsTo(User::class, 'creado_por_id');
     }
 
-    public function libro(){
-        return $this->hasOne(Libro::class,'id','libro_id');
-    }
-
     public function libros(){
         return $this->belongsToMany(Libro::class);
     }

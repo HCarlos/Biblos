@@ -23,6 +23,8 @@ class InventarioLibroController extends Controller{
     protected $tableName = "inventariolibros";
     protected $navCat = "Inventario Libros";
     protected $msg = "";
+    protected $Request;
+    protected $BreadCrumbs;
 
     public function __construct(){
         $this->middleware('auth');
@@ -39,6 +41,11 @@ class InventarioLibroController extends Controller{
         @ini_set( 'post_max_size', '16384M');
         @ini_set( 'max_execution_time', '960000' );
 
+        //dd($Id);
+
+        $this->Request = $Id;
+
+
         $filters = ['libro_id'=>$Id];
         $libro = Libro::find($Id);
         $items = InventarioLibro::query()
@@ -50,20 +57,22 @@ class InventarioLibroController extends Controller{
         $user = Auth::user();
         $Libro = Libro::find($Id);
         Session::put('items', $items);
-        //dd ( $libro->titulo );
+
+        $this->BreadCrumbs[] = (object) ['titulo'=>'libros','url'=>'listaLibro', 'request'=>$this->Request];
+
         return view('SIGEBI.com.inventario_libro._inventario_libro_list',
             [
-                'items'          => $items,
-                'user'           => $user,
-                'Id'             => $Id,
-                'tituloTabla'    => 'Ejemplares de '.$libro->titulo,
-                'listItems'      => 'listaLibro',
-                'IsModal'        => false,
-                'newItem'        => 'inventarioLibroNew/'.$Id,
-                'editItem'       => 'inventarioLibroEdit',
-                'createItem'     => 'createInventarioLibro',
-                'removeItem'     => 'removeInventarioLibro',
-                'FormInline'     => 'contentMain-contentPropertie',
+                'items'           => $items,
+                'user'            => $user,
+                'Id'              => $Id,
+                'titulo'          => 'Ejemplares de '.$libro->titulo,
+                'listItems'       => 'listaLibro',
+                'IsModal'         => false,
+                'newItemWithData' => 'inventarioLibroNew',
+                'editItem'        => 'inventarioLibroEdit',
+                'createItem'      => 'createInventarioLibro',
+                'removeItem'      => 'removeInventarioLibro',
+                'breadcrumbs'     => $this->BreadCrumbs,
             ]
         );
     }
@@ -75,6 +84,8 @@ class InventarioLibroController extends Controller{
         $user  = Auth::user();
         $Libro = Libro::find($libro_id);
         $Editoriales  = Editoriale::query()->select('id','editorial as data')->orderBy('editorial') ->pluck('data','id')->toArray();
+        $this->BreadCrumbs[] = (object) ['titulo'=>'libros','url'=>'listaLibro', 'request'=>$this->Request];
+        $this->BreadCrumbs[] = (object) ['titulo'=>'libro '.$libro_id,'url'=>'listaInventarioLibroList', 'request'=>$libro_id];
 
         //dd($Libro);
         return view('SIGEBI.com.inventario_libro._inventario_libro_new',
@@ -88,7 +99,7 @@ class InventarioLibroController extends Controller{
                 'msg'          => $this->msg,
                 'IsUpload'     => true,
                 'IsNew'        => true,
-                'FormInline'   => 'contentPropertie-contentLevel3',
+                'breadcrumbs'  => $this->BreadCrumbs,
             ]
         );
 
@@ -119,6 +130,8 @@ class InventarioLibroController extends Controller{
         $Libro = Libro::find($Item->libro_id);
         $Editoriales  = Editoriale::query()->select('id','editorial as data')->orderBy('editorial') ->pluck('data','id')->toArray();
         $user  = Auth::user();
+        $this->BreadCrumbs[] = (object) ['titulo'=>'libros','url'=>'listaLibro', 'request'=>$this->Request];
+        $this->BreadCrumbs[] = (object) ['titulo'=>'libro '.$Item->libro_id,'url'=>'listaInventarioLibroList', 'request'=>$Item->libro_id];
 
 //        dd($Item);
 
@@ -134,7 +147,7 @@ class InventarioLibroController extends Controller{
                 'msg'          => $this->msg,
                 'IsUpload'     => true,
                 'IsNew'        => false,
-                'FormInline'   => 'contentPropertie-contentLevel3',
+                'breadcrumbs'  => $this->BreadCrumbs,
             ]
         );
 

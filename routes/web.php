@@ -132,7 +132,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('listPortadas/{Id}', [PortadaController::class,'index'])->name('listPortadas');
     Route::get('portadaLibroNew/{Id}',[PortadaController::class,'newItem'])->name('portadaLibroNew');
     Route::post('portadaLibroCreate',[PortadaController::class,'createItem'])->name('portadaLibroCreate');
-    Route::get('removePortadaLibro/{Id}',[PortadaController::class,'removeItem'])->name('removePortadaLibro');
+    Route::get('removePortadaLibro/{Id}/{Dato1}/{Dato2}',[PortadaController::class,'removeItem'])->name('removePortadaLibro');
 
     //INVENTARIO LIBROS
     Route::get('listaInventarioLibroList/{Id}', [InventarioLibroController::class,'index'])->name('listaInventarioLibroList');

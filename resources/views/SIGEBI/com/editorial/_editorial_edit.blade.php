@@ -6,6 +6,8 @@
     @slot('IsNew',$IsNew ?? false)
     @slot('IsUpload',$IsUpload ?? false)
     @slot('ReadOnly',$ReadOnly ?? false)
+    @slot('newItemWithData',$newItemWithData ?? null)
+    @slot('breadcrumbs', $breadcrumbs ?? null)
     @slot('items_forms')
         @if($IsNew)
             @include('SIGEBI.lay.editorial.__editorial_new')

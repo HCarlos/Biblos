@@ -23,11 +23,11 @@ class ComposerStaticInitaa43ac7a12fcd969b52827af8cfea4b4
         'def43f6c87e4f8dfd0c9e1b1bab14fe8' => __DIR__ . '/..' . '/symfony/polyfill-iconv/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
@@ -95,11 +95,11 @@ class ComposerStaticInitaa43ac7a12fcd969b52827af8cfea4b4
         '4888a6f58c08148ebe17682f9ce9b2a8' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Operations/divideby.php',
         'eef6fa3879d3efa347cd24d5eb348f85' => __DIR__ . '/..' . '/markbaker/matrix/classes/src/Operations/divideinto.php',
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
+        'a1af1fc0cffb5f61cbaf64dbe030fdb9' => __DIR__ . '/..' . '/laravel/legacy-factories/helpers.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
+        'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
         '0b47d6d4a00ca9112ba3953b49e7c9a4' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/helper.php',
-        'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
-        'a1af1fc0cffb5f61cbaf64dbe030fdb9' => __DIR__ . '/..' . '/laravel/legacy-factories/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -286,8 +286,8 @@ class ComposerStaticInitaa43ac7a12fcd969b52827af8cfea4b4
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'ZipStream\\' => 
         array (
@@ -653,9 +653,9 @@ class ComposerStaticInitaa43ac7a12fcd969b52827af8cfea4b4
         ),
         'Doctrine\\Common\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
-            1 => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common',
-            2 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+            1 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
+            2 => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common',
         ),
         'Dflydev\\DotAccessData\\' => 
         array (
@@ -729,6 +729,7 @@ class ComposerStaticInitaa43ac7a12fcd969b52827af8cfea4b4
         'App\\Classes\\GeneralFunctios' => __DIR__ . '/../..' . '/app/Classes/GeneralFunctios.php',
         'App\\Classes\\LoadTemplateExcel' => __DIR__ . '/../..' . '/app/Classes/LoadTemplateExcel.php',
         'App\\Classes\\MessageAlertClass' => __DIR__ . '/../..' . '/app/Classes/MessageAlertClass.php',
+        'App\\Classes\\MigrationCustomClass' => __DIR__ . '/../..' . '/app/Classes/MigrationCustomClass.php',
         'App\\Classes\\ValidatorPassword' => __DIR__ . '/../..' . '/app/Classes/ValidatorPassword.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
@@ -3038,6 +3039,7 @@ class ComposerStaticInitaa43ac7a12fcd969b52827af8cfea4b4
         'Illuminate\\Bus\\PendingBatch' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Bus/PendingBatch.php',
         'Illuminate\\Bus\\PrunableBatchRepository' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Bus/PrunableBatchRepository.php',
         'Illuminate\\Bus\\Queueable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Bus/Queueable.php',
+        'Illuminate\\Bus\\UniqueLock' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Bus/UniqueLock.php',
         'Illuminate\\Bus\\UpdatedBatchJobCounts' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Bus/UpdatedBatchJobCounts.php',
         'Illuminate\\Cache\\ApcStore' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/ApcStore.php',
         'Illuminate\\Cache\\ApcWrapper' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Cache/ApcWrapper.php',
@@ -3216,6 +3218,7 @@ class ComposerStaticInitaa43ac7a12fcd969b52827af8cfea4b4
         'Illuminate\\Contracts\\Routing\\UrlRoutable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Routing/UrlRoutable.php',
         'Illuminate\\Contracts\\Session\\Session' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Session/Session.php',
         'Illuminate\\Contracts\\Support\\Arrayable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Support/Arrayable.php',
+        'Illuminate\\Contracts\\Support\\CanBeEscapedWhenCastToString' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Support/CanBeEscapedWhenCastToString.php',
         'Illuminate\\Contracts\\Support\\DeferrableProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Support/DeferrableProvider.php',
         'Illuminate\\Contracts\\Support\\DeferringDisplayableValue' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Support/DeferringDisplayableValue.php',
         'Illuminate\\Contracts\\Support\\Htmlable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Contracts/Support/Htmlable.php',

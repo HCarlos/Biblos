@@ -3,22 +3,37 @@
 @section('contenedor')
     @php $IsModal = $IsModal  ?? false @endphp
     <div class="card bcard" id="contentMain">
-        <div class="card-header bgc-primary-d1 text-white border-0">
+        <div class="navbar-intro justify-content-xl-start bgc-transparent pr-lg-3 w-auto">
+            @include('share.bars.___breadcrumbs')
             @include('share.bars.___toolbar_catalogo')
-            <h4 class="text-40">
-                <h3>{{$tituloTabla}}</h3>
-            </h4>
         </div>
-        <hr>
-        <div class="card-body p-0 border-x-1 border-b-1 brc-default-m4 radius-0 overflow-hidden p-2">
+        @include('share.bars.___paginator')
+        <div class="card-body  ">
             {{$Tabla}}
         </div>
         @include('share.bars.___paginator')
     </div>
 
 @endsection
+
+@section('style-header')
+
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/datatable-plus/dataTables.bootstrap4.css' ) }} ">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/datatable-plus/jquery.dataTables.css' ) }} ">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/datatable-plus/responsive.dataTables.css' ) }} ">
+
+@endsection
+
 @section('script-footer')
-    <script type="text/javascript">
-        localStorage.FullScreen = {{$FullScreen ?? 0}}
-    </script>
+
+<script src="{{ asset('assets/js/datatable-plus/dataTables.fixedHeader.min.js') }}"></script>
+<script src="{{ asset('assets/js/datatable-plus/dataTables.responsive.js') }}"></script>
+<script src="{{ asset('assets/js/datatable-plus/dataTables-call.js') }}"></script>
+<script src="{{ asset('assets/js/datatable-plus/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('assets/js/datatable.js') }}"></script>
+
+<script type="text/javascript">
+    localStorage.FullScreen = {{$FullScreen ?? 0}}
+</script>
+
 @stop

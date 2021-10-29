@@ -40,29 +40,34 @@ class InventarioLibroRequest extends FormRequest{
 
             if ($this->id == "0") {
                 $Item = [
-                    'isbn'          => $this->isbn,
-                    'codebar'       => $this->codebar,
-                    'clasificacion' => $this->clasificacion,
-                    'edicion'       => $this->edicion,
-                    'editorial_id'  => $this->editorial_id,
-                    'libro_id'      => $this->libro_id,
-                    'creado_por_id' => $this->creado_por_id,
-                    'empresa_id'    => $this->empresa_id,
-                    'uuid'          => Str::uuid()->toString(),
+                    'isbn'            => $this->isbn,
+                    'codebar'         => $this->codebar,
+                    'clasificacion'   => $this->clasificacion,
+                    'edicion'         => $this->edicion,
+                    'editorial_id'    => $this->editorial_id,
+                    'libro_id'        => $this->libro_id,
+                    'no_coleccion'    => strtoupper(trim($this->no_coleccion)),
+                    'etiqueta_smarth' => strtoupper(trim($this->etiqueta_smarth)),
+                    'creado_por_id'   => $this->creado_por_id,
+                    'empresa_id'      => $this->empresa_id,
+                    'uuid'            => Str::uuid()->toString(),
                 ];
                 $Lib = Libro::find($this->libro_id);
                 $item = InventarioLibro::create($Item) ;
-                $portada_id = $Lib->portadas->last()->id;
-                $item->portadas()->attach( $portada_id );
+                $portada_id = $Lib->portadas->last()->id ?? 0;
+                if ($portada_id > 0)
+                    $item->portadas()->attach( $portada_id );
 
             }else{
                 $Item = [
-                    'isbn'          => $this->isbn,
-                    'codebar'       => $this->codebar,
-                    'clasificacion' => $this->clasificacion,
-                    'edicion'       => $this->edicion,
-                    'editorial_id'  => $this->editorial_id,
-                    'libro_id'      => $this->libro_id,
+                    'isbn'            => $this->isbn,
+                    'codebar'         => $this->codebar,
+                    'clasificacion'   => $this->clasificacion,
+                    'edicion'         => $this->edicion,
+                    'editorial_id'    => $this->editorial_id,
+                    'libro_id'        => $this->libro_id,
+                    'no_coleccion'    => strtoupper(trim($this->no_coleccion)),
+                    'etiqueta_smarth' => strtoupper(trim($this->etiqueta_smarth)),
                 ];
                 $item = InventarioLibro::find($this->id);
                 $item->update($Item);

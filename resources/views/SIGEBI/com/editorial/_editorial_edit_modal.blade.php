@@ -4,6 +4,8 @@
     @slot('Method',$Method ?? 'GET')
     @slot('IsNew',$IsNew ?? false)
     @slot('IsUpload',$IsUpload ?? false)
+    @slot('newItemWithData',$newItemWithData ?? null)
+    @slot('breadcrumbs', $breadcrumbs ?? null)
     @slot('CuerpoModal')
         @if($IsNew)
             @include('SIGEBI.lay.editorial.__editorial_new')

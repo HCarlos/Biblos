@@ -1,38 +1,27 @@
-<div class="btn-group ms-2 mt-1">
-    @if( ! is_null($newItem))
-        <a href="{{ route($newItem) }}" class="btn btn-white btn-lighter-white btn-h-red btn-a-info @if( $IsModal ) btnFullModal @endif " >
-            <i class="fa fa-plus w-3"></i>
-        </a>
-    @endif
-    @if( ! is_null($searchButton))
-        <a href="{{ route($searchButton) }}" class="btn btn-white btn-lighter-white btn-h-red btn-a-info btnFullModal"  data-toggle="modal" data-target="#modalFull">
-            <i class="fa fa-search w-3"></i>
-        </a>
-    @endif
-    @if( ! is_null($excelButton))
-        <a href="{{ route($excelButton) }}" class="btn btn-white btn-lighter-white btn-h-red btn-a-info">
-            <i class="fa fa-file-excel w-3"></i>
-        </a>
-    @endif
-    @if( ! is_null($listItems))
-        <form method="get" action="{{route($listItems)}}" class="form-inline frmSearchInList float-right"  data-toggle="tooltip" title="Buscar...">
-            <div class="col-auto mr-auto">
-                <div class="app-search">
-                    <div class="input-group">
-                        <input type="search" id="search" name="search" value="{{ request('search') }}" class="form-control" placeholder="Buscar...">
-                        <span class="mdi mdi-magnify"></span>
-                        <div class="input-group-append">
-                            <button class="btn btn-sm searchbrownamlobtn" type="submit">
-                                <i class="fab fa-searchengin text-white fa-lg"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    @endif
+<div class="navbar-content flex-grow-0 ml-auto">
+@if( ! is_null($newItem) && isset($newItem) )
+    <a href="{{ route($newItem) }}" class="btn btn-sm px-2 btn-outline-grey btn-h-outline-green btn-h-text-grey btn-a-outline-green btn-bold btn-brc-tp mx-lg-2 @if( $IsModal ) btnFullModal @endif " title="Nuevo" >
+        <i class="fa fa-plus bgc-green radius-round w-3 h-3 text-center mr-lg-1 text-white pt-15 text-95"></i>
+        <span class="d-none d-lg-inline">Crear Nuevo</span>
+    </a>
+@endif
 
-
-
-
+@if( ! is_null($newItemWithData) && isset($newItemWithData) )
+    <a href="{{ route($newItemWithData,['Id'=>$Id]) }}" class="btn btn-sm px-2 btn-outline-grey btn-h-outline-green btn-h-text-grey btn-a-outline-green btn-bold btn-brc-tp mx-lg-2 @if( $IsModal ) btnFullModal @endif " title="Nuevo" >
+        <i class="fa fa-plus bgc-green radius-round w-3 h-3 text-center mr-lg-1 text-white pt-15 text-95"></i>
+        <span class="d-none d-lg-inline">Crear Nuevo</span>
+    </a>
+@endif
+@if( ! is_null($searchButton))
+    <a href="{{ route($searchButton) }}" class="btn btn-sm px-2 btn-outline-grey btn-h-outline-orange btn-h-text-grey btn-a-outline-orange btn-bold btn-brc-tp mx-lg-2 btnFullModal"  title="Consultar" data-toggle="modal" data-target="#modalFull">
+        <i class="fa fa-binoculars bgc-orange radius-round w-3 h-3 text-center mr-lg-1 text-white pt-15 text-95"></i>
+        <span class="d-none d-lg-inline">Filtrar</span>
+    </a>
+@endif
+@if( ! is_null($excelButton))
+    <a href="{{ route($excelButton) }}" class="btn btn-sm px-2 btn-outline-grey btn-h-outline-info btn-h-text-grey btn-a-outline-info btn-bold btn-brc-tp mx-lg-2 " title="Exportar a MS Excel">
+        <i class="fa fa-file-excel bgc-info radius-round w-3 h-3 text-center mr-lg-1 text-white pt-15 text-95"></i>
+        <span class="d-none d-lg-inline">Exportar</span>
+    </a>
+@endif
 </div>

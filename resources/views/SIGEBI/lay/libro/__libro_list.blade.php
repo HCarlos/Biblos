@@ -1,5 +1,5 @@
 
-<table class="table text-dark-m2 text-95 bgc-white ml-n1px m-2" id="table">
+<table class="table text-dark-m2 text-95 bgc-white ml-n1px" id="table">
     <thead class="text-dark-tp3 bgc-grey-l4 text-90 border-b-1 brc-transparent">
     <tr>
         <th>ID</th>

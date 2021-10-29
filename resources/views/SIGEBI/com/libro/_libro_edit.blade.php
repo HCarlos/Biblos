@@ -1,12 +1,12 @@
-<x-inline.card-form-inline>
+<x-card-form-normal>
     @slot('titulo', $titulo)
     @slot('User',$User ?? null)
     @slot('Route',$Route ?? '')
     @slot('Method',$Method ?? '')
     @slot('IsNew',$IsNew ?? false)
     @slot('IsUpload',$IsUpload ?? false)
-    @slot('ReadOnly',$ReadOnly ?? false)
-    @slot('FormInline',$FormInline ?? 'none')
+    @slot('ReadOnly',$ReadOnly ?? false,)
+    @slot('breadcrumbs', $breadcrumbs ?? null)
     @slot('items_forms')
         @if($IsNew)
             @include('SIGEBI.lay.libro.__libro_new')
@@ -14,4 +14,4 @@
             @include('SIGEBI.lay.libro.__libro_edit')
         @endif
     @endslot
-</x-inline.card-form-inline>
+</x-card-form-normal>

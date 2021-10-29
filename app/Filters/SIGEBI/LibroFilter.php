@@ -10,11 +10,10 @@ class LibroFilter extends QueryFilter{
 
     public function rules(): array{
         return [
-            'search'        => '',
-            'titulo'     => '',
-            'autor' => '',
-            'etiqueta_smarth'     => '',
-            'id'         => '',
+            'search' => '',
+            'titulo' => '',
+            'autor'  => '',
+            'id'     => '',
         ];
     }
 
@@ -37,12 +36,6 @@ class LibroFilter extends QueryFilter{
         if (is_null($search) || empty ($search) || trim($search) == "") {return $query;}
         $search = strtoupper(trim($search));
         return $query->whereRaw("autor like ?", "%{$search}%");
-    }
-
-    public function etiqueta_smarth($query, $search){
-        if (is_null($search) || empty ($search) || trim($search) == "") {return $query;}
-        $search = strtoupper(trim($search));
-        return $query->whereRaw("etiqueta_smarth like ?", "%{$search}%");
     }
 
     public function id($query, $search){

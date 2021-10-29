@@ -28,10 +28,13 @@ class PortadaController extends Controller{
     protected $disk = 'portada';
     protected $msg = "";
     protected $F;
+    protected $Request;
+    protected $BreadCrumbs;
 
     // Obtiene el Listado de Portadas
     protected function index($Id)
     {
+        $this->Request = $Id;
 
         $libro = Libro::find($Id);
         $items = Portada::select()
@@ -42,18 +45,21 @@ class PortadaController extends Controller{
             ->paginate();
         $user = Auth::User();
 
+        $this->BreadCrumbs[] = (object) ['titulo'=>'libros','url'=>'listaLibro', 'request'=>$this->Request];
+
         return view('SIGEBI.com.portada._portada_list',
             [
-                'items'          => $items,
-                'user'           => $user,
-                'Id'             => $Id,
-                'tituloTabla'    => 'Portadas de '.$libro->titulo,
-                'listItems'      => 'listaLibro',
-                'IsModal'        => false,
-                'FormInline'     => 'contentMain-contentPropertie',
-                'newItem'        => 'portadaLibroNew/'.$Id,
-                'createItem'     => 'createPortadaLibro',
-                'removeItem'     => 'removePortadaLibro',
+                'items'           => $items,
+                'user'            => $user,
+                'Id'              => $Id,
+                'tituloTabla'     => 'Portadas de '.$libro->titulo,
+                'listItems'       => 'listaLibro',
+                'IsModal'         => false,
+                'FormInline'      => 'contentMain-contentPropertie',
+                'newItemWithData' => 'portadaLibroNew',
+                'createItem'      => 'createPortadaLibro',
+                'removeItem'      => 'removePortadaLibro',
+                'breadcrumbs'     => $this->BreadCrumbs,
             ]
         );
 
@@ -64,6 +70,8 @@ class PortadaController extends Controller{
 
         $user = Auth::user();
         $Libro = Libro::find($libro_id);
+        $this->BreadCrumbs[] = (object) ['titulo'=>'libros','url'=>'listaLibro', 'request'=>$this->Request];
+        $this->BreadCrumbs[] = (object) ['titulo'=>'libro '.$libro_id,'url'=>'listPortadas', 'request'=>$libro_id];
         //dd($Libro);
         return view('SIGEBI.com.portada._portada_new',[
             "item"         => $Libro,
@@ -74,7 +82,7 @@ class PortadaController extends Controller{
             'msg'          => $this->msg,
             'IsUpload'     => true,
             'IsNew'        => true,
-            'FormInline'   => 'contentPropertie-contentLevel3',
+            'breadcrumbs'     => $this->BreadCrumbs,
         ]);
 
     }

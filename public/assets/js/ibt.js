@@ -13,6 +13,10 @@ $(document).ready(function() {
         }
     });
 
+
+
+
+
     if ( $(".removeItem").length > 0  ){
         $(".removeItem").on("click", function(event) {
             event.preventDefault();

@@ -61,10 +61,8 @@ class LibroRequest extends FormRequest{
 
             $Obj0 = [
                 'ficha_no'         => strtoupper(trim($this->ficha_no)),
-                'etiqueta_smarth'  => strtoupper(trim($this->etiqueta_smarth)),
                 'titulo'           => strtoupper(trim($this->titulo)),
                 'autor'            => strtoupper(trim($this->autor)),
-                'no_coleccion'     => strtoupper(trim($this->no_coleccion)),
 
                 'tipo_material_id' => strtoupper(trim($this->tipo_material_id)),
                 'editorial_id'     => strtoupper(trim($this->editorial_id)),

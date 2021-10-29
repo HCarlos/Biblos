@@ -1,8 +1,8 @@
 @auth()
-    <nav class="navbar navbar-expand-lg navbar-fixed navbar-blue">
+    <nav class="navbar navbar-expand-sm navbar-fixed navbar-blue">
         <div class="navbar-inner">
 
-            <div class="navbar-intro justify-content-xl-between">
+            <div class="navbar-intro justify-content-xl-between ">
 
                 <button type="button" class="btn btn-burger burger-arrowed static collapsed ml-2 d-flex d-xl-none" data-toggle-mobile="sidebar" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle sidebar">
                     <span class="bars"></span>
@@ -18,6 +18,7 @@
                 </button><!-- sidebar toggler button -->
 
             </div><!-- /.navbar-intro -->
+        @include('share.bars.___search_bar')
 
             <!-- mobile #navbarMenu toggler button -->
             <button class="navbar-toggler ml-1 mr-2 px-1" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navbar menu">
@@ -35,7 +36,6 @@
             </span>
             </button>
 
-
             <div class="navbar-menu collapse navbar-collapse navbar-backdrop" id="navbarMenu">
 
                 <div class="navbar-nav">
@@ -52,23 +52,24 @@
                         @endif
 
                         @auth
-                        <li class="nav-item dropdown order-first order-lg-last">
+                        <li class="nav-item dropdown order-first order-sm-last">
+
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                 @if( Auth::user()->IsEmptyPhoto() )
                                     @if( Auth::user()->IsFemale() )
-                                        <img id="id-navbar-user-image" class="d-none d-lg-inline-block radius-round border-2 brc-white-tp1 mr-2 w-6"  src="{{ asset('assets/image/avatar/avatar1.png')  }}" alt="{{ Auth::user()->username  }}">
+                                        <img id="id-navbar-user-image" class="d-none d-sm-inline-block radius-round border-2 brc-white-tp1 mr-2 w-6"  src="{{ asset('assets/image/avatar/avatar1.png')  }}" alt="{{ Auth::user()->username  }}">
                                     @else
-                                        <img id="id-navbar-user-image" class="d-none d-lg-inline-block radius-round border-2 brc-white-tp1 mr-2 w-6"  src="{{ asset('assets/image/avatar/avatar.png')  }}" alt="{{ Auth::user()->username  }}">
+                                        <img id="id-navbar-user-image" class="d-none d-sm-inline-block radius-round border-2 brc-white-tp1 mr-2 w-6"  src="{{ asset('assets/image/avatar/avatar.png')  }}" alt="{{ Auth::user()->username  }}">
                                     @endif
                                 @else
-                                    <img src="{{ asset(env('PROFILE_ROOT').'/'. Auth::user()->filename_png)  }}?timestamp={{now()}}" id="id-navbar-user-image" class="d-none d-lg-inline-block radius-round border-2 brc-white-tp1 mr-2 w-6"  alt="{{Auth::user()->username}}"/>
+                                    <img src="{{ asset(env('PROFILE_ROOT').'/'. Auth::user()->filename_png)  }}?timestamp={{now()}}" id="id-navbar-user-image" class="d-none d-sm-inline-block radius-round border-2 brc-white-tp1 mr-2 w-6"  alt="{{Auth::user()->username}}"/>
                                 @endif
-                                    <span class="d-inline-block d-lg-none d-xl-inline-block">
+                                    <span class="d-inline-block d-sm-none d-xl-inline-block">
                                         <span class="text-90" id="id-user-welcome">Bienvenid{{Auth::user()->IsFemale() ? 'a' :'o'}},</span>
                                         <span class="nav-user-name">{{Auth::user()->username}}</span>
                                     </span>
                                 <i class="caret fa fa-angle-down d-none d-xl-block"></i>
-                                <i class="caret fa fa-angle-left d-block d-lg-none"></i>
+                                <i class="caret fa fa-angle-left d-block d-sm-none"></i>
                             </a>
 
                             <div class="dropdown-menu dropdown-caret dropdown-menu-right dropdown-animated brc-primary-m3 py-1">

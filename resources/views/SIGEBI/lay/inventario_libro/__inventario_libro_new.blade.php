@@ -6,6 +6,12 @@
         <x-inputs.text-field cols="2" tipo="text" nombre="edicion" nombrees="Edición" valor="{{old('edicion')}}"></x-inputs.text-field>
         <x-inputs.select-form cols="3" nombre="editorial_id" nombrees="Editorial" :arr="$Editoriales" valor="{{old('editorial_id',$Libro->editorial_id)}}"></x-inputs.select-form>
     </div>
+    <div class="form-group row">
+        <x-inputs.text-field cols="12" tipo="text" nombre="no coleccion" nombrees="Núm Colección" valor="{{old('no_coleccion')}}"></x-inputs.text-field>
+    </div>
+    <div class="form-group row">
+        <x-inputs.text-field cols="12" tipo="text" nombre="etiqueta smarth" nombrees="Etiqueta Smarth" valor="{{old('etiqueta_smarth')}}"></x-inputs.text-field>
+    </div>
 
 <input type="hidden" name="id" id="id" value="0">
 <input type="hidden" name="libro_id" id="libro_id" value="{{ $Libro->id }}">

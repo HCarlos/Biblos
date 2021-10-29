@@ -1,5 +1,5 @@
 <x-catalogo-list>
-    @slot('tituloTabla',$tituloTabla)
+    @slot('titulo',$tituloTabla)
     @slot('items',$items)
     @slot('user',$user)
     @slot('newItem',$newItem ?? null)
@@ -9,6 +9,8 @@
     @slot('removeItem',$removeItem)
     @slot('listItems',$listItems ?? '')
     @slot('IsModal', $IsModal ?? false )
+    @slot('newItemWithData',$newItemWithData ?? null)
+    @slot('breadcrumbs', $breadcrumbs ?? null)
     @slot('Tabla')
         @include('SIGEBI.lay.editorial.__editorial_list')
     @endslot

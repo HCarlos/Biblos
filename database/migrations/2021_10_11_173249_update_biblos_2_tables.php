@@ -1,5 +1,6 @@
 <?php
 
+use App\Classes\MigrationCustomClass;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -35,12 +36,16 @@ class UpdateBiblos2Tables extends Migration
 
             });
         }
+
+
         if (Schema::hasTable($tableBiblos['portadas'])) {
             Schema::table($tableBiblos['portadas'], function (Blueprint $table) use ($tableBiblos) {
-                $table->dropColumn('libro_id');
-                $table->dropColumn('inventariolibro_id');
+                MigrationCustomClass::DropColumnIfExists($tableBiblos['portadas'],'libro_id');
+                MigrationCustomClass::DropColumnIfExists($tableBiblos['portadas'],'inventariolibro_id');
             });
         }
+
+
 
     }
 
@@ -50,9 +55,20 @@ class UpdateBiblos2Tables extends Migration
      * @return void
      */
     public function down(){
+
+
         $tableBiblos = config('ibt.table_names.biblos');
+
+        if (Schema::hasTable($tableBiblos['portadas'])) {
+            Schema::table($tableBiblos['portadas'], function (Blueprint $table) use ($tableBiblos){
+                $table->unsignedInteger('libro_id')->default(0)->nullable();
+                $table->unsignedInteger('inventariolibro_id')->default(0)->nullable();
+            });
+        }
+
         if (!Schema::hasTable($tableBiblos['libro_portada'])) {
             Schema::dropIfExists($tableBiblos['libro_portada']);
         }
+
     }
 }

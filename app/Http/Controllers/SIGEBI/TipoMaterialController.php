@@ -51,7 +51,7 @@ class TipoMaterialController extends Controller{
         return view('SIGEBI.com.tipo_material._tipo_material_list',[
             'items'        => $items,
             'user'         => $user,
-            'tituloTabla'  => 'Listado de Tipos de Materiales',
+            'tituloTabla'  => 'Catálogo de Tipos de Materiales',
             'newItem'      => 'newTipoMaterial',
             'editItem'     => 'editTipoMaterial',
             'removeItem'   => 'removeTipoMaterial',
