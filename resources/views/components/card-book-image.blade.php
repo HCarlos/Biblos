@@ -6,7 +6,7 @@
                 <div class="flex-grow-1 pl-25 pos-rel d-flex flex-column">
                     <div class="align-self-center pos-rel text-blue">
                         <div class="flex-grow-1 mb-3">
-                            <div class="text-nowrap text-20 text-dark-l2">
+                            <div class="text-justify text-20 text-dark-l2 ">
                                 {{ $item->id.' '.$item->libros->last()->titulo }}
                             </div>
                         </div>
@@ -15,7 +15,7 @@
                             <img class="media-object" src="{{asset($item->PathImage ?? '/images/web/file-not-found.png' )}}" width="100" height="128" >
                         </a>
                     </div>
-                    <div class="ml-auto pr-1 align-self-center pos-rel text-125">
+                    <div class="ml-auto pr-1 align-self-center pos-rel text-125 float-right">
                         @include('share.bars.___removeItem')
                     </div>
                 </div>

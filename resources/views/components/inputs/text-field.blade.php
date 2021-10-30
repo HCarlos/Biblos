@@ -13,7 +13,7 @@
         </label>
     </div>
     <div class="col-sm-{{$cols1}} {{$class1}}  ">
-        <input type="{{$tipo}}" class="form-control {{ $Nombre }} col-sm-{{$cols1}} {{$class1}} has-error form-error " placeholder="{{ $nombre_es }}" name="{{ $Nombre }}" id="{{ $Nombre }}" value="{{$valor}}" {{$deshabilitado}} {{$sololectura}} >
+        <input type="{{$tipo}}" class="form-control {{ $Nombre }} col-sm-{{$cols1}} {{$class1}} has-error form-error " placeholder="{{ $nombrees }}" name="{{ $Nombre }}" id="{{ $Nombre }}" value="{{$valor}}" {{$deshabilitado}} {{$sololectura}} >
         @include('share.bars.___error_input')
         @include('share.bars.___error_input')
     </div>
