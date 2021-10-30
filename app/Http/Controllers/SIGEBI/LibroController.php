@@ -50,7 +50,6 @@ class LibroController extends Controller{
         $items->appends($filters)->fragment('table');
 
         $user = Auth::user();
-        $items->appends($filters)->fragment('table');
 
         $request->session()->put('items', $items);
 

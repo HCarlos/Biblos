@@ -7,11 +7,9 @@
             @include('share.bars.___breadcrumbs')
             @include('share.bars.___toolbar_catalogo')
         </div>
-        @include('share.bars.___paginator')
         <div class="card-body  ">
             {{$Tabla}}
         </div>
-        @include('share.bars.___paginator')
     </div>
 
 @endsection
