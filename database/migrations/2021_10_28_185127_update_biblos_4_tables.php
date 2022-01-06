@@ -32,7 +32,6 @@ class UpdateBiblos4Tables extends Migration
         DB::statement("CREATE INDEX inventariolibros_searchtext_gin ON inventariolibros USING GIN(searchtext)");
         DB::statement("CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON inventariolibros FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.spanish', 'isbn', 'clasificacion', 'edicion', 'codebar', 'etiqueta_smarth')");
 
-
     }
 
     /**

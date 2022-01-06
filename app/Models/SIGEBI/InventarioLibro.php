@@ -18,7 +18,7 @@ class InventarioLibro extends Model{
 
     protected $fillable = [
         'id','libro_id', 'etiqueta_smarth', 'fecha_prestamo', 'fecha_entrega', 'fecha_apartado','uuid','observaciones',
-        'isbn','codebar', 'prestado_user_id', 'apartado_user_id','status_libro', 'clasificacion','edicion',
+        'isbn','codebar', 'prestado_user_id', 'apartado_user_id','status_libro', 'clasificacion','edicion','ficha_no',
         'no_coleccion', 'empresa_id','editorial_id', 'creado_por_id',
     ];
 

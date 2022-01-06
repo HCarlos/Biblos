@@ -41,6 +41,7 @@ class InventarioLibroRequest extends FormRequest{
             if ($this->id == "0") {
                 $Item = [
                     'isbn'            => $this->isbn,
+                    'ficha_no'        => $this->ficha_no,
                     'codebar'         => $this->codebar,
                     'clasificacion'   => $this->clasificacion,
                     'edicion'         => $this->edicion,
@@ -61,6 +62,7 @@ class InventarioLibroRequest extends FormRequest{
             }else{
                 $Item = [
                     'isbn'            => $this->isbn,
+                    'ficha_no'        => $this->ficha_no,
                     'codebar'         => $this->codebar,
                     'clasificacion'   => $this->clasificacion,
                     'edicion'         => $this->edicion,
