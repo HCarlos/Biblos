@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filters;
+namespace App\Filters\User;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;

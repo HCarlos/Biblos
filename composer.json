@@ -11,6 +11,7 @@
         "php": "^7.3",
         "fideloper/proxy": "^4.4.1",
         "fruitcake/laravel-cors": "^2.0.5",
+        "fzaninotto/faker": "^1.9",
         "guzzlehttp/guzzle": "^7.4.1",
         "intervention/image": "^2.7.1",
         "laravel/framework": "^8.78.1",
@@ -28,7 +29,6 @@
     },
     "require-dev": {
         "facade/ignition": "^2.17.4",
-        "fzaninotto/faker": "^1.9.2",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10.0",
         "phpunit/phpunit": "^9.5.11"
@@ -61,6 +61,21 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan config:cache",
+            "@php artisan cache:clear",
+            "@php artisan config:clear",
+            "@php artisan view:clear",
+            "@php artisan route:clear",
+            "@php artisan route:clear"
+        ],
+        "post-install-cmd": [
+            "@php artisan config:cache",
+            "@php artisan cache:clear",
+            "@php artisan config:clear",
+            "@php artisan view:clear",
+            "@php artisan route:clear"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
