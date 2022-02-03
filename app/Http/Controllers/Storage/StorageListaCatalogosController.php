@@ -82,15 +82,17 @@ class StorageListaCatalogosController extends Controller{
                     ->setCellValue('W' . $C, $item->user_data_social->username_red_social)
                     ->setCellValue('X' . $C, $item->user_data_social->alias_red_social);
                 $j = 0;
-                foreach ($item->familiares as $fam){
-                    $par = $fam->getParentesco($fam->pivot->familiar_parentesco_id);
-                    $sh
-                        ->setCellValue($letras[$j++] . $C, $par)
-                        ->setCellValue($letras[$j++] . $C, $fam->FullName)
-                        ->setCellValue($letras[$j++] . $C, $fam->telefonos)
-                        ->setCellValue($letras[$j++] . $C, $fam->celulares)
-                        ->setCellValue($letras[$j++] . $C, $fam->emails);
-                    $j++;
+                if ($item->familiares){
+                    foreach ($item->familiares as $fam){
+                        $par = $fam->getParentesco($fam->pivot->familiar_parentesco_id);
+                        $sh
+                            ->setCellValue($letras[$j++] . $C, $par)
+                            ->setCellValue($letras[$j++] . $C, $fam->FullName)
+                            ->setCellValue($letras[$j++] . $C, $fam->telefonos)
+                            ->setCellValue($letras[$j++] . $C, $fam->celulares)
+                            ->setCellValue($letras[$j++] . $C, $fam->emails);
+                        $j++;
+                    }
                 }
                 $sh
                     ->setCellValue($letras[$j] . $C, $item->pais);

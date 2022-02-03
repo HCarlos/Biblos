@@ -8,4 +8,17 @@
         @endif
         <li class="breadcrumb-item active text-dark-l4"> {{$titulo}}</li>
     </ol>
-</div>
+        <a href="#" class="btn btn-link btn-primary"> Ver Detalle</a>
+ </div>
+    <div class="navbar-content flex-grow-0 ml-auto">
+        @isset($Id)
+        <a href="{{ route('listPortadas',['Id'=>$Id]) }}" class="btn btn-sm px-2 btn-outline-grey btn-h-outline-green btn-h-text-grey btn-a-outline-green btn-bold btn-brc-tp mx-lg-2">
+            <i class="fa fa-images bgc-orange radius-round w-3 h-3 text-center mr-lg-1 text-white pt-15 text-95"></i>
+            <span class="d-none d-lg-inline">Agregar Imágenes</span>
+        </a>
+        <a href="{{ route('inventarioLibroList',['Id'=>$Id]) }}"  class="btn btn-sm px-2 btn-outline-grey btn-h-outline-green btn-h-text-grey btn-a-outline-green btn-bold btn-brc-tp mx-lg-2">
+            <i class="fa fa-edit bgc-info radius-round w-3 h-3 text-center mr-lg-1 text-white pt-15 text-95"></i>
+            <span class="d-none d-lg-inline">Agregar Detalle</span>
+        </a>
+        @endisset
+    </div>

@@ -1,5 +1,5 @@
 <x-catalogo-list>
-    @slot('tituloTabla',$tituloTabla)
+    @slot('titulo',$tituloTabla)
     @slot('items',$items)
     @slot('user',$user)
     @slot('newItem',$newItem ?? null)
@@ -9,6 +9,8 @@
     @slot('removeItem',$removeItem)
     @slot('listItems',$listItems ?? null)
     @slot('IsModal',$IsModal ?? false)
+    @slot('breadcrumbs',$breadcrumbs ?? null)
+    @slot('newItemWithData',$listItems ?? null)
     @slot('Tabla')
         @include('share.Catalogos.User.Roles.__roles_list')
     @endslot

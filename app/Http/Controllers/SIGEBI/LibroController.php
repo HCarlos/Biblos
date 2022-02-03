@@ -80,9 +80,9 @@ class LibroController extends Controller{
             "item"         => null,
             "User"         => $user,
             "TipoMaterial" => $TipoMaterial,
-            "Editoriales" => $Editoriales,
-            "titulo"  => "Nuevo registro ",
-            'Route'   => 'createLibro',
+            "Editoriales"  => $Editoriales,
+            "titulo"       => "Nuevo registro ",
+            'Route'        => 'createLibro',
             'Method'       => 'POST',
             'msg'          => $this->msg,
             'IsUpload'     => false,
@@ -107,7 +107,10 @@ class LibroController extends Controller{
         session(['msg' => $this->msg]);
 //        return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
 //        return Redirect::to('listaLibro');
-        return redirect()->route('listaLibro', [$request]);
+
+//        return redirect()->route('listaLibro', [$request]);
+        return redirect('editLibro/'.$id);
+
     }
 
 
@@ -129,6 +132,7 @@ class LibroController extends Controller{
             'msg'          => $this->msg,
             'IsUpload'     => false,
             'IsNew'        => false,
+            'Id'           => $Id,
             'breadcrumbs'  => $breadcrumbs,
         ]);
 

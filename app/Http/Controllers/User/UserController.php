@@ -83,6 +83,7 @@ class UserController extends Controller{
             'removeItem'   => 'removeUsuario',
             'listItems'    => 'listaUsuarios',
             'IsModal'      => false,
+            'newItemWithData' => null,
 
         ]);
     }

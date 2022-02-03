@@ -32,7 +32,6 @@
         "psr/log": "^1.0|^2.0",
         "psr/simple-cache": "^1.0",
         "ramsey/uuid": "^4.2.2",
-        "swiftmailer/swiftmailer": "^6.3",
         "symfony/console": "^5.4",
         "symfony/error-handler": "^5.4",
         "symfony/finder": "^5.4",
@@ -44,7 +43,7 @@
         "symfony/var-dumper": "^5.4",
         "tijsverkoyen/css-to-inline-styles": "^2.2.2",
         "vlucas/phpdotenv": "^5.4.1",
-        "voku/portable-ascii": "^1.4.8"
+        "voku/portable-ascii": "^1.6.1"
     },
     "replace": {
         "illuminate/auth": "self.version",
@@ -153,7 +152,6 @@
         "symfony/cache": "Required to PSR-6 cache bridge (^5.4).",
         "symfony/filesystem": "Required to enable support for relative symbolic links (^5.4).",
         "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^2.0).",
-        "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
     },
     "config": {
         "sort-packages": true,

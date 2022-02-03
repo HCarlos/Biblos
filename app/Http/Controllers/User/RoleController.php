@@ -70,7 +70,7 @@ class RoleController extends Controller{
             'editItem'     => 'editRole',
             'removeItem'   => 'removeRole',
             'IsModal'      => false,
-
+            'breadcrumbs'  => null,
         ]);
     }
 
@@ -78,6 +78,7 @@ class RoleController extends Controller{
     protected function newItem(){
 
         $user = Auth::user();
+
         return view('layouts.User.roles._role_edit',[
             "item"     => null,
             "User"     => $user,
@@ -88,6 +89,7 @@ class RoleController extends Controller{
             'IsUpload' => false,
             'IsNew'    => true,
             'IsModal'  => false,
+            'breadcrumbs'  => [],
         ]);
 
     }

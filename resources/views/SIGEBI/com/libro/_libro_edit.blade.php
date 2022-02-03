@@ -7,6 +7,8 @@
     @slot('IsUpload',$IsUpload ?? false)
     @slot('ReadOnly',$ReadOnly ?? false,)
     @slot('breadcrumbs', $breadcrumbs ?? null)
+    @slot('item', $item ?? null)
+    @slot('Id', $Id ?? null)
     @slot('items_forms')
         @if($IsNew)
             @include('SIGEBI.lay.libro.__libro_new')

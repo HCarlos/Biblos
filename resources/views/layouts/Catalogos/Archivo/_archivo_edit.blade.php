@@ -7,6 +7,8 @@
     @slot('IsUpload',$IsUpload ?? false)
     @slot('ReadOnly',$ReadOnly ?? false)
     @slot('archivos',$archivos ?? false)
+    @slot('breadcrumbs',$breadcrumbs ?? null)
+    @slot('newItemWithData',$newItemWithData ?? null)
     @slot('items_forms')
         @include('share.Catalogos.Archivos.__archivo_new')
     @endslot

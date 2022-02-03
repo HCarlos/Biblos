@@ -7,6 +7,8 @@
     @slot('IsUpload',$IsUpload ?? false)
     @slot('ReadOnly',$ReadOnly ?? false)
     @slot('IsModal',$IsModal ?? false)
+    @slot('breadcrumbs',$breadcrumbs ?? null)
+    @slot('newItemWithData',$newItemWithData ?? null)
     @slot('items_forms')
         @if($IsNew)
             @include('share.Catalogos.User.__user_new')
