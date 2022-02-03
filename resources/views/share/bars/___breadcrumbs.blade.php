@@ -14,11 +14,11 @@
         @isset($Id)
         <a href="{{ route('listPortadas',['Id'=>$Id]) }}" class="btn btn-sm px-2 btn-outline-grey btn-h-outline-green btn-h-text-grey btn-a-outline-green btn-bold btn-brc-tp mx-lg-2">
             <i class="fa fa-images bgc-orange radius-round w-3 h-3 text-center mr-lg-1 text-white pt-15 text-95"></i>
-            <span class="d-none d-lg-inline">Imágenes</span>
+            <span class="d-none d-lg-inline">Portadas</span>
         </a>
         <a href="{{ route('inventarioLibroList',['Id'=>$Id]) }}"  class="btn btn-sm px-2 btn-outline-grey btn-h-outline-green btn-h-text-grey btn-a-outline-green btn-bold btn-brc-tp mx-lg-2">
             <i class="fa fa-edit bgc-info radius-round w-3 h-3 text-center mr-lg-1 text-white pt-15 text-95"></i>
-            <span class="d-none d-lg-inline">Detalles</span>
+            <span class="d-none d-lg-inline">Ejemplares</span>
         </a>
         @endisset
     </div>
