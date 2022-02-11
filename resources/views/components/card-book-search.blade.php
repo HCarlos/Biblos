@@ -45,8 +45,8 @@
                 <div class="row p-0 m-0" >
 
                     <div class="col-sm-4 p-0 m-0" >
-                        <a class="pos-rel"  href="{{asset($item->portada->PathImage ?? '/images/web/file-not-found.png' )}}" target="_blank" >
-                            <img class="media-object" src="{{asset($item->portadas->last()->path_image  )}}" width="100" height="128" >
+                        <a class="pos-rel"  href="{{asset($item->portadas->last()->path_image ?? '/images/web/file-not-found.png' )}}" target="_blank" >
+                            <img class="media-object" src="{{asset($item->portadas->last()->path_image ?? '/images/web/file-not-found.png' )}}" width="100" height="128" >
                         </a>
                     </div>
 

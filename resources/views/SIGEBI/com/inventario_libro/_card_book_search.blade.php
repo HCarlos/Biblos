@@ -1,4 +1,4 @@
-Total Libros: {{ $Libro->InventarioLibro->count() }}
+{{--Total Libros: {{ $Libro->InventarioLibro->count() }}--}}
 <div class="row " >
     @foreach($Libro->InventarioLibro as $item)
         <x-card-book-search>

@@ -31,12 +31,18 @@ class LibroFilter extends QueryFilter{
         if (is_null($search) || empty ($search) || trim($search) == "") {return $query;}
         $F        = new GeneralFunctios();
         $tsString = $F->string_to_tsQuery( $search,' & ');
+
 //        dd($tsString);
+
         $search = strtoupper(trim($search));
+//        return $query->whereRaw("searchtext @@ to_tsquery('spanish', ?)", [$tsString]);
+
         return $query->whereHas('InventarioLibro',function ($q) use ($tsString){
-                return $q->whereRaw("searchtext @@ to_tsquery('spanish', ?)", [$tsString]);
-            })
+            return $q->whereRaw("searchtext @@ to_tsquery('spanish', ?)", [$tsString]);
+        })
             ->orWhereRaw("searchtext @@ to_tsquery('spanish', ?)", [$tsString]);
+
+
 
 
 //        return $q->whereRaw("UPPER(isbn) like ?", "%{$search}%")
