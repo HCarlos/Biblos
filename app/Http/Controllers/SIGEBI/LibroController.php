@@ -25,7 +25,7 @@ class LibroController extends Controller{
     protected $Request;
 
     public function __construct(){
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     protected function index(Request $request){

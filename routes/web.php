@@ -90,6 +90,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('showModalSearchBook',[LibroController::class,'removeItem'])->name('showModalSearchBook');
     Route::match(['get','put','post'],'findDataInBook/',[LibroController::class,'findDataInBook'])->name('findDataInBook');
 
+    Route::post('searchbook/',[LibroController::class,'searchBook'])->name('searchbook');
     Route::get('viewcard/{Id}',[LibroController::class,'viewCard'])->name('viewcard');
 
 
@@ -170,4 +171,3 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-Route::post('searchbook/',[LibroController::class,'searchBook'])->name('searchbook');

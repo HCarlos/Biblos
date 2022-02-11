@@ -45,14 +45,14 @@ $(document).ready(function() {
         $(".frmSearchLibro").on('submit', function (event) {
             event.preventDefault();
 
-            var dataObj = $(this).serializeArray();
+            var dataObj = $(this).serialize();
 
             $("#itemsLibros").empty();
             $("#sugerencias").hide();
 
             $.ajax({
                 method: "POST",
-                url: '/searchbook/',
+                url: '/searchbook',
                 data: dataObj
             }).done(function (data) {
                 // alert(data.id)
