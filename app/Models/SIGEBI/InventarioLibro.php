@@ -31,6 +31,11 @@ class InventarioLibro extends Model{
         return $this->belongsTo(Libro::class);
     }
 
+    public function Libros(){
+//        return $this->hasMany(Libro::class);
+        return $this->belongsToMany(Libro::class);
+    }
+
     public function portadas(){
         return $this->belongsToMany(Portada::class,'inventariolibro_portada','inventariolibro_id','portada_id');
     }
@@ -44,7 +49,12 @@ class InventarioLibro extends Model{
     }
 
     public function Editorial(){
-        return $this->belongsToMany(Editoriale::class);
+        return $this->hasOne(Editoriale::class,'id','editorial_id');
+//        return $this->belongsToMany(Editoriale::class);
+    }
+
+    public function getEstatusLibroAttribute(){
+        return intval($this->status_libro) == 1 ? 'DISPONIBLE' : 'NO DISPONIBLE';
     }
 
 

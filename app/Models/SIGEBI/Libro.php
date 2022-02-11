@@ -25,6 +25,12 @@ class Libro extends Model{
     ];
     protected $casts = ['predeterminado'=>'boolean'];
 
+    public function scopeSearch($query, $search){
+        if (!$search || $search == "" || $search == null) return $query;
+        return $query->whereRaw("searchtext @@ to_tsquery('spanish', ?)", [$search])
+            ->orderByRaw("ts_rank(searchtext, to_tsquery('spanish', ?)) ASC", [$search]);
+    }
+
     public function scopeFilterBySearch($query, $filters){
         return (new LibroFilter())->applyTo($query, $filters);
     }
@@ -39,6 +45,11 @@ class Libro extends Model{
 
     public function Editorial(){
         return $this->belongsToMany(Editoriale::class);
+    }
+
+    public function InventarioLibro(){
+        return $this->hasMany(InventarioLibro::class,'libro_id','id');
+//        return $this->belongsToMany(InventarioLibro::class,'libro_id','id');
     }
 
     public function TipoMaterial(){

@@ -8,6 +8,7 @@ use App\Http\Controllers\SIGEBI\EditorialController;
 use App\Http\Controllers\SIGEBI\InventarioLibroController;
 use App\Http\Controllers\SIGEBI\LibroController;
 use App\Http\Controllers\SIGEBI\PortadaController;
+use App\Http\Controllers\SIGEBI\SearchIndexController;
 use App\Http\Controllers\SIGEBI\TipoMaterialController;
 use App\Http\Controllers\Storage\ProfileStorageController;
 use App\Http\Controllers\Storage\StorageExternalFilesController;
@@ -85,7 +86,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('updateLibro',[LibroController::class,'updateItem'])->name('updateLibro');
     Route::get('removeLibro/{Id}/{Dato1}/{Dato2}',[LibroController::class,'removeItem'])->name('removeLibro');
 
-    // LIBRO
+    Route::post('searchBook/',[LibroController::class,'searchBook'])->name('searchBook');
+    Route::get('getBook/{Dato1}',[LibroController::class,'getBook'])->name('getBook');
+    Route::get('showModalSearchBook',[LibroController::class,'removeItem'])->name('showModalSearchBook');
+    Route::match(['get','put','post'],'findDataInBook/',[LibroController::class,'findDataInBook'])->name('findDataInBook');
+
+    Route::get('viewCard/{Id}',[LibroController::class,'viewCard'])->name('viewCard');
+
+
+    // INVENTARIO LIBRO
     Route::get('inventarioLibroList/{Id}',[InventarioLibroController::class,'index'])->name('inventarioLibroList');
     Route::get('newInventarioLibro',[InventarioLibroController::class,'newItem'])->name('newInventarioLibro');
     Route::post('createInventarioLibro',[InventarioLibroController::class,'createItem'])->name('createInventarioLibro');
@@ -143,7 +152,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('removeInventarioLibro/{Id}/{Dato1}/{Dato2}',[InventarioLibroController::class,'removeItem'])->name('removeInventarioLibro');
 
 
-
+    Route::get('find',[SearchIndexController::class,'index'])->name('find');
 
 
 

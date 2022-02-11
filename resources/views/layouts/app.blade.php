@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <base href="../" />
 
     <title>{{ config('app.name')  }}</title>
@@ -22,14 +23,16 @@
 
 </head>
 
-<body>
-<div class="body-container  m-0 p-0">
+<body >
+<div class="body-container  m-0 p-0 flex-fill" >
     @auth()
         @include('layouts.partials.navbar')
         <div class="main-container bgc-white m-0 p-0">
             @include('layouts.partials.side-bar')
-            <div class="main-content ">
-                <div class="page-content m-0 ">
+            <div class="main-content " >
+                <div class="page-content m-0 "  style="background: url('{{asset('assets/image/Lab/abstract_blue_background.jpg')}}') !important; background-size: cover  !important;
+                    background-repeat: no-repeat !important;
+                    background-position: center center !important;">
                     @yield('contenedor')
                     @include('layouts.partials.footer')
                 </div>
@@ -63,6 +66,7 @@
 <script src="{{ asset('node_modules/free-jqgrid/js/jquery.jqgrid.src.js') }}"></script>
 <script src="{{ asset('dist/js/ace.js') }}"></script>
 <script src="{{ asset('app/browser/demo.js') }}"></script>
+<script src="{{ asset('assets/js/biblos.js') }}"></script>
 <script src="{{ asset('node_modules/free-jqgrid/js/jquery.jqgrid.src.j') }}s"></script>
 <script src="{{ asset('views/pages/cards/@page-script.js') }}"></script>
 @yield('script-footer')

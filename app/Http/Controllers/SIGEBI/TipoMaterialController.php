@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers\SIGEBI;
 
-use App\Filters\User\UserFilterRules;
+use App\Filters\SIGEBI\LibroFilterRules;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SIGEBI\TipoMaterialRequest;
-use App\Http\Requests\User\UserRequest;
 use App\Models\SIGEBI\TipoMaterial;
-use App\Models\User;
-use App\Models\User\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
@@ -34,7 +31,7 @@ class TipoMaterialController extends Controller{
         @ini_set( 'post_max_size', '16384M');
         @ini_set( 'max_execution_time', '960000' );
 
-        $filters = new UserFilterRules();
+        $filters = new LibroFilterRules();
         $filters = $filters->filterRulesUserDB($request);
 
         $items = TipoMaterial::query()

@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers\SIGEBI;
 
-use App\Filters\User\UserFilterRules;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\SIGEBI\EditorialRequest;
 use App\Http\Requests\SIGEBI\InventarioLibroRequest;
-use App\Http\Requests\SIGEBI\LibroRequest;
 use App\Models\SIGEBI\Editoriale;
 use App\Models\SIGEBI\InventarioLibro;
 use App\Models\SIGEBI\Libro;
-use App\Models\SIGEBI\TipoMaterial;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
@@ -184,6 +179,11 @@ class InventarioLibroController extends Controller{
         return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
 
     }
+
+
+
+
+
 
 
 }

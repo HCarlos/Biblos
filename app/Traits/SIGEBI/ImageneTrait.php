@@ -12,6 +12,7 @@ trait ImageneTrait{
     public function getPathImageAttribute(){
         if ( ! is_null($this->filename) ) {
             $exists = Storage::disk($this->disk)->exists($this->filename);
+            //dd($this->filename);
             $ret = $exists && ! is_null($this->filename)
                 ? "/storage/".$this->disk."/".$this->filename
                 : '/images/web/file-not-found.png';
@@ -24,6 +25,7 @@ trait ImageneTrait{
     // Get Image Thumbnail
     public function getPathImageThumbAttribute(){
         $fl   = explode('.',$this->filename);
+        //dd($this->filename);
         $dg   = $fl[count($fl)-1];
         $envi = config("ibt.videos_type_extension");
         $rt   = in_array( $dg, $envi ) ? '/images/web/video-icon.png':'/images/web/file-not-found.png';

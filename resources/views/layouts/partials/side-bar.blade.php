@@ -14,8 +14,8 @@
                         <span class="fadeinable mt-n2 text-125">&hellip;</span>
                     </li>
 
-                    <li class="nav-item {{ url()->current() == route('home') ? 'active': '' }}">
-                        <a class="nav-link" href="{{route('home')}}">
+                    <li class="nav-item {{ url()->current() == route('find') ? 'active': '' }}">
+                        <a class="nav-link" href="{{route('find')}}">
                             <i class="nav-icon fa fa-home"></i>
                             <span class="nav-text fadeable">Inicio</span>
                         </a>

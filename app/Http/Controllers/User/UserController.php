@@ -2,19 +2,15 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Classes\FunctionsEloquentClass;
-use App\Filters\User\UserFilterRules;
+use App\Filters\SIGEBI\LibroFilterRules;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UserPasswordRequest;
 use App\Http\Requests\User\UserRequest;
 use App\Models\User;
 use App\Models\User\Role;
 use Illuminate\Http\Request;
-
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
-
 
 
 class UserController extends Controller{
@@ -50,7 +46,7 @@ class UserController extends Controller{
         @ini_set( 'max_execution_time', '960000' );
 
         $this->tableName = 'users';
-        $filters = new UserFilterRules();
+        $filters = new LibroFilterRules();
         $filters = $filters->filterRulesUserDB($request);
 
         $items = User::query()
@@ -249,7 +245,7 @@ class UserController extends Controller{
         $user = Auth::user();
         return view('User.foto', [
                 'User' => $user,
-                'titulo' => 'Cambiar mi password',
+                'titulo' => 'Cambiar mi foto',
                 'Route' => 'updateFotodUser',
                 'Method' => 'POST',
                 'msg' => $this->msg,

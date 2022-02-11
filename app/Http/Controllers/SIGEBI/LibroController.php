@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\SIGEBI;
 
-use App\Filters\User\UserFilterRules;
+use App\Classes\GeneralFunctios;
+use App\Filters\SIGEBI\LibroFilterRules;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SIGEBI\LibroRequest;
 use App\Models\SIGEBI\Editoriale;
+use App\Models\SIGEBI\InventarioLibro;
 use App\Models\SIGEBI\Libro;
 use App\Models\SIGEBI\TipoMaterial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Redirect;
-use phpDocumentor\Reflection\Types\Collection;
+use Illuminate\Support\Facades\Response;
 
 class LibroController extends Controller{
 
@@ -40,8 +41,8 @@ class LibroController extends Controller{
         @ini_set( 'post_max_size', '16384M');
         @ini_set( 'max_execution_time', '960000' );
 
-        $filters = new UserFilterRules();
-        $filters = $filters->filterRulesUserDB($request);
+        $filters = new LibroFilterRules();
+        $filters = $filters->filterRulesLibro($request);
 
         $items = Libro::query()
             ->filterBySearch($filters)
@@ -166,5 +167,189 @@ class LibroController extends Controller{
         $user->forceDelete();
         return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ***************** MAUTOCOMPLETE DE UBICACIONES ++++++++++++++++++++ //
+    protected function searchBook(Request $request)
+    {
+        ini_set('max_execution_time', 300000);
+        $filters =$request->input('searchBook');
+        $F           = new GeneralFunctios();
+        $tsString    = $F->string_to_tsQuery( strtoupper($filters),' & ');
+
+//        dd( $tsString );
+
+        $filters = new LibroFilterRules();
+        $filters = $filters->filterRulesLibro($request);
+
+//dd($filters);
+
+        $items = Libro::query()
+            ->filterBySearch($filters)
+            ->orderByDesc('id')
+            ->get();
+
+//        $items = Libro::query()
+//            ->search($tsString)
+//            ->orderBy('id')
+//            ->get();
+
+        //dd($items->count());
+
+        $data=array();
+
+        foreach ($items as $item) {
+            //dd($item->id);
+            $invlibs = InventarioLibro::query()->where('libro_id',$item->id)->get();
+
+            //dd($invlibs);
+
+            if ( $invlibs->count() > 0 ){
+                $data[]=array(
+                    'value'=>$item->titulo.'|'.$item->autor.'|'.$item->codebar,
+                    'id'=>$item->id);
+
+            }
+
+        }
+        if(count($data))
+            return $data;
+        else
+            return ['value'=>'No se encontraron resultados','id'=>0];
+//        return Response::json(['mensaje' => 'OK', 'data' => json_decode($data), 'status' => '200'], 200);
+
+    }
+
+// ***************** MAUTOCOMPLETE DE UBICACIONES ++++++++++++++++++++ //
+    protected function getBook($Dato=0)
+    {
+        $items = Libro::find($Dato);
+        return Response::json(['mensaje' => 'OK', 'data' => json_decode($items), 'status' => '200'], 200);
+
+    }
+
+    protected function showModalSearchBook(){
+
+//        if (Auth::user()->isRole('ENLACE')){
+//
+//            $dep_id = intval(Auth::user()->IsEnlaceDependencia);
+//            $Dependencias = Dependencia::all()->where('id',$dep_id)->sortBy('dependencia')->pluck('dependencia','id');
+//            $Servicios = Servicio::whereHas('subareas', function($p) use ($dep_id) {
+//                $p->whereHas("areas", function($q) use ($dep_id){
+//                    return $q->where("dependencia_id",$dep_id);
+//                });
+//            })->orderBy('servicio')->get()->pluck('servicio','id');
+//
+//        }else{
+//            $Dependencias = Dependencia::all()->sortBy('dependencia')->pluck('dependencia','id');
+//            $Servicios    = Servicio::all()->where('')->sortBy('servicio')->pluck('servicio','id');
+//        }
+//
+//        if(Auth::user()->isRole('Administrator|SysOp|USER_OPERATOR_ADMIN|USER_ARCHIVO_ADMIN')){
+//            $Estatus      = Estatu::all()->sortBy('estatus');
+//        }else{
+//            $Estatus      = Estatu::all()->where('estatus_cve',1)->sortBy('estatus');
+//        }
+//
+//        $Origenes     = Origen::all()->sortBy('origen');
+//
+//        $Capturistas  = User::query()->whereHas('roles', function ($q) {
+//            return $q->whereIn('name',array('ENLACE','USER_OPERATOR_SIAC','USER_OPERATOR_ADMIN') );
+//        } )
+//            ->get()
+//            ->sortBy('full_name_with_username_dependencia')
+//            ->pluck('full_name_with_username_dependencia','id');
+//
+//        $user = Auth::user();
+//        return view ('SIAC.denuncia.search.denuncia_search_panel',
+//            [
+//                'findDataInDenuncia' => 'findDataInDenuncia',
+//                'dependencias'       => $Dependencias,
+//                'capturistas'        => $Capturistas,
+//                'servicios'          => $Servicios,
+//                'estatus'            => $Estatus,
+//                'origenes'           => $Origenes,
+//                'items'              => $user,
+//            ]
+//        );
+    }
+
+
+    // ***************** MUESTRA EL MENU DE BUSQUEDA ++++++++++++++++++++ //
+    protected function findDataInBook(Request $request)
+    {
+
+//        $filters = new GeneralFunctios();
+//
+//        $queryFilters = $filters->filterRulesDenuncia($request);
+////        dd($queryFilters);
+//
+//        $items = Denuncia::query()
+//            ->filterBy($queryFilters)
+//            ->orderByDesc('id')
+//            ->paginate($this->max_item_for_query);
+//
+//        $items->appends($queryFilters)->fragment('table');
+//
+//
+//        $user = Auth::User();
+//
+//
+//        $request->session()->put('items', $items);
+//
+//        return view('SIAC.denuncia.denuncia.denuncia_list',
+//            [
+//                'items'                               => $items,
+//                'titulo_catalogo'                     => "Catálogo de " . ucwords($this->tableName),
+//                'user'                                => $user,
+//                'searchInListDenuncia'                => 'listDenuncias',
+//                'respuestasDenunciaItem'              => 'listRespuestas',
+//                'newWindow'                           => true,
+//                'tableName'                           => $this->tableName,
+//                'showEdit'                            => 'editDenuncia',
+//                'newItem'                             => 'newDenuncia',
+//                'removeItem'                          => 'removeDenuncia',
+//                'showProcess1'                        => 'showDataListDenunciaExcel1A',
+//                'searchAdressDenuncia'                => 'listDenuncias',
+//                'showModalSearchDenuncia'             => 'showModalSearchDenuncia',
+//                'findDataInDenuncia'                  => 'findDataInDenuncia',
+//                'showEditDenunciaDependenciaServicio' => 'listDenunciaDependenciaServicio',
+//                'imagenesDenunciaItem'                => 'listImagenes',
+//
+//
+//            ]
+//        );
+
+    }
+
+
+    public function viewCard($Id){
+
+        $Libro = Libro::find($Id);
+        $user  = Auth::user();
+
+        return view('SIGEBI.com.inventario_libro._card_book_search',
+            [
+                "Libro"        => $Libro,
+                "User"         => $user,
+            ]
+        );
+
+    }
+
+
+
 
 }

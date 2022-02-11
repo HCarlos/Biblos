@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\SIGEBI;
 
-use App\Filters\User\UserFilterRules;
+use App\Filters\SIGEBI\LibroFilterRules;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SIGEBI\EditorialRequest;
 use App\Models\SIGEBI\Editoriale;
@@ -33,7 +33,7 @@ class EditorialController extends Controller{
         @ini_set( 'post_max_size', '16384M');
         @ini_set( 'max_execution_time', '960000' );
 
-        $filters = new UserFilterRules();
+        $filters = new LibroFilterRules();
         $filters = $filters->filterRulesUserDB($request);
 
         $items = Editoriale::query()

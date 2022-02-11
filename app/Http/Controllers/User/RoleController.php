@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Filters\User\UserFilterRules;
+use App\Filters\SIGEBI\LibroFilterRules;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\RoleRequest;
-use App\Http\Requests\User\UserPasswordRequest;
-use App\Http\Requests\User\UserRequest;
-use App\Models\User;
 use App\Models\User\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -46,7 +43,7 @@ class RoleController extends Controller{
         @ini_set( 'max_execution_time', '960000' );
 
         $this->tableName = 'roles';
-        $filters = new UserFilterRules();
+        $filters = new LibroFilterRules();
         $filters = $filters->filterRulesUserDB($request);
 
         $items = Role::query()
