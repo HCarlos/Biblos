@@ -45,7 +45,7 @@
     <form class="frmSearchLibro" name="frmSearchLibro" id="frmSearchLibro" >
         <div class="d-flex mt-3">
             <div class="flex-grow-1">
-                <input type="text" class="form-control form-control-lg pr-425 searchBook" name="searchBook" id="searchBook" placeholder="Escribe un título ó autor ...">
+                <input type="text" class="form-control form-control-lg pr-425 searchbook" name="searchbook" id="searchbook" placeholder="Escribe un título ó autor ...">
             </div>
             <i class="fa fa-search align-self-center ml-n4 text-secondary-d1"></i>
             <button type="submit" class="btn btn-primary btn-raised text-600 ml-25">

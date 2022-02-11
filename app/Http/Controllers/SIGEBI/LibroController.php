@@ -25,7 +25,7 @@ class LibroController extends Controller{
     protected $Request;
 
     public function __construct(){
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     protected function index(Request $request){
@@ -185,7 +185,7 @@ class LibroController extends Controller{
     protected function searchBook(Request $request)
     {
         ini_set('max_execution_time', 300000);
-        $filters =$request->input('searchBook');
+        $filters =$request->input('searchbook');
         $F           = new GeneralFunctios();
         $tsString    = $F->string_to_tsQuery( strtoupper($filters),' & ');
 

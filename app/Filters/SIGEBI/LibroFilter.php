@@ -11,7 +11,7 @@ class LibroFilter extends QueryFilter{
     public function rules(): array{
         return [
             'search'     => '',
-            'searchBook' => '',
+            'searchbook' => '',
             'titulo'     => '',
             'autor'      => '',
             'id'         => '',
@@ -27,7 +27,7 @@ class LibroFilter extends QueryFilter{
 
     }
 
-    public function searchBook($query, $search){
+    public function searchbook($query, $search){
         if (is_null($search) || empty ($search) || trim($search) == "") {return $query;}
         $F        = new GeneralFunctios();
         $tsString = $F->string_to_tsQuery( $search,' & ');

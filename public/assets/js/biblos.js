@@ -52,7 +52,7 @@ $(document).ready(function() {
 
             $.ajax({
                 method: "POST",
-                url: '/searchBook/',
+                url: '/searchbook/',
                 data: dataObj
             }).done(function (data) {
                 // alert(data.id)
@@ -60,7 +60,7 @@ $(document).ready(function() {
                     jQuery.each(data, function(i, response) {
                             $.ajax({
                                 method: "GET",
-                                url: '/viewCard/'+response.id+'/'
+                                url: '/viewcard/'+response.id+'/'
                             }).done(function (html) {
                                 $("#itemsLibros").append(html);
                             }, "html");

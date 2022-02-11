@@ -15,12 +15,12 @@ class LibroFilterRules{
     ***************************************************************************************************************** */
 
     public function filterRulesLibro(Request $request){
-        $data = $request->all(['Id','search','searchBook','titulo','autor','datos_fijos','codebar','isbn','observaciones']);
+        $data = $request->all(['Id','search','searchbook','titulo','autor','datos_fijos','codebar','isbn','observaciones']);
 
         $data['Id']         = $data['Id'] == null ? "" : intval($data['Id']);
 
         $data['search']      = $data['search']     == null ? "" : $data['search'];
-        $data['searchBook']  = $data['searchBook'] == null ? "" : $data['searchBook'];
+        $data['searchbook']  = $data['searchbook'] == null ? "" : $data['searchbook'];
         $data['titulo']      = $data['titulo']     == null ? "" : strtoupper(trim($data['titulo']));
         $data['autor']       = $data['autor']      == null ? "" : strtoupper(trim($data['autor']));
 
@@ -32,7 +32,7 @@ class LibroFilterRules{
         $filters = [
             'Id'            => $data['Id'],
             'search'        => $data['search'],
-            'searchBook'    => $data['searchBook'],
+            'searchbook'    => $data['searchbook'],
             'titulo'        => $data['titulo'],
             'autor'         => $data['autor'],
             'datos_fijos'   => $data['datos_fijos'],
