@@ -206,12 +206,14 @@ class LibroController extends Controller{
 //            ->orderBy('id')
 //            ->get();
 
-        //dd($items->count());
+//       dd($items->count());
 
         $data=array();
 
         foreach ($items as $item) {
+
             //dd($item->id);
+
             $invlibs = InventarioLibro::query()->where('libro_id',$item->id)->get();
 
             //dd($invlibs);

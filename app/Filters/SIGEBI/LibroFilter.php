@@ -35,13 +35,15 @@ class LibroFilter extends QueryFilter{
 //        dd($tsString);
 
         $search = strtoupper(trim($search));
-//        return $query->whereRaw("searchtext @@ to_tsquery('spanish', ?)", [$tsString]);
+
+//        return $query->whereRaw("searchtext @@ to_tsquery('spanish', ?)", [$tsString])
+//            ->orderByRaw("ts_rank(searchtext, to_tsquery('spanish', ?)) ASC", [$tsString]);
 
         return $query->whereHas('InventarioLibro',function ($q) use ($tsString){
             return $q->whereRaw("searchtext @@ to_tsquery('spanish', ?)", [$tsString]);
         })
-            ->orWhereRaw("searchtext @@ to_tsquery('spanish', ?)", [$tsString]);
-
+        ->orWhereRaw("searchtext @@ to_tsquery('spanish', ?)", [$tsString])
+        ->orderByRaw("ts_rank(searchtext, to_tsquery('spanish', ?)) ASC", [$tsString]);
 
 
 
