@@ -53,7 +53,9 @@
             </button>
         </div>
     </form>
-    <div class="col-lg-12 " id="itemsLibros" >
+    <div class="col-lg-12 ">
+        <div class="row"  id="itemsLibros" >
+        </div>
     </div>
 
     <div class="mt-4 text-105 bgc-secondary-l4 py-2 px-3 radius-1" id="sugerencias">
