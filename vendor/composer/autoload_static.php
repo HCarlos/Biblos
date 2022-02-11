@@ -39,9 +39,9 @@ class ComposerStaticInitaa43ac7a12fcd969b52827af8cfea4b4
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         'a1af1fc0cffb5f61cbaf64dbe030fdb9' => __DIR__ . '/..' . '/laravel/legacy-factories/helpers.php',
-        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
         '0b47d6d4a00ca9112ba3953b49e7c9a4' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/helper.php',
+        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -664,10 +664,10 @@ class ComposerStaticInitaa43ac7a12fcd969b52827af8cfea4b4
         'App\\Filters\\SIGEBI\\EditorialFilter' => __DIR__ . '/../..' . '/app/Filters/SIGEBI/EditorialFilter.php',
         'App\\Filters\\SIGEBI\\InventarioLibroFilter' => __DIR__ . '/../..' . '/app/Filters/SIGEBI/InventarioLibroFilter.php',
         'App\\Filters\\SIGEBI\\LibroFilter' => __DIR__ . '/../..' . '/app/Filters/SIGEBI/LibroFilter.php',
+        'App\\Filters\\SIGEBI\\LibroFilterRules' => __DIR__ . '/../..' . '/app/Filters/SIGEBI/LibroFilterRules.php',
         'App\\Filters\\SIGEBI\\TipoMaterialFilter' => __DIR__ . '/../..' . '/app/Filters/SIGEBI/TipoMaterialFilter.php',
         'App\\Filters\\User\\QueryFilter' => __DIR__ . '/../..' . '/app/Filters/User/QueryFilter.php',
         'App\\Filters\\User\\UserFilter' => __DIR__ . '/../..' . '/app/Filters/User/UserFilter.php',
-        'App\\Filters\\User\\UserFilterRules' => __DIR__ . '/../..' . '/app/Filters/User/UserFilterRules.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -683,6 +683,7 @@ class ComposerStaticInitaa43ac7a12fcd969b52827af8cfea4b4
         'App\\Http\\Controllers\\SIGEBI\\InventarioLibroController' => __DIR__ . '/../..' . '/app/Http/Controllers/SIGEBI/InventarioLibroController.php',
         'App\\Http\\Controllers\\SIGEBI\\LibroController' => __DIR__ . '/../..' . '/app/Http/Controllers/SIGEBI/LibroController.php',
         'App\\Http\\Controllers\\SIGEBI\\PortadaController' => __DIR__ . '/../..' . '/app/Http/Controllers/SIGEBI/PortadaController.php',
+        'App\\Http\\Controllers\\SIGEBI\\SearchIndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/SIGEBI/SearchIndexController.php',
         'App\\Http\\Controllers\\SIGEBI\\TipoMaterialController' => __DIR__ . '/../..' . '/app/Http/Controllers/SIGEBI/TipoMaterialController.php',
         'App\\Http\\Controllers\\Storage\\ProfileStorageController' => __DIR__ . '/../..' . '/app/Http/Controllers/Storage/ProfileStorageController.php',
         'App\\Http\\Controllers\\Storage\\StorageExternalFilesController' => __DIR__ . '/../..' . '/app/Http/Controllers/Storage/StorageExternalFilesController.php',
@@ -745,6 +746,7 @@ class ComposerStaticInitaa43ac7a12fcd969b52827af8cfea4b4
         'App\\Traits\\Vehiculo\\VehiculosAttributes' => __DIR__ . '/../..' . '/app/Traits/Vehiculo/VehiculosAttributes.php',
         'App\\View\\Components\\CardBasic' => __DIR__ . '/../..' . '/app/View/Components/CardBasic.php',
         'App\\View\\Components\\CardBook' => __DIR__ . '/../..' . '/app/View/Components/CardBook.php',
+        'App\\View\\Components\\CardBookSearch' => __DIR__ . '/../..' . '/app/View/Components/CardBookSearch.php',
         'App\\View\\Components\\CatalogoInlineList' => __DIR__ . '/../..' . '/app/View/Components/CatalogoInlineList.php',
         'App\\View\\Components\\EmptyCanva' => __DIR__ . '/../..' . '/app/View/Components/EmptyCanva.php',
         'App\\View\\Components\\Inline\\CardFormInline' => __DIR__ . '/../..' . '/app/View/Components/Inline/CardFormInline.php',
