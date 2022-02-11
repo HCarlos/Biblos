@@ -86,7 +86,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('updateLibro',[LibroController::class,'updateItem'])->name('updateLibro');
     Route::get('removeLibro/{Id}/{Dato1}/{Dato2}',[LibroController::class,'removeItem'])->name('removeLibro');
 
-    Route::post('searchBook/',[LibroController::class,'searchBook'])->name('searchBook');
+    Route::match(['get','put','post'],'searchBook/',[LibroController::class,'searchBook'])->name('searchBook');
     Route::get('getBook/{Dato1}',[LibroController::class,'getBook'])->name('getBook');
     Route::get('showModalSearchBook',[LibroController::class,'removeItem'])->name('showModalSearchBook');
     Route::match(['get','put','post'],'findDataInBook/',[LibroController::class,'findDataInBook'])->name('findDataInBook');
