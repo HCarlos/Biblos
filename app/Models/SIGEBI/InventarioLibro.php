@@ -54,7 +54,22 @@ class InventarioLibro extends Model{
     }
 
     public function getEstatusLibroAttribute(){
-        return intval($this->status_libro) == 1 ? 'DISPONIBLE' : 'NO DISPONIBLE';
+        //return intval($this->status_libro) == 1 ? 'DISPONIBLE' : 'NO DISPONIBLE';
+        switch( intval($this->status_libro) ){
+            case 1:
+                return 'DISPONIBLE';
+                break;
+            case 2:
+                return 'RESERVADO/APARTADO';
+                break;
+            case 3:
+                return 'PRESTADO';
+                break;
+            default:
+                return 'NO DISPONIBLE';
+                break;
+        }
+
     }
 
 

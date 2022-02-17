@@ -156,7 +156,6 @@ class LibroController extends Controller{
 //        return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
         return Redirect::to('listaLibro');
 
-
     }
 
     // ***************** ELIMINA AL USUARIO VIA AJAX ++++++++++++++++++++ //
@@ -189,49 +188,33 @@ class LibroController extends Controller{
         $F           = new GeneralFunctios();
         $tsString    = $F->string_to_tsQuery( strtoupper($filters),' & ');
 
-//        dd( $tsString );
-
         $filters = new LibroFilterRules();
         $filters = $filters->filterRulesLibro($request);
-
-//dd($filters);
 
         $items = Libro::query()
             ->filterBySearch($filters)
             ->orderByDesc('id')
             ->get();
 
-//        $items = Libro::query()
-//            ->search($tsString)
-//            ->orderBy('id')
-//            ->get();
-
-//       dd($items->count());
-
-        $data=array();
-
+        $dataId=array();
         foreach ($items as $item) {
-
-            //dd($item->id);
-
-            $invlibs = InventarioLibro::query()->where('libro_id',$item->id)->get();
-
-            //dd($invlibs);
-
-            if ( $invlibs->count() > 0 ){
-                $data[]=array(
-                    'value'=>$item->titulo.'|'.$item->autor.'|'.$item->codebar,
-                    'id'=>$item->id);
-
+            $invlibs = $item->InventarioLibro;
+            $totalInvLib = $invlibs->count();
+            if ( $totalInvLib > 0 ){
+                $dataId[]=$item->id;
             }
-
         }
-        if(count($data))
-            return $data;
-        else
-            return ['value'=>'No se encontraron resultados','id'=>0];
-//        return Response::json(['mensaje' => 'OK', 'data' => json_decode($data), 'status' => '200'], 200);
-
+        if( count($dataId) ) {
+            $Lib = Libro::query()->whereIn('id', $dataId )->get();
+            $user  = Auth::user();
+            return view('SIGEBI.com.inventario_libro._card_book_search',
+                [
+                    "Libros"        => $Lib,
+                    "User"         => $user,
+                ]
+            );
+        } else
+            return ['value'=>'No se encontraron resultados','id'=>0, 'total' => 0];
     }
 
 // ***************** MAUTOCOMPLETE DE UBICACIONES ++++++++++++++++++++ //

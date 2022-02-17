@@ -4,9 +4,11 @@ namespace App\Http\Controllers\SIGEBI;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SIGEBI\InventarioLibroRequest;
+use App\Http\Requests\SIGEBI\InventarioLibroReservaRequest;
 use App\Models\SIGEBI\Editoriale;
 use App\Models\SIGEBI\InventarioLibro;
 use App\Models\SIGEBI\Libro;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Session;
@@ -181,9 +183,42 @@ class InventarioLibroController extends Controller{
     }
 
 
+    protected function showModalReservar($IL){
+
+        $Item = InventarioLibro::find($IL);
+        $user  = Auth::user();
+        return view('SIGEBI.com.inventario_libro._inventario_libro_reservar',
+            [
+                'TituloModal'     => 'Reservar '.$Item->id,
+                'RouteModal'      => 'saveReservation',
+                'Method'          => 'POST',
+                'IsNew'           => true,
+                'IsUpload'        => false,
+                'newItemWithData' => null,
+                'breadcrumbs'     => null,
+                'item'            => $Item,
+                'User'            => $user,
+            ]
+        );
+
+    }
 
 
+    protected function saveReservation(InventarioLibroReservaRequest $request){
 
+        //dd($request->all());
+
+        $Obj = $request->manageReservation();
+//        if (!is_object($Obj)) {
+//            $id = 0;
+//        }else{
+//            $id = $Obj->id;
+//        }
+        $code = 'OK';
+        $msg = "Libro Reservado con éxito!";
+        session(['msg' => $this->msg]);
+        return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
+    }
 
 
 }

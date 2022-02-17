@@ -356,8 +356,6 @@ class CreateBiblosTable extends Migration
                     ->references('id')
                     ->on($tableCatalogos['users'])
                     ->onDelete('cascade');
-
-
                     });
 
         }

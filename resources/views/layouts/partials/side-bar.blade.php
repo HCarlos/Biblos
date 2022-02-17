@@ -17,7 +17,7 @@
                     <li class="nav-item {{ url()->current() == route('find') ? 'active': '' }}">
                         <a class="nav-link" href="{{route('find')}}">
                             <i class="nav-icon fa fa-home"></i>
-                            <span class="nav-text fadeable">Inicio</span>
+                            <span class="nav-text fadeable">Buscar</span>
                         </a>
                     </li>
 

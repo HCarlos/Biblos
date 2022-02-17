@@ -20,7 +20,7 @@ class HistorialLibro extends Model{
     protected $fillable = [
         'id','libro_id','inventariolibro_id','user_id',
         'fecha', 'tipo_movto','observaciones',
-        'empresa_id','editorial_id', 'creado_por_id',
+        'empresa_id', 'creado_por_id',
     ];
 
     public function Libro(){
@@ -38,11 +38,12 @@ class HistorialLibro extends Model{
     public function Creado_Por(){
         return $this->belongsTo(User::class, 'creado_por_id');
     }
-
+    
+/*
     public function Editorial(){
         return $this->belongsToMany(Editoriale::class);
     }
-
+*/
 
 
 

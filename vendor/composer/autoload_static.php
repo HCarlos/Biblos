@@ -39,9 +39,9 @@ class ComposerStaticInitaa43ac7a12fcd969b52827af8cfea4b4
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         'a1af1fc0cffb5f61cbaf64dbe030fdb9' => __DIR__ . '/..' . '/laravel/legacy-factories/helpers.php',
+        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
         '0b47d6d4a00ca9112ba3953b49e7c9a4' => __DIR__ . '/..' . '/yajra/laravel-datatables-oracle/src/helper.php',
-        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -704,6 +704,7 @@ class ComposerStaticInitaa43ac7a12fcd969b52827af8cfea4b4
         'App\\Http\\Requests\\Familia\\FamiliaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Familia/FamiliaRequest.php',
         'App\\Http\\Requests\\SIGEBI\\EditorialRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SIGEBI/EditorialRequest.php',
         'App\\Http\\Requests\\SIGEBI\\InventarioLibroRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SIGEBI/InventarioLibroRequest.php',
+        'App\\Http\\Requests\\SIGEBI\\InventarioLibroReservaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SIGEBI/InventarioLibroReservaRequest.php',
         'App\\Http\\Requests\\SIGEBI\\LibroRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SIGEBI/LibroRequest.php',
         'App\\Http\\Requests\\SIGEBI\\PortadaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SIGEBI/PortadaRequest.php',
         'App\\Http\\Requests\\SIGEBI\\TipoMaterialRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SIGEBI/TipoMaterialRequest.php',
@@ -851,6 +852,7 @@ class ComposerStaticInitaa43ac7a12fcd969b52827af8cfea4b4
         'Carbon\\Traits\\Units' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Units.php',
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'Carbon\\TranslatorImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/TranslatorImmutable.php',
         'Carbon\\TranslatorStrongTypeInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/TranslatorStrongTypeInterface.php',
         'Collective\\Html\\Componentable' => __DIR__ . '/..' . '/laravelcollective/html/src/Componentable.php',
         'Collective\\Html\\Eloquent\\FormAccessible' => __DIR__ . '/..' . '/laravelcollective/html/src/Eloquent/FormAccessible.php',

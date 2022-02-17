@@ -2,10 +2,12 @@
 By @DevCH Primavera de 2019
 JavaScript
 */
+// <script src="/assets/js/biblos.js"></script>
 
 $(document).ready(function() {
 
     const token = window.localStorage.getItem('access_token');
+    let InicioBtnFull = false;
 
     $.ajaxSetup({
         headers: {
@@ -46,11 +48,13 @@ $(document).ready(function() {
         });
     }
 
-    if ( $(".btnFullModal").length > 0  ){
-        $(".btnFullModal").on("click", function (event) {
+
+    function btnFullModal(vObj){
+        let Obj = vObj ;
+
+        Obj.on("click", function (event) {
             event.preventDefault();
             localStorage.Input="";
-
             // Aplica para los Checkbox en dataTable
             if ( $(".table") ){
                 $form = $(".table > tbody");
@@ -58,8 +62,6 @@ $(document).ready(function() {
                     localStorage.Input += localStorage.Input === "" ? $(this).val() : ","+$(this).val();
                 });
             }
-
-            // Nombre del Modal Form
 
             var htmlInit = '<div class="fa-2x m-2"><i class="fa fa-cog fa-spin"></i> Cargado datos...</div>';
 
@@ -74,18 +76,14 @@ $(document).ready(function() {
                 $form = $("#modalFull");
                 $formC = $("#modalFull .modal-content");
                 $formC.html(htmlInit);
-
-
             }
+
             $formC.empty();
             $formC.html('<div class="fa-2x m-2"><i class="fa fa-cog fa-spin"></i> Cargado datos...</div>');
             $form.modal('show');
 
-
-            // $("#modalFull .modal-content").empty();
-            // $("#modalFull .modal-content").html('<div class="fa-2x m-2"><i class="fa fa-cog fa-spin"></i> Cargado datos...</div>');
-            // $("#modalFull").modal('show');
             var Url = event.currentTarget.href;
+
             $(function () {
                 $.ajax({
                     method: "get",
@@ -120,7 +118,9 @@ $(document).ready(function() {
                     });
             });
         });
+
     }
+    btnFullModal( $(".btnFullModal") );
 
     if ( $(".listTarget").length > 0  ){
         $(".listTarget").on('change', function(event) {
@@ -380,10 +380,41 @@ $(document).ready(function() {
         });
     }
 
+
+    $("#sugerencias").show();
+    $("#bajesTotalItems").hide();
+    if ($(".frmSearchLibro")) {
+        $(".frmSearchLibro").on('submit', function (event) {
+            event.preventDefault();
+
+            let dataObj = $(this).serialize();
+            let totalItems = 0;
+
+            $("#itemsLibros").empty();
+            $("#totalItems").empty();
+            $("#sugerencias").hide();
+            $("#bajesTotalItems").show();
+            var Ini = 0;
+            $.ajax({
+                method: "POST",
+                url: '/searchbook',
+                data: dataObj
+            }).done(function (html) {
+                $("#itemsLibros").append(html);
+                $("#bajesTotalItems").show();
+                btnFullModal( $(".btnUno") );
+            }, "json");
+
+        });
+    }
+
+
+
     if ( $("#contentPropertie") ) $("#contentPropertie").hide();
     if ( $("#contentLevel3") ) $("#contentLevel3").hide();
     if ( $("#contentLevel4") ) $("#contentLevel4").hide();
     if ( $("#contentLevel5") ) $("#contentLevel5").hide();
 
+//alert("Final")
 
 });

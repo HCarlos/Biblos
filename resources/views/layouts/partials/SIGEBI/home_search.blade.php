@@ -39,7 +39,7 @@
     </div>
 
 
-    <div class="text-dark-m2 text-110 text-center text-md-left mt-45">
+    <div class="text-white text-110 text-center text-md-left mt-45">
         Buscar material por Título ó Autor
     </div>
     <form class="frmSearchLibro" name="frmSearchLibro" id="frmSearchLibro" >
@@ -53,9 +53,19 @@
             </button>
         </div>
     </form>
-    <div class="col-lg-12 ">
-        <div class="row"  id="itemsLibros" >
+
+    <div class="col-12 mt-2 p-0" id="bajesTotalItems">
+        <div class="bgc-white border-2 brc-green text-dark-tp3 badge-pill px-4 pt-1 bgc-h-green-l3">
+            <div class="pos-rel d-flex ">
+                <h3 class="text-primary-d3 m-0 p-0 mr-2  text-140">Total de ejemplares:  </h3>
+                <span class="badge pr-2 mb-2 mt-1 pt-1 bgc-red-d2 text-white radius-round text-90 px-25 py-1000" id="totalItems"></span>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <div class="col-sm-12" >
+        <div class="row " id="itemsLibros" ></div>
     </div>
 
     <div class="mt-4 text-105 bgc-secondary-l4 py-2 px-3 radius-1" id="sugerencias">

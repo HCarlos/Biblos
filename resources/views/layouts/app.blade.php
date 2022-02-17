@@ -66,11 +66,12 @@
 <script src="{{ asset('node_modules/free-jqgrid/js/jquery.jqgrid.src.js') }}"></script>
 <script src="{{ asset('dist/js/ace.js') }}"></script>
 <script src="{{ asset('app/browser/demo.js') }}"></script>
-<script src="{{ asset('assets/js/biblos.js') }}"></script>
 <script src="{{ asset('node_modules/free-jqgrid/js/jquery.jqgrid.src.j') }}s"></script>
 <script src="{{ asset('views/pages/cards/@page-script.js') }}"></script>
-@yield('script-footer')
+<script src="{{ asset('assets/js/biblos.js') }}"></script>
 <script src="{{ asset('assets/js/ibt.js') }}"></script>
+
+@yield('script-footer')
 
 </body>
 </html>

@@ -32,8 +32,8 @@ class InventarioLibroRequest extends FormRequest{
         return [];
     }
 
-    public function manageInventarioLibro()
-    {
+    public function manageInventarioLibro(){
+
         $this->F = new GeneralFunctios();
 
         try {

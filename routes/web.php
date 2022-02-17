@@ -101,6 +101,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('editInventarioLibro/{Id}',[InventarioLibroController::class,'editItem'])->name('editInventarioLibro');
     Route::put('updateInventarioLibro',[InventarioLibroController::class,'updateItem'])->name('updateInventarioLibro');
     Route::get('removeInventarioLibro/{Id}/{Dato1}/{Dato2}',[InventarioLibroController::class,'removeItem'])->name('removeInventarioLibro');
+    Route::get('showModalReservar/{IL}',[InventarioLibroController::class,'showModalReservar'])->name('showModalReservar');
+    Route::post('saveReservation',[InventarioLibroController::class,'saveReservation'])->name('saveReservation');
 
 
     // USUARIOS
