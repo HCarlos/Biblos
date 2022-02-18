@@ -155,9 +155,14 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::get('find',[SearchIndexController::class,'buscarLibroApartado'])->name('find');
+
     Route::get('listadoAprtados',[SearchIndexController::class,'listadoAprtados'])->name('listadoAprtados');
     Route::get('showModalPrestar/{Id}',[InventarioLibroController::class,'showModalPrestar'])->name('showModalPrestar');
     Route::post('savePrestar',[InventarioLibroController::class,'savePrestar'])->name('savePrestar');
+
+    Route::get('listadoPrestados',[SearchIndexController::class,'listadoPrestados'])->name('listadoPrestados');
+    Route::get('showModalEntregar/{Id}',[InventarioLibroController::class,'showModalEntregar'])->name('showModalEntregar');
+    Route::post('saveEntregar',[InventarioLibroController::class,'saveEntregar'])->name('saveEntregar');
 
 
 

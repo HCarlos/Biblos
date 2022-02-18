@@ -203,7 +203,6 @@ class InventarioLibroController extends Controller{
 
     }
 
-
     protected function saveReservation(InventarioLibroReservaRequest $request){
         $Obj = $request->manageApartados();
         $code = 'OK';
@@ -211,6 +210,12 @@ class InventarioLibroController extends Controller{
         session(['msg' => $this->msg]);
         return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
     }
+
+
+
+
+
+
 
 
     protected function showModalPrestar($Id){
@@ -235,19 +240,52 @@ class InventarioLibroController extends Controller{
 
 
     protected function savePrestar(InventarioLibroReservaRequest $request){
-
-        //dd($request->all());
-
         $Obj = $request->managePrestamos();
-//        if (!is_object($Obj)) {
-//            $id = 0;
-//        }else{
-//            $id = $Obj->id;
-//        }
         $code = 'OK';
         $msg = "Libro Prestado con éxito!";
         session(['msg' => $this->msg]);
         return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
     }
+
+
+
+
+
+
+
+    protected function showModalEntregar($Id){
+
+        $Item = InventarioLibro::find($Id);
+        $user  = Auth::user();
+        return view('SIGEBI.com.inventario_libro.entregas._entrega_new',
+            [
+                'TituloModal'     => 'Entregar el Item ID: '.$Item->id,
+                'RouteModal'      => 'saveEntregar',
+                'Method'          => 'POST',
+                'IsNew'           => true,
+                'IsUpload'        => false,
+                'newItemWithData' => null,
+                'breadcrumbs'     => null,
+                'item'            => $Item,
+                'User'            => $user,
+            ]
+        );
+
+    }
+
+
+    protected function saveEntregar(InventarioLibroReservaRequest $request){
+        $Obj = $request->manageEntregas();
+        $code = 'OK';
+        $msg = "Libro Entregado con éxito!";
+        session(['msg' => $this->msg]);
+        return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
+    }
+
+
+
+
+
+
 
 }

@@ -117,6 +117,8 @@ return array(
     'App\\View\\Components\\Inputs\\TextField' => $baseDir . '/app/View/Components/Inputs/TextField.php',
     'App\\View\\Components\\Inputs\\TextFieldHrz' => $baseDir . '/app/View/Components/Inputs/TextFieldHrz.php',
     'App\\View\\Components\\Modals\\Blurred' => $baseDir . '/app/View/Components/Modals/Blurred.php',
+    'App\\View\\Components\\inline\\ApartadosList' => $baseDir . '/app/View/Components/inline/ApartadosList.php',
+    'App\\View\\Components\\inline\\PrestadosList' => $baseDir . '/app/View/Components/inline/PrestadosList.php',
     'Asm89\\Stack\\Cors' => $vendorDir . '/asm89/stack-cors/src/Cors.php',
     'Asm89\\Stack\\CorsService' => $vendorDir . '/asm89/stack-cors/src/CorsService.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',

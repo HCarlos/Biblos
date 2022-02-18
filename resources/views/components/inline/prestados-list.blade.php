@@ -4,8 +4,8 @@
     @php $IsModal = $IsModal  ?? false @endphp
     <div class="card bcard" id="contentMain">
         <div class="navbar-intro justify-content-xl-start bgc-transparent pr-lg-3 w-auto">
-            @include('share.bars.___breadcrumbs_apartados')
-{{--            @include('share.bars.___toolbar_catalogo')--}}
+                        @include('share.bars.___breadcrumbs_prestados')
+            {{--            @include('share.bars.___toolbar_catalogo')--}}
         </div>
 
         <div class="card-body  ">

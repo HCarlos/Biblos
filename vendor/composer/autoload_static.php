@@ -758,6 +758,8 @@ class ComposerStaticInitaa43ac7a12fcd969b52827af8cfea4b4
         'App\\View\\Components\\Inputs\\TextField' => __DIR__ . '/../..' . '/app/View/Components/Inputs/TextField.php',
         'App\\View\\Components\\Inputs\\TextFieldHrz' => __DIR__ . '/../..' . '/app/View/Components/Inputs/TextFieldHrz.php',
         'App\\View\\Components\\Modals\\Blurred' => __DIR__ . '/../..' . '/app/View/Components/Modals/Blurred.php',
+        'App\\View\\Components\\inline\\ApartadosList' => __DIR__ . '/../..' . '/app/View/Components/inline/ApartadosList.php',
+        'App\\View\\Components\\inline\\PrestadosList' => __DIR__ . '/../..' . '/app/View/Components/inline/PrestadosList.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',

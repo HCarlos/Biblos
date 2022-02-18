@@ -28,6 +28,13 @@
                         </a>
                     </li>
 
+                    <li class="nav-item {{ url()->current() == route('listadoPrestados') ? 'active': '' }}">
+                        <a class="nav-link" href="{{route('listadoPrestados')}}">
+                            <i class="nav-icon fa fa-clipboard-check"></i>
+                            <span class="nav-text fadeable">Prestados</span>
+                        </a>
+                    </li>
+
                     <li class="nav-item">
                         <a href="#" class="nav-link dropdown-toggle">
                             <i class="nav-icon fa fa-list"></i>
