@@ -205,20 +205,49 @@ class InventarioLibroController extends Controller{
 
 
     protected function saveReservation(InventarioLibroReservaRequest $request){
-
-        //dd($request->all());
-
-        $Obj = $request->manageReservation();
-//        if (!is_object($Obj)) {
-//            $id = 0;
-//        }else{
-//            $id = $Obj->id;
-//        }
+        $Obj = $request->manageApartados();
         $code = 'OK';
         $msg = "Libro Reservado con éxito!";
         session(['msg' => $this->msg]);
         return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
     }
 
+
+    protected function showModalPrestar($Id){
+
+        $Item = InventarioLibro::find($Id);
+        $user  = Auth::user();
+        return view('SIGEBI.com.inventario_libro.prestamos._prestamo_new',
+            [
+                'TituloModal'     => 'Prestar el Item ID: '.$Item->id,
+                'RouteModal'      => 'savePrestar',
+                'Method'          => 'POST',
+                'IsNew'           => true,
+                'IsUpload'        => false,
+                'newItemWithData' => null,
+                'breadcrumbs'     => null,
+                'item'            => $Item,
+                'User'            => $user,
+            ]
+        );
+
+    }
+
+
+    protected function savePrestar(InventarioLibroReservaRequest $request){
+
+        //dd($request->all());
+
+        $Obj = $request->managePrestamos();
+//        if (!is_object($Obj)) {
+//            $id = 0;
+//        }else{
+//            $id = $Obj->id;
+//        }
+        $code = 'OK';
+        $msg = "Libro Prestado con éxito!";
+        session(['msg' => $this->msg]);
+        return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
+    }
 
 }

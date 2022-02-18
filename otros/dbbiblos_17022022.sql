@@ -2,10 +2,10 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 10.6
--- Dumped by pg_dump version 10.6
+-- Dumped from database version 10.20
+-- Dumped by pg_dump version 10.20
 
--- Started on 2022-02-10 17:59:08 CST
+-- Started on 2022-02-17 18:37:09 CST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -14,11 +14,12 @@ SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
 SET check_function_bodies = false;
+SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- TOC entry 1 (class 3079 OID 12393)
+-- TOC entry 1 (class 3079 OID 13794)
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
 --
 
@@ -26,7 +27,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2833 (class 0 OID 0)
+-- TOC entry 4234 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
@@ -39,7 +40,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- TOC entry 209 (class 1259 OID 43934)
+-- TOC entry 196 (class 1259 OID 19259)
 -- Name: categorias; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -55,7 +56,7 @@ CREATE TABLE public.categorias (
 ALTER TABLE public.categorias OWNER TO postgres;
 
 --
--- TOC entry 208 (class 1259 OID 43932)
+-- TOC entry 197 (class 1259 OID 19263)
 -- Name: categorias_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -71,8 +72,8 @@ CREATE SEQUENCE public.categorias_id_seq
 ALTER TABLE public.categorias_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2834 (class 0 OID 0)
--- Dependencies: 208
+-- TOC entry 4235 (class 0 OID 0)
+-- Dependencies: 197
 -- Name: categorias_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -80,7 +81,7 @@ ALTER SEQUENCE public.categorias_id_seq OWNED BY public.categorias.id;
 
 
 --
--- TOC entry 232 (class 1259 OID 44161)
+-- TOC entry 198 (class 1259 OID 19265)
 -- Name: codigopaises; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -102,7 +103,7 @@ CREATE TABLE public.codigopaises (
 ALTER TABLE public.codigopaises OWNER TO postgres;
 
 --
--- TOC entry 231 (class 1259 OID 44159)
+-- TOC entry 199 (class 1259 OID 19274)
 -- Name: codigopaises_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -117,8 +118,8 @@ CREATE SEQUENCE public.codigopaises_id_seq
 ALTER TABLE public.codigopaises_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2835 (class 0 OID 0)
--- Dependencies: 231
+-- TOC entry 4236 (class 0 OID 0)
+-- Dependencies: 199
 -- Name: codigopaises_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -126,7 +127,7 @@ ALTER SEQUENCE public.codigopaises_id_seq OWNED BY public.codigopaises.id;
 
 
 --
--- TOC entry 244 (class 1259 OID 44396)
+-- TOC entry 200 (class 1259 OID 19276)
 -- Name: editoriale_libro; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -143,7 +144,7 @@ CREATE TABLE public.editoriale_libro (
 ALTER TABLE public.editoriale_libro OWNER TO postgres;
 
 --
--- TOC entry 243 (class 1259 OID 44394)
+-- TOC entry 201 (class 1259 OID 19281)
 -- Name: editoriale_libro_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -158,8 +159,8 @@ CREATE SEQUENCE public.editoriale_libro_id_seq
 ALTER TABLE public.editoriale_libro_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2836 (class 0 OID 0)
--- Dependencies: 243
+-- TOC entry 4237 (class 0 OID 0)
+-- Dependencies: 201
 -- Name: editoriale_libro_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -167,7 +168,7 @@ ALTER SEQUENCE public.editoriale_libro_id_seq OWNED BY public.editoriale_libro.i
 
 
 --
--- TOC entry 234 (class 1259 OID 44188)
+-- TOC entry 202 (class 1259 OID 19283)
 -- Name: editoriales; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -191,7 +192,7 @@ CREATE TABLE public.editoriales (
 ALTER TABLE public.editoriales OWNER TO postgres;
 
 --
--- TOC entry 233 (class 1259 OID 44186)
+-- TOC entry 203 (class 1259 OID 19297)
 -- Name: editoriales_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -206,8 +207,8 @@ CREATE SEQUENCE public.editoriales_id_seq
 ALTER TABLE public.editoriales_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2837 (class 0 OID 0)
--- Dependencies: 233
+-- TOC entry 4238 (class 0 OID 0)
+-- Dependencies: 203
 -- Name: editoriales_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -215,7 +216,7 @@ ALTER SEQUENCE public.editoriales_id_seq OWNED BY public.editoriales.id;
 
 
 --
--- TOC entry 199 (class 1259 OID 40736)
+-- TOC entry 204 (class 1259 OID 19299)
 -- Name: empresas; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -235,7 +236,7 @@ CREATE TABLE public.empresas (
 ALTER TABLE public.empresas OWNER TO postgres;
 
 --
--- TOC entry 198 (class 1259 OID 40734)
+-- TOC entry 205 (class 1259 OID 19310)
 -- Name: empresas_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -250,8 +251,8 @@ CREATE SEQUENCE public.empresas_id_seq
 ALTER TABLE public.empresas_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2838 (class 0 OID 0)
--- Dependencies: 198
+-- TOC entry 4239 (class 0 OID 0)
+-- Dependencies: 205
 -- Name: empresas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -259,7 +260,7 @@ ALTER SEQUENCE public.empresas_id_seq OWNED BY public.empresas.id;
 
 
 --
--- TOC entry 216 (class 1259 OID 44006)
+-- TOC entry 206 (class 1259 OID 19312)
 -- Name: failed_jobs; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -277,7 +278,7 @@ CREATE TABLE public.failed_jobs (
 ALTER TABLE public.failed_jobs OWNER TO postgres;
 
 --
--- TOC entry 215 (class 1259 OID 44004)
+-- TOC entry 207 (class 1259 OID 19319)
 -- Name: failed_jobs_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -292,8 +293,8 @@ CREATE SEQUENCE public.failed_jobs_id_seq
 ALTER TABLE public.failed_jobs_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2839 (class 0 OID 0)
--- Dependencies: 215
+-- TOC entry 4240 (class 0 OID 0)
+-- Dependencies: 207
 -- Name: failed_jobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -301,7 +302,7 @@ ALTER SEQUENCE public.failed_jobs_id_seq OWNED BY public.failed_jobs.id;
 
 
 --
--- TOC entry 248 (class 1259 OID 44440)
+-- TOC entry 208 (class 1259 OID 19321)
 -- Name: historiallibros; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -324,7 +325,7 @@ CREATE TABLE public.historiallibros (
 ALTER TABLE public.historiallibros OWNER TO postgres;
 
 --
--- TOC entry 247 (class 1259 OID 44438)
+-- TOC entry 209 (class 1259 OID 19334)
 -- Name: historiallibros_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -339,8 +340,8 @@ CREATE SEQUENCE public.historiallibros_id_seq
 ALTER TABLE public.historiallibros_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2840 (class 0 OID 0)
--- Dependencies: 247
+-- TOC entry 4241 (class 0 OID 0)
+-- Dependencies: 209
 -- Name: historiallibros_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -348,7 +349,7 @@ ALTER SEQUENCE public.historiallibros_id_seq OWNED BY public.historiallibros.id;
 
 
 --
--- TOC entry 213 (class 1259 OID 43973)
+-- TOC entry 210 (class 1259 OID 19336)
 -- Name: imagen_user; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -365,7 +366,7 @@ CREATE TABLE public.imagen_user (
 ALTER TABLE public.imagen_user OWNER TO postgres;
 
 --
--- TOC entry 212 (class 1259 OID 43971)
+-- TOC entry 211 (class 1259 OID 19341)
 -- Name: imagen_user_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -381,8 +382,8 @@ CREATE SEQUENCE public.imagen_user_id_seq
 ALTER TABLE public.imagen_user_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2841 (class 0 OID 0)
--- Dependencies: 212
+-- TOC entry 4242 (class 0 OID 0)
+-- Dependencies: 211
 -- Name: imagen_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -390,7 +391,7 @@ ALTER SEQUENCE public.imagen_user_id_seq OWNED BY public.imagen_user.id;
 
 
 --
--- TOC entry 211 (class 1259 OID 43943)
+-- TOC entry 212 (class 1259 OID 19343)
 -- Name: imagenes; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -415,7 +416,7 @@ CREATE TABLE public.imagenes (
 ALTER TABLE public.imagenes OWNER TO postgres;
 
 --
--- TOC entry 210 (class 1259 OID 43941)
+-- TOC entry 213 (class 1259 OID 19356)
 -- Name: imagenes_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -430,8 +431,8 @@ CREATE SEQUENCE public.imagenes_id_seq
 ALTER TABLE public.imagenes_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2842 (class 0 OID 0)
--- Dependencies: 210
+-- TOC entry 4243 (class 0 OID 0)
+-- Dependencies: 213
 -- Name: imagenes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -439,7 +440,7 @@ ALTER SEQUENCE public.imagenes_id_seq OWNED BY public.imagenes.id;
 
 
 --
--- TOC entry 246 (class 1259 OID 44418)
+-- TOC entry 214 (class 1259 OID 19358)
 -- Name: inventariolibro_portada; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -456,7 +457,7 @@ CREATE TABLE public.inventariolibro_portada (
 ALTER TABLE public.inventariolibro_portada OWNER TO postgres;
 
 --
--- TOC entry 245 (class 1259 OID 44416)
+-- TOC entry 215 (class 1259 OID 19363)
 -- Name: inventariolibro_portada_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -471,8 +472,8 @@ CREATE SEQUENCE public.inventariolibro_portada_id_seq
 ALTER TABLE public.inventariolibro_portada_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2843 (class 0 OID 0)
--- Dependencies: 245
+-- TOC entry 4244 (class 0 OID 0)
+-- Dependencies: 215
 -- Name: inventariolibro_portada_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -480,7 +481,7 @@ ALTER SEQUENCE public.inventariolibro_portada_id_seq OWNED BY public.inventariol
 
 
 --
--- TOC entry 240 (class 1259 OID 44296)
+-- TOC entry 216 (class 1259 OID 19365)
 -- Name: inventariolibros; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -515,7 +516,7 @@ CREATE TABLE public.inventariolibros (
 ALTER TABLE public.inventariolibros OWNER TO postgres;
 
 --
--- TOC entry 239 (class 1259 OID 44294)
+-- TOC entry 217 (class 1259 OID 19386)
 -- Name: inventariolibros_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -530,8 +531,8 @@ CREATE SEQUENCE public.inventariolibros_id_seq
 ALTER TABLE public.inventariolibros_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2844 (class 0 OID 0)
--- Dependencies: 239
+-- TOC entry 4245 (class 0 OID 0)
+-- Dependencies: 217
 -- Name: inventariolibros_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -539,7 +540,7 @@ ALTER SEQUENCE public.inventariolibros_id_seq OWNED BY public.inventariolibros.i
 
 
 --
--- TOC entry 250 (class 1259 OID 58483)
+-- TOC entry 218 (class 1259 OID 19388)
 -- Name: libro_portada; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -556,7 +557,7 @@ CREATE TABLE public.libro_portada (
 ALTER TABLE public.libro_portada OWNER TO postgres;
 
 --
--- TOC entry 249 (class 1259 OID 58481)
+-- TOC entry 219 (class 1259 OID 19393)
 -- Name: libro_portada_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -571,8 +572,8 @@ CREATE SEQUENCE public.libro_portada_id_seq
 ALTER TABLE public.libro_portada_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2845 (class 0 OID 0)
--- Dependencies: 249
+-- TOC entry 4246 (class 0 OID 0)
+-- Dependencies: 219
 -- Name: libro_portada_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -580,7 +581,7 @@ ALTER SEQUENCE public.libro_portada_id_seq OWNED BY public.libro_portada.id;
 
 
 --
--- TOC entry 238 (class 1259 OID 44245)
+-- TOC entry 220 (class 1259 OID 19395)
 -- Name: libros; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -609,7 +610,7 @@ CREATE TABLE public.libros (
 ALTER TABLE public.libros OWNER TO postgres;
 
 --
--- TOC entry 237 (class 1259 OID 44243)
+-- TOC entry 221 (class 1259 OID 19414)
 -- Name: libros_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -624,8 +625,8 @@ CREATE SEQUENCE public.libros_id_seq
 ALTER TABLE public.libros_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2846 (class 0 OID 0)
--- Dependencies: 237
+-- TOC entry 4247 (class 0 OID 0)
+-- Dependencies: 221
 -- Name: libros_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -633,7 +634,7 @@ ALTER SEQUENCE public.libros_id_seq OWNED BY public.libros.id;
 
 
 --
--- TOC entry 197 (class 1259 OID 40728)
+-- TOC entry 222 (class 1259 OID 19416)
 -- Name: migrations; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -647,7 +648,7 @@ CREATE TABLE public.migrations (
 ALTER TABLE public.migrations OWNER TO postgres;
 
 --
--- TOC entry 196 (class 1259 OID 40726)
+-- TOC entry 223 (class 1259 OID 19419)
 -- Name: migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -663,8 +664,8 @@ CREATE SEQUENCE public.migrations_id_seq
 ALTER TABLE public.migrations_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2847 (class 0 OID 0)
--- Dependencies: 196
+-- TOC entry 4248 (class 0 OID 0)
+-- Dependencies: 223
 -- Name: migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -672,7 +673,7 @@ ALTER SEQUENCE public.migrations_id_seq OWNED BY public.migrations.id;
 
 
 --
--- TOC entry 221 (class 1259 OID 44051)
+-- TOC entry 224 (class 1259 OID 19421)
 -- Name: model_has_permissions; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -686,7 +687,7 @@ CREATE TABLE public.model_has_permissions (
 ALTER TABLE public.model_has_permissions OWNER TO postgres;
 
 --
--- TOC entry 222 (class 1259 OID 44063)
+-- TOC entry 225 (class 1259 OID 19424)
 -- Name: model_has_roles; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -700,7 +701,7 @@ CREATE TABLE public.model_has_roles (
 ALTER TABLE public.model_has_roles OWNER TO postgres;
 
 --
--- TOC entry 214 (class 1259 OID 43997)
+-- TOC entry 226 (class 1259 OID 19427)
 -- Name: password_resets; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -714,7 +715,7 @@ CREATE TABLE public.password_resets (
 ALTER TABLE public.password_resets OWNER TO postgres;
 
 --
--- TOC entry 229 (class 1259 OID 44131)
+-- TOC entry 227 (class 1259 OID 19433)
 -- Name: permission_role; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -731,7 +732,7 @@ CREATE TABLE public.permission_role (
 ALTER TABLE public.permission_role OWNER TO postgres;
 
 --
--- TOC entry 228 (class 1259 OID 44129)
+-- TOC entry 228 (class 1259 OID 19436)
 -- Name: permission_role_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -747,7 +748,7 @@ CREATE SEQUENCE public.permission_role_id_seq
 ALTER TABLE public.permission_role_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2848 (class 0 OID 0)
+-- TOC entry 4249 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: permission_role_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -756,7 +757,7 @@ ALTER SEQUENCE public.permission_role_id_seq OWNED BY public.permission_role.id;
 
 
 --
--- TOC entry 227 (class 1259 OID 44111)
+-- TOC entry 229 (class 1259 OID 19438)
 -- Name: permission_user; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -773,7 +774,7 @@ CREATE TABLE public.permission_user (
 ALTER TABLE public.permission_user OWNER TO postgres;
 
 --
--- TOC entry 226 (class 1259 OID 44109)
+-- TOC entry 230 (class 1259 OID 19441)
 -- Name: permission_user_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -789,8 +790,8 @@ CREATE SEQUENCE public.permission_user_id_seq
 ALTER TABLE public.permission_user_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2849 (class 0 OID 0)
--- Dependencies: 226
+-- TOC entry 4250 (class 0 OID 0)
+-- Dependencies: 230
 -- Name: permission_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -798,7 +799,7 @@ ALTER SEQUENCE public.permission_user_id_seq OWNED BY public.permission_user.id;
 
 
 --
--- TOC entry 218 (class 1259 OID 44020)
+-- TOC entry 231 (class 1259 OID 19443)
 -- Name: permissions; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -816,7 +817,7 @@ CREATE TABLE public.permissions (
 ALTER TABLE public.permissions OWNER TO postgres;
 
 --
--- TOC entry 217 (class 1259 OID 44018)
+-- TOC entry 232 (class 1259 OID 19451)
 -- Name: permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -831,8 +832,8 @@ CREATE SEQUENCE public.permissions_id_seq
 ALTER TABLE public.permissions_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2850 (class 0 OID 0)
--- Dependencies: 217
+-- TOC entry 4251 (class 0 OID 0)
+-- Dependencies: 232
 -- Name: permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -840,7 +841,7 @@ ALTER SEQUENCE public.permissions_id_seq OWNED BY public.permissions.id;
 
 
 --
--- TOC entry 242 (class 1259 OID 44349)
+-- TOC entry 233 (class 1259 OID 19453)
 -- Name: portadas; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -865,7 +866,7 @@ CREATE TABLE public.portadas (
 ALTER TABLE public.portadas OWNER TO postgres;
 
 --
--- TOC entry 241 (class 1259 OID 44347)
+-- TOC entry 234 (class 1259 OID 19469)
 -- Name: portadas_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -880,8 +881,8 @@ CREATE SEQUENCE public.portadas_id_seq
 ALTER TABLE public.portadas_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2851 (class 0 OID 0)
--- Dependencies: 241
+-- TOC entry 4252 (class 0 OID 0)
+-- Dependencies: 234
 -- Name: portadas_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -889,7 +890,7 @@ ALTER SEQUENCE public.portadas_id_seq OWNED BY public.portadas.id;
 
 
 --
--- TOC entry 223 (class 1259 OID 44074)
+-- TOC entry 235 (class 1259 OID 19471)
 -- Name: role_has_permissions; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -902,7 +903,7 @@ CREATE TABLE public.role_has_permissions (
 ALTER TABLE public.role_has_permissions OWNER TO postgres;
 
 --
--- TOC entry 225 (class 1259 OID 44091)
+-- TOC entry 236 (class 1259 OID 19474)
 -- Name: role_user; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -919,7 +920,7 @@ CREATE TABLE public.role_user (
 ALTER TABLE public.role_user OWNER TO postgres;
 
 --
--- TOC entry 224 (class 1259 OID 44089)
+-- TOC entry 237 (class 1259 OID 19477)
 -- Name: role_user_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -935,8 +936,8 @@ CREATE SEQUENCE public.role_user_id_seq
 ALTER TABLE public.role_user_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2852 (class 0 OID 0)
--- Dependencies: 224
+-- TOC entry 4253 (class 0 OID 0)
+-- Dependencies: 237
 -- Name: role_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -944,7 +945,7 @@ ALTER SEQUENCE public.role_user_id_seq OWNED BY public.role_user.id;
 
 
 --
--- TOC entry 220 (class 1259 OID 44035)
+-- TOC entry 238 (class 1259 OID 19479)
 -- Name: roles; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -963,7 +964,7 @@ CREATE TABLE public.roles (
 ALTER TABLE public.roles OWNER TO postgres;
 
 --
--- TOC entry 219 (class 1259 OID 44033)
+-- TOC entry 239 (class 1259 OID 19488)
 -- Name: roles_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -978,8 +979,8 @@ CREATE SEQUENCE public.roles_id_seq
 ALTER TABLE public.roles_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2853 (class 0 OID 0)
--- Dependencies: 219
+-- TOC entry 4254 (class 0 OID 0)
+-- Dependencies: 239
 -- Name: roles_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -987,7 +988,7 @@ ALTER SEQUENCE public.roles_id_seq OWNED BY public.roles.id;
 
 
 --
--- TOC entry 230 (class 1259 OID 44149)
+-- TOC entry 240 (class 1259 OID 19490)
 -- Name: sessions; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1004,7 +1005,7 @@ CREATE TABLE public.sessions (
 ALTER TABLE public.sessions OWNER TO postgres;
 
 --
--- TOC entry 236 (class 1259 OID 44222)
+-- TOC entry 241 (class 1259 OID 19496)
 -- Name: tipomaterial; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1023,7 +1024,7 @@ CREATE TABLE public.tipomaterial (
 ALTER TABLE public.tipomaterial OWNER TO postgres;
 
 --
--- TOC entry 235 (class 1259 OID 44220)
+-- TOC entry 242 (class 1259 OID 19505)
 -- Name: tipomaterial_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1038,8 +1039,8 @@ CREATE SEQUENCE public.tipomaterial_id_seq
 ALTER TABLE public.tipomaterial_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2854 (class 0 OID 0)
--- Dependencies: 235
+-- TOC entry 4255 (class 0 OID 0)
+-- Dependencies: 242
 -- Name: tipomaterial_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1047,7 +1048,7 @@ ALTER SEQUENCE public.tipomaterial_id_seq OWNED BY public.tipomaterial.id;
 
 
 --
--- TOC entry 203 (class 1259 OID 43873)
+-- TOC entry 243 (class 1259 OID 19507)
 -- Name: user_adress; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1072,7 +1073,7 @@ CREATE TABLE public.user_adress (
 ALTER TABLE public.user_adress OWNER TO postgres;
 
 --
--- TOC entry 202 (class 1259 OID 43871)
+-- TOC entry 244 (class 1259 OID 19522)
 -- Name: user_adress_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1088,8 +1089,8 @@ CREATE SEQUENCE public.user_adress_id_seq
 ALTER TABLE public.user_adress_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2855 (class 0 OID 0)
--- Dependencies: 202
+-- TOC entry 4256 (class 0 OID 0)
+-- Dependencies: 244
 -- Name: user_adress_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1097,7 +1098,7 @@ ALTER SEQUENCE public.user_adress_id_seq OWNED BY public.user_adress.id;
 
 
 --
--- TOC entry 205 (class 1259 OID 43898)
+-- TOC entry 245 (class 1259 OID 19524)
 -- Name: user_extend; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1117,7 +1118,7 @@ CREATE TABLE public.user_extend (
 ALTER TABLE public.user_extend OWNER TO postgres;
 
 --
--- TOC entry 204 (class 1259 OID 43896)
+-- TOC entry 246 (class 1259 OID 19534)
 -- Name: user_extend_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1133,8 +1134,8 @@ CREATE SEQUENCE public.user_extend_id_seq
 ALTER TABLE public.user_extend_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2856 (class 0 OID 0)
--- Dependencies: 204
+-- TOC entry 4257 (class 0 OID 0)
+-- Dependencies: 246
 -- Name: user_extend_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1142,7 +1143,7 @@ ALTER SEQUENCE public.user_extend_id_seq OWNED BY public.user_extend.id;
 
 
 --
--- TOC entry 207 (class 1259 OID 43918)
+-- TOC entry 247 (class 1259 OID 19536)
 -- Name: user_social; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1161,7 +1162,7 @@ CREATE TABLE public.user_social (
 ALTER TABLE public.user_social OWNER TO postgres;
 
 --
--- TOC entry 206 (class 1259 OID 43916)
+-- TOC entry 248 (class 1259 OID 19542)
 -- Name: user_social_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1177,8 +1178,8 @@ CREATE SEQUENCE public.user_social_id_seq
 ALTER TABLE public.user_social_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2857 (class 0 OID 0)
--- Dependencies: 206
+-- TOC entry 4258 (class 0 OID 0)
+-- Dependencies: 248
 -- Name: user_social_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1186,7 +1187,7 @@ ALTER SEQUENCE public.user_social_id_seq OWNED BY public.user_social.id;
 
 
 --
--- TOC entry 201 (class 1259 OID 43830)
+-- TOC entry 249 (class 1259 OID 19544)
 -- Name: users; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -1232,7 +1233,7 @@ CREATE TABLE public.users (
 ALTER TABLE public.users OWNER TO postgres;
 
 --
--- TOC entry 200 (class 1259 OID 43828)
+-- TOC entry 250 (class 1259 OID 19566)
 -- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -1248,8 +1249,8 @@ CREATE SEQUENCE public.users_id_seq
 ALTER TABLE public.users_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2858 (class 0 OID 0)
--- Dependencies: 200
+-- TOC entry 4259 (class 0 OID 0)
+-- Dependencies: 250
 -- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -1257,7 +1258,7 @@ ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
--- TOC entry 2361 (class 2604 OID 43937)
+-- TOC entry 3720 (class 2604 OID 19568)
 -- Name: categorias id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1265,7 +1266,7 @@ ALTER TABLE ONLY public.categorias ALTER COLUMN id SET DEFAULT nextval('public.c
 
 
 --
--- TOC entry 2386 (class 2604 OID 44164)
+-- TOC entry 3727 (class 2604 OID 19569)
 -- Name: codigopaises id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1273,7 +1274,7 @@ ALTER TABLE ONLY public.codigopaises ALTER COLUMN id SET DEFAULT nextval('public
 
 
 --
--- TOC entry 2447 (class 2604 OID 44399)
+-- TOC entry 3730 (class 2604 OID 19570)
 -- Name: editoriale_libro id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1281,7 +1282,7 @@ ALTER TABLE ONLY public.editoriale_libro ALTER COLUMN id SET DEFAULT nextval('pu
 
 
 --
--- TOC entry 2393 (class 2604 OID 44191)
+-- TOC entry 3739 (class 2604 OID 19571)
 -- Name: editoriales id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1289,7 +1290,7 @@ ALTER TABLE ONLY public.editoriales ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 2319 (class 2604 OID 40739)
+-- TOC entry 3745 (class 2604 OID 19572)
 -- Name: empresas id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1297,7 +1298,7 @@ ALTER TABLE ONLY public.empresas ALTER COLUMN id SET DEFAULT nextval('public.emp
 
 
 --
--- TOC entry 2374 (class 2604 OID 44009)
+-- TOC entry 3747 (class 2604 OID 19573)
 -- Name: failed_jobs id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1305,7 +1306,7 @@ ALTER TABLE ONLY public.failed_jobs ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 2453 (class 2604 OID 44443)
+-- TOC entry 3755 (class 2604 OID 19574)
 -- Name: historiallibros id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1313,7 +1314,7 @@ ALTER TABLE ONLY public.historiallibros ALTER COLUMN id SET DEFAULT nextval('pub
 
 
 --
--- TOC entry 2371 (class 2604 OID 43976)
+-- TOC entry 3758 (class 2604 OID 19575)
 -- Name: imagen_user id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1321,7 +1322,7 @@ ALTER TABLE ONLY public.imagen_user ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 2363 (class 2604 OID 43946)
+-- TOC entry 3766 (class 2604 OID 19576)
 -- Name: imagenes id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1329,7 +1330,7 @@ ALTER TABLE ONLY public.imagenes ALTER COLUMN id SET DEFAULT nextval('public.ima
 
 
 --
--- TOC entry 2450 (class 2604 OID 44421)
+-- TOC entry 3769 (class 2604 OID 19577)
 -- Name: inventariolibro_portada id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1337,7 +1338,7 @@ ALTER TABLE ONLY public.inventariolibro_portada ALTER COLUMN id SET DEFAULT next
 
 
 --
--- TOC entry 2420 (class 2604 OID 44299)
+-- TOC entry 3785 (class 2604 OID 19578)
 -- Name: inventariolibros id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1345,7 +1346,7 @@ ALTER TABLE ONLY public.inventariolibros ALTER COLUMN id SET DEFAULT nextval('pu
 
 
 --
--- TOC entry 2461 (class 2604 OID 58486)
+-- TOC entry 3788 (class 2604 OID 19579)
 -- Name: libro_portada id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1353,7 +1354,7 @@ ALTER TABLE ONLY public.libro_portada ALTER COLUMN id SET DEFAULT nextval('publi
 
 
 --
--- TOC entry 2406 (class 2604 OID 44248)
+-- TOC entry 3802 (class 2604 OID 19580)
 -- Name: libros id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1361,7 +1362,7 @@ ALTER TABLE ONLY public.libros ALTER COLUMN id SET DEFAULT nextval('public.libro
 
 
 --
--- TOC entry 2318 (class 2604 OID 40731)
+-- TOC entry 3803 (class 2604 OID 19581)
 -- Name: migrations id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1369,7 +1370,7 @@ ALTER TABLE ONLY public.migrations ALTER COLUMN id SET DEFAULT nextval('public.m
 
 
 --
--- TOC entry 2385 (class 2604 OID 44134)
+-- TOC entry 3804 (class 2604 OID 19582)
 -- Name: permission_role id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1377,7 +1378,7 @@ ALTER TABLE ONLY public.permission_role ALTER COLUMN id SET DEFAULT nextval('pub
 
 
 --
--- TOC entry 2384 (class 2604 OID 44114)
+-- TOC entry 3805 (class 2604 OID 19583)
 -- Name: permission_user id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1385,7 +1386,7 @@ ALTER TABLE ONLY public.permission_user ALTER COLUMN id SET DEFAULT nextval('pub
 
 
 --
--- TOC entry 2376 (class 2604 OID 44023)
+-- TOC entry 3808 (class 2604 OID 19584)
 -- Name: permissions id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1393,7 +1394,7 @@ ALTER TABLE ONLY public.permissions ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 2436 (class 2604 OID 44352)
+-- TOC entry 3819 (class 2604 OID 19585)
 -- Name: portadas id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1401,7 +1402,7 @@ ALTER TABLE ONLY public.portadas ALTER COLUMN id SET DEFAULT nextval('public.por
 
 
 --
--- TOC entry 2383 (class 2604 OID 44094)
+-- TOC entry 3820 (class 2604 OID 19586)
 -- Name: role_user id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1409,7 +1410,7 @@ ALTER TABLE ONLY public.role_user ALTER COLUMN id SET DEFAULT nextval('public.ro
 
 
 --
--- TOC entry 2379 (class 2604 OID 44038)
+-- TOC entry 3824 (class 2604 OID 19587)
 -- Name: roles id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1417,7 +1418,7 @@ ALTER TABLE ONLY public.roles ALTER COLUMN id SET DEFAULT nextval('public.roles_
 
 
 --
--- TOC entry 2402 (class 2604 OID 44225)
+-- TOC entry 3828 (class 2604 OID 19588)
 -- Name: tipomaterial id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1425,7 +1426,7 @@ ALTER TABLE ONLY public.tipomaterial ALTER COLUMN id SET DEFAULT nextval('public
 
 
 --
--- TOC entry 2342 (class 2604 OID 43876)
+-- TOC entry 3838 (class 2604 OID 19589)
 -- Name: user_adress id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1433,7 +1434,7 @@ ALTER TABLE ONLY public.user_adress ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 2352 (class 2604 OID 43901)
+-- TOC entry 3843 (class 2604 OID 19590)
 -- Name: user_extend id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1441,7 +1442,7 @@ ALTER TABLE ONLY public.user_extend ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 2357 (class 2604 OID 43921)
+-- TOC entry 3847 (class 2604 OID 19591)
 -- Name: user_social id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1449,7 +1450,7 @@ ALTER TABLE ONLY public.user_social ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 2325 (class 2604 OID 43833)
+-- TOC entry 3864 (class 2604 OID 19592)
 -- Name: users id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -1457,8 +1458,8 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 
 
 --
--- TOC entry 2784 (class 0 OID 43934)
--- Dependencies: 209
+-- TOC entry 4172 (class 0 OID 19259)
+-- Dependencies: 196
 -- Data for Name: categorias; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -1467,8 +1468,8 @@ COPY public.categorias (id, categoria, deleted_at, created_at, updated_at) FROM 
 
 
 --
--- TOC entry 2807 (class 0 OID 44161)
--- Dependencies: 232
+-- TOC entry 4174 (class 0 OID 19265)
+-- Dependencies: 198
 -- Data for Name: codigopaises; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -1477,8 +1478,8 @@ COPY public.codigopaises (id, codigo, lenguaje, tipo, empresa_id, status_lenguaj
 
 
 --
--- TOC entry 2819 (class 0 OID 44396)
--- Dependencies: 244
+-- TOC entry 4176 (class 0 OID 19276)
+-- Dependencies: 200
 -- Data for Name: editoriale_libro; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -1487,8 +1488,8 @@ COPY public.editoriale_libro (id, editoriale_id, libro_id, deleted_at, created_a
 
 
 --
--- TOC entry 2809 (class 0 OID 44188)
--- Dependencies: 234
+-- TOC entry 4178 (class 0 OID 19283)
+-- Dependencies: 202
 -- Data for Name: editoriales; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -1742,12 +1743,17 @@ COPY public.editoriales (id, editorial, representante, telefonos, email, predete
 248	C L E				f	1	1	2	\N	2022-01-11 18:25:13	2022-01-11 18:25:13	'c':1 'l':2
 249	MARCOMBO EDICIONES MEXICANAS				f	1	1	2	\N	2022-01-12 15:58:53	2022-01-12 15:58:53	'edicion':2 'marcomb':1 'mexican':3
 250	ESFINGE				f	1	1	2	\N	2022-01-26 14:27:24	2022-01-26 14:27:24	'esfing':1
+251	REVERTÉ S.A.				f	1	1	2	\N	2022-02-11 14:40:44	2022-02-11 14:40:44	'revert':1 's.a':2
+252	EDITORIAL CRÍTICA				f	1	1	2	\N	2022-02-17 16:05:48	2022-02-17 16:05:48	'critic':2 'editorial':1
+253	EDERE				f	1	1	2	\N	2022-02-17 20:40:47	2022-02-17 20:40:47	'eder':1
+254	MANUAL MODERNO				f	1	1	2	\N	2022-02-17 20:56:24	2022-02-17 20:56:24	'manual':1 'modern':2
+255	SUDAMERICANA				f	1	1	2	\N	2022-02-17 21:26:32	2022-02-17 21:26:32	'sudamerican':1
 \.
 
 
 --
--- TOC entry 2774 (class 0 OID 40736)
--- Dependencies: 199
+-- TOC entry 4180 (class 0 OID 19299)
+-- Dependencies: 204
 -- Data for Name: empresas; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -1757,8 +1763,8 @@ COPY public.empresas (id, razon_social, domicilio_fiscal, rfc, ip, host, deleted
 
 
 --
--- TOC entry 2791 (class 0 OID 44006)
--- Dependencies: 216
+-- TOC entry 4182 (class 0 OID 19312)
+-- Dependencies: 206
 -- Data for Name: failed_jobs; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -1767,18 +1773,19 @@ COPY public.failed_jobs (id, uuid, connection, queue, payload, exception, failed
 
 
 --
--- TOC entry 2823 (class 0 OID 44440)
--- Dependencies: 248
+-- TOC entry 4184 (class 0 OID 19321)
+-- Dependencies: 208
 -- Data for Name: historiallibros; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.historiallibros (id, libro_id, inventariolibro_id, user_id, fecha, tipo_movto, observaciones, empresa_id, creado_por_id, deleted_at, created_at, updated_at) FROM stdin;
+1	1004	125	1	2022-02-17 00:00:00	RESERVADO/APARTADO	PRUEBA DE RESERVATION...	1	1	\N	2022-02-17 23:33:04	2022-02-17 23:33:04
 \.
 
 
 --
--- TOC entry 2788 (class 0 OID 43973)
--- Dependencies: 213
+-- TOC entry 4186 (class 0 OID 19336)
+-- Dependencies: 210
 -- Data for Name: imagen_user; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -1787,8 +1794,8 @@ COPY public.imagen_user (id, imagen_id, user_id, deleted_at, created_at, updated
 
 
 --
--- TOC entry 2786 (class 0 OID 43943)
--- Dependencies: 211
+-- TOC entry 4188 (class 0 OID 19343)
+-- Dependencies: 212
 -- Data for Name: imagenes; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -1797,8 +1804,8 @@ COPY public.imagenes (id, root, filename, filename_png, filename_thumb, pie_de_f
 
 
 --
--- TOC entry 2821 (class 0 OID 44418)
--- Dependencies: 246
+-- TOC entry 4190 (class 0 OID 19358)
+-- Dependencies: 214
 -- Data for Name: inventariolibro_portada; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2064,7 +2071,6 @@ COPY public.inventariolibro_portada (id, inventariolibro_id, portada_id, deleted
 263	286	323	\N	\N	\N
 264	287	324	\N	\N	\N
 265	288	325	\N	\N	\N
-266	289	326	\N	\N	\N
 267	290	327	\N	\N	\N
 268	291	328	\N	\N	\N
 271	294	330	\N	\N	\N
@@ -2399,12 +2405,326 @@ COPY public.inventariolibro_portada (id, inventariolibro_id, portada_id, deleted
 606	643	461	\N	\N	\N
 607	644	461	\N	\N	\N
 608	645	461	\N	\N	\N
+609	646	462	\N	\N	\N
+610	647	462	\N	\N	\N
+611	648	463	\N	\N	\N
+612	649	463	\N	\N	\N
+613	650	463	\N	\N	\N
+614	651	463	\N	\N	\N
+615	652	463	\N	\N	\N
+616	653	463	\N	\N	\N
+617	654	463	\N	\N	\N
+618	655	464	\N	\N	\N
+619	656	465	\N	\N	\N
+620	657	465	\N	\N	\N
+621	658	465	\N	\N	\N
+622	659	465	\N	\N	\N
+623	660	465	\N	\N	\N
+624	661	466	\N	\N	\N
+625	662	466	\N	\N	\N
+626	663	467	\N	\N	\N
+627	664	467	\N	\N	\N
+628	665	467	\N	\N	\N
+629	666	468	\N	\N	\N
+630	667	469	\N	\N	\N
+631	668	469	\N	\N	\N
+632	669	469	\N	\N	\N
+633	670	469	\N	\N	\N
+634	671	470	\N	\N	\N
+635	672	470	\N	\N	\N
+636	673	470	\N	\N	\N
+637	674	470	\N	\N	\N
+638	675	471	\N	\N	\N
+639	676	473	\N	\N	\N
+643	680	474	\N	\N	\N
+644	681	474	\N	\N	\N
+645	682	474	\N	\N	\N
+646	683	475	\N	\N	\N
+647	684	475	\N	\N	\N
+648	685	475	\N	\N	\N
+649	686	475	\N	\N	\N
+650	687	475	\N	\N	\N
+651	688	475	\N	\N	\N
+652	689	475	\N	\N	\N
+653	690	475	\N	\N	\N
+658	695	476	\N	\N	\N
+659	696	476	\N	\N	\N
+660	698	476	\N	\N	\N
+661	699	476	\N	\N	\N
+662	701	476	\N	\N	\N
+663	702	476	\N	\N	\N
+664	703	476	\N	\N	\N
+665	705	476	\N	\N	\N
+666	707	476	\N	\N	\N
+667	708	477	\N	\N	\N
+668	709	478	\N	\N	\N
+669	710	478	\N	\N	\N
+670	711	478	\N	\N	\N
+671	712	478	\N	\N	\N
+672	713	478	\N	\N	\N
+673	714	478	\N	\N	\N
+674	715	478	\N	\N	\N
+675	716	478	\N	\N	\N
+676	717	478	\N	\N	\N
+677	718	478	\N	\N	\N
+678	719	479	\N	\N	\N
+679	720	480	\N	\N	\N
+680	721	480	\N	\N	\N
+681	722	481	\N	\N	\N
+682	723	482	\N	\N	\N
+683	724	483	\N	\N	\N
+684	725	483	\N	\N	\N
+685	726	485	\N	\N	\N
+686	727	486	\N	\N	\N
+687	728	486	\N	\N	\N
+688	729	486	\N	\N	\N
+689	730	486	\N	\N	\N
+690	731	487	\N	\N	\N
+691	732	487	\N	\N	\N
+692	733	488	\N	\N	\N
+693	734	489	\N	\N	\N
+694	735	491	\N	\N	\N
+695	736	492	\N	\N	\N
+696	737	492	\N	\N	\N
+697	738	492	\N	\N	\N
+698	739	492	\N	\N	\N
+699	740	492	\N	\N	\N
+700	741	492	\N	\N	\N
+701	742	492	\N	\N	\N
+702	743	492	\N	\N	\N
+703	744	493	\N	\N	\N
+704	745	494	\N	\N	\N
+705	746	495	\N	\N	\N
+706	747	495	\N	\N	\N
+707	748	496	\N	\N	\N
+708	749	496	\N	\N	\N
+709	750	498	\N	\N	\N
+710	751	498	\N	\N	\N
+711	752	499	\N	\N	\N
+712	754	499	\N	\N	\N
+713	755	500	\N	\N	\N
+714	756	500	\N	\N	\N
+715	757	501	\N	\N	\N
+716	758	501	\N	\N	\N
+717	759	502	\N	\N	\N
+718	760	503	\N	\N	\N
+719	761	504	\N	\N	\N
+720	762	504	\N	\N	\N
+721	763	504	\N	\N	\N
+722	764	504	\N	\N	\N
+723	765	504	\N	\N	\N
+724	766	504	\N	\N	\N
+725	767	504	\N	\N	\N
+726	768	504	\N	\N	\N
+727	769	504	\N	\N	\N
+728	770	504	\N	\N	\N
+729	771	505	\N	\N	\N
+730	772	506	\N	\N	\N
+731	773	507	\N	\N	\N
+732	774	508	\N	\N	\N
+733	775	509	\N	\N	\N
+734	776	510	\N	\N	\N
+735	777	511	\N	\N	\N
+736	778	511	\N	\N	\N
+737	779	512	\N	\N	\N
+738	780	513	\N	\N	\N
+739	781	513	\N	\N	\N
+740	782	514	\N	\N	\N
+741	783	514	\N	\N	\N
+742	784	515	\N	\N	\N
+743	785	515	\N	\N	\N
+744	786	516	\N	\N	\N
+745	787	516	\N	\N	\N
+746	788	517	\N	\N	\N
+747	789	517	\N	\N	\N
+748	790	518	\N	\N	\N
+749	792	518	\N	\N	\N
+750	793	519	\N	\N	\N
+751	794	520	\N	\N	\N
+752	795	520	\N	\N	\N
+753	796	521	\N	\N	\N
+754	797	521	\N	\N	\N
+755	798	522	\N	\N	\N
+756	799	522	\N	\N	\N
+757	800	523	\N	\N	\N
+758	801	523	\N	\N	\N
+761	804	525	\N	\N	\N
+762	805	525	\N	\N	\N
+763	806	526	\N	\N	\N
+764	807	526	\N	\N	\N
+765	808	526	\N	\N	\N
+766	809	526	\N	\N	\N
+767	810	526	\N	\N	\N
+768	811	526	\N	\N	\N
+769	812	526	\N	\N	\N
+770	813	526	\N	\N	\N
+771	814	526	\N	\N	\N
+772	815	526	\N	\N	\N
+773	816	526	\N	\N	\N
+774	817	527	\N	\N	\N
+775	818	527	\N	\N	\N
+776	819	528	\N	\N	\N
+777	820	528	\N	\N	\N
+778	821	528	\N	\N	\N
+779	822	528	\N	\N	\N
+780	824	529	\N	\N	\N
+781	825	530	\N	\N	\N
+782	826	531	\N	\N	\N
+783	827	532	\N	\N	\N
+784	828	533	\N	\N	\N
+785	829	534	\N	\N	\N
+786	830	535	\N	\N	\N
+787	831	536	\N	\N	\N
+788	832	537	\N	\N	\N
+789	833	538	\N	\N	\N
+790	834	539	\N	\N	\N
+791	835	540	\N	\N	\N
+792	836	541	\N	\N	\N
+793	837	542	\N	\N	\N
+794	838	542	\N	\N	\N
+795	839	542	\N	\N	\N
+796	840	542	\N	\N	\N
+797	841	542	\N	\N	\N
+798	842	542	\N	\N	\N
+799	843	543	\N	\N	\N
+800	844	543	\N	\N	\N
+801	845	543	\N	\N	\N
+802	846	543	\N	\N	\N
+803	847	543	\N	\N	\N
+804	848	543	\N	\N	\N
+805	849	543	\N	\N	\N
+806	850	543	\N	\N	\N
+807	851	543	\N	\N	\N
+808	852	543	\N	\N	\N
+809	853	543	\N	\N	\N
+810	854	543	\N	\N	\N
+811	855	544	\N	\N	\N
+812	856	544	\N	\N	\N
+813	857	545	\N	\N	\N
+814	858	545	\N	\N	\N
+815	859	545	\N	\N	\N
+816	860	545	\N	\N	\N
+825	870	547	\N	\N	\N
+826	871	547	\N	\N	\N
+827	872	547	\N	\N	\N
+828	873	547	\N	\N	\N
+829	874	547	\N	\N	\N
+830	875	547	\N	\N	\N
+831	876	547	\N	\N	\N
+832	877	547	\N	\N	\N
+833	878	548	\N	\N	\N
+834	879	549	\N	\N	\N
+835	880	550	\N	\N	\N
+836	881	550	\N	\N	\N
+837	882	551	\N	\N	\N
+838	883	551	\N	\N	\N
+839	884	552	\N	\N	\N
+840	885	552	\N	\N	\N
+841	886	552	\N	\N	\N
+842	887	552	\N	\N	\N
+843	888	553	\N	\N	\N
+844	889	553	\N	\N	\N
+845	890	554	\N	\N	\N
+846	891	555	\N	\N	\N
+847	892	555	\N	\N	\N
+848	893	556	\N	\N	\N
+849	894	556	\N	\N	\N
+850	895	557	\N	\N	\N
+851	896	557	\N	\N	\N
+852	897	558	\N	\N	\N
+853	898	558	\N	\N	\N
+854	899	559	\N	\N	\N
+855	900	560	\N	\N	\N
+856	901	561	\N	\N	\N
+857	902	562	\N	\N	\N
+858	903	562	\N	\N	\N
+859	904	563	\N	\N	\N
+860	905	563	\N	\N	\N
+861	906	564	\N	\N	\N
+862	907	565	\N	\N	\N
+863	908	567	\N	\N	\N
+864	909	568	\N	\N	\N
+865	910	568	\N	\N	\N
+866	911	568	\N	\N	\N
+867	912	568	\N	\N	\N
+868	913	568	\N	\N	\N
+869	914	568	\N	\N	\N
+871	917	569	\N	\N	\N
+872	918	569	\N	\N	\N
+873	919	569	\N	\N	\N
+874	920	569	\N	\N	\N
+875	921	569	\N	\N	\N
+876	922	569	\N	\N	\N
+877	923	569	\N	\N	\N
+878	924	570	\N	\N	\N
+879	925	570	\N	\N	\N
+880	926	570	\N	\N	\N
+881	927	570	\N	\N	\N
+882	928	570	\N	\N	\N
+883	929	571	\N	\N	\N
+884	930	572	\N	\N	\N
+885	931	572	\N	\N	\N
+886	932	573	\N	\N	\N
+887	933	573	\N	\N	\N
+888	934	573	\N	\N	\N
+889	935	573	\N	\N	\N
+890	936	573	\N	\N	\N
+891	937	573	\N	\N	\N
+892	938	574	\N	\N	\N
+893	939	574	\N	\N	\N
+894	940	574	\N	\N	\N
+895	941	574	\N	\N	\N
+896	942	574	\N	\N	\N
+897	943	575	\N	\N	\N
+898	944	576	\N	\N	\N
+899	945	577	\N	\N	\N
+900	946	577	\N	\N	\N
+901	947	577	\N	\N	\N
+902	948	577	\N	\N	\N
+903	949	577	\N	\N	\N
+904	950	578	\N	\N	\N
+905	951	578	\N	\N	\N
+906	952	579	\N	\N	\N
+907	953	579	\N	\N	\N
+908	954	580	\N	\N	\N
+909	955	580	\N	\N	\N
+910	956	581	\N	\N	\N
+911	957	581	\N	\N	\N
+912	958	583	\N	\N	\N
+913	959	583	\N	\N	\N
+914	960	584	\N	\N	\N
+915	961	585	\N	\N	\N
+916	962	585	\N	\N	\N
+917	963	585	\N	\N	\N
+918	964	585	\N	\N	\N
+919	965	585	\N	\N	\N
+920	966	585	\N	\N	\N
+921	967	586	\N	\N	\N
+922	968	586	\N	\N	\N
+923	969	587	\N	\N	\N
+924	970	587	\N	\N	\N
+925	971	588	\N	\N	\N
+926	972	589	\N	\N	\N
+927	973	589	\N	\N	\N
+928	974	589	\N	\N	\N
+929	975	589	\N	\N	\N
+930	976	589	\N	\N	\N
+931	977	589	\N	\N	\N
+932	978	589	\N	\N	\N
+933	979	589	\N	\N	\N
+935	981	590	\N	\N	\N
+936	982	590	\N	\N	\N
+937	983	590	\N	\N	\N
+938	984	590	\N	\N	\N
+939	985	590	\N	\N	\N
+940	986	590	\N	\N	\N
+941	987	592	\N	\N	\N
 \.
 
 
 --
--- TOC entry 2815 (class 0 OID 44296)
--- Dependencies: 240
+-- TOC entry 4192 (class 0 OID 19365)
+-- Dependencies: 216
 -- Data for Name: inventariolibros; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -2419,12 +2739,14 @@ COPY public.inventariolibros (id, libro_id, isbn, clasificacion, edicion, codeba
 11	936	01-89637-028-3	737.4972 B154 2005	2501a. Ed.	\N	0	\N	\N	0	\N	220	635fa7f9-d3ac-4e56-9a62-87e3d3087161		1	1	2	\N	2021-11-08 15:39:36	2021-11-08 15:39:36	¦02001-89637-028-3¦082737.4972 B154 2005¦100BAILEY, DON¦245¡VIVA LA REVOLUCIóN!: THE MONEY OF THE MEXICAN REVOLUTION / BY DON BAILEY¦2501A. ED.¦260ESTADOS UNIDOS DE AMéRICA : AMERICAN NUMISMATIC ASSOCIATION MONEY MUSEUM¦300159 PAG.¦6501. NUMISMáTICA - MéXICO 2. MéXICO - HISTORIA - REVOLUCIóN, 1910 - 1917¦700I. FLORES COLORADO, JOE, COAUT.Ì		'-028':3,12 '-3':4,13 '-89637':2,11 '01':1 '02001':10 '082737.4972':14 '100bailey':17 '1910':52 '1917':53 '2':48 '2005':7,16 '245':19 '2501a':8,32 '260estados':34 '300159':43 '6501':45 '700i':54 '737.4972':5 'amer':37 'americ':38 'association':40 'b154':6,15 'bailey':31 'by':29 'coaut':58 'color':56 'don':18,30 'ed':9,33 'flor':55 'histori':50 'joe':57 'mexic':27,47,49 'money':24,41 'museum':42 'numismat':46 'numismatic':39 'of':25 'pag':44 'revolu':22,51 'revolution':28 'the':23,26 'unid':35 'viv':20 'ì':59	
 12	937	978-607-95359-5-7	371.58 C657 2011	2501a. Ed.	\N	0	\N	\N	0	\N	167	ebadec61-8cb9-47f4-9368-16d833938950		1	1	2	\N	2021-11-17 13:28:11	2021-11-17 13:28:11	¦020978-607-95359-5-7¦082371.58 C657 2011¦100COBO, PALOMA¦245¿BULLYING?: LIBERATE DEL ACOSO ESCOLAR / PALOMA COBO¦2501A. ED.¦260MéXICO : PRODUCCIONES EDUCACIóN APLICADA¦30087 PAG.¦6501. BULLYING 2. VIOLENCIA ESCOLAR 2. ACOSO ESCOLAR¦700I. TELLO, ROMEO, COAUT.Ì		'-5':4,14 '-607':2,12 '-7':5,15 '-95359':3,13 '020978':11 '082371.58':16 '100cobo':19 '2':39,42 '2011':8,18 '245':21 '2501a':9,29 '260méxico':31 '30087':35 '371.58':6 '6501':37 '700i':45 '978':1 'acos':25,43 'aplic':34 'bullying':22,38 'c657':7,17 'coaut':48 'cob':28 'ed':10,30 'educ':33 'escol':26,41,44 'liberat':23 'pag':36 'palom':20,27 'produccion':32 'rome':47 'tell':46 'violenci':40 'ì':49	
 15	938	ISSN18703186	R 505 U58 2000	2501a. Ed.	\N	0	\N	\N	0	\N	179	3b3ec078-0adc-4d90-abca-6de115ff40f9		1	1	2	\N	2021-11-25 18:37:27	2021-11-25 18:37:27	¦020ISSN-1870-3186¦082R 505 U58 2000¦100UNIVERSIDAD NACIONAL AUTóNOMA DE MéXICO¦245¿COMO VES? REVISTA DE DIVULGACIóN DE LA CIENCIA / UNIVERSIDAD NACIONAL AUTóNOMA DE MéXICO¦2501A. ED.¦260MéXICO : UNAM¦30040 PAG,¦5001. MARZO (AñO 2, NUM. 16)¦5051. CIENCIA - PUBLICACIONES PERIóDICAS 2. TECNOLOGíA - PUBLICACIONES PERIóDICASÌ		'-1870':9 '-3186':10 '020issn':8 '082r':11 '100universidad':15 '16':45 '2':43,50 '2000':5,14 '245':20 '2501a':6,34 '260méxico':36 '30040':38 '5001':40 '505':3,12 '5051':46 'autonom':17,31 'año':42 'cienci':28,47 'divulg':25 'ed':7,35 'issn18703186':1 'marz':41 'mexic':19,33 'nacional':16,30 'num':44 'pag':39 'period':49 'periodicasì':53 'public':48,52 'r':2 'revist':23 'tecnolog':51 'u58':4,13 'unam':37 'univers':29 'ves':22	
+242	1134	\N	340 S625	\N	\N	0	\N	\N	0	\N	245	c6e0f848-b0f8-4285-b4e5-f0c3c7536bda		1	1	2	\N	2022-01-26 14:36:00	2022-01-26 14:36:00			'340':1 's625':2	1385
 14	938	18703186	R 505 U58 2000	2501a. Ed.	\N	0	\N	\N	0	\N	179	e9950994-2dc0-4697-ada1-ff5439e3fc19		1	1	2	\N	2021-11-25 17:40:48	2021-11-25 19:41:37	¦020ISSN-1870-3186¦082R 505 U58 2000¦100UNIVERSIDAD NACIONAL AUTóNOMA DE MéXICO¦245¿COMO VES? REVISTA DE DIVULGACIóN DE LA CIENCIA / UNIVERSIDAD NACIONAL AUTóNOMA DE MéXICO¦2501A. ED.¦260MéXICO : UNAM¦30040 PAG,¦5001. MARZO (AñO 2, NUM. 16)¦5051. CIENCIA - PUBLICACIONES PERIóDICAS 2. TECNOLOGíA - PUBLICACIONES PERIóDICASÌ	VOL. 1 (MARZO) 2. VOL. 2 (ABRIL) 3. VOL. 3 (JULIO)	'-1870':9 '-3186':10 '020issn':8 '082r':11 '100universidad':15 '16':45 '18703186':1 '2':43,50 '2000':5,14 '245':20 '2501a':6,34 '260méxico':36 '30040':38 '5001':40 '505':3,12 '5051':46 'autonom':17,31 'año':42 'cienci':28,47 'divulg':25 'ed':7,35 'marz':41 'mexic':19,33 'nacional':16,30 'num':44 'pag':39 'period':49 'periodicasì':53 'public':48,52 'r':2 'revist':23 'tecnolog':51 'u58':4,13 'unam':37 'univers':29 'ves':22	
 17	938	1870-3186	R 505 U58 2006	2501a. Ed.	\N	0	\N	\N	0	\N	179	fb015587-0a90-4096-bbb4-5bacc3988f61		1	1	2	\N	2021-11-25 20:02:42	2021-11-25 20:02:42	¦020ISSN-1870-3186¦082R 505 U58 2006¦100UNIVERSIDAD NACIONAL AUTóNOMA DE MéXICO¦245¿COMO VES? REVISTA DE DIVULGACIóN DE LA CIENCIA / UNIVERSIDAD NACIONAL AUTóNOMA DE MéXICO¦2501A. ED.¦260MéXICO : UNAM¦30040 PAG.¦500LA BIBLIOTECA SOLAMENTE TIENE EL EJEMPLAR DEL MES DE JUNIO DEL 2006¦5051. JUNIO (AñO 8, NUM. 91)¦6501. CIENCIA - PUBLICACIONES PERIóDICAS 2. TECNOLOGíA - PUBLICACIONES PERIóDICASÌ	VOL. 1 (JUNIO) 2. VOL. 2 (SEPTIEMBRE) 3. VOL. 3 (OCTUBRE)	'-1870':10 '-3186':2,11 '020issn':9 '082r':12 '100universidad':16 '1870':1 '2':63 '2006':6,15,52 '245':21 '2501a':7,35 '260méxico':37 '30040':39 '500la':41 '505':4,13 '5051':53 '6501':59 '8':56 '91':58 'autonom':18,32 'año':55 'bibliotec':42 'cienci':29,60 'divulg':26 'ed':8,36 'ejempl':46 'juni':50,54 'mes':48 'mexic':20,34 'nacional':17,31 'num':57 'pag':40 'period':62 'periodicasì':66 'public':61,65 'r':3 'revist':24 'sol':43 'tecnolog':64 'u58':5,14 'unam':38 'univers':30 'ves':23	
 20	938	ISSN 18703186	R 505 U58 2008	\N	\N	0	\N	\N	0	\N	179	b29d7d45-94c3-4b3f-a1fa-898391fbff3a		1	1	2	\N	2021-11-25 20:14:14	2021-11-25 20:14:14	&QUOT;¦020ISSN-1870-3186¦082R 505 U58 2008¦100UNIVERSIDAD NACIONAL AUTóNOMA DE MéXICO¦245¿COMO VES? REVISTA DE DIVULGACIóN DE LA CIENCIA / UNIVERSIDAD NACIONAL AUTóNOMA DE MéXICO¦2501A. ED.¦260MéXICO : UNAM¦3003 VOL.¦500LA BIBLIOTECA SOLAMENTE TIENE LOS EJEMPLARES DE LOS MESES DE: JUNIO, SEPTIEMBRE Y OCTUBRE¦5051. VOL. 1 (JUNIO) 2. VOL. 2 (SEPTIEMBRE) 3. VOL. 3 (OCTUBRE) ¦6501. CIENCIA - PUBLICACIONES PERIóDICAS 2. TECNOLOGíA - PUBLICACIONES PERIóDICASÌ&QUOT;	VOL. 1 (JUNIO) 2. VOL. 2 (SEPTIEMBRE) 3. VOL. 3 (OCTUBRE)	'-1870':8 '-3186':9 '020issn':7 '082r':10 '1':55 '100universidad':14 '18703186':2 '2':57,59,69 '2008':6,13 '245':19 '2501a':33 '260méxico':35 '3':61,63 '3003':37 '500la':39 '505':4,11 '5051':53 '6501':65 'autonom':16,30 'bibliotec':40 'cienci':27,66 'divulg':24 'ed':34 'ejemplar':44 'issn':1 'juni':49,56 'mes':47 'mexic':18,32 'nacional':15,29 'octubr':52,64 'period':68 'periodicasì':72 'public':67,71 'r':3 'revist':22 'septiembr':50,60 'sol':41 'tecnolog':70 'u58':5,12 'unam':36 'univers':28 'ves':21 'vol':38,54,58,62	
 43	944	9684037368	616.9792 F711 1998	2501a. Ed.	\N	0	\N	\N	0	\N	156	4fe9ac03-4803-46d7-8983-cd94e098d922		1	1	2	\N	2021-11-30 20:27:22	2021-11-30 20:27:22	¦020968-403-736-8¦082616.9792 F711 1998¦100FORD, MICHAEL THOMAS¦245¿QUé ONDA CON EL SIDA / MICHAEL THOMAS FORD¦2501A. ED.¦260MéXICO : SELECTOR¦300199 PAG.¦440COLEC. SELECTOR¦6501. SIDA 2. ENFERMEDADES TRASMITIBLESÌ	COLEC. SELECTOR	'-403':8 '-736':9 '-8':10 '020968':7 '082616.9792':11 '100ford':14 '1998':4,13 '2':36 '245':17 '2501a':5,26 '260méxico':28 '300199':30 '440colec':32 '616.9792':2 '6501':34 '9684037368':1 'ed':6,27 'enfermedad':37 'f711':3,12 'ford':25 'michael':15,23 'onda':19 'pag':31 'selector':29,33 'sid':22,35 'thom':16,24 'trasmitiblesì':38	
 22	938	ISSN  18703186	R 505 U58 2009	2501a. Ed.	\N	0	\N	\N	0	\N	179	96bd5d51-94a2-4a56-8492-827a614aaee2		1	1	2	\N	2021-11-25 20:17:59	2021-11-25 20:17:59	&QUOT;¦020ISSN-1870-3186¦082R 505 U58 2009¦100UNIVERSIDAD NACIONAL AUTóNOMA DE MéXICO¦245¿COMO VES? REVISTA DE DIVULGACIóN DE LA CIENCIA / UNIVERSIDAD NACIONAL AUTONOMA DE MéXICO¦2501A. ED.¦260MéXICO: UNAM¦3004 VOL.¦500LA BIBLIOTECA SOLAMENTE TIENE LOS EJEMPLARES DE LOS MESES DE: FEBRERO, MARZO, ABRIL Y JUNIO¦5051. VOL. 1 (FEBRERO) 2. VOL. 2 (MARZO) 3. VOL. 3 (ABRIL) 4. VOL. 4 (JUNIO)¦6501. CIENCIA - PUBLICACIONES PERIóDICAS 2. TECNOLOGíA - PUBLICACIONES PERIóDICASÌ&QUOT;	VOL. 1 (FEBRERO) 2. VOL. 2 (MARZO) 3. VOL. 3 (ABRIL) 4. VOL. 4 (JUNIO)	'-1870':10 '-3186':11 '020issn':9 '082r':12 '1':58 '100universidad':16 '18703186':2 '2':60,62,76 '2009':6,15 '245':21 '2501a':7,35 '260méxico':37 '3':64,66 '3004':39 '4':68,70 '500la':41 '505':4,13 '5051':56 '6501':72 'abril':53,67 'autonom':18,32 'bibliotec':42 'cienci':29,73 'divulg':26 'ed':8,36 'ejemplar':46 'febrer':51,59 'issn':1 'juni':55,71 'marz':52,63 'mes':49 'mexic':20,34 'nacional':17,31 'period':75 'periodicasì':79 'public':74,78 'r':3 'revist':24 'sol':43 'tecnolog':77 'u58':5,14 'unam':38 'univers':30 'ves':23 'vol':40,57,61,65,69	
 23	938	ISSN   18703186	R 505 U58 2010	2501a. Ed.	\N	0	\N	\N	0	\N	179	8d3c5eab-4932-430a-a88c-ad8196055a16		1	1	2	\N	2021-11-25 20:21:23	2021-11-25 20:21:23	"¦020ISSN-1870-3186¦082R 505 U58 2010¦100UNIVERSIDAD NACIONAL AUTóNOMA DE MéXICO¦245¿COMO VES? REVISTA DE DIVULGACIóN DE LA CIENCIA / UNIVERSIDAD NACIONAL AUTóNOMA DE MéXICO¦2501A. ED.¦260MéXICO : UNAM¦3002 VOL.¦500LA BIBLIOTECA SOLAMENTE TIENE LOS EJEMPLARES DE LOS MESES DE: AGOSTO Y NOVIEMBRE¦5051. VOL. 1 (AGOSTO) 2. VOL. 2 (NOVIEMBRE)¦6501. CIENCIA - PUBLICACIONES PERIóDICAS 2. TECNOLOGíA - PUBLICACIONES PERIóDICASÌ"	VOL. 1 (AGOSTO) 2. VOL. 2 (NOVIEMBRE)	'-1870':10 '-3186':11 '020issn':9 '082r':12 '1':56 '100universidad':16 '18703186':2 '2':58,60,66 '2010':6,15 '245':21 '2501a':7,35 '260méxico':37 '3002':39 '500la':41 '505':4,13 '5051':54 '6501':62 'agost':51,57 'autonom':18,32 'bibliotec':42 'cienci':29,63 'divulg':26 'ed':8,36 'ejemplar':46 'issn':1 'mes':49 'mexic':20,34 'nacional':17,31 'noviembr':53,61 'period':65 'periodicasì':69 'public':64,68 'r':3 'revist':24 'sol':43 'tecnolog':67 'u58':5,14 'unam':38 'univers':30 'ves':23 'vol':40,55,59	
+32	838	978-968-5950-36-7	468.2 D322 2008	2501a. Ed.	\N	0	\N	\N	0	\N	186	1aa27cfb-fc80-4451-a66f-e74d31e895e0		1	1	2	\N	2021-11-30 14:31:32	2021-11-30 14:51:03	¦020978-968-5950-36-7¦082468.2 D322 2008¦100DEHESA, JUANA INéS¦245¿PARA QUE SIRVE UN SUSTANTIVO? / JUANA INéS DEHESA¦2501A. ED.¦260MéXICO : EDITORIAL SERPENTINA¦30031 PAG.¦440COLEC. CAJA  DE HERRAMIENTAS¦6501. SUSTANTIVOS 2. ESPAñOL - GRAMáTICA GENERAL¦700I. FERNáNDEZ, BERNARDO, IL.Ì	COLEC. CAJA DE HERRAMIENTAS	'-36':4,14 '-5950':3,13 '-7':5,15 '-968':2,12 '020978':11 '082468.2':16 '100dehesa':19 '2':44 '2008':8,18 '245':22 '2501a':9,31 '260méxico':33 '30031':36 '440colec':38 '468.2':6 '6501':42 '700i':48 '978':1 'bernard':50 'caj':39 'd322':7,17 'dehes':30 'ed':10,32 'editorial':34 'español':45 'fernandez':49 'general':47 'gramat':46 'herramient':41 'il':51 'ines':21,29 'juan':20,28 'pag':37 'serpentin':35 'sirv':25 'sustant':27,43 'ì':52	
 26	938	ISSN    18703186	R 505 U58 2012	2501a. Ed.	\N	0	\N	\N	0	\N	179	cc191a06-7f5c-4bc5-902c-dd4559cfd5ba		1	1	2	\N	2021-11-25 20:25:40	2021-11-25 20:25:40	¦020ISSN-1870-3186¦082R 505 U58 2012¦100UNIVERSIDAD NACIONAL AUTóNOMA DE MéXICO¦245¿COMO VES? REVISTA DE DIVULGACIóN DE LA CIENCIA / UNIVERSIDAD NACIONAL AUTóNOMA DE MéXICO¦2501A. ED.¦260MéXICO : UNAM¦30040 PAG.¦500LA BIBLIOTECA SOLAMENTE TIENE EL EJEMPLAR DEL MES DE ENERO¦5051. VOL. 1 (ENERO)¦6501. CIENCIA - PUBLICACIONES PERIóDICAS 2. TECNOLOGíA - PUBLICACIONES PERIóDICASÌ	VOL. 1 (ENERO)	'-1870':10 '-3186':11 '020issn':9 '082r':12 '1':53 '100universidad':16 '18703186':2 '2':59 '2012':6,15 '245':21 '2501a':7,35 '260méxico':37 '30040':39 '500la':41 '505':4,13 '5051':51 '6501':55 'autonom':18,32 'bibliotec':42 'cienci':29,56 'divulg':26 'ed':8,36 'ejempl':46 'ener':50,54 'issn':1 'mes':48 'mexic':20,34 'nacional':17,31 'pag':40 'period':58 'periodicasì':62 'public':57,61 'r':3 'revist':24 'sol':43 'tecnolog':60 'u58':5,14 'unam':38 'univers':30 'ves':23 'vol':52	
 27	804	978-607-9192-02-0	330.972 R864 2012	2501a. Ed.	\N	0	\N	\N	0	\N	176	1b27825b-0a69-4ca6-ad68-552282a6d8e1		1	1	2	\N	2021-11-30 13:59:42	2021-11-30 13:59:42	¦020978-607-9192-02-0¦082330.972 R864 2012¦100LóPEZ ROMO, HERIBERTO¦245¿CóMO VIVIMOS LOS MEXICANOS? DATOS CURIOSOS E IMAGENES SOBRE LOS NIVELES SOCIECONóMICOS EN MéXICO / HERIBERTO LóPEZ ROMO¦2501A. ED.¦260MéXICO : INSTIRUTO DE INVESTIGACIONES SOCIALES S.C.¦300279 PAG.¦6501. MéXICO - CONDICIONES ECONóMICAS 2. PODER ADQUISITIVO - MéXICOÌ		'-0':5,15 '-02':4,14 '-607':2,12 '-9192':3,13 '020978':11 '082330.972':16 '100lópez':19 '2':54 '2012':8,18 '245':22 '2501a':9,40 '260méxico':42 '300279':48 '330.972':6 '6501':50 '978':1 'adquisit':56 'com':23 'condicion':52 'curios':28 'dat':27 'econom':53 'ed':10,41 'heribert':21,37 'imagen':30 'instirut':43 'investig':45 'lopez':38 'mexic':36,51 'mexican':26 'mexicoì':57 'nivel':33 'pag':49 'pod':55 'r864':7,17 'rom':20,39 's.c':47 'social':46 'socieconom':34 'viv':24	
 44	945	978-970-07-7516-6	583.79 S914 2007	2501a. Ed.	\N	0	\N	\N	0	\N	82	8dd6d40d-99e4-4aca-a271-6906d8f9f04b		1	1	2	\N	2021-11-30 20:30:51	2021-11-30 20:30:51	¦020978-970-07-7516-6¦082583.79 S914 2007¦100STREPPONI, BLANCA¦245¿QUIEN DIJO KARTOFEL? / BLANCA STREPPONI¦2501A. ED.¦260MéXICO : EDITORIAL PORRúA¦30056 PAG.¦6501. PAPA - CULTIVO¦700I. PANTIN, YOLANDA, COAUT.Ì		'-07':3,13 '-6':5,15 '-7516':4,14 '-970':2,12 '020978':11 '082583.79':16 '100strepponi':19 '2007':8,18 '245':21 '2501a':9,27 '260méxico':29 '30056':32 '583.79':6 '6501':34 '700i':37 '978':1 'blanc':20,25 'coaut':40 'cultiv':36 'dij':23 'ed':10,28 'editorial':30 'kartofel':24 'pag':33 'pantin':38 'pap':35 'porru':31 's914':7,17 'strepponi':26 'yoland':39 'ì':41	
@@ -2433,7 +2755,7 @@ COPY public.inventariolibros (id, libro_id, isbn, clasificacion, edicion, codeba
 34	833	978-968-5950-37-4	468.2 D322 2008	2501a. Ed.	\N	0	\N	\N	0	\N	186	5b0a8d48-5610-4110-920a-7730221f4032		1	1	2	\N	2021-11-30 14:44:35	2021-11-30 14:44:35	¦020978-968-5950-37-4¦082468.2 D322 2008¦100DEHESA, JUANA INéS¦245¿PARA QUE SIRVE UNA PREPOSICIóN? / JUANA INéS DEHESA¦2501A. ED.¦260MéXICO : EDITORIAL SERPENTINA¦30031 PAG.¦440COLEC. CAJA DE HERRAMIENTAS¦6501. PREPOSICIONES 2. ESPAñOL - GRAMáTICA GENERAL¦700FERNáNDEZ, BERNARDO, IL.Ì	COLEC. CAJA DE HERRAMIENTAS	'-37':4,14 '-4':5,15 '-5950':3,13 '-968':2,12 '020978':11 '082468.2':16 '100dehesa':19 '2':44 '2008':8,18 '245':22 '2501a':9,31 '260méxico':33 '30031':36 '440colec':38 '468.2':6 '6501':42 '700fernández':48 '978':1 'bernard':49 'caj':39 'd322':7,17 'dehes':30 'ed':10,32 'editorial':34 'español':45 'general':47 'gramat':46 'herramient':41 'il':50 'ines':21,29 'juan':20,28 'pag':37 'preposicion':27,43 'serpentin':35 'sirv':25 'ì':51	
 30	837	978-968-5950-35-0	468.2 D322 2008	2501A. ED.	\N	0	\N	\N	0	\N	186	a712b02d-62e5-4b9d-8ede-55078827278b		1	1	2	\N	2021-11-30 14:24:32	2021-11-30 14:45:15	¦020978-968-5950-35-0¦082468.2 D322 2008¦100DEHESA, JUANA INéS¦245¿PARA QUE SIRVE UN ADJETIVO / JUANA INéS DEHESA¦2501A. ED.¦260MéXICO : EDITORIAL SERPENTINA¦30031 PAG.¦440COLEC. CAJA DE HERRAMIENTAS¦6501. ADJETIVOS 2. ESPAñOL - GRAMáTICAÌ	COLEC. CAJA DE HERRAMIENTAS	'-0':5,15 '-35':4,14 '-5950':3,13 '-968':2,12 '020978':11 '082468.2':16 '100dehesa':19 '2':44 '2008':8,18 '245':22 '2501a':9,31 '260méxico':33 '30031':36 '440colec':38 '468.2':6 '6501':42 '978':1 'adjet':27,43 'caj':39 'd322':7,17 'dehes':30 'ed':10,32 'editorial':34 'español':45 'gramaticaì':46 'herramient':41 'ines':21,29 'juan':20,28 'pag':37 'serpentin':35 'sirv':25	
 35	836	978-968-5950-34-3	468.2 D322 2008	2501a. Ed.	\N	0	\N	\N	0	\N	186	7ec4d1ca-bb21-4801-875d-e93301244fca		1	1	2	\N	2021-11-30 14:48:53	2021-11-30 14:48:53	¦020978-968-5950-34-3¦082468.2 D322 2008¦100DEHESA, JUANA INéS¦245¿PARA QUE SIRVE UN ADVERBIO / JUANA INéS DEHESA¦2501A. ED.¦260MéXICO : EDITORIAL SERPENTINA¦30031 PAG.¦440COLEC. CAJA DE HERRAMIENTAS¦6501. ADVERBIOS 2. ESPAñOL - GRAMáTICA GENERALÌ	COLEC. CAJA DE HERRAMIENTAS	'-3':5,15 '-34':4,14 '-5950':3,13 '-968':2,12 '020978':11 '082468.2':16 '100dehesa':19 '2':44 '2008':8,18 '245':22 '2501a':9,31 '260méxico':33 '30031':36 '440colec':38 '468.2':6 '6501':42 '978':1 'adverbi':27,43 'caj':39 'd322':7,17 'dehes':30 'ed':10,32 'editorial':34 'español':45 'generalì':47 'gramat':46 'herramient':41 'ines':21,29 'juan':20,28 'pag':37 'serpentin':35 'sirv':25	
-32	838	978-968-5950-36-7	468.2 D322 2008	2501a. Ed.	\N	0	\N	\N	0	\N	186	1aa27cfb-fc80-4451-a66f-e74d31e895e0		1	1	2	\N	2021-11-30 14:31:32	2021-11-30 14:51:03	¦020978-968-5950-36-7¦082468.2 D322 2008¦100DEHESA, JUANA INéS¦245¿PARA QUE SIRVE UN SUSTANTIVO? / JUANA INéS DEHESA¦2501A. ED.¦260MéXICO : EDITORIAL SERPENTINA¦30031 PAG.¦440COLEC. CAJA  DE HERRAMIENTAS¦6501. SUSTANTIVOS 2. ESPAñOL - GRAMáTICA GENERAL¦700I. FERNáNDEZ, BERNARDO, IL.Ì	COLEC. CAJA DE HERRAMIENTAS	'-36':4,14 '-5950':3,13 '-7':5,15 '-968':2,12 '020978':11 '082468.2':16 '100dehesa':19 '2':44 '2008':8,18 '245':22 '2501a':9,31 '260méxico':33 '30031':36 '440colec':38 '468.2':6 '6501':42 '700i':48 '978':1 'bernard':50 'caj':39 'd322':7,17 'dehes':30 'ed':10,32 'editorial':34 'español':45 'fernandez':49 'general':47 'gramat':46 'herramient':41 'il':51 'ines':21,29 'juan':20,28 'pag':37 'serpentin':35 'sirv':25 'sustant':27,43 'ì':52	
+166	1047	\N	380 V458F 2001	\N	\N	0	\N	\N	0	\N	245	4691b6fa-b8dc-40ea-9d9a-cacd7a37e360		1	1	2	\N	2022-01-11 19:59:58	2022-01-11 19:59:58			'2001':3 '380':1 'v458f':2	1450
 33	835	978-968-595038-1	468.2 D322 2008	2501a. Ed.	\N	0	\N	\N	0	\N	186	c3cc0439-a4fb-435e-823f-65355232dc9b		1	1	2	\N	2021-11-30 14:41:30	2021-11-30 14:51:16	¦020978-968-595038-1¦082468.2 D322 2008¦100DEHESA, JUANA INéS¦245¿PARA QUE SIRVE UN VERBO? / JUANA INéS DEHESA¦2501A. ED.¦260MéXICO : EDITORIAL SERPENTINA¦30031 PAG.¦440COLEC. CAJA DE HERRAMIENTAS¦6501. VERBOS 2. ESPAñOL - GRAMáTICA GENERAL¦700I. FERNáNDEZ, BERNARDO, IL.Ì	COLEC. CAJA DE HERRAMIENTAS	'-1':4,13 '-595038':3,12 '-968':2,11 '020978':10 '082468.2':14 '100dehesa':17 '2':42 '2008':7,16 '245':20 '2501a':8,29 '260méxico':31 '30031':34 '440colec':36 '468.2':5 '6501':40 '700i':46 '978':1 'bernard':48 'caj':37 'd322':6,15 'dehes':28 'ed':9,30 'editorial':32 'español':43 'fernandez':47 'general':45 'gramat':44 'herramient':39 'il':49 'ines':19,27 'juan':18,26 'pag':35 'serpentin':33 'sirv':23 'verb':25,41 'ì':50	
 31	834	978-968-5950-48-0	468.2 D322 2008	2501a. Ed.	\N	0	\N	\N	0	\N	186	ce138d7c-1fbd-495a-a03d-a9c1345acf35		1	1	2	\N	2021-11-30 14:27:30	2021-11-30 14:50:29	¦020978-968-5950-48-0¦082468.2 D322 2008¦100DEHESA, JUANA INéS¦245¿PARA QUE SIRVE UN ARTICULO? / JUANA INéS DEHESA¦2501A. ED.¦260MéXICO : EDITORIAL SERPENTINA¦30031 PAG.¦440COLEC. CAJA DE HERRAMIENTAS¦6501. ARTICULOS 2. ESPAñOL - GRAMáTICA GENERAL¦700I. FERNáNDEZ, BERNARDO, IL.Ì	COLEC. CAJA DE HERRAMIENTAS	'-0':5,15 '-48':4,14 '-5950':3,13 '-968':2,12 '020978':11 '082468.2':16 '100dehesa':19 '2':44 '2008':8,18 '245':22 '2501a':9,31 '260méxico':33 '30031':36 '440colec':38 '468.2':6 '6501':42 '700i':48 '978':1 'articul':27,43 'bernard':50 'caj':39 'd322':7,17 'dehes':30 'ed':10,32 'editorial':34 'español':45 'fernandez':49 'general':47 'gramat':46 'herramient':41 'il':51 'ines':21,29 'juan':20,28 'pag':37 'serpentin':35 'sirv':25 'ì':52	
 36	939	978-607-7511-03-8	743.8 F181 2012	2501a. Ed.	\N	0	\N	\N	0	\N	167	8e47fd4c-6370-4936-bc47-5041c22f6df1		1	1	2	\N	2021-11-30 14:57:51	2021-11-30 14:57:51	¦020978-607-7511-03-8¦082743.8 F181 2012¦100FALCóN, GLORIA¦245¿PINTAMOS MANDALAS?: APARTIR DE 5 AñOS / ILUSTRACIONES DE GLORIA FALCóN¦2501A. ED.¦260MéXICO : PRODUCCIONES EDUCACIóN APLICADA¦30071 PAG.¦500LIBRO PARA COLOREAR¦6501. MANDALAS 2. DIBUJOS 3. LIBROS PARA ILUMINARÌ		'-03':4,14 '-607':2,12 '-7511':3,13 '-8':5,15 '020978':11 '082743.8':16 '100falcón':19 '2':45 '2012':8,18 '245':21 '2501a':9,32 '260méxico':34 '3':47 '30071':38 '5':26 '500libro':40 '6501':43 '743.8':6 '978':1 'apart':24 'aplic':37 'años':27 'color':42 'dibuj':46 'ed':10,33 'educ':36 'f181':7,17 'falcon':31 'glori':20,30 'iluminarì':50 'ilustr':28 'libr':48 'mandal':23,44 'pag':39 'pint':22 'produccion':35	
@@ -2442,6 +2764,7 @@ COPY public.inventariolibros (id, libro_id, isbn, clasificacion, edicion, codeba
 39	808	970-712-406-7	328.34 S959 2005	2504a. Ed.	\N	0	\N	\N	0	\N	148	958ab936-3483-4588-aadb-1a81f321f982		1	1	2	\N	2021-11-30 15:09:43	2021-11-30 15:09:43	¦020970-712-406-7¦082328.34 S959 2005¦100SUPREMA CORTE DE JUSTICIA DE LA NACIóN¦245¿QUE ES EL PODER JUDICIAL DE LA FEDERACIóN? / SUPREMA CORTE DE JUSTICIA DE LA NACIóN¦2504A. ED.¦260MéXICO : SUPREMA CORTE DE JUSTICIA DE LA NACIóN¦30091 PAG.¦6501. PODERES JUDICIALES - MéXICOÌ		'-406':3,12 '-7':4,13 '-712':2,11 '020970':10 '082328.34':14 '100suprema':17 '2005':7,16 '245':24 '2504a':8,40 '260méxico':42 '30091':50 '328.34':5 '6501':52 '970':1 'cort':18,34,44 'ed':9,41 'feder':32 'judicial':29,54 'justici':20,36,46 'mexicoì':55 'nacion':23,39,49 'pag':51 'pod':28 'poder':53 's959':6,15 'suprem':33,43	
 40	940	978-968-16-8461-7	320.0973 F363 2008	2501a. Ed.	\N	0	\N	\N	0	\N	16	d282a7ec-132d-4b8b-8f78-54b50c26f49a		1	1	2	\N	2021-11-30 19:12:31	2021-11-30 19:12:31	¦020978-968-16-8461-7¦082320.0973 F363 2008¦100FERNáNDEZ DE CASTRO, RAFAEL¦245¿QUE ES ESTADOA UNIDOS? / RAFAEL FERNáNDEZ DE CASTRO¦2501A. ED.¦260MéXICO : FONDO DE CULTURA ECONóMICA¦300516 PAG.¦440COLEC. SECCIóN DE OBRAS DE POLíTICA Y DERECHO¦6501. E.U.A - POLíTICA Y GOBIERNO 2. E.U.A - HISTORIA¦700I. BLACKMORE, HAZAL, COORD.Ì	COLEC. SECCIóN DE OBRAS DE POLíTICA Y DERECHO	'-16':3,13 '-7':5,15 '-8461':4,14 '-968':2,12 '020978':11 '082320.0973':16 '100fernández':19 '2':54 '2008':8,18 '245':23 '2501a':9,32 '260méxico':34 '300516':39 '320.0973':6 '440colec':41 '6501':49 '700i':57 '978':1 'blackmor':58 'castr':21,31 'coord':60 'cultur':37 'derech':48 'e.u.a':50,55 'econom':38 'ed':10,33 'estado':26 'f363':7,17 'fernandez':29 'fond':35 'gobiern':53 'hazal':59 'histori':56 'obras':44 'pag':40 'polit':46,51 'rafael':22,28 'seccion':42 'unid':27 'ì':61	
 41	942	978-987-3743-14-6	346.0482 F762 2015	2502a. Ed.	\N	0	\N	\N	0	\N	226	6e397d78-8df4-4c0a-82ee-d1c1160968ff		1	1	2	\N	2021-11-30 19:39:24	2021-11-30 19:39:24	¦020978-987-3743-14-6¦082346.0482 F762 2015¦100FOUCAULT, MICHEL¦245¿QUé ES UN AUTOR / MICHEL FOUCAULT¦2502A. ED.¦260MéXICO : EDITORIAL GHANDI¦30086 PAG.¦440COLEC. FILOSOFíA ENSAYO; 276¦6501. AUTORES 2. AUTOR¦700I. MATTANI, SILVIO, TR.Ì	COLEC. FILOSOFíA ENSAYO; 276	'-14':4,14 '-3743':3,13 '-6':5,15 '-987':2,12 '020978':11 '082346.0482':16 '100foucault':19 '2':41 '2015':8,18 '245':21 '2502a':9,28 '260méxico':30 '276':38 '30086':33 '346.0482':6 '440colec':35 '6501':39 '700i':43 '978':1 'autor':25,40,42 'ed':10,29 'editorial':31 'ensay':37 'f762':7,17 'filosof':36 'foucault':27 'ghandi':32 'mattani':44 'michel':20,26 'pag':34 'silvi':45 'tr':46 'ì':47	
+167	1048	\N	378 U558	\N	\N	0	\N	\N	0	\N	245	5b2c5b95-a0d2-4473-bb98-a8c910a56301		1	1	2	\N	2022-01-11 20:02:16	2022-01-11 20:02:16			'378':1 'u558':2	1454
 42	943	978-968-24-7757-7	370.302812 L616 2007	\N	\N	0	\N	\N	0	\N	60	a837f874-48b8-48ab-91a8-7f49888191ab		1	1	2	\N	2021-11-30 19:43:13	2021-11-30 19:43:13	¦020978-968-24-7757-7¦082370.302812 L616 2007¦100LERMA JASSO, HéCTOR¦245¿QUé TIPO DE ALUMNO SOY? UNA GUíA PARA MEJORAR EN EL ESTUDIO / HéCTOR LERMA JASSO¦2502A. ED.¦260MéXICO : EDITORIAL TRILLAS¦300196 PAG.¦500INCLUYE ÍNDICE¦6501. ESTUDIO Y ENSEñANZA 2. ESTUDIO - MéTODO 3. PSICOLOGíA PEDAGOGICAÌ		'-24':3,11 '-7':5,13 '-7757':4,12 '-968':2,10 '020978':9 '082370.302812':14 '100lerma':17 '2':49 '2007':8,16 '245':20 '2502a':36 '260méxico':38 '3':52 '300196':41 '370.302812':6 '500incluye':43 '6501':45 '978':1 'alumn':24 'ed':37 'editorial':39 'enseñ':48 'estudi':32,46,50 'gui':27 'hector':19,33 'indic':44 'jass':18,35 'l616':7,15 'lerm':34 'mejor':29 'metod':51 'pag':42 'pedagogicaì':54 'psicolog':53 'tip':22 'trill':40	
 45	946	978-970-07-7515-9	583.79 S914 2007	2501a. Ed.	\N	0	\N	\N	0	\N	82	5f486e1a-2830-4ca4-a4ee-1239354d498c		1	1	2	\N	2021-11-30 20:35:03	2021-11-30 20:35:03	¦020978-970-07-7515-9¦082583.79 S914 2007¦100STREPPONI, BLANCA¦245¿QUIéN DIJO POMODORO? / BLANCA STREPPONI¦2501A. ED.¦260MéXICO : EDITORIAL PORRúA¦30032 PAG.¦6501. JITOMATE - HISTORIA 2. JITOMATE - MERCADOTECNIAÌ		'-07':3,13 '-7515':4,14 '-9':5,15 '-970':2,12 '020978':11 '082583.79':16 '100strepponi':19 '2':37 '2007':8,18 '245':21 '2501a':9,27 '260méxico':29 '30032':32 '583.79':6 '6501':34 '978':1 'blanc':20,25 'dij':23 'ed':10,28 'editorial':30 'histori':36 'jitomat':35,38 'mercadotecniaì':39 'pag':33 'pomodor':24 'porru':31 'quien':22 's914':7,17 'strepponi':26	
 46	947	978-970-07-7524-1	583.46 S914 2007	2501a. Ed.	\N	0	\N	\N	0	\N	82	781ede51-114c-4bf4-b766-1229af70ae8c		1	1	2	\N	2021-11-30 20:37:42	2021-11-30 20:37:42	¦020978-970-07-7524-1¦082583.46 S914 2007¦100STREPPONI, BLANCA¦245¿QUIéN DIJO ZAPALLO? / BLANCA STREPPONI¦2501A. ED.¦260MéXICO : EDITORIAL PORRúA¦30044 PAG.¦6501. CALABAZA - CULTIVOÌ		'-07':3,13 '-1':5,15 '-7524':4,14 '-970':2,12 '020978':11 '082583.46':16 '100strepponi':19 '2007':8,18 '245':21 '2501a':9,27 '260méxico':29 '30044':32 '583.46':6 '6501':34 '978':1 'blanc':20,25 'calabaz':35 'cultivoì':36 'dij':23 'ed':10,28 'editorial':30 'pag':33 'porru':31 'quien':22 's914':7,17 'strepponi':26 'zapall':24	
@@ -2449,6 +2772,10 @@ COPY public.inventariolibros (id, libro_id, isbn, clasificacion, edicion, codeba
 49	949	84-7953-338-2	153.85 J69 1999	25013a. Ed.	\N	0	\N	\N	0	\N	227	1a9508b8-e508-40ea-bf88-f1800985dee3		1	1	2	\N	2021-12-01 13:56:45	2021-12-01 13:56:45	¦02084-7953-338-2¦082153.85 J69 1999¦100JOHNSON, SPENCER¦245¿QUIéN SE A LLEVADO MI QUESO?: UNA MANERA SORPRENDENTE DE AFRONTAR EL CAMBIO EN EL TRABAJO Y EN LA VIDA PRIVADA / SPENCER JOHNSON¦25013A. ED.¦260ESPAñA : EMPRESA ACTIVA¦30093 PAG.¦6501. LIBROS DE MOTIVACIóN PERSONAL 2. MOTIVACIóN DEL ÉXITOÌ		'-2':4,13 '-338':3,12 '-7953':2,11 '02084':10 '082153.85':14 '100johnson':17 '153.85':5 '1999':7,16 '2':55 '245':19 '25013a':8,43 '260españa':45 '30093':48 '6501':50 '84':1 'activ':47 'afront':30 'cambi':32 'ed':9,44 'empres':46 'exitoì':58 'j69':6,15 'johnson':42 'libr':51 'llev':23 'maner':27 'motiv':53,56 'pag':49 'personal':54 'priv':40 'ques':25 'quien':20 'sorprendent':28 'spenc':18,41 'trabaj':35 'vid':39	
 50	949	84-7953-445-1	153.85 J69 2001	25025a. Ed.	\N	0	\N	\N	0	\N	227	72bdf72f-69b1-407a-b914-9ee78f04e19c		1	1	2	\N	2021-12-01 14:47:14	2021-12-01 14:47:14	¦02084-7953-445-1¦082153.85 J69 2001¦100JOHNSON, SPENCER¦245¿QUIéN SE HA LLEVADO MI QUESO?: UNA MANERA SORPRENDENTE DE AFRONTAR EL CAMBIO EN EL TRABAJO Y EN LA VIDA PRIVADA / SPENCER JOHNSON¦25025A. ED.¦260ESPAñA : EMPRESA ACTIVA¦300106 PAG.¦6501. LIBROS DE MOTIVACIóN PERSONAL 2. MOTIVACIóN DEL ÉXITOÌ		'-1':4,13 '-445':3,12 '-7953':2,11 '02084':10 '082153.85':14 '100johnson':17 '153.85':5 '2':55 '2001':7,16 '245':19 '25025a':8,43 '260españa':45 '300106':48 '6501':50 '84':1 'activ':47 'afront':30 'cambi':32 'ed':9,44 'empres':46 'exitoì':58 'j69':6,15 'johnson':42 'libr':51 'llev':23 'maner':27 'motiv':53,56 'pag':49 'personal':54 'priv':40 'ques':25 'quien':20 'sorprendent':28 'spenc':18,41 'trabaj':35 'vid':39	
 51	950	978-987-538-212-1	371.9 A995 2008	2501a. Ed.	\N	0	\N	\N	0	\N	165	512c7983-28e2-4787-a5cb-be8c7ea7a499		1	1	2	\N	2021-12-01 18:55:07	2021-12-01 18:55:07	¦020978-987-538-212-1¦082371.9 A995 2008¦100AZNER, ANDREA S.¦245¿SON O SE HACEN? EL CAMPO DE LA DISCAPACIDAD INTELECTUAL ESTUDIADA A TRAVEZ DE RECORRIDOS MULTIPLES / ANDREA S. AZNER¦2501A. ED.¦260ARGENTINA : CENTRO DE PUBLICACIONES EDUCATIVAS Y MATERIAL DIDáCTICO¦300248 PAG.¦440COLEC. COLEC. DISCAPACIDAD¦500INCLUYE ÍNDICE¦6501. EDUCACIóN ESPECIAL 2. DEFICIENCIA INTELECTUAL 3. DISCAPACIDAD¦700I. GONZáLEZ CASTAñON, DIEGO, COAUT. II. SIEDE, ISABELINA A, PRóL.Ì	COLEC. COLEC. DISCAPACIDAD	'-1':5,15 '-212':4,14 '-538':3,13 '-987':2,12 '020978':11 '082371.9':16 '100azner':19 '2':62 '2008':8,18 '245':22 '2501a':9,42 '260argentina':44 '3':65 '300248':52 '371.9':6 '440colec':54 '500incluye':57 '6501':59 '700i':67 '978':1 'a995':7,17 'andre':20,39 'azner':41 'camp':28 'castañon':69 'centr':45 'coaut':71 'colec':55 'deficient':63 'didact':51 'dieg':70 'discapac':31,56,66 'ed':10,43 'educ':48,60 'especial':61 'estudi':33 'gonzalez':68 'hac':26 'ii':72 'indic':58 'intelectual':32,64 'isabelin':74 'material':50 'multipl':38 'pag':53 'prol':76 'public':47 'recorr':37 's':21,40 'sied':73 'travez':35 'ì':77	
+168	1050	\N	371.425 C383P	\N	\N	0	\N	\N	0	\N	117	43620f5c-289e-4eea-9565-6808eea4f703		1	1	2	\N	2022-01-11 20:06:24	2022-01-11 20:06:24			'371.425':1 'c383p':2	1663
+169	1051	\N	371.7 S352V	\N	\N	0	\N	\N	0	\N	245	3d766698-a75b-463c-a1de-fea4a4ea3cc4		1	1	2	\N	2022-01-11 20:11:20	2022-01-11 20:11:20			'371.7':1 's352v':2	1741
+170	1052	\N	380 145 104 R355C	\N	\N	0	\N	\N	0	\N	60	0c3e7b67-d5ce-4a5e-bcd7-c72abe1cd8b2		1	1	2	\N	2022-01-11 20:14:44	2022-01-11 20:14:44			'104':3 '145':2 '380':1 'r355c':4	1543
+171	1053	\N	380 145 91 C438E	\N	\N	0	\N	\N	0	\N	60	cc500197-c5bf-4c07-8b2d-f67813eb706d		1	1	2	\N	2022-01-11 20:18:23	2022-01-11 20:18:23			'145':2 '380':1 '91':3 'c438e':4	1545
 52	951	978-968-817-877-5	333.70972 M479 2008	2501a. Ed.	\N	0	\N	\N	0	\N	38	793aeb23-db6d-40f4-873b-57851934b3ef		1	1	2	\N	2021-12-01 19:50:08	2021-12-01 19:50:08	¦020978-968-817-877-5¦082333.70972 M479 2008¦100MéXICO, SECRETARIA DE MEDIO AMBIENTE Y RECURSOS NATURALEZ¦245¿Y EL MEDIO AMBIENTE? / SEMARNAT¦2501A. ED.¦260MéXICO : SEMARNAT¦300192 PAG.¦6501. MéXICO - POLíTICA AMBIENTAL 2. MEDIO AMBIENTE - MéXICO 3. RECURSOS NATURALEZ - MéXICOÌ		'-5':5,15 '-817':3,13 '-877':4,14 '-968':2,12 '020978':11 '082333.70972':16 '100méxico':19 '2':43 '2008':8,18 '245':27 '2501a':9,33 '260méxico':35 '3':47 '300192':37 '333.70972':6 '6501':39 '978':1 'ambient':23,31,45 'ambiental':42 'ed':10,34 'm479':7,17 'medi':22,30,44 'mexic':40,46 'mexicoì':50 'naturalez':26,49 'pag':38 'polit':41 'recurs':25,48 'secretari':20 'semarnat':32,36	
 53	447	978-84-96609-21-1	923.6 G458 2008	\N	\N	0	\N	\N	0	\N	132	1c71ec8f-e0a3-4652-80ee-8f9be0ba125f		1	1	2	\N	2021-12-01 19:55:38	2021-12-01 19:55:38	¦020978-84-96609-21-1¦082923.6 G458 2008¦100GIFFORD, CLIVE¦24510 LIDERES QUE CAMBIARON EL MUNDO / CLIVE GIFFORD¦260SINGAPORE : EDILUPA¦30063 PAG.¦6501. HUMANISTAS - BIOGRAFIAS 2. ESTADISTAS - BIOGRAFIíAS¦700I. COUSENS, DAVID, IL. II. SáNCHEZ ALMAGRO, IRENE, TR.Ì		'-1':5,13 '-21':4,12 '-84':2,10 '-96609':3,11 '020978':9 '082923.6':14 '100gifford':17 '2':34 '2008':8,16 '24510':19 '260singapore':27 '30063':29 '6501':31 '700i':37 '923.6':6 '978':1 'almagr':43 'biografi':33,36 'cambi':22 'cliv':18,25 'cousens':38 'dav':39 'edilup':28 'estad':35 'g458':7,15 'gifford':26 'human':32 'ii':41 'il':40 'iren':44 'lider':20 'mund':24 'pag':30 'sanchez':42 'tr':45 'ì':46	
 54	953	978-90-8998-205-6	502 L664 2012	2501a. Ed.	\N	0	\N	\N	0	\N	229	f838642d-c77e-416b-a270-5d5367ed2611		1	1	2	\N	2021-12-01 20:22:19	2021-12-01 20:22:19	¦020978-90-8998-205-6¦082502 L664 2012¦100LEVY, JOEL¦245100 ANALOGíAS CIENTíFICAS / JOEL LEVY¦2501A. ED.¦260ESPAñA : LIBRERO¦300224 PAG.¦500INCLUYE ÍNDICE¦6501. CIENCIA - ESTUDIO Y ENSEñANZA 2. CIENCIA - LENGUAJE 3. CIENCIA - TERMINOLOGíA¦700I. CILLERO & DE MOTA, TR.Ì		'-205':4,14 '-6':5,15 '-8998':3,13 '-90':2,12 '020978':11 '082502':16 '100levy':19 '2':39 '2012':8,18 '245100':21 '2501a':9,26 '260españa':28 '3':42 '300224':30 '500incluye':32 '502':6 '6501':34 '700i':45 '978':1 'analog':22 'cienci':35,40,43 'cientif':23 'ciller':46 'ed':10,27 'enseñ':38 'estudi':36 'indic':33 'joel':20,24 'l664':7,17 'lenguaj':41 'levy':25 'librer':29 'mot':48 'pag':31 'terminolog':44 'tr':49 'ì':50	
@@ -2457,6 +2784,9 @@ COPY public.inventariolibros (id, libro_id, isbn, clasificacion, edicion, codeba
 58	956	978-3-8331-6111-7	759 S934 2011	2501a. Ed.	\N	0	\N	\N	0	\N	232	0f472200-0091-42f4-9c0b-c99a488a3d2f		1	1	2	\N	2021-12-02 13:24:13	2021-12-02 13:24:13	¦020978-3-8331-6111-7¦082759 S934 2011¦100STUKENBROCK, CHRISTIANE¦2451000 OBRAS MAESTRAS DE LA PINTURA / CHRISTIANE STUKENBROCK¦2501A. ED.¦260ESPAñA : H.F. ULMANN¦3001007 PAG.¦6501. PINTURA - TRABAJOS ANTERIORES A 1800 2. PINTURA - COLECCIONES¦700I. TOPPER, BARBARA, COAUT.Ì		'-3':2,12 '-6111':4,14 '-7':5,15 '-8331':3,13 '020978':11 '082759':16 '100stukenbrock':19 '1800':41 '2':42 '2011':8,18 '2451000':21 '2501a':9,29 '260españa':31 '3001007':34 '6501':36 '700i':45 '759':6 '978':1 'anterior':39 'barb':47 'christian':20,27 'coaut':48 'coleccion':44 'ed':10,30 'h.f':32 'maestr':23 'obras':22 'pag':35 'pintur':26,37,43 's934':7,17 'stukenbrock':28 'topp':46 'trabaj':38 'ulmann':33 'ì':49	
 59	958	978-970-683-312-9	028 O66 2007	2501a. Ed.	\N	0	\N	\N	0	\N	140	3bd1e5fa-44bd-45a0-8d7a-255f73e6830b		1	1	2	\N	2021-12-02 13:39:21	2021-12-02 13:39:21	¦020978-970-683-312-9¦082028 O66 2007¦100ORELLANA, MARGARITA DE¦245101 AVENTURAS DE LA LECTURA / MARGARITA DE ORELLANA¦2501A. ED.¦260MéXICO : ARTES DE MéXICO / IBBY MéXICO¦300223 PAG.¦500INCLUYE ÍNDICE¦6501. LECTURAS - CITAS - MAXIMAS¦700I. GEDOVIUS, JUAN, IL.Ì		'-312':4,14 '-683':3,13 '-9':5,15 '-970':2,12 '020978':11 '028':6 '082028':16 '100orellana':19 '2007':8,18 '245101':22 '2501a':9,30 '260méxico':32 '300223':38 '500incluye':40 '6501':42 '700i':46 '978':1 'artes':33 'aventur':23 'cit':44 'ed':10,31 'gedovius':47 'ibby':36 'il':49 'indic':41 'juan':48 'lectur':26,43 'margarit':20,27 'maxim':45 'mexic':35,37 'o66':7,17 'orellan':29 'pag':39 'ì':50	
 60	959	978-84-8076-833-7	778.37 F855 2015	2501a. Ed.	\N	0	\N	\N	0	\N	230	e7dbccb6-ea49-4e26-94ee-46a70e58f5c8		1	1	2	\N	2021-12-02 13:49:12	2021-12-02 13:49:12	¦020978-84-8076-833-7¦082778.37 F855 2015¦100FREEMAN, MICHAEL¦245101 CONSEJOS, FOTOGRAFíA DIGITAL: LOS SECRETOS DE LOS MEJORES FOTOGRáFOS DEL MUNDO / MICHAEL FREEMAN¦2501A. ED.¦260ESPAñA : EDITORIAL BLUME¦300176 PAG.¦6501. FOTOGRAFíA DIGITAL - ESTUDIO Y ENSEñANZA¦700I. BABER CASASNOVAS, CRISTOBAL, TR.Ì		'-7':5,15 '-8076':3,13 '-833':4,14 '-84':2,12 '020978':11 '082778.37':16 '100freeman':19 '2015':8,18 '245101':21 '2501a':9,35 '260españa':37 '300176':40 '6501':42 '700i':48 '778.37':6 '978':1 'bab':49 'blum':39 'casasnov':50 'consej':22 'cristobal':51 'digital':24,44 'ed':10,36 'editorial':38 'enseñ':47 'estudi':45 'f855':7,17 'fotograf':23,30,43 'freem':34 'mejor':29 'michael':20,33 'mund':32 'pag':41 'secret':26 'tr':52 'ì':53	
+172	1054	\N	004.6 F676T 2007	\N	\N	0	\N	\N	0	\N	245	e65a501d-f994-4128-be06-82bfdca2b473		1	1	2	\N	2022-01-12 15:55:02	2022-01-12 15:55:02			'004.6':1 '2007':3 'f676t':2	1052
+173	1055	\N	004 D873E	\N	\N	0	\N	\N	0	\N	68	58e6dc02-1148-4e74-9764-5b4f866b37d7		1	1	2	\N	2022-01-14 14:56:55	2022-01-14 14:56:55			'004':1 'd873e':2	1376
+174	1056	\N	004 M555W	\N	\N	0	\N	\N	0	\N	111	7255c043-c137-49e5-a0ba-6251acab229a		1	1	2	\N	2022-01-14 15:01:26	2022-01-14 15:01:26			'004':1 'm555w':2	1048
 61	960	9788434237957	751.45 C212 2012	2501a. Ed.	\N	0	\N	\N	0	\N	234	c40b7a32-d719-4b2f-961c-f0468f10eae8		1	1	2	\N	2021-12-02 13:53:20	2021-12-02 13:53:20	¦020978-84-342-3795-7¦082751.45 C212 2012¦100CANAL, MA. FERNANDA¦245101 TéCNICAS OLEO / DIRECCIóN EDITORIAL DE MA. FERNANDA CANAL¦2501A. ED.¦260ESPAñA : PARRAMóN EDICIONES¦300144 PAG.¦6501. PINTURA - ESTUDIO Y ENSEñANZA¦700I. SAN MIGUEL, DAVID, EDIT.Ì		'-342':9 '-3795':10 '-7':11 '-84':8 '020978':7 '082751.45':12 '100canal':15 '2012':4,14 '245101':18 '2501a':5,27 '260españa':29 '300144':32 '6501':34 '700i':39 '751.45':2 '9788434237957':1 'c212':3,13 'canal':26 'dav':42 'direccion':21 'ed':6,28 'edicion':31 'edit':43 'editorial':22 'enseñ':38 'estudi':36 'fernand':17,25 'ma':16,24 'miguel':41 'ole':20 'pag':33 'parramon':30 'pintur':35 'san':40 'tecnic':19 'ì':44	
 62	961	978-607-02-1520-9	972.0831 D671 2010	2501a. Ed.	\N	0	\N	\N	0	\N	179	061d2c9b-fcd7-4217-8464-295a50404452		1	1	2	\N	2021-12-03 15:03:23	2021-12-03 15:03:23	¦020978-607-02-1520-9¦082972.0831 D671 2010¦100DOMíNGUEZ NAVA, CUAUHTEMOC¦2451968 LA ESCUELA Y LOS ESTUDIANTES / CUAUHTEMOC DOMíNGUEZ NAVA¦2501A. ED.¦260MéXICO : UNAM¦300175 PAG.¦6501. MOVIMIENTO ESTUDIANTIL - MéXICO 2. MéXICO - CONFLICTO SOCIAL¦700I. AGUIRRE ROJAS, CARLOS ANTONIO, PRóL.Ì		'-02':3,13 '-1520':4,14 '-607':2,12 '-9':5,15 '020978':11 '082972.0831':16 '100domínguez':19 '2':41 '2010':8,18 '2451968':22 '2501a':9,31 '260méxico':33 '300175':35 '6501':37 '700i':45 '972.0831':6 '978':1 'aguirr':46 'antoni':49 'carl':48 'conflict':43 'cuauhtemoc':21,28 'd671':7,17 'dominguez':29 'ed':10,32 'escuel':24 'estudi':27 'estudiantil':39 'mexic':40,42 'movimient':38 'nav':20,30 'pag':36 'prol':50 'roj':47 'social':44 'unam':34 'ì':51	
 63	806	978-970-777-338-7	158 B918 2007	2501a. Ed.	\N	0	\N	\N	0	\N	97	a824cac6-27a1-4c68-80e2-6a0591632f7a		1	1	2	\N	2021-12-07 13:31:07	2021-12-07 13:31:07	¦020978-970-777-338-7¦082158 B918 2007¦100BUCAY, JORGE¦24520 PASOS HACIA ADELANTE / JORGE BUCAY¦2501A. ED.¦260MéXICO : EDITORIAL OCEANO¦300177 PAG.¦440BIBLIOTECA JORGE BUCAY¦6501. MOTIVACIóN 2. SUPERACIóN PERSONALÌ		'-338':4,14 '-7':5,15 '-777':3,13 '-970':2,12 '020978':11 '082158':16 '100bucay':19 '158':6 '2':39 '2007':8,18 '24520':21 '2501a':9,27 '260méxico':29 '300177':32 '440biblioteca':34 '6501':37 '978':1 'adel':24 'b918':7,17 'bucay':26,36 'ed':10,28 'editorial':30 'haci':23 'jorg':20,25,35 'motiv':38 'ocean':31 'pag':33 'pas':22 'personalì':41 'super':40	
@@ -2465,6 +2795,9 @@ COPY public.inventariolibros (id, libro_id, isbn, clasificacion, edicion, codeba
 67	963	978-1-4063-2715-1	428 S786 2010	2501a. Ed.	\N	0	\N	\N	0	\N	235	dd11da6e-96fb-4486-8eb0-a9355f30b2d8		1	1	2	\N	2021-12-07 18:53:05	2021-12-07 18:53:05	¦020978-1-4063-2715-1¦082428 S786 2010¦100STANHOPE, NICK¦24531 WAYS TO CHANGE THE WORLD: BY 4,381 CHILDREN, WE ARE WHAT WE DO AND YOU / NICK STANHOPE¦2501A. ED.¦260INGLATERRA : WALKER BOOKS¦30073 PAG.¦6501. MUNDO - CAMBIOS 2. NIñOS EN EL MUNDO¦700I. NEW FUTURE GRAPHIC, IL. II. TAYLOR, TANIS, COAUT.Ì		'-1':2,5,12,15 '-2715':4,14 '-4063':3,13 '020978':11 '082428':16 '100stanhope':19 '2':50 '2010':8,18 '24531':21 '2501a':9,40 '260inglaterra':42 '30073':45 '381':29 '4':28 '428':6 '6501':47 '700i':55 '978':1 'and':36 'are':32 'books':44 'by':27 'cambi':49 'chang':24 'childr':30 'coaut':63 'do':35 'ed':10,41 'futur':57 'graphic':58 'ii':60 'il':59 'mund':48,54 'new':56 'nick':20,38 'niñ':51 'pag':46 's786':7,17 'stanhop':39 'tanis':62 'taylor':61 'the':25 'to':23 'walk':43 'ways':22 'we':31,34 'what':33 'world':26 'you':37 'ì':64	
 68	828	978-607-07-0978-4	231.042 A283 2011	2501a. Ed.	\N	0	\N	\N	0	\N	68	ec736a9d-8639-4d3a-ad34-dd5c2eaf2b24		1	1	2	\N	2021-12-07 20:08:36	2021-12-07 20:08:36	¦020978-607-07-0978-4¦082231.042 A283 2011¦100AGUILAR VALDéS, JOSé DE JESúS¦245365 DIAS PARA ACERCARCE A DIOS / JOSé DE JESúS AGUILAR VALDéS¦2501A. ED.¦260MéXICO : MR EDICIONES¦300716 PAG.¦6501. DIOS - CULTO Y AMOR¦700I. OSORIO, MARIANO, PROL.Ì		'-07':3,13 '-0978':4,14 '-4':5,15 '-607':2,12 '020978':11 '082231.042':16 '100aguilar':19 '2011':8,18 '231.042':6 '245365':24 '2501a':9,35 '260méxico':37 '300716':40 '6501':42 '700i':47 '978':1 'a283':7,17 'acercarc':27 'aguil':33 'amor':46 'cult':44 'dias':25 'dios':29,43 'ed':10,36 'edicion':39 'jesus':23,32 'jos':21,30 'marian':49 'mr':38 'osori':48 'pag':41 'prol':50 'valdes':20,34 'ì':51	
 91	978	\N	FT 745.097263 P784 1988	2501a. Ed.	\N	0	\N	\N	0	\N	136	6d74d60a-8588-40c2-a3c8-f8425e4a3525		1	1	2	\N	2021-12-09 15:05:46	2021-12-09 15:05:46	¦082FT 745.097263 P784 1988¦100POMAR, MARIA TERESA¦245ACERCA DEL ARTE POPULAR / MARIA TERESA POMAR¦2501A. ED.¦260VILLAHERMOSA, TABASCO, MéXICO : GOBIERNO DEL ESTADO DE TABASCO¦30025 PAG.¦440COLEC. CUADERNOS¦6501. ARTESANOS - TABASCO 2. ARTE POPULAR - TABASCOÌ	COLEC. CUADERNOS	'082ft':7 '100pomar':11 '1988':4,10 '2':38 '245acerca':14 '2501a':5,21 '260villahermosa':23 '30025':31 '440colec':33 '6501':35 '745.097263':2,8 'arte':16,39 'artesan':36 'cuad':34 'ed':6,22 'ft':1 'gobiern':26 'mari':12,18 'mexic':25 'p784':3,9 'pag':32 'pom':20 'popul':17,40 'tabasc':24,30,37 'tabascoì':41 'teres':13,19	
+175	1057	\N	004 N678I 2006	\N	\N	0	\N	\N	0	\N	245	ed59aa6c-26bb-42e5-8c06-8633bc2b496f		1	1	2	\N	2022-01-14 15:06:08	2022-01-14 15:06:08			'004':1 '2006':3 'n678i':2	1051
+176	1059	\N	004 C656	\N	\N	0	\N	\N	0	\N	245	341a8b5d-d2e3-40d8-9932-1d6614693190		1	1	2	\N	2022-01-14 16:29:39	2022-01-14 16:29:39			'004':1 'c656':2	1674
+178	1060	\N	004 Z365A	\N	\N	0	\N	\N	0	\N	61	2466eb0e-3e0d-4001-87dc-4bb1f533b686		1	1	2	\N	2022-01-14 16:32:43	2022-01-14 16:32:43			'004':1 'z365a':2	1712
 109	453	978-607-14-1200-3	923.2 G111 2013	\N	\N	0	\N	\N	0	\N	133	29a02451-785a-4d8d-b99e-e8d4cc7f220d		1	1	2	\N	2021-12-10 13:35:54	2021-12-10 13:35:54	¦020978-607-14-1200-3¦082923.2 G111 2013¦100GASCA FLORES, EDGAR RODRIGO¦245ADOLFO HITLER / EDGAR GASCA FLORES¦260MéXICO : EDITORES MEXICANOS UNIDOS¦30084 PAG.¦440SERIE BIOGRAFíAS: LIDERES POLíTICOS¦6501. HITLER, ADOLFO, 1889 - 1945 - BIOGRAFíAÌ		'-1200':4,12 '-14':3,11 '-3':5,13 '-607':2,10 '020978':9 '082923.2':14 '100gasca':17 '1889':39 '1945':40 '2013':8,16 '245adolfo':21 '260méxico':26 '30084':30 '440serie':32 '6501':36 '923.2':6 '978':1 'adolf':38 'biograf':33 'biografiaì':41 'edgar':19,23 'editor':27 'flor':18,25 'g111':7,15 'gasc':24 'hitl':22,37 'lider':34 'mexican':28 'pag':31 'polit':35 'rodrig':20 'unid':29	
 69	964	978-607-02-1537-7	972.0831 A958 2010	2501a. Ed.	\N	0	\N	\N	0	\N	179	bf3e8ac1-37b2-46be-a493-cfbb575dfcf2		1	1	2	\N	2021-12-07 20:27:31	2021-12-07 20:27:50	&QUOT;¦020978-607-02-1537-7¦082972.0831 A958 2010¦100AVILéS CAVASOLA, JUNCIA¦24540 AñOS MOVIMIENTO ESTUDIANTIL DEL 68 / JUNCIA AVILéS CAVASOLA¦2501A. ED.¦260MéXICO : UNAM¦3002 VOL.¦5051. VOL. 1 EL 68: TODO EL DIA Y TODA LA NOCHE, CONFERENCIAS MAGISTRALES 2. VOL. 2 EL ORDEN INVISIBLE: ARTE, ESCENA Y ESPACIO PúBLICO.¦6501. MOVIMIENTOS ESTUDIANTILES - MéXICO 2. MéXICO - CONFLICTO SOCIAL 3. MéXICO - HISTORIA - 1968 - 1970Ì&QUOT;		'-02':3,13 '-1537':4,14 '-607':2,12 '-7':5,15 '020978':11 '082972.0831':16 '1':39 '100avilés':19 '1968':73 '1970ì':74 '2':51,53,66 '2010':8,18 '24540':22 '2501a':9,31 '260méxico':33 '3':70 '3002':35 '5051':37 '6501':62 '68':27,41 '972.0831':6 '978':1 'a958':7,17 'arte':57 'aviles':29 'años':23 'cavasol':20,30 'conferent':49 'conflict':68 'dia':44 'ed':10,32 'escen':58 'espaci':60 'estudiantil':25,64 'histori':72 'invis':56 'junci':21,28 'magistral':50 'mexic':65,67,71 'movimient':24,63 'noch':48 'orden':55 'public':61 'social':69 'tod':46 'unam':34 'vol':36,38,52	
 70	965	978-84-344-6937-2	720.2 W684 2010	2501a. Ed.	\N	0	\N	\N	0	\N	10	31c6d406-d0fb-4c07-81cd-ed31b3e04177		1	1	2	\N	2021-12-07 20:36:08	2021-12-07 20:36:08	¦020978-84-344-6937-2¦082720.2 W684 2010¦100WILKINSON, PHILIP¦24550 COSAS QUE HAY QUE SABER SOBRE ARQUITECTURA / PHILIP WILKINSON¦2501A. ED.¦260ESPAñA : EDITORIAL ARIEL¦300217 PAG,¦440SERIE CLAVES¦500INCLUYE ÍNDICE¦6501. ARQUITECTURA - ESTUDIO Y ENSEñANZA¦700I. ENGUIX TERCERO, MARIA, TR.Ì		'-2':5,15 '-344':3,13 '-6937':4,14 '-84':2,12 '020978':11 '082720.2':16 '100wilkinson':19 '2010':8,18 '24550':21 '2501a':9,31 '260españa':33 '300217':36 '440serie':38 '500incluye':40 '6501':42 '700i':47 '720.2':6 '978':1 'ariel':35 'arquitectur':28,43 'clav':39 'cos':22 'ed':10,32 'editorial':34 'enguix':48 'enseñ':46 'estudi':44 'indic':41 'mari':50 'pag':37 'philip':20,29 'sab':26 'tercer':49 'tr':51 'w684':7,17 'wilkinson':30 'ì':52	
@@ -2473,6 +2806,8 @@ COPY public.inventariolibros (id, libro_id, isbn, clasificacion, edicion, codeba
 74	967	968-889-225-4	FT 861 R173 1991	2501a. Ed.	\N	0	\N	\N	0	\N	136	2c0168e4-f75e-43a2-a336-69200c768e9b		1	1	2	\N	2021-12-09 14:06:15	2021-12-09 14:06:15	¦020968-889-225-4¦082FT 861 R173 1991¦100RAMíREZ, KARMINA¦245A CUERPO ABIERTO / KARMINA RAMíREZ¦2501A. ED.¦260VILLAHERMOSA, TABASCO, MéXICO : GOBIERNO DEL ESTADO DE TABASCO¦300220 PAG.¦440COLEC. CREACIóN / POESíA¦6501. POESíA MEXICANA - TABASCO - SIGLO XX 2. AUTORES MEXICANOS - TABASCO - SIGLO XXÌ		'-225':3,13 '-4':4,14 '-889':2,12 '020968':11 '082ft':15 '100ramírez':19 '1991':8,18 '2':47 '245a':21 '2501a':9,26 '260villahermosa':28 '300220':36 '440colec':38 '6501':41 '861':6,16 '968':1 'abiert':23 'autor':48 'creacion':39 'cuerp':22 'ed':10,27 'ft':5 'gobiern':31 'karmin':20,24 'mexic':30 'mexican':43,49 'pag':37 'poes':40,42 'r173':7,17 'ramirez':25 'sigl':45,51 'tabasc':29,35,44,50 'xx':46 'xxì':52	
 75	968	970-15-1073-9	371.30282 G2121 2010	2509a. Ed.	\N	0	\N	\N	0	\N	213	81a58843-d946-4d7b-95f7-7db01737daef		1	1	2	\N	2021-12-09 14:10:16	2021-12-09 14:10:16	¦020970-15-1073-9¦082371.30282 G2121 2010¦100GARCíA HIDOBRO B, CECILIA¦245A ESTUDIAR SE APRENDE: METODOLOGíA DE ESTUDIO SESION POR SESION / CECILIA GARCíA HIDOBRO B.¦2509A. ED.¦260MéXICO : ALFAOMEGA GRUPO EDITOR¦300191 PAG.¦500LIBRO CON EJERCICIOS¦6501. ESTUDIO - MéTODOS 2. ESTUDIANTES - ENSEñANZA¦700I. GUTIéRREZ G, MARIA CRISTINA, COAUT. II. CONDEMARíN G., ELIANA, COAUT.Ì		'-1073':3,12 '-15':2,11 '-9':4,13 '020970':10 '082371.30282':14 '100garcía':17 '2':49 '2010':7,16 '245a':21 '2509a':8,35 '260méxico':37 '300191':41 '371.30282':5 '500libro':43 '6501':46 '700i':52 '970':1 'alfaomeg':38 'aprend':24 'b':19,34 'cecili':20,31 'coaut':57,62 'condemarin':59 'cristin':56 'ed':9,36 'editor':40 'ejercici':45 'elian':61 'enseñ':51 'estudi':22,27,47,50 'g':54,60 'g2121':6,15 'garc':32 'grup':39 'gutierrez':53 'hidobr':18,33 'ii':58 'mari':55 'metod':48 'metodolog':25 'pag':42 'sesion':28,30 'ì':63	
 76	544	970-29-0034-4	465 V836 2004	2501a. Ed.	\N	0	\N	\N	0	\N	48	7e0f546a-cb23-4209-a926-5b9b5ab913db		1	1	2	\N	2021-12-09 14:19:48	2021-12-09 14:19:48	¦020970-29-0034-4¦082465 V836 2004¦100VITAL, ALBERTO¦245A JUGAR CON LA GRAMáTICA / ALBERTO VITAL¦2501A. ED.¦260MéXICO : EDITORIAL SANTILLANA¦30063 PAG.¦440BIBLIOTECA JUVENIL ILUSTRADA¦6501. ESPAñOL - GRAMáTICA COMPARADAÌ		'-0034':3,12 '-29':2,11 '-4':4,13 '020970':10 '082465':14 '100vital':17 '2004':7,16 '245a':19 '2501a':8,26 '260méxico':28 '30063':31 '440biblioteca':33 '465':5 '6501':36 '970':1 'albert':18,24 'comparadaì':39 'ed':9,27 'editorial':29 'español':37 'gramat':23,38 'ilustr':35 'jug':20 'juvenil':34 'pag':32 'santillan':30 'v836':6,15 'vital':25	
+179	1061	\N	004.6 C425J	\N	\N	0	\N	\N	0	\N	217	26573605-9fa8-4b91-abef-5fdce4c04ab6		1	1	2	\N	2022-01-14 16:35:11	2022-01-14 16:35:11			'004.6':1 'c425j':2	1713
+180	1062	\N	421 S883	\N	\N	0	\N	\N	0	\N	68	bec4bfbb-f6e7-4541-814f-23bcf668c18e		1	1	2	\N	2022-01-14 22:36:47	2022-01-14 22:36:47			'421':1 's883':2	437
 77	969	968-29-9793-3	972.0816 A283 1997	2501a. Ed.	\N	0	\N	\N	0	\N	58	7c52d57f-e7ae-46e6-a16c-37e67f25fbd5		1	1	2	\N	2021-12-09 14:22:26	2021-12-09 14:22:26	¦020968-29-9793-3¦082972.0816 A283 1997¦100AGUILAR CAMíN, HéCTOR¦245A LA SOMBRA DE LA REVOLUCIóN MEXICANA / HéCTOR AGUILAR CAMíN¦2501A. ED.¦260MéXICO : SEP¦300293 PAG.¦440COLEC. BIBLIOTECA PARA LA ACTUALIZACIóN DEL MAESTRO¦6501. MéXICO - HISTORIA - REVOLUCIóN, 1910 - 1917¦700I. MEYER, LORENZO, COAUT.Ì		'-29':2,11 '-3':4,13 '-9793':3,12 '020968':10 '082972.0816':14 '100aguilar':17 '1910':47 '1917':48 '1997':7,16 '245a':20 '2501a':8,30 '260méxico':32 '300293':34 '440colec':36 '6501':43 '700i':49 '968':1 '972.0816':5 'a283':6,15 'actualiz':40 'aguil':28 'bibliotec':37 'camin':18,29 'coaut':52 'ed':9,31 'hector':19,27 'histori':45 'lorenz':51 'maestr':42 'mexic':44 'mexican':26 'mey':50 'pag':35 'revolu':25,46 'sep':33 'sombr':22 'ì':53	
 78	970	978-19-068-6122-3	791.43612 B766 2010	2501a. Ed.	\N	0	\N	\N	0	\N	236	ad010382-f098-433d-8490-95a7d6f7eb92		1	1	2	\N	2021-12-09 14:25:51	2021-12-09 14:25:51	¦020978-19-068-6122-3¦082791.43612 B766 2010¦100BOURKE, ANTHONY¦245A LION CALLED CHRISTIAN / ANTHONY BOURKE¦2501A. ED.¦260INGLATERRA : RICHMOND PUBLISHING¦30088 PAG.¦440RICHMOND READERS LEVEL 4¦500WITH AUDIO CD¦6501. PELICULAS DE ANIMALES 2. PELICULAS DOCUMENTALES 3. LIBROS Y LECTURAS PARA LA JUVENTUD¦700I. REVELL, JANE, EDIT. II. RENDALL, JOHN, COAUT.Ì		'-068':3,13 '-19':2,12 '-3':5,15 '-6122':4,14 '020978':11 '082791.43612':16 '100bourke':19 '2':45 '2010':8,18 '245a':21 '2501a':9,27 '260inglaterra':29 '3':48 '30088':32 '4':37 '440richmond':34 '500with':38 '6501':41 '700i':55 '791.43612':6 '978':1 'animal':44 'anthony':20,25 'audi':39 'b766':7,17 'bourk':26 'call':23 'cd':40 'christi':24 'coaut':62 'documental':47 'ed':10,28 'edit':58 'ii':59 'jan':57 'john':61 'juventud':54 'lectur':51 'level':36 'libr':49 'lion':22 'pag':33 'pelicul':42,46 'publishing':31 'readers':35 'rendall':60 'revell':56 'richmond':30 'ì':63	
 79	971	968-19-0554-7	863 R763 2001	2501a. Ed.	\N	0	\N	\N	0	\N	5	95ad638c-9dd3-48c2-83b5-a99bbff60a2a		1	1	2	\N	2021-12-09 14:28:10	2021-12-09 14:28:10	¦020968-19-0554-7¦082863 R763 2001¦100ROMEU, EMMA¦245A MISSISIPPI POR EL MAR: NUEVAS AVENTURAS DE GREGORIO / EMMA ROMEU¦2501A. ED.¦260MéXICO : ALFAGUARA¦300150 PAG.¦440COLEC. ALFAGUARA INFANTIL¦6501. NOVELA CUBANA - SIGLO XX¦700I. MORA, ANGEL, IL.Ì	COLEC. ALFAGUARA INFANTIL	'-0554':3,12 '-19':2,11 '-7':4,13 '020968':10 '082863':14 '100romeu':17 '2001':7,16 '245a':19 '2501a':8,30 '260méxico':32 '300150':34 '440colec':36 '6501':39 '700i':44 '863':5 '968':1 'alfagu':33,37 'angel':46 'aventur':25 'cuban':41 'ed':9,31 'emma':18,28 'gregori':27 'il':47 'infantil':38 'mar':23 'missisippi':20 'mor':45 'novel':40 'nuev':24 'pag':35 'r763':6,15 'romeu':29 'sigl':42 'xx':43 'ì':48	
@@ -2480,12 +2815,18 @@ COPY public.inventariolibros (id, libro_id, isbn, clasificacion, edicion, codeba
 81	973	0-852-41940-9	823 D548 1999	2501a. Ed.	\N	0	\N	\N	0	\N	30	25f3e67d-2a2a-4c1f-980a-1c56d6ac1800		1	1	2	\N	2021-12-09 14:35:29	2021-12-09 14:35:29	¦0200-852-41940-9¦082823 D548 1999¦100DICKENS, CHARLES¦245A TALES OF TWO CITIES / CHARLES DICKENS¦2501A. ED.¦260ESTADOS UNIDOS DE AMéRICA : PENGUIN BOOKS¦300135 PAG.¦440PENGUIN READER LEVEL 5¦6501. NOVELA INGLESA - SIGLO XIX 2. LIBROS Y LECTURAS PARA LA JUVENTUD¦700I: HOPKINS, ANDY, EDIT. II. POTTER, JOCELYN, EDITÌ		'-41940':3,12 '-852':2,11 '-9':4,13 '0':1 '0200':10 '082823':14 '100dickens':17 '1999':7,16 '2':45 '245a':19 '2501a':8,26 '260estados':28 '300135':34 '440penguin':36 '5':39 '6501':40 '700i':52 '823':5 'amer':31 'andy':54 'books':33 'charl':18,24 'citi':23 'd548':6,15 'dickens':25 'ed':9,27 'edit':55 'editì':59 'hopkins':53 'ii':56 'ingles':42 'jocelyn':58 'juventud':51 'lectur':48 'level':38 'libr':46 'novel':41 'of':21 'pag':35 'penguin':32 'pott':57 'read':37 'sigl':43 'tal':20 'two':22 'unid':29 'xix':44	
 83	974	978-968-16-6441-1	056.1 P348 2001	2501a. Ed.	\N	0	\N	\N	0	\N	16	da6db3e6-a4aa-4723-844d-6ed16d4a0239		1	1	2	\N	2021-12-09 14:38:43	2021-12-09 14:38:43	¦020978-968-16-6441-1¦082056.1 P348 2001¦100PAZ, MARIE JOSé¦245A TREINTA AñOS DE PLURAL ( 1971 - 1976 ): REVISTA FUNDADA POR OCTAVIO PAZ / MARIE JOSé PAZ¦2501A. ED.¦260MéXICO : FONDO DE CULTURA ECONOMICA¦300178 PAG.¦6501. PUBLICACIONES PERIODICAS MEXICANAS 2. PLURA: CRíTICA, ARTE, LITERATURA - PUBLICACIONES¦700I. CASTAñóN, ADOLFO, COAUT. II. TORRES FIERRO, DANUBIO, COAUT.Ì		'-1':5,15 '-16':3,13 '-6441':4,14 '-968':2,12 '020978':11 '056.1':6 '082056.1':16 '100paz':19 '1971':27 '1976':28 '2':50 '2001':8,18 '245a':22 '2501a':9,37 '260méxico':39 '300178':44 '6501':46 '700i':56 '978':1 'adolf':58 'arte':53 'años':24 'castañon':57 'coaut':59,64 'critic':52 'cultur':42 'danubi':63 'econom':43 'ed':10,38 'fierr':62 'fond':40 'fund':30 'ii':60 'jos':21,35 'literatur':54 'mari':20,34 'mexican':49 'octavi':32 'p348':7,17 'pag':45 'paz':33,36 'period':48 'plur':51 'plural':26 'public':47,55 'revist':29 'torr':61 'treint':23 'ì':65	
 84	975	ISSN-1665-8523	R 613.005 I59 2006	2501a. Ed.	\N	0	\N	\N	0	\N	22	4b884b65-61bc-49f7-ae05-6c219e7684b3		1	1	2	\N	2021-12-09 14:42:28	2021-12-09 14:42:28	¦020ISSN-1665-8523¦082R 613.005 I59 2006¦100INSTITUTO MEXICANO DEL SEGURO SOCIAL¦245A Tú SALUD / INSTITUTO MEXICANO DEL SEGURO SOCIAL¦2501A. ED.¦260MéXICO : IMSS, EDITORIAL MéXICO¦30096 PAG.¦500LA BIBLIOTECA SOLO CUENTA CON EL EJEMPLAR DEL MES DE ENERO DEL 2006¦6501. HIGIENE - PUBLICACIONES PERIODICAS 2. SALUD - PUBLICACIONES PERIODICAS 3. MEDICINA PREVENTIVA - PUBLICACIONES PERIODICASÌ		'-1665':2,11 '-8523':3,12 '020issn':10 '082r':13 '100instituto':17 '2':55 '2006':7,16,50 '245a':22 '2501a':8,30 '260méxico':32 '3':59 '30096':36 '500la':38 '613.005':5,14 '6501':51 'bibliotec':39 'cuent':41 'ed':9,31 'editorial':34 'ejempl':44 'ener':48 'higien':52 'i59':6,15 'imss':33 'institut':25 'issn':1 'medicin':60 'mes':46 'mexic':35 'mexican':18,26 'pag':37 'period':54,58 'periodicasì':63 'prevent':61 'public':53,57,62 'r':4 'salud':24,56 'segur':20,28 'social':21,29 'sol':40	
+183	1066	\N	421 W674	\N	\N	0	\N	\N	0	\N	245	883b1569-525f-481d-a7cb-18779035b7e3		1	1	2	\N	2022-01-14 23:56:04	2022-01-14 23:56:04			'421':1 'w674':2	431
 92	261	970-22-0384-8	540. J37 2002	\N	\N	0	\N	\N	0	\N	59	f20ecdfc-062a-44df-a232-bdca92353b85		1	1	2	\N	2021-12-09 15:11:40	2021-12-09 15:11:40	¦020970-22-0384-8¦050540. J37 2002¦100JARA REYES,SILVIA¦245ACéRCATE A LA QUíMICA 1/SILVIA JARA REYES¦260MéXICO: LAROUSSE¦300212 P./ 25 CM.¦500INCLUYE BIBLIOGRAFíA PARA EL ALUMNO Y PARA EL MAESTRO,ANEXO Y TABLA DE ELEMENTOS QUíMICOS.¦600JARA REYES,SILVIA¦6501.QUíMICA-ESTUDIO Y ENSEñANZA (SECUNDARIA)¦700I.LóPEZ VILLA,NORMA MóNICA.Ì		'-0384':3,10 '-22':2,9 '-8':4,11 '020970':8 '050540':12 '1/silvia':22 '100jara':15 '2002':7,14 '245acércate':18 '25':29 '260méxico':25 '300212':27 '500incluye':31 '540':5 '600jara':46 '6501.qu':49 '700i.l':56 '970':1 'alumn':35 'anex':40 'bibliograf':32 'cm':30 'element':44 'enseñ':54 'estudi':52 'imic':51 'imica-estudi':50 'j37':6,13 'jar':23 'larouss':26 'maestr':39 'monic':60 'norm':59 'opez':57 'p':28 'quimic':21,45 'rey':16,24,47 'secundari':55 'silvi':17,48 'tabl':42 'vill':58 'ì':61	
 86	975	ISSN- 1665-8523	R 613.005 I59 2008	2501a. Ed.	\N	0	\N	\N	0	\N	238	0ced844f-c33e-4f5b-aad0-fe63e64098c2		1	1	2	\N	2021-12-09 14:49:01	2021-12-09 14:49:01	&QUOT;¦020ISSN-1665-8523¦082R 613.005 I59 2008¦100INSTITUTO MEXICANO DEL SEGURO SOCIAL¦245A Tú SALUD / INSTITUTO MEXICANO DEL SEGURO SOCIAL¦2501A. ED.¦260MéXICO : IMSS, EDITORIAL MéXICO¦3005 VOL.¦500LA BIBLIOTECA SOLO CUENTA CON LOS EJEMPLARES DE LOS MESES DE: JUNIO, AGOSTO, SEPTIEMBRE, NOVIEMBRE Y DICIEMBRE DE 2008¦5051. VOL. 1 (JUNIO) 2. VOL. 2 (AGOSTO) 3. VOL. 3 (SEPTIEMBRE) 4. VOL. 4 (NOVIEMBRE) 5. VOL. 5 (DICIEMBRE)¦6501. HIGIENE - PUBLICACIONES PERIODICAS 2. SALUD - PUBLICACIONES PERIODICAS 3. MEDICINA PEVENTIVA - PUBLICACIONES PERIODICASÌ&QUOT;		'-1665':11 '-8523':3,12 '020issn':10 '082r':13 '1':59 '100instituto':17 '1665':2 '2':61,63,81 '2008':7,16,56 '245a':22 '2501a':8,30 '260méxico':32 '3':65,67,85 '3005':36 '4':69,71 '5':73,75 '500la':38 '5051':57 '613.005':5,14 '6501':77 'agost':50,64 'bibliotec':39 'cuent':41 'diciembr':54,76 'ed':9,31 'editorial':34 'ejemplar':44 'higien':78 'i59':6,15 'imss':33 'institut':25 'issn':1 'juni':49,60 'medicin':86 'mes':47 'mexic':35 'mexican':18,26 'noviembr':52,72 'period':80,84 'periodicasì':89 'pevent':87 'public':79,83,88 'r':4 'salud':24,82 'segur':20,28 'septiembr':51,68 'social':21,29 'sol':40 'vol':37,58,62,66,70,74	
 87	975	ISSN-1665- 8523	R 613.005 I59 2008	2501a. Ed.	\N	0	\N	\N	0	\N	238	e476c0a0-5ae5-4c5a-8d55-58b484af7c43		1	1	2	\N	2021-12-09 14:49:23	2021-12-09 14:49:23	"¦020ISSN-1665-8523¦082R 613.005 I59 2008¦100INSTITUTO MEXICANO DEL SEGURO SOCIAL¦245A Tú SALUD / INSTITUTO MEXICANO DEL SEGURO SOCIAL¦2501A. ED.¦260MéXICO : IMSS, EDITORIAL MéXICO¦3005 VOL.¦500LA BIBLIOTECA SOLO CUENTA CON LOS EJEMPLARES DE LOS MESES DE: JUNIO, AGOSTO, SEPTIEMBRE, NOVIEMBRE Y DICIEMBRE DE 2008¦5051. VOL. 1 (JUNIO) 2. VOL. 2 (AGOSTO) 3. VOL. 3 (SEPTIEMBRE) 4. VOL. 4 (NOVIEMBRE) 5. VOL. 5 (DICIEMBRE)¦6501. HIGIENE - PUBLICACIONES PERIODICAS 2. SALUD - PUBLICACIONES PERIODICAS 3. MEDICINA PEVENTIVA - PUBLICACIONES PERIODICASÌ"		'-1665':2,11 '-8523':12 '020issn':10 '082r':13 '1':59 '100instituto':17 '2':61,63,81 '2008':7,16,56 '245a':22 '2501a':8,30 '260méxico':32 '3':65,67,85 '3005':36 '4':69,71 '5':73,75 '500la':38 '5051':57 '613.005':5,14 '6501':77 '8523':3 'agost':50,64 'bibliotec':39 'cuent':41 'diciembr':54,76 'ed':9,31 'editorial':34 'ejemplar':44 'higien':78 'i59':6,15 'imss':33 'institut':25 'issn':1 'juni':49,60 'medicin':86 'mes':47 'mexic':35 'mexican':18,26 'noviembr':52,72 'period':80,84 'periodicasì':89 'pevent':87 'public':79,83,88 'r':4 'salud':24,82 'segur':20,28 'septiembr':51,68 'social':21,29 'sol':40 'vol':37,58,62,66,70,74	
 88	976	968-23-2279-0	809.923 G643 2001	2501a. Ed.	\N	0	\N	\N	0	\N	40	b755cf78-5879-41ed-b071-569fc35a47b8		1	1	2	\N	2021-12-09 14:53:06	2021-12-09 14:53:06	¦020968-23-2279-0¦082809.923 G643 2001¦100GONZáLEZ, ANIBAL¦245ABUSOS Y ADMONICIONES: ÉTICA Y ESCRITURA EN LA NARRATIVA HISPANOAMERICANA MODERNA / ANIBAL GONZáLEZ¦2501A. ED.¦260MéXICO : SIGLO XXI EDITORES¦300205 PAG.¦440COLEC. LINGUISTICA Y TEORíA LITERARIA¦6501. LITERATURA HISANOAMERICANA - HISTORIA Y CRíTICA 2. NARRATIVA HISPANOAMERICANAÌ		'-0':4,13 '-2279':3,12 '-23':2,11 '020968':10 '082809.923':14 '100gonzález':17 '2':51 '2001':7,16 '245abusos':19 '2501a':8,32 '260méxico':34 '300205':38 '440colec':40 '6501':45 '809.923':5 '968':1 'admonicion':21 'anibal':18,30 'critic':50 'ed':9,33 'editor':37 'escritur':24 'etic':22 'g643':6,15 'gonzalez':31 'hisanoamerican':47 'hispanoamerican':28 'hispanoamericanaì':53 'histori':48 'linguist':41 'literari':44 'literatur':46 'modern':29 'narrat':27,52 'pag':39 'sigl':35 'teor':43 'xxi':36	
 89	977	9786074024081	361.61 C676 2012	\N	\N	0	\N	\N	0	\N	239	9a8abe10-6d24-4633-bdb7-fa8aec8817f9		1	1	2	\N	2021-12-09 14:56:47	2021-12-09 14:56:47	¦020978-607-402-408-1¦082361.61 C676 2012¦100COGCO CALDERóN, ADOLFO ROGELIO¦245ACCIONES Y REFLEXIONES PARA LA RECONSTRUCCIóN DE LA POLíTICA SOCIAL EN MéXICO. UNA MIRADA DESDE LO LOCAL / ADOLFO ROGELIO COGCO CALDERóN¦2501A. ED.¦260MéXICO : PLAZA Y VALDéS EDITORES¦300166 PAG.¦440COLEC. CIENCIAS SOCIALES¦6501. POLíTICA SOCIAL - MéXICO¦700I. RODRíGUEZ VARGAS, MIRIAM, COAUT. II. PéREZ CRUZ, JORGE ALBERTO, COAUT.Ì		'-1':9 '-402':7 '-408':8 '-607':6 '020978':5 '082361.61':10 '100cogco':13 '2012':4,12 '245acciones':17 '2501a':38 '260méxico':40 '300166':45 '361.61':2 '440colec':47 '6501':50 '700i':54 '9786074024081':1 'adolf':15,34 'albert':63 'c676':3,11 'calderon':14,37 'cienci':48 'coaut':58,64 'cogc':36 'cruz':61 'ed':39 'editor':44 'ii':59 'jorg':62 'local':33 'mexic':28,53 'mir':30 'miriam':57 'pag':46 'perez':60 'plaz':41 'polit':25,51 'reconstruccion':22 'reflexion':19 'rodriguez':55 'rogeli':16,35 'social':26,49,52 'valdes':43 'varg':56 'ì':65	
 90	84	958-04-4292-4	461.076 S211 2003	2501a. Ed.	\N	0	\N	\N	0	\N	56	fdf42cf5-6557-4869-a38d-e98f7e28c3a5		1	1	2	\N	2021-12-09 14:59:23	2021-12-09 14:59:23	¦020958-04-4292-4¦082461.076 S211 2003¦100SáNCHEZ LOZANO, CARLOS¦245ACENTO 2 : CUADERNO DE TRABAJO / CARLOS SáNCHEZ LOZANO¦2501A. ED.¦260MéXICO : GRUPO EDITORIAL NORMA¦300148 P 27 CM¦6501. ESPAñOL - ORTOGRAFíA Y DELETREO 2. ESPAñOL - LEXICOGRAFíAÌ		'-04':2,11 '-4':4,13 '-4292':3,12 '020958':10 '082461.076':14 '100sánchez':17 '2':21,43 '2003':7,16 '245acento':20 '2501a':8,28 '260méxico':30 '27':36 '300148':34 '461.076':5 '6501':38 '958':1 'carl':19,25 'cm':37 'cuadern':22 'deletre':42 'ed':9,29 'editorial':32 'español':39,44 'grup':31 'lexicografiaì':45 'lozan':18,27 'norm':33 'ortograf':40 'p':35 's211':6,15 'sanchez':26 'trabaj':24	
+184	1067	\N	421 W674	\N	\N	0	\N	\N	0	\N	245	9a82c9cb-7608-4bf1-8c78-d1167723bbf9		1	1	2	\N	2022-01-14 23:57:54	2022-01-14 23:57:54			'421':1 'w674':2	433
+185	1068	\N	421 T432	\N	\N	0	\N	\N	0	\N	245	47f29538-b01e-46dd-bc2f-ca826c8555b1		1	1	2	\N	2022-01-14 23:59:12	2022-01-14 23:59:12			'421':1 't432':2	435
+186	1069	\N	421 W674	\N	\N	0	\N	\N	0	\N	245	bf3bbb93-83a1-4ac0-b32c-b7bf09bd14a1		1	1	2	\N	2022-01-15 00:01:01	2022-01-15 00:01:01			'421':1 'w674':2	436
+187	1070	\N	421 W674	\N	\N	0	\N	\N	0	\N	245	17053ab8-2000-4dd4-b106-d40027f39411		1	1	2	\N	2022-01-15 00:02:56	2022-01-15 00:02:56			'421':1 'w674':2	438
+188	1071	\N	421 S883	\N	\N	0	\N	\N	0	\N	245	a5f784ce-51b4-47c4-b2d4-eae6abcf33ae		1	1	2	\N	2022-01-15 00:05:10	2022-01-15 00:05:10			'421':1 's883':2	439
 93	979	978-607-7556-17-6	616.53 S399 2007	\N	\N	0	\N	\N	0	\N	240	9db2d3dd-73cf-42a5-bb61-a55f1f2f22c2		1	1	2	\N	2021-12-09 18:30:54	2021-12-09 18:30:54	¦020978-607-7556-17-6¦082616.53 S399 2007¦100SCHWARSTZBERG, JESSE SNOWFLAKE¦245ACNé JUVENIL: PUNTO Y APARTE / JESSE SNOWFLAKE SCHWARSTZBERG¦2501A. ED.¦260MéXICO : VISTO BUENO EDITORES¦30045 PAG.¦440COLEC. SALUD ADULTOS¦500PUBLICACIóN AVALADA POR COMEPA¦6501. PIEL - ENFERMEDADES 2. ACNéÌ	COLEC. SALUD ADULTOS	'-17':4,12 '-6':5,13 '-607':2,10 '-7556':3,11 '020978':9 '082616.53':14 '100schwarstzberg':17 '2':46 '2007':8,16 '245acné':20 '2501a':28 '260méxico':30 '30045':34 '440colec':36 '500publicación':39 '616.53':6 '6501':43 '978':1 'acneì':47 'adult':38 'apart':24 'aval':40 'buen':32 'comep':42 'ed':29 'editor':33 'enfermedad':45 'jess':18,25 'juvenil':21 'pag':35 'piel':44 'punt':22 's399':7,15 'salud':37 'schwarstzberg':27 'snowflak':19,26 'vist':31	
 94	980	978-84-342-2186-4	751.426 C212 2008	2505a. Ed.	\N	0	\N	\N	0	\N	234	2e18df1d-bedb-4dac-8c25-ff4d29521965		1	1	2	\N	2021-12-09 18:38:53	2021-12-09 18:39:00	¦020978-84-342-2186-4¦082751.426 C212 2008¦100CANAL, MARIA FERNANDA¦245ACRíLICO: EJERCICIOS PARRAMóN / DIRECCIóN EDITORIAL DE MARIA FERNANDA CANAL¦2505A. ED.¦260ESPAñA : EDITORIAL PARRAMóN¦30032 PAG.¦440COLEC. EJERCICIOS PARRAMóN, 18¦500INCLUYE ÍNDICE¦6501. PINTURA EN ACRíLICO - ESTUDIO Y ENSAñANZAÌ	COLEC. EJERCICIOS PARRAMóN, 18	'-2186':4,14 '-342':3,13 '-4':5,15 '-84':2,12 '020978':11 '082751.426':16 '100canal':19 '18':41 '2008':8,18 '245acrílico':22 '2505a':9,31 '260españa':33 '30032':36 '440colec':38 '500incluye':42 '6501':44 '751.426':6 '978':1 'acril':47 'c212':7,17 'canal':30 'direccion':25 'ed':10,32 'editorial':26,34 'ejercici':23,39 'ensañanzaì':50 'estudi':48 'fernand':21,29 'indic':43 'mari':20,28 'pag':37 'parramon':24,35,40 'pintur':45	
 95	731	978-607-11-0748-0	861 H899 2010	2501a. Ed.	\N	0	\N	\N	0	\N	72	5c3774c1-c96b-421d-95c2-34b66733ac20		1	1	2	\N	2021-12-09 18:43:01	2021-12-09 18:43:01	¦020978-607-11-0748-0¦082861 H899 2010¦100HUIDOBRO, VICENTE¦245ACRóBATA DEL CIELO: ANTOLOGíA BREVE / VIVENTE HUIDOBRO¦2501A. ED.¦260MéXICO : EDITORIAL ALFAGUARA¦300119 PAG.¦500INCLUYE ANTOLOGíA BREVE DE RODOLFO FONSECA¦6501. POESíA CHILENA - SIGLO XXÌ		'-0':5,15 '-0748':4,14 '-11':3,13 '-607':2,12 '020978':11 '082861':16 '100huidobro':19 '2010':8,18 '245acróbata':21 '2501a':9,28 '260méxico':30 '300119':33 '500incluye':35 '6501':41 '861':6 '978':1 'alfagu':32 'antolog':24,36 'brev':25,37 'chilen':43 'ciel':23 'ed':10,29 'editorial':31 'fonsec':40 'h899':7,17 'huidobr':27 'pag':34 'poes':42 'rodolf':39 'sigl':44 'vicent':20 'vivent':26 'xxì':45	
@@ -2501,6 +2842,7 @@ COPY public.inventariolibros (id, libro_id, isbn, clasificacion, edicion, codeba
 105	853	978-84-9842-255-9	305.235 N962 2009	2501a. Ed.	\N	0	\N	\N	0	\N	192	ace30205-f9c0-4a88-bc3d-e229f9927406		1	1	2	\N	2021-12-09 20:44:37	2021-12-09 20:44:37	¦020978-84-9842-255-9¦082305.235 N962 2009¦100NUEVO GONZáLEZ, ELISEO¦245ADOLESCENTES 50 CASOS PROBLEMáTICOS: ANáLISIS PICOLóGICO Y PROPUESTAS EDUCATIVAS / ELISEO NUEVO GONZáLEZ¦2501A. ED.¦260ESPAñA : EDITORIAL CCS¦300352 PAG.¦440COLECCIóN EDUCAR, 51¦6501. ADOLESCENCIA, PSICOLOGíA DE LA 2. ADOLESCENCIA - ESTUDIO DE CASOS¦700I. SáNCHEZ, DIANA, COAUT.Ì	COLECCIóN EDUCAR, 51	'-255':4,14 '-84':2,12 '-9':5,15 '-9842':3,13 '020978':11 '082305.235':16 '100nuevo':19 '2':49 '2009':8,18 '245adolescentes':22 '2501a':9,34 '260españa':36 '300352':39 '305.235':6 '440colección':41 '50':23 '51':43 '6501':44 '700i':54 '978':1 'adolescent':45,50 'analisis':26 'cas':24,53 'ccs':38 'coaut':57 'dian':56 'ed':10,35 'editorial':37 'educ':30,42 'elise':21,31 'estudi':51 'gonzalez':20,33 'n962':7,17 'nuev':32 'pag':40 'picolog':27 'problemat':25 'propuest':29 'psicolog':46 'sanchez':55 'ì':58	
 106	793	978-84-92892-25-9	154.24 M722 2012	2501a. Ed.	\N	0	\N	\N	0	\N	169	e84fc215-43c4-4918-b08d-b819e2c0e46f		1	1	2	\N	2021-12-09 20:51:04	2021-12-09 20:51:04	¦020978-84-92892-25-9¦082154.24 M722 2012¦100MOLINERO, CARLOS¦245ADOLESCENTES EN CONFLICTO: COMO RECUPERAR LA ARMONIA PERDIDA / CARLOS MOLLINERO¦2501A. ED.¦260MADRID, ESPAñA : MESTAS EDICIONES¦300157 PAG.¦440COLECCIóN EL MUNDO EN TUS MANOS¦6501. ADOLESCENCIA PSICOLOGíA DE LA 2. CONFLICTOS - SOLUCIONESÌ	COLECCIóN EL MUNDO EN TUS MANOS	'-25':4,14 '-84':2,12 '-9':5,15 '-92892':3,13 '020978':11 '082154.24':16 '100molinero':19 '154.24':6 '2':50 '2012':8,18 '245adolescentes':21 '2501a':9,31 '260madrid':33 '300157':37 '440colección':39 '6501':45 '978':1 'adolescent':46 'armoni':27 'carl':20,29 'conflict':23,51 'ed':10,32 'edicion':36 'españ':34 'm722':7,17 'man':44 'mest':35 'molliner':30 'mund':41 'pag':38 'perd':28 'psicolog':47 'recuper':25 'solucionesì':52	
 107	826	84-414-1689-3	155.5 M314 2005	Colección Tú Hijo y Tu; 22	\N	0	\N	\N	0	\N	182	3f581e0e-4df0-4182-be7e-f6be92737587		1	1	2	\N	2021-12-09 20:52:53	2021-12-09 20:52:53	¦02084-414-1689-3¦082155.5 M314 2005¦100MARCELLI, DANIEL¦245ADOLESCENTES, MALOS ROLLOS, COMPLEJOS Y COMEDURAS DE LOCO / DANIEL MARCELLI¦2501A. ED.¦260BARCELONA, ESPAñA : EDAF¦300292 PAG.¦440COLECCIóN Tú HIJO Y TU; 22¦6501. ADOLESCENCIA, PSICOLOGíA DE LA 2. PADRES E HIJOS¦700I. BORIE, GUILLEMETTE DE LA, COAUT.  II. TASTET, PHILIPPE, ILÌ	COLECCIóN Tú HIJO Y TU; 22	'-1689':3,16 '-3':4,17 '-414':2,15 '02084':14 '082155.5':18 '100marcelli':21 '155.5':5 '2':51 '2005':7,20 '22':13,45 '245adolescentes':23 '2501a':33 '260barcelona':35 '300292':38 '440colección':40 '6501':46 '700i':55 '84':1 'adolescent':47 'bori':56 'coaut':60 'coleccion':8 'comedur':28 'complej':26 'daniel':22,31 'ed':34 'edaf':37 'españ':36 'guillemett':57 'hij':10,42,54 'ii':61 'ilì':64 'loc':30 'm314':6,19 'mal':24 'marcelli':32 'padr':52 'pag':39 'philipp':63 'psicolog':48 'roll':25 'tastet':62	
+190	1073	\N	\N	\N	380.145 910 4 C388P	0	\N	\N	0	\N	60	c69cc65d-617e-46f1-9957-a6983f301317		1	1	2	\N	2022-01-15 00:22:18	2022-01-15 00:22:18			'380.145':1 '4':3 '910':2 'c388p':4	1559
 110	990	968-889-122-3	FT 808.831 L55 1988	2501a. Ed.	\N	0	\N	\N	0	\N	242	cd01eac6-c52b-4094-ace4-f0e3695ad6d5		1	1	2	\N	2021-12-10 13:42:29	2021-12-10 13:42:29	¦020968-889-122-3¦082FT 808.831 L55 1988¦100LILLE FUENTES, MARIO DE¦245ADVERTENCIAS AMORALES AL LECTOR Y CIERTO TIPO DE CUENTOS SUMAMENTE INOCENTES / MARIO DE LILLE FUENTES¦2501A. ED.¦260VILLAHERMOSA, TABASCO, MéXICO : GOBIERNO DEL ESTADO DE TABASCO. INSTITUTO DE CULTURA DE TABASCO¦300257 PAG.¦440AUTORES TABASQUEñOS CONTEMPORáNEOS; 7¦6501. CUENTOS MEXICANOS - TABASCOÌ		'-122':3,13 '-3':4,14 '-889':2,12 '020968':11 '082ft':15 '100lille':19 '1988':8,18 '245advertencias':23 '2501a':9,38 '260villahermosa':40 '300257':53 '440autores':55 '6501':59 '7':58 '808.831':6,16 '968':1 'amoral':24 'ciert':28 'contemporane':57 'cuent':31,60 'cultur':50 'ed':10,39 'ft':5 'fuent':20,37 'gobiern':43 'inocent':33 'institut':48 'l55':7,17 'lector':26 'lill':36 'mari':21,34 'mexic':42 'mexican':61 'pag':54 'sum':32 'tabasc':41,47,52 'tabascoì':62 'tabasqueñ':56 'tip':29	
 111	991	978-970-58-0010-8	863.01 F954 2012	2501a. Ed.	\N	0	\N	\N	0	\N	5	fad91e6e-36d3-4d10-a5ff-14f3ab84cbd3		1	1	2	\N	2021-12-10 13:50:25	2021-12-10 13:50:25	¦020978-970-58-0010-8¦082863.01 F954 2012¦100FUENTES, CARLOS¦245AGUA QUEMADA: CUARTETO / CARLOS FUENTES¦2501A. ED.¦260MéXICO : ALFAGUARA¦300173 PAG.¦6501. CUENTOS MEXICANOS - SIGLO XXÌ		'-0010':4,14 '-58':3,13 '-8':5,15 '-970':2,12 '020978':11 '082863.01':16 '100fuentes':19 '2012':8,18 '245agua':21 '2501a':9,26 '260méxico':28 '300173':30 '6501':32 '863.01':6 '978':1 'alfagu':29 'carl':20,24 'cuartet':23 'cuent':33 'ed':10,27 'f954':7,17 'fuent':25 'mexican':34 'pag':31 'quem':22 'sigl':35 'xxì':36	
 112	992	968-889-259-9	FT 863.01 S687 1994	2501a. Ed.	\N	0	\N	\N	0	\N	136	e9b8f9f0-1e13-42b7-b011-1aab2f728e1e		1	1	2	\N	2021-12-10 14:01:21	2021-12-10 14:01:21	¦020968-889-259-9¦082FT 863.01 S687 1994¦100SOLIS CALVILLO, ANTONIO¦245AH, LAS HISTORIAS CONOCIDAS / ANTONIO SOLIS CALVILLO¦2501A. ED.¦260VILLAHERMOSA, TABASCO, MéXICO : GOBIERNO DEL ESTADO DE TABASCO¦30057 PAG.¦440SERIE ALIENTO¦6501. CUENTOS MEXICANOS - TABASCO - SIGLO XX 2. AUTORES MEXICANOS - TABASCO - SIGLO XXÌ		'-259':3,13 '-889':2,12 '-9':4,14 '020968':11 '082ft':15 '100solis':19 '1994':8,18 '2':49 '245ah':22 '2501a':9,29 '260villahermosa':31 '30057':39 '440serie':41 '6501':43 '863.01':6,16 '968':1 'alient':42 'antoni':21,26 'autor':50 'calvill':20,28 'conoc':25 'cuent':44 'ed':10,30 'ft':5 'gobiern':34 'histori':24 'mexic':33 'mexican':45,51 'pag':40 's687':7,17 'sigl':47,53 'solis':27 'tabasc':32,38,46,52 'xx':48 'xxì':54	
@@ -2509,6 +2851,7 @@ COPY public.inventariolibros (id, libro_id, isbn, clasificacion, edicion, codeba
 115	996	978-958-04-7984-0	925.3 CH532 2004	2501a. Ed.	\N	0	\N	\N	0	\N	56	a294ecd4-4e22-481e-8c3c-3a9111e04959		1	1	2	\N	2021-12-10 14:15:27	2021-12-10 14:15:27	¦020978-958-04-7984-0¦082925.3 CH532 2004¦100CHIRINOS, JUAN CARLOS¦245ALBERT EINSTEIN: CARTAS PROBABLES / JUAN CARLOS CHIRINOS¦2501A. ED.¦260COLOMBIA : EDITORIAL NORMA¦440COLEC. SOL & LUNA¦6501. EINSTEIN, ALBERT, 1879 - 1955 - BIOGRAFíA 2. EINSTEIN, ALBERT, 1879 - 1955 - CORRESPONDENCIA - MEMORIAS¦700I. HERNáNDEZ, DECKERS, COAUT.Ì	COLEC. SOL & LUNA	'-0':5,15 '-04':3,13 '-7984':4,14 '-958':2,12 '020978':11 '082925.3':16 '100chirinos':19 '1879':40,46 '1955':41,47 '2':43 '2004':8,18 '245albert':22 '2501a':9,29 '260colombia':31 '440colec':34 '6501':37 '700i':50 '925.3':6 '978':1 'albert':39,45 'biograf':42 'carl':21,27 'cart':24 'ch532':7,17 'chirin':28 'coaut':53 'correspondent':48 'deckers':52 'ed':10,30 'editorial':32 'einstein':23,38,44 'hernandez':51 'juan':20,26 'lun':36 'memori':49 'norm':33 'probabl':25 'sol':35 'ì':54	
 116	538	978-84-96950-35-1	362.292 L869 2007	2501a. Ed.	\N	0	\N	\N	0	\N	143	c84f33a3-7de7-46e5-8712-7c8868a185af		1	1	2	\N	2021-12-10 14:19:50	2021-12-10 14:19:50	¦020978-84-96950-35-1¦082362.292 L869 2007¦100LORENZO PONTEVEDRA, MA. CARMEN¦245ALCOHOL / MA. CARMEN LORENZO PONTEVEDRA¦2501A. ED.¦260VIGO, ESPAñA : NOVA GALICIA EDICIONES¦30053 PAG.¦440SABER PARA VIVIR¦6501. ALCOHOL 2. ALCOHOLISMOÌ		'-1':5,15 '-35':4,14 '-84':2,12 '-96950':3,13 '020978':11 '082362.292':16 '100lorenzo':19 '2':42 '2007':8,18 '245alcohol':23 '2501a':9,28 '260vigo':30 '30053':35 '362.292':6 '440saber':37 '6501':40 '978':1 'alcohol':41 'alcoholismoì':43 'carm':22,25 'ed':10,29 'edicion':34 'españ':31 'galici':33 'l869':7,17 'lorenz':26 'ma':21,24 'nov':32 'pag':36 'pontevedr':20,27 'viv':39	
 117	538	978-84-85401-25-3	362.292 L868 2006	2501a. Ed.	\N	0	\N	\N	0	\N	143	7e10475e-5b25-46c3-98e2-e50029d8b47d		1	1	2	\N	2021-12-10 14:22:13	2021-12-10 14:22:13	¦020978-84-85401-25-3¦082362.292 L868 2006¦100LORENZO PONTEVEDRA, MARIA DEL CARMEN¦245ALCOHOL / MARIA DEL CARMEN LORENZO PONTEVEDRA¦2501A. ED.¦260VIGO, ESPAñA : NOVA GALICIA EDICIONS¦30053 PAG.¦440QUé ME DICES DE....¦6501. ALCOHOLISMO 2. ALCOHOL - PROBLEMASÌ		'-25':4,14 '-3':5,15 '-84':2,12 '-85401':3,13 '020978':11 '082362.292':16 '100lorenzo':19 '2':45 '2006':8,18 '245alcohol':24 '2501a':9,30 '260vigo':32 '30053':37 '362.292':6 '440qué':39 '6501':43 '978':1 'alcohol':44,46 'carm':23,27 'dic':41 'ed':10,31 'edicions':36 'españ':33 'galici':35 'l868':7,17 'lorenz':28 'mari':21,25 'nov':34 'pag':38 'pontevedr':20,29 'problemasì':47	
+239	1131	\N	428.2 S637A 2001	\N	\N	0	\N	\N	0	\N	64	d872f69d-b91d-44a3-9d4f-732a43f8bbfe		1	1	2	\N	2022-01-26 13:54:08	2022-01-26 13:54:08			'2001':3 '428.2':1 's637a':2	453
 118	997	958-04-7986-0	923.1 CH532 2004	2501a. Ed.	\N	0	\N	\N	0	\N	56	d30dffa0-20a1-4433-8659-ef80584a0913		1	1	2	\N	2021-12-10 14:29:22	2021-12-10 14:29:22	¦020958-04-7986-0¦082923.1 CH532 2004¦100CHIRINOS, JUAN CARLOS¦245ALEJANDRO MAGNO: EL VIVO ANHELO DE CONOCER / JUAN CARLOS CHIRINOS¦2501A. ED.¦260COLOMBIA : GRUPO EDITORIAL NORMA¦300202 PAG.¦440COLEC. SOL & LUNA¦6501. ALAEJANDRO MAGNO, 356 - 323 A.D - BIOGRAFíA 2. GRECIA - HISTORIA SIGLO IV¦700I. ALEJANDRO III DE MACEDONIAÌ	COLEC. SOL & LUNA	'-0':4,13 '-04':2,11 '-7986':3,12 '020958':10 '082923.1':14 '100chirinos':17 '2':48 '2004':7,16 '245alejandro':20 '2501a':8,30 '260colombia':32 '300202':36 '323':45 '356':44 '440colec':38 '6501':41 '700i':53 '923.1':5 '958':1 'a.d':46 'alaejandr':42 'alejandr':54 'anhel':24 'biograf':47 'carl':19,28 'ch532':6,15 'chirin':29 'conoc':26 'ed':9,31 'editorial':34 'greci':49 'grup':33 'histori':50 'iii':55 'iv':52 'juan':18,27 'lun':40 'macedoniaì':57 'magn':21,43 'norm':35 'pag':37 'sigl':51 'sol':39 'viv':23	
 124	1003	\N	001.42 T326T	\N	\N	0	\N	\N	0	\N	245	4d020021-43f1-4cfe-96a9-f3637fb5a6e5		1	1	2	\N	2022-01-05 14:31:51	2022-01-05 14:31:51			'001.42':1 't326t':2	
 127	1006	\N	004 C656	\N	\N	0	\N	\N	0	\N	245	854649af-8fa7-403b-8e13-151dcb67de09		1	1	2	\N	2022-01-05 14:38:12	2022-01-05 14:38:12			'004':1 'c656':2	
@@ -2538,7 +2881,6 @@ COPY public.inventariolibros (id, libro_id, isbn, clasificacion, edicion, codeba
 121	1000	\N	001.42 A537G 2003	\N	00004	0	\N	\N	0	\N	245	d5db96b3-515f-47c5-868e-df4efae10146		1	1	2	\N	2022-01-04 19:55:04	2022-02-08 14:57:04			'00004':4 '001.42':1 '2003':3 'a537g':2	3
 122	1001	\N	001.42 P474C	\N	00007	0	\N	\N	0	\N	245	fe175659-faec-40ac-bd33-e2ea24ce5d1a		1	1	2	\N	2022-01-05 14:23:54	2022-02-08 14:57:44			'00007':3 '001.42':1 'p474c':2	5
 123	1002	\N	001.42 R433	\N	00008	0	\N	\N	0	\N	245	3313563c-8930-4e8e-90d9-de08a5aac270		1	1	2	\N	2022-01-05 14:26:33	2022-02-08 14:58:23			'00008':3 '001.42':1 'r433':2	6
-125	1004	\N	001.539 K323L 1997	\N	00037	0	\N	\N	0	\N	245	4ec7147b-0505-4074-8b0c-ca2bc0b12eda		1	1	2	\N	2022-01-05 14:33:48	2022-02-08 14:59:18			'00037':4 '001.539':1 '1997':3 'k323l':2	7
 126	1005	\N	002 A354C	\N	00041	0	\N	\N	0	\N	245	e2592ce8-6f0c-4c9a-ac72-20f04f100f77		1	1	2	\N	2022-01-05 14:35:43	2022-02-08 17:14:16			'00041':3 '002':1 'a354c':2	8
 154	1034	\N	440.1 F678 2001	\N	\N	0	\N	\N	0	\N	247	88c041f5-6faf-4b3c-a518-690e6e990678		1	1	2	\N	2022-01-11 18:22:35	2022-01-11 18:22:35			'2001':3 '440.1':1 'f678':2	\N
 155	1035	\N	440.1 A584 2008	\N	\N	0	\N	\N	0	\N	247	872d0317-1cd9-4f46-b17f-c320a3093a7f		1	1	2	\N	2022-01-11 18:24:26	2022-01-11 18:24:26			'2008':3 '440.1':1 'a584':2	\N
@@ -2551,27 +2893,7 @@ COPY public.inventariolibros (id, libro_id, isbn, clasificacion, edicion, codeba
 163	1044	\N	378.006 P655	\N	\N	0	\N	\N	0	\N	245	2a894cd5-42ab-495c-be27-0cb9dcb773eb		1	1	2	\N	2022-01-11 19:35:10	2022-01-11 19:35:10			'378.006':1 'p655':2	233
 164	1045	\N	379.82 G368P	\N	\N	0	\N	\N	0	\N	179	d132c8d1-0b18-4476-a0b7-f8113d64e3df		1	1	2	\N	2022-01-11 19:54:06	2022-01-11 19:54:06			'379.82':1 'g368p':2	232
 165	1046	\N	380 F343F	\N	\N	0	\N	\N	0	\N	245	2c75c9bd-505e-4956-8de7-c469dc0f6d5f		1	1	2	\N	2022-01-11 19:57:32	2022-01-11 19:57:32			'380':1 'f343f':2	270
-166	1047	\N	380 V458F 2001	\N	\N	0	\N	\N	0	\N	245	4691b6fa-b8dc-40ea-9d9a-cacd7a37e360		1	1	2	\N	2022-01-11 19:59:58	2022-01-11 19:59:58			'2001':3 '380':1 'v458f':2	1450
-167	1048	\N	378 U558	\N	\N	0	\N	\N	0	\N	245	5b2c5b95-a0d2-4473-bb98-a8c910a56301		1	1	2	\N	2022-01-11 20:02:16	2022-01-11 20:02:16			'378':1 'u558':2	1454
-168	1050	\N	371.425 C383P	\N	\N	0	\N	\N	0	\N	117	43620f5c-289e-4eea-9565-6808eea4f703		1	1	2	\N	2022-01-11 20:06:24	2022-01-11 20:06:24			'371.425':1 'c383p':2	1663
-169	1051	\N	371.7 S352V	\N	\N	0	\N	\N	0	\N	245	3d766698-a75b-463c-a1de-fea4a4ea3cc4		1	1	2	\N	2022-01-11 20:11:20	2022-01-11 20:11:20			'371.7':1 's352v':2	1741
-170	1052	\N	380 145 104 R355C	\N	\N	0	\N	\N	0	\N	60	0c3e7b67-d5ce-4a5e-bcd7-c72abe1cd8b2		1	1	2	\N	2022-01-11 20:14:44	2022-01-11 20:14:44			'104':3 '145':2 '380':1 'r355c':4	1543
-171	1053	\N	380 145 91 C438E	\N	\N	0	\N	\N	0	\N	60	cc500197-c5bf-4c07-8b2d-f67813eb706d		1	1	2	\N	2022-01-11 20:18:23	2022-01-11 20:18:23			'145':2 '380':1 '91':3 'c438e':4	1545
-172	1054	\N	004.6 F676T 2007	\N	\N	0	\N	\N	0	\N	245	e65a501d-f994-4128-be06-82bfdca2b473		1	1	2	\N	2022-01-12 15:55:02	2022-01-12 15:55:02			'004.6':1 '2007':3 'f676t':2	1052
-173	1055	\N	004 D873E	\N	\N	0	\N	\N	0	\N	68	58e6dc02-1148-4e74-9764-5b4f866b37d7		1	1	2	\N	2022-01-14 14:56:55	2022-01-14 14:56:55			'004':1 'd873e':2	1376
-174	1056	\N	004 M555W	\N	\N	0	\N	\N	0	\N	111	7255c043-c137-49e5-a0ba-6251acab229a		1	1	2	\N	2022-01-14 15:01:26	2022-01-14 15:01:26			'004':1 'm555w':2	1048
-175	1057	\N	004 N678I 2006	\N	\N	0	\N	\N	0	\N	245	ed59aa6c-26bb-42e5-8c06-8633bc2b496f		1	1	2	\N	2022-01-14 15:06:08	2022-01-14 15:06:08			'004':1 '2006':3 'n678i':2	1051
-176	1059	\N	004 C656	\N	\N	0	\N	\N	0	\N	245	341a8b5d-d2e3-40d8-9932-1d6614693190		1	1	2	\N	2022-01-14 16:29:39	2022-01-14 16:29:39			'004':1 'c656':2	1674
-178	1060	\N	004 Z365A	\N	\N	0	\N	\N	0	\N	61	2466eb0e-3e0d-4001-87dc-4bb1f533b686		1	1	2	\N	2022-01-14 16:32:43	2022-01-14 16:32:43			'004':1 'z365a':2	1712
-179	1061	\N	004.6 C425J	\N	\N	0	\N	\N	0	\N	217	26573605-9fa8-4b91-abef-5fdce4c04ab6		1	1	2	\N	2022-01-14 16:35:11	2022-01-14 16:35:11			'004.6':1 'c425j':2	1713
-180	1062	\N	421 S883	\N	\N	0	\N	\N	0	\N	68	bec4bfbb-f6e7-4541-814f-23bcf668c18e		1	1	2	\N	2022-01-14 22:36:47	2022-01-14 22:36:47			'421':1 's883':2	437
-183	1066	\N	421 W674	\N	\N	0	\N	\N	0	\N	245	883b1569-525f-481d-a7cb-18779035b7e3		1	1	2	\N	2022-01-14 23:56:04	2022-01-14 23:56:04			'421':1 'w674':2	431
-184	1067	\N	421 W674	\N	\N	0	\N	\N	0	\N	245	9a82c9cb-7608-4bf1-8c78-d1167723bbf9		1	1	2	\N	2022-01-14 23:57:54	2022-01-14 23:57:54			'421':1 'w674':2	433
-185	1068	\N	421 T432	\N	\N	0	\N	\N	0	\N	245	47f29538-b01e-46dd-bc2f-ca826c8555b1		1	1	2	\N	2022-01-14 23:59:12	2022-01-14 23:59:12			'421':1 't432':2	435
-186	1069	\N	421 W674	\N	\N	0	\N	\N	0	\N	245	bf3bbb93-83a1-4ac0-b32c-b7bf09bd14a1		1	1	2	\N	2022-01-15 00:01:01	2022-01-15 00:01:01			'421':1 'w674':2	436
-187	1070	\N	421 W674	\N	\N	0	\N	\N	0	\N	245	17053ab8-2000-4dd4-b106-d40027f39411		1	1	2	\N	2022-01-15 00:02:56	2022-01-15 00:02:56			'421':1 'w674':2	438
-188	1071	\N	421 S883	\N	\N	0	\N	\N	0	\N	245	a5f784ce-51b4-47c4-b2d4-eae6abcf33ae		1	1	2	\N	2022-01-15 00:05:10	2022-01-15 00:05:10			'421':1 's883':2	439
-190	1073	\N	\N	\N	380.145 910 4 C388P	0	\N	\N	0	\N	60	c69cc65d-617e-46f1-9957-a6983f301317		1	1	2	\N	2022-01-15 00:22:18	2022-01-15 00:22:18			'380.145':1 '4':3 '910':2 'c388p':4	1559
+240	1132	\N	339 C384P	\N	\N	0	\N	\N	0	\N	245	25ef7d9d-ace2-434c-9b54-0f58d9f43e86		1	1	2	\N	2022-01-26 14:11:24	2022-01-26 14:11:24			'339':1 'c384p':2	292
 192	1074	\N	380-.145 338 4 A823M	\N	\N	0	\N	\N	0	\N	60	68a28c0f-3e0e-4ad2-89fa-e155f0b32ed0		1	1	2	\N	2022-01-15 00:25:46	2022-01-15 00:25:46			'145':2 '338':3 '380':1 '4':4 'a823m':5	1732
 193	1075	\N	380.145 338 4 R355M	\N	\N	0	\N	\N	0	\N	60	e8618a8d-7646-4249-bb90-31312a286978		1	1	2	\N	2022-01-15 00:27:34	2022-01-15 00:27:34			'338':2 '380.145':1 '4':3 'r355m':4	1700
 194	1076	\N	380.145 910 4 B685A	\N	\N	0	\N	\N	0	\N	60	4f6b1558-daee-41f9-912d-dae58b13989c		1	1	2	\N	2022-01-15 00:29:51	2022-01-15 00:29:51			'380.145':1 '4':3 '910':2 'b685a':4	1556
@@ -2619,10 +2941,7 @@ COPY public.inventariolibros (id, libro_id, isbn, clasificacion, edicion, codeba
 236	1129	\N	428.007 S868H	\N	\N	0	\N	\N	0	\N	64	2296ced3-8789-4c3a-83a9-8561c24183d7		1	1	2	\N	2022-01-26 13:33:36	2022-01-26 13:33:36			'428.007':1 's868h':2	458
 237	1128	\N	428.007 S868H	\N	\N	0	\N	\N	0	\N	64	569fd6f9-1728-4c47-90d2-6c939c24c06f		1	1	2	\N	2022-01-26 13:34:22	2022-01-26 13:34:22			'428.007':1 's868h':2	458
 238	1130	\N	428.2 S637A 2002	\N	\N	0	\N	\N	0	\N	64	055a62db-3942-437c-ba5c-8f72e89343c9		1	1	2	\N	2022-01-26 13:51:42	2022-01-26 13:51:42			'2002':3 '428.2':1 's637a':2	452
-239	1131	\N	428.2 S637A 2001	\N	\N	0	\N	\N	0	\N	64	d872f69d-b91d-44a3-9d4f-732a43f8bbfe		1	1	2	\N	2022-01-26 13:54:08	2022-01-26 13:54:08			'2001':3 '428.2':1 's637a':2	453
-240	1132	\N	339 C384P	\N	\N	0	\N	\N	0	\N	245	25ef7d9d-ace2-434c-9b54-0f58d9f43e86		1	1	2	\N	2022-01-26 14:11:24	2022-01-26 14:11:24			'339':1 'c384p':2	292
 241	1135	\N	340 C555L	\N	\N	0	\N	\N	0	\N	122	32aeff1e-80b9-4a6d-b0ca-3c80dba7f1fa		1	1	2	\N	2022-01-26 14:27:09	2022-01-26 14:27:09			'340':1 'c555l':2	1738
-242	1134	\N	340 S625	\N	\N	0	\N	\N	0	\N	245	c6e0f848-b0f8-4285-b4e5-f0c3c7536bda		1	1	2	\N	2022-01-26 14:36:00	2022-01-26 14:36:00			'340':1 's625':2	1385
 243	1133	\N	339 D675M 1991	\N	\N	0	\N	\N	0	\N	245	d4de9c3f-9c45-476b-96f8-6178e48c12c1		1	1	2	\N	2022-01-26 14:38:41	2022-01-26 14:38:41			'1991':3 '339':1 'd675m':2	223
 244	1136	\N	340 M686E 2007	\N	\N	0	\N	\N	0	\N	139	68bb6532-4868-426b-a6c0-c9387e53f95d		1	1	2	\N	2022-01-26 14:43:24	2022-01-26 14:43:24			'2007':3 '340':1 'm686e':2	1136
 245	1139	\N	340 M686E 2006	\N	\N	0	\N	\N	0	\N	82	20b77de4-38fc-479f-b708-8377643c7be4		1	1	2	\N	2022-01-26 14:47:30	2022-01-26 14:47:30			'2006':3 '340':1 'm686e':2	2560
@@ -2682,7 +3001,6 @@ COPY public.inventariolibros (id, libro_id, isbn, clasificacion, edicion, codeba
 305	1200	\N	341.481 B482D	\N	\N	0	\N	\N	0	\N	179	1fc34d90-a9a2-4631-b056-3536f474b0c6		1	1	2	\N	2022-02-01 15:01:54	2022-02-01 15:01:54			'341.481':1 'b482d':2	1435
 306	1201	\N	341.7 R566T	\N	\N	0	\N	\N	0	\N	60	d90c3669-d28c-4513-81b9-2a993cf40e78		1	1	2	\N	2022-02-01 15:03:43	2022-02-01 15:03:43			'341.7':1 'r566t':2	1409
 274	1170	\N	004.6 S988G 2004	\N	00079	0	\N	\N	0	\N	245	8a1b0d46-8e35-458a-a63b-e1d9f97d9746		1	1	2	\N	2022-01-27 14:19:27	2022-02-08 14:39:36			'00079':4 '004.6':1 '2004':3 's988g':2	1088
-289	1186	\N	154.63 L853 F887	\N	00378	0	\N	\N	0	\N	179	fb4916c7-71ec-48b4-b403-e5cf276abba7		1	1	2	\N	2022-01-27 16:56:10	2022-02-08 17:14:56			'00378':4 '154.63':1 'f887':3 'l853':2	66
 307	1202	\N	341.754 L664C	\N	\N	0	\N	\N	0	\N	60	13c8e2c9-6603-41e0-b08d-4168bf0c2f2c		1	1	2	\N	2022-02-01 15:08:39	2022-02-01 15:08:39			'341.754':1 'l664c':2	1564
 308	1203	\N	341.754 B685M 2003	\N	\N	0	\N	\N	0	\N	60	3d035332-cf42-40d1-8d76-cd5e2ee16bea		1	1	2	\N	2022-02-01 15:32:25	2022-02-01 15:32:25			'2003':3 '341.754':1 'b685m':2	239
 309	1204	\N	341.754 M655P.	\N	\N	0	\N	\N	0	\N	241	a632d731-3075-4f4e-8f88-e3ed948df3c7		1	1	2	\N	2022-02-01 15:34:45	2022-02-01 15:34:45			'341.754':1 'm655p':2	1557
@@ -3008,12 +3326,327 @@ COPY public.inventariolibros (id, libro_id, isbn, clasificacion, edicion, codeba
 643	1319	\N	352.5 A247A	\N	02713	0	\N	\N	0	\N	60	bf64fc15-86f4-4d30-9c80-db1d561e25a3		1	1	2	\N	2022-02-10 23:58:30	2022-02-10 23:58:30			'02713':3 '352.5':1 'a247a':2	263
 644	1319	\N	352.5 A247A	\N	02714	0	\N	\N	0	\N	60	62fb5283-1993-460e-9bfa-cc270a3e8a16		1	1	2	\N	2022-02-10 23:58:44	2022-02-10 23:58:44			'02714':3 '352.5':1 'a247a':2	263
 645	1319	\N	352.5 A247A	\N	02715	0	\N	\N	0	\N	60	d2b4afc0-e4b6-4d2b-949d-79d904516adf		1	1	2	\N	2022-02-10 23:58:54	2022-02-10 23:58:54			'02715':3 '352.5':1 'a247a':2	263
+646	1320	\N	361.1 B345P	\N	02716	0	\N	\N	0	\N	245	9c1d298c-14df-4521-8617-9a9f5261778a		1	1	2	\N	2022-02-11 00:00:33	2022-02-11 00:00:40			'02716':3 '361.1':1 'b345p':2	1085
+647	1320	\N	\N	\N	02717	0	\N	\N	0	\N	245	242c46e6-06b0-4545-825f-26b9c6ca5f0c		1	1	2	\N	2022-02-11 00:00:53	2022-02-11 00:00:53			'02717':1	1085
+648	1321	\N	361.1 P396P 2005	\N	02718	0	\N	\N	0	\N	245	4be144c2-3650-4192-8b9a-e30dd327b9e1		1	1	2	\N	2022-02-11 00:02:56	2022-02-11 00:02:56			'02718':4 '2005':3 '361.1':1 'p396p':2	1078
+649	1321	\N	361.1 P396P 2005	\N	02719	0	\N	\N	0	\N	245	de3284c6-aef8-4ed1-ad1a-a8fb74b652f9		1	1	2	\N	2022-02-11 00:03:08	2022-02-11 00:03:08			'02719':4 '2005':3 '361.1':1 'p396p':2	1078
+650	1321	\N	361.1 P396P 2005	\N	02720	0	\N	\N	0	\N	245	92bafe47-eb8c-464d-b564-c7d838a13433		1	1	2	\N	2022-02-11 00:03:18	2022-02-11 00:03:18			'02720':4 '2005':3 '361.1':1 'p396p':2	1078
+651	1321	\N	361.1 P396P 2005	\N	02721	0	\N	\N	0	\N	245	618ce406-f616-46c8-b7bf-1511c3fe88c3		1	1	2	\N	2022-02-11 00:03:39	2022-02-11 00:03:39			'02721':4 '2005':3 '361.1':1 'p396p':2	1078
+652	1321	\N	361.1 P396P 2005	\N	02722	0	\N	\N	0	\N	245	2921a0b9-c65a-4218-9b33-4b07eb34a910		1	1	2	\N	2022-02-11 00:03:48	2022-02-11 00:03:48			'02722':4 '2005':3 '361.1':1 'p396p':2	1078
+653	1321	\N	361.1 P396P 2005	\N	02723	0	\N	\N	0	\N	245	de3f3785-d9c0-4602-bcb3-17c96589ebf6		1	1	2	\N	2022-02-11 00:03:56	2022-02-11 00:03:56			'02723':4 '2005':3 '361.1':1 'p396p':2	1078
+654	1321	\N	361.1 P396P 2005	\N	02724	0	\N	\N	0	\N	245	63ea1745-6af6-4a6c-bec9-3ef1f0f6ef4a		1	1	2	\N	2022-02-11 00:04:09	2022-02-11 00:04:09			'02724':4 '2005':3 '361.1':1 'p396p':2	1078
+655	1322	\N	362.5 L488A	\N	02725	0	\N	\N	0	\N	245	15fea767-3a9d-411d-96ac-521476710735		1	1	2	\N	2022-02-11 00:06:22	2022-02-11 00:06:22			'02725':3 '362.5':1 'l488a':2	275
+656	1323	\N	363.73 C478C	\N	02726	0	\N	\N	0	\N	245	4a59df82-c768-436b-a432-8916296f229a		1	1	2	\N	2022-02-11 00:08:02	2022-02-11 00:08:02			'02726':3 '363.73':1 'c478c':2	1378
+657	1323	\N	363.73 C478C	\N	03895	0	\N	\N	0	\N	245	9f8e17f6-106b-45e2-8156-c9461a3db64f		1	1	2	\N	2022-02-11 00:08:12	2022-02-11 00:08:12			'03895':3 '363.73':1 'c478c':2	1378
+658	1323	\N	363.73 C478C	\N	03896	0	\N	\N	0	\N	245	2627efe0-435f-4d57-b99e-4cf44f519693		1	1	2	\N	2022-02-11 00:08:26	2022-02-11 00:08:26			'03896':3 '363.73':1 'c478c':2	1378
+659	1323	\N	363.73 C478C	\N	03897	0	\N	\N	0	\N	245	b8d2ed03-b16d-4e64-8c46-c259cf01e953		1	1	2	\N	2022-02-11 00:08:35	2022-02-11 00:08:35			'03897':3 '363.73':1 'c478c':2	1378
+660	1323	\N	363.73 C478C	\N	03898	0	\N	\N	0	\N	245	8ec37563-3812-4669-9520-cb177c74572e		1	1	2	\N	2022-02-11 00:08:46	2022-02-11 00:08:46			'03898':3 '363.73':1 'c478c':2	1378
+661	1324	\N	363.11 N675	\N	04394	0	\N	\N	0	\N	245	d0878f6c-5c1d-4929-a31c-dc59ad496c1b		1	1	2	\N	2022-02-11 00:10:29	2022-02-11 00:10:29			'04394':3 '363.11':1 'n675':2	891
+662	1324	\N	363.11 N675	\N	04395	0	\N	\N	0	\N	245	89e75415-e46a-4602-b758-20bc5a955652		1	1	2	\N	2022-02-11 00:10:39	2022-02-11 00:10:39			'04395':3 '363.11':1 'n675':2	891
+663	1325	\N	363.11 A833S	\N	05015	0	\N	\N	0	\N	245	62229374-932d-42aa-986e-136f70bb2c27		1	1	2	\N	2022-02-11 00:12:24	2022-02-11 00:12:24			'05015':3 '363.11':1 'a833s':2	1646
+664	1325	\N	363.11 A833S	\N	05016	0	\N	\N	0	\N	245	010dabdd-ab84-42bd-ab13-4fe0b21a64b6		1	1	2	\N	2022-02-11 00:12:37	2022-02-11 00:12:37			'05016':3 '363.11':1 'a833s':2	1646
+665	1325	\N	363.11 A833S	\N	05017	0	\N	\N	0	\N	245	9f709561-01b6-4ec0-af6c-4a6d2302fab1		1	1	2	\N	2022-02-11 00:12:46	2022-02-11 00:12:46			'05017':3 '363.11':1 'a833s':2	363.11 A833S
+666	1326	\N	363.96 C656	\N	05240	0	\N	\N	0	\N	245	1c5ccff1-4417-43d7-a51f-79dbf690aea0		1	1	2	\N	2022-02-11 00:14:06	2022-02-11 00:14:06			'05240':3 '363.96':1 'c656':2	1744
+667	1327	\N	364 C715	\N	04965	0	\N	\N	0	\N	245	b719b8ad-51e8-4e7a-9a47-97864635d840		1	1	2	\N	2022-02-11 00:15:49	2022-02-11 00:15:49			'04965':3 '364':1 'c715':2	1631
+668	1327	\N	364 C715	\N	04966	0	\N	\N	0	\N	245	6c2549cc-a0a5-49ba-9128-15b9166f0b57		1	1	2	\N	2022-02-11 00:16:05	2022-02-11 00:16:05			'04966':3 '364':1 'c715':2	1631
+669	1327	\N	364 C715	\N	04967	0	\N	\N	0	\N	245	401d165e-e60c-4fad-880a-f3e467f03040		1	1	2	\N	2022-02-11 00:16:20	2022-02-11 00:16:20			'04967':3 '364':1 'c715':2	1631
+670	1327	\N	364 C715	\N	04968	0	\N	\N	0	\N	245	1642aaa7-2131-495b-a5b0-188d903f4b3c		1	1	2	\N	2022-02-11 00:16:32	2022-02-11 00:16:32			'04968':3 '364':1 'c715':2	1631
+671	1328	\N	364. C755	\N	04969	0	\N	\N	0	\N	245	97c3d5d9-b391-4004-ada2-0d23be32e492		1	1	2	\N	2022-02-11 00:20:20	2022-02-11 00:20:20			'04969':3 '364':1 'c755':2	1632
+672	1328	\N	364. C755	\N	04970	0	\N	\N	0	\N	245	53cd54c5-ef0a-47a0-bd0e-a930a7d72dea		1	1	2	\N	2022-02-11 00:20:30	2022-02-11 00:20:30			'04970':3 '364':1 'c755':2	1632
+673	1328	\N	364. C755	\N	04971	0	\N	\N	0	\N	245	f89aaa8c-5173-4f0d-8e03-29d648b35b38		1	1	2	\N	2022-02-11 00:20:38	2022-02-11 00:20:38			'04971':3 '364':1 'c755':2	1632
+674	1328	\N	364. C755	\N	04972	0	\N	\N	0	\N	245	3a365ffc-28b6-49a4-944e-05570b7ea5d7		1	1	2	\N	2022-02-11 00:20:48	2022-02-11 00:20:48			'04972':3 '364':1 'c755':2	1632
+675	1329	\N	030 E525	\N	05093	0	\N	\N	0	\N	245	05d36325-fa8d-4694-9c3f-c1ef804e1f5e		1	1	2	\N	2022-02-11 13:34:02	2022-02-11 13:34:02			'030':1 '05093':3 'e525':2	1673
+676	1331	\N	030 E525	\N	04976	0	\N	\N	0	\N	245	af102acd-e990-40cb-b500-9df6d363365e		1	1	2	\N	2022-02-11 13:43:53	2022-02-11 13:43:53			'030':1 '04976':3 'e525':2	1634
+682	1332	\N	030 A886 V1	\N	04400	0	\N	\N	0	\N	106	c1c7342f-aa74-4edc-838b-e3aca32476cf		1	1	2	\N	2022-02-11 13:47:09	2022-02-11 13:48:05			'030':1 '04400':4 'a886':2 'v1':3	1327
+681	1332	\N	030 A886 V1	\N	04401	0	\N	\N	0	\N	106	12d14578-f6e8-4be3-9a08-3af0099c1d61		1	1	2	\N	2022-02-11 13:47:09	2022-02-11 13:48:26			'030':1 '04401':4 'a886':2 'v1':3	1327
+680	1332	\N	030 A886 V1	\N	04402	0	\N	\N	0	\N	106	7e71ea9a-88f2-44f2-a513-00c2aab52c53		1	1	2	\N	2022-02-11 13:47:09	2022-02-11 13:48:42			'030':1 '04402':4 'a886':2 'v1':3	1327
+683	1333	\N	030 E525	\N	00264	0	\N	\N	0	\N	245	703f2875-3931-4b1a-93ff-4d88e3920267		1	1	2	\N	2022-02-11 13:53:32	2022-02-11 13:53:32			'00264':3 '030':1 'e525':2	1140
+684	1333	\N	030 E525	\N	00265	0	\N	\N	0	\N	245	5fae837a-d937-496f-96be-a9c477db61f9		1	1	2	\N	2022-02-11 13:54:14	2022-02-11 13:54:14			'00265':3 '030':1 'e525':2	1140
+685	1333	\N	030 E525	\N	00266	0	\N	\N	0	\N	245	012c79ef-90ff-480b-9252-99e51935c392		1	1	2	\N	2022-02-11 13:55:05	2022-02-11 13:55:05			'00266':3 '030':1 'e525':2	1140
+686	1333	\N	030 E525	\N	00267	0	\N	\N	0	\N	245	66373486-34ac-4c8c-af1e-98e127655fc1		1	1	2	\N	2022-02-11 13:55:25	2022-02-11 13:55:25			'00267':3 '030':1 'e525':2	1140
+687	1333	\N	030 E525	\N	00268	0	\N	\N	0	\N	245	da9f5ced-2808-41b9-a289-2ab4dc98522a		1	1	2	\N	2022-02-11 13:56:00	2022-02-11 13:56:00			'00268':3 '030':1 'e525':2	1140
+688	1333	\N	030 E525	\N	00269	0	\N	\N	0	\N	245	2a079e82-feab-4264-84e7-a3ff75864268		1	1	2	\N	2022-02-11 13:56:42	2022-02-11 13:56:42			'00269':3 '030':1 'e525':2	1140
+689	1333	\N	030 E525	\N	00270	0	\N	\N	0	\N	245	1171951f-6e70-4368-b59b-e6cf16d256db		1	1	2	\N	2022-02-11 13:57:04	2022-02-11 13:57:04			'00270':3 '030':1 'e525':2	1140
+690	1333	\N	030 E525	\N	00271	0	\N	\N	0	\N	245	5b81a952-c7ac-4600-b0f8-d5890771bebe		1	1	2	\N	2022-02-11 13:57:36	2022-02-11 13:57:36			'00271':3 '030':1 'e525':2	1140
+695	1334	\N	030 T453	\N	00256	0	\N	\N	0	\N	245	d9a8fee0-0a29-421e-b604-4e724e083189		1	1	2	\N	2022-02-11 14:04:57	2022-02-11 14:04:57			'00256':3 '030':1 't453':2	1144
+696	1334	\N	030 T453	\N	00257	0	\N	\N	0	\N	245	f4a2ac88-84e6-4ebe-8dd3-61b522c02e9c		1	1	2	\N	2022-02-11 14:05:11	2022-02-11 14:05:11			'00257':3 '030':1 't453':2	1144
+698	1334	\N	030 T453	\N	00258	0	\N	\N	0	\N	245	0f151fb0-cf74-4454-a1ae-4bb48b9dc5ed		1	1	2	\N	2022-02-11 14:05:35	2022-02-11 14:05:35			'00258':3 '030':1 't453':2	1144
+699	1334	\N	030 T453	\N	00259	0	\N	\N	0	\N	245	165ec783-097c-4848-a6b8-a4f40b42ccbc		1	1	2	\N	2022-02-11 14:06:01	2022-02-11 14:06:01			'00259':3 '030':1 't453':2	1144
+701	1334	\N	030 T453	\N	00260	0	\N	\N	0	\N	245	3c47dde5-3227-4064-bb83-1235335fd2a1		1	1	2	\N	2022-02-11 14:06:28	2022-02-11 14:06:28			'00260':3 '030':1 't453':2	1144
+702	1334	\N	030 T453	\N	00261	0	\N	\N	0	\N	245	b97b0543-c8d9-422b-a6e1-19378c16652f		1	1	2	\N	2022-02-11 14:06:44	2022-02-11 14:06:44			'00261':3 '030':1 't453':2	1144
+703	1334	\N	030 T453	\N	00262	0	\N	\N	0	\N	245	7386fa50-49b3-4cf4-b3b2-6e18906262ff		1	1	2	\N	2022-02-11 14:07:05	2022-02-11 14:07:05			'00262':3 '030':1 't453':2	1144
+705	1334	\N	030 T453	\N	00263	0	\N	\N	0	\N	245	2eea7bae-62c0-4952-9172-3ca6a5549cce		1	1	2	\N	2022-02-11 14:07:27	2022-02-11 14:07:27			'00263':3 '030':1 't453':2	1144
+707	1334	\N	030 T453	\N	004250	0	\N	\N	0	\N	245	167951c6-bee1-404a-9720-cd2eb6e47e37		1	1	2	\N	2022-02-11 14:07:54	2022-02-11 14:07:54			'004250':3 '030':1 't453':2	1144
+708	1335	\N	030 O936	\N	00255	0	\N	\N	0	\N	64	7d456934-f97b-4bea-982e-fb29acd1ac13		1	1	2	\N	2022-02-11 14:11:21	2022-02-11 14:11:21			'00255':3 '030':1 'o936':2	1142
+709	1336	\N	030 D522	\N	00221	0	\N	\N	0	\N	245	fa2b8bdf-f3a8-481e-bf2b-3fcb3b989631		1	1	2	\N	2022-02-11 14:26:57	2022-02-11 14:26:57			'00221':3 '030':1 'd522':2	34
+710	1336	\N	030 D522	\N	00222	0	\N	\N	0	\N	245	f4a8199e-1181-4495-b98a-48ce9e8c4e2f		1	1	2	\N	2022-02-11 14:27:10	2022-02-11 14:27:10			'00222':3 '030':1 'd522':2	34
+711	1336	\N	030 D522	\N	00223	0	\N	\N	0	\N	245	2869dc0f-1343-4b17-b19a-caa048a84ed3		1	1	2	\N	2022-02-11 14:27:20	2022-02-11 14:27:20			'00223':3 '030':1 'd522':2	34
+712	1336	\N	34030 D522	\N	00224	0	\N	\N	0	\N	245	03ac27e3-8eeb-4efd-9c0b-badb87da7fae		1	1	2	\N	2022-02-11 14:27:37	2022-02-11 14:27:37			'00224':3 '34030':1 'd522':2	34
+713	1336	\N	030 D522	\N	00225	0	\N	\N	0	\N	245	185cb8e5-ca3e-4ffa-bae6-a6fe50d56fe6		1	1	2	\N	2022-02-11 14:27:49	2022-02-11 14:27:49			'00225':3 '030':1 'd522':2	34
+714	1336	\N	030 D522	\N	00226	0	\N	\N	0	\N	245	c64e0283-16e4-4e2c-9f59-64fd9bf5accd		1	1	2	\N	2022-02-11 14:28:01	2022-02-11 14:28:01			'00226':3 '030':1 'd522':2	34
+715	1336	\N	030 D522	\N	00227	0	\N	\N	0	\N	245	891a5c5e-f6da-479a-9c29-c1300652bf7e		1	1	2	\N	2022-02-11 14:28:12	2022-02-11 14:28:12			'00227':3 '030':1 'd522':2	34
+716	1336	\N	030 D522	\N	00228	0	\N	\N	0	\N	245	7efd970b-12cf-4da3-9ae0-432706bcd979		1	1	2	\N	2022-02-11 14:28:23	2022-02-11 14:28:23			'00228':3 '030':1 'd522':2	34
+717	1336	\N	030 D522	\N	00229	0	\N	\N	0	\N	245	1c93f559-8a5a-42a0-a5d4-fd66b5d42140		1	1	2	\N	2022-02-11 14:28:33	2022-02-11 14:28:33			'00229':3 '030':1 'd522':2	34
+718	1336	\N	030 D522	\N	00230	0	\N	\N	0	\N	245	cf167e8a-1853-484f-8039-2d4e6d9d7982		1	1	2	\N	2022-02-11 14:28:58	2022-02-11 14:28:58			'00230':3 '030':1 'd522':2	34
+719	1337	\N	020 M527	\N	00196	0	\N	\N	0	\N	245	145948f4-375d-4ccc-b054-5f37b4afc13f		1	1	2	\N	2022-02-11 14:36:27	2022-02-11 14:36:27			'00196':3 '020':1 'm527':2	27
+720	1338	\N	020 K588E	\N	00193	0	\N	\N	0	\N	251	8dd6e4c6-defa-4f06-b76a-81af7b7ba583		1	1	2	\N	2022-02-11 14:42:22	2022-02-11 14:42:22			'00193':3 '020':1 'k588e':2	22
+721	1338	\N	020 K588E	\N	00194	0	\N	\N	0	\N	251	37b90e73-0be7-4031-a2b9-9e338964d19a		1	1	2	\N	2022-02-11 14:42:39	2022-02-11 14:42:39			'00194':3 '020':1 'k588e':2	22
+722	1339	\N	020 C458 1996	\N	00184	0	\N	\N	0	\N	245	20dff85f-5801-4378-8cfa-d5fb1144aa3d		1	1	2	\N	2022-02-11 15:05:41	2022-02-11 15:05:41			'00184':4 '020':1 '1996':3 'c458':2	9
+723	1340	\N	370 U558	\N	04248	0	\N	\N	0	\N	245	454a9a65-26cc-4f8b-b354-f32e68f4763c		1	1	2	\N	2022-02-11 15:50:43	2022-02-11 15:50:43			'04248':3 '370':1 'u558':2	1458
+724	1341	\N	370 E382	\N	04246	0	\N	\N	0	\N	245	e0b89402-c63b-4e51-a932-366feb06d517		1	1	2	\N	2022-02-11 16:04:37	2022-02-11 16:04:37			'04246':3 '370':1 'e382':2	1457
+725	1341	\N	370 E382	\N	04247	0	\N	\N	0	\N	245	539775d4-ae89-45f2-b45b-a7d651ed5ed8		1	1	2	\N	2022-02-11 16:04:50	2022-02-11 16:04:50			'04247':3 '370':1 'e382':2	1457
+726	1343	\N	370.19 U558 J675	\N	02735	0	\N	\N	0	\N	179	ad8ffb64-4fd6-4607-aa9e-20b1224bfba1		1	1	2	\N	2022-02-11 16:07:16	2022-02-11 16:07:16			'02735':4 '370.19':1 'j675':3 'u558':2	154
+727	1344	\N	370.1 H475F	\N	02731	0	\N	\N	0	\N	245	243a5cc3-c1b4-444c-bcf5-ee4739a74e87		1	1	2	\N	2022-02-11 16:09:13	2022-02-11 16:09:13			'02731':3 '370.1':1 'h475f':2	300
+728	1344	\N	370.1 H475F	\N	02732	0	\N	\N	0	\N	245	dbbbff9b-abef-4d4b-be5b-b15aebedf7b6		1	1	2	\N	2022-02-12 00:52:10	2022-02-12 00:52:10			'02732':3 '370.1':1 'h475f':2	300
+729	1344	\N	370.1 H475F	\N	02733	0	\N	\N	0	\N	245	8f05daf1-e97b-4e3e-821b-5ff977fc3ffe		1	1	2	\N	2022-02-12 00:52:19	2022-02-12 00:52:19			'02733':3 '370.1':1 'h475f':2	300
+730	1344	\N	370.1 H475F	\N	02734	0	\N	\N	0	\N	245	d6383023-f614-4e23-9f1b-79ae179cb46a		1	1	2	\N	2022-02-12 00:52:28	2022-02-12 00:52:28			'02734':3 '370.1':1 'h475f':2	300
+731	1346	\N	370.1 C524C	\N	02730	0	\N	\N	0	\N	245	e8515a1d-f66b-4fc5-9616-12c88cd77ec6		1	1	2	\N	2022-02-12 00:54:09	2022-02-12 00:54:09			'02730':3 '370.1':1 'c524c':2	299
+732	1346	\N	370.1 C524C	\N	02729	0	\N	\N	0	\N	245	319a44b4-ccdd-4f68-9dd6-b988c986ac6c		1	1	2	\N	2022-02-12 00:54:21	2022-02-12 00:54:21			'02729':3 '370.1':1 'c524c':2	299
+733	1347	\N	370 E382	\N	02727	0	\N	\N	0	\N	245	099bb725-d9e0-40e2-a34f-e4d857e73618		1	1	2	\N	2022-02-12 00:55:48	2022-02-12 00:55:48			'02727':3 '370':1 'e382':2	305
+734	1348	\N	128 F745A	\N	05245	0	\N	\N	0	\N	245	6ef65f09-64d3-4c05-a707-f4f8236c0bea		1	1	2	\N	2022-02-15 15:35:06	2022-02-15 15:35:06			'05245':3 '128':1 'f745a':2	1749
+735	1349	\N	158 P474R	\N	05251	0	\N	\N	0	\N	245	ceb1bb05-c9b4-4614-9a31-9628a5e3e75a		1	1	2	\N	2022-02-15 15:37:45	2022-02-15 15:37:45			'05251':3 '158':1 'p474r':2	1755
+736	1350	\N	055.1 G688P 2005	\N	00272	0	\N	\N	0	\N	245	e7874506-bf74-49b6-91cd-43f2c4e5bd6d		1	1	2	\N	2022-02-15 15:42:20	2022-02-15 15:42:20			'00272':4 '055.1':1 '2005':3 'g688p':2	1065
+737	1350	\N	055.1 G688P 2005	\N	00273	0	\N	\N	0	\N	245	d2bc3367-f4af-49be-81a6-c58ad3e7dca7		1	1	2	\N	2022-02-15 15:42:33	2022-02-15 15:42:33			'00273':4 '055.1':1 '2005':3 'g688p':2	1065
+738	1350	\N	055.1 G688P 2005	\N	00274	0	\N	\N	0	\N	245	2f8d83e8-9fb1-4d43-bfbc-a1345b887463		1	1	2	\N	2022-02-15 15:42:46	2022-02-15 15:42:46			'00274':4 '055.1':1 '2005':3 'g688p':2	1065
+739	1350	\N	055.1 G688P 2005	\N	00275	0	\N	\N	0	\N	245	bbcd2e35-2d5e-446d-9582-0ebd55c8c2ab		1	1	2	\N	2022-02-15 15:42:57	2022-02-15 15:42:57			'00275':4 '055.1':1 '2005':3 'g688p':2	1065
+740	1350	\N	055.1 G688P 2005	\N	00276	0	\N	\N	0	\N	245	b8e7fc23-6081-400d-9e84-618695fd5219		1	1	2	\N	2022-02-15 15:43:09	2022-02-15 15:43:09			'00276':4 '055.1':1 '2005':3 'g688p':2	1065
+741	1350	\N	055.1 G688P 2005	\N	00277	0	\N	\N	0	\N	245	e1d3882e-0a6b-4219-81a7-41fb80653dc1		1	1	2	\N	2022-02-15 15:43:35	2022-02-15 15:43:35			'00277':4 '055.1':1 '2005':3 'g688p':2	055.1 G688P 2005
+742	1350	\N	055.1 G688P 2005	\N	00278	0	\N	\N	0	\N	245	2818c1dd-b4f3-4f88-a50a-868181ad10c5		1	1	2	\N	2022-02-15 15:43:47	2022-02-15 15:43:47			'00278':4 '055.1':1 '2005':3 'g688p':2	1065
+743	1350	\N	055.1 G688P 2005	\N	00279	0	\N	\N	0	\N	245	3114a9a7-ff82-49f0-985d-8fbb9600456d		1	1	2	\N	2022-02-15 15:44:00	2022-02-15 15:44:00			'00279':4 '055.1':1 '2005':3 'g688p':2	1065
+744	1351	\N	158 V353C	\N	05250	0	\N	\N	0	\N	245	31a15d93-f359-4459-b929-7a8dcdb14323		1	1	2	\N	2022-02-15 15:50:22	2022-02-15 15:50:22			'05250':3 '158':1 'v353c':2	1754
+745	1352	\N	158 C678V	\N	05249	0	\N	\N	0	\N	245	741197ef-7765-4506-9f76-6882d56ca2b2		1	1	2	\N	2022-02-15 19:04:43	2022-02-15 19:04:43			'05249':3 '158':1 'c678v':2	1753
+746	1353	\N	155.935 D887E	\N	05337	0	\N	\N	0	\N	60	8ed2ef8b-1479-4562-aeca-11c9d1b5eb38		1	1	2	\N	2022-02-15 19:06:28	2022-02-15 19:06:28			'05337':3 '155.935':1 'd887e':2	1795
+747	1353	\N	155.935 D887E	\N	05338	0	\N	\N	0	\N	60	77e7440f-5c03-4a38-9fee-965273101bcc		1	1	2	\N	2022-02-15 19:06:39	2022-02-15 19:06:39			'05338':3 '155.935':1 'd887e':2	1795
+748	1354	\N	060 M456	\N	04548	0	\N	\N	0	\N	179	f04e25f5-0630-49a9-9347-aaeceae5bdb1		1	1	2	\N	2022-02-15 19:09:07	2022-02-15 19:09:07			'04548':3 '060':1 'm456':2	1311
+749	1354	\N	060 M456	\N	04549	0	\N	\N	0	\N	179	c544f075-f6f8-4662-a503-4646aeccb1d5		1	1	2	\N	2022-02-15 19:09:19	2022-02-15 19:09:19			'04549':3 '060':1 'm456':2	1311
+750	1355	\N	060 E524	\N	04244	0	\N	\N	0	\N	179	ba3d70b8-dfef-4573-89c3-ef02b7d673e1		1	1	2	\N	2022-02-15 19:12:42	2022-02-15 19:12:42			'04244':3 '060':1 'e524':2	1456
+751	1355	\N	060 E524	\N	04245	0	\N	\N	0	\N	179	a1198e2e-5f5c-4a5f-91ca-1afcea083e68		1	1	2	\N	2022-02-15 19:12:58	2022-02-15 19:12:58			'04245':3 '060':1 'e524':2	1456
+752	1356	\N	060 U558	\N	04234	0	\N	\N	0	\N	179	ed0b8592-a780-4eeb-bf0d-8bf738d642b4		1	1	2	\N	2022-02-15 19:16:41	2022-02-15 19:16:41			'04234':3 '060':1 'u558':2	1449
+754	1356	\N	060 U558	\N	04235	0	\N	\N	0	\N	179	0d938daf-bbe9-4ac0-9d81-7b6998ddf4fe		1	1	2	\N	2022-02-15 19:16:57	2022-02-15 19:16:57			'04235':3 '060':1 'u558':2	1449
+755	1357	\N	060 M456	\N	00282	0	\N	\N	0	\N	179	21a14da4-4be5-424d-98d8-d7117cafd90d		1	1	2	\N	2022-02-15 19:19:06	2022-02-15 19:19:06			'00282':3 '060':1 'm456':2	414
+756	1357	\N	060 M456	\N	00283	0	\N	\N	0	\N	179	c973360d-cb1c-4c51-802a-e5c93d47e72a		1	1	2	\N	2022-02-15 19:19:21	2022-02-15 19:19:21			'00283':3 '060':1 'm456':2	414
+757	1358	\N	060 T472 VOL. 1	\N	00284	0	\N	\N	0	\N	179	8d38f1d4-4273-4334-827d-fbacbe2e089c		1	1	2	\N	2022-02-15 19:21:23	2022-02-15 19:21:23			'00284':5 '060':1 '1':4 't472':2 'vol':3	128
+758	1358	\N	060 T472 VOL. 1	\N	00285	0	\N	\N	0	\N	179	67635b27-b3b7-4bb4-ba91-31efd3e92c4e		1	1	2	\N	2022-02-15 19:21:33	2022-02-15 19:21:33			'00285':5 '060':1 '1':4 't472':2 'vol':3	128
+759	1359	\N	069 D539M	\N	00288	0	\N	\N	0	\N	245	fedf31f2-05a1-4b4b-a953-60143327d1af		1	1	2	\N	2022-02-15 19:25:16	2022-02-15 19:25:16			'00288':3 '069':1 'd539m':2	125
+760	1360	\N	069 G853E	\N	00289	0	\N	\N	0	\N	245	790ebd42-68af-4933-ad0a-c72631439ba2		1	1	2	\N	2022-02-15 20:39:28	2022-02-15 20:39:28			'00289':3 '069':1 'g853e':2	121
+761	1361	\N	339 P374M 2001	\N	02422	0	\N	\N	0	\N	245	d7c97b78-ad8d-4ca0-9af9-93a22e7f1cae		1	1	2	\N	2022-02-15 20:43:41	2022-02-15 20:43:41			'02422':4 '2001':3 '339':1 'p374m':2	291
+762	1361	\N	339 P374M 2001	\N	02423	0	\N	\N	0	\N	245	a08beb08-9165-4f3b-8ca2-4ebf0e5e5e9e		1	1	2	\N	2022-02-15 20:43:52	2022-02-15 20:43:52			'02423':4 '2001':3 '339':1 'p374m':2	291
+763	1361	\N	339 P374M 2001	\N	02424	0	\N	\N	0	\N	245	82d0888f-31e9-407a-8928-cae72610b990		1	1	2	\N	2022-02-15 20:44:32	2022-02-15 20:44:32			'02424':4 '2001':3 '339':1 'p374m':2	2291
+764	1361	\N	\N	\N	02425	0	\N	\N	0	\N	245	9d60097f-f662-48fd-b988-06bfdefeb11d		1	1	2	\N	2022-02-15 20:44:56	2022-02-15 20:44:56			'02425':1	291
+765	1361	\N	339 P374M 2001	\N	02426	0	\N	\N	0	\N	245	88b51145-2b7e-447b-8df4-779f055d7153		1	1	2	\N	2022-02-15 20:45:21	2022-02-15 20:45:21			'02426':4 '2001':3 '339':1 'p374m':2	291
+766	1361	\N	339 P374M 2001	\N	02427	0	\N	\N	0	\N	245	a1076ea6-3370-4f02-b580-f80a420b4891		1	1	2	\N	2022-02-15 20:45:36	2022-02-15 20:45:36			'02427':4 '2001':3 '339':1 'p374m':2	291
+767	1361	\N	339 P374M 2001	\N	02428	0	\N	\N	0	\N	245	eb156886-09a2-4c9d-b01c-0454b2decaf4		1	1	2	\N	2022-02-15 20:45:48	2022-02-15 20:45:48			'02428':4 '2001':3 '339':1 'p374m':2	291
+768	1361	\N	339 P374M 2001	\N	02429	0	\N	\N	0	\N	245	d5868e40-47c8-47d2-b928-412e7fe1953f		1	1	2	\N	2022-02-15 20:45:59	2022-02-15 20:45:59			'02429':4 '2001':3 '339':1 'p374m':2	291
+769	1361	\N	339 P374M 2001	\N	02430	0	\N	\N	0	\N	245	6251748b-222c-4e94-b7c9-1e97431a40f3		1	1	2	\N	2022-02-15 20:46:10	2022-02-15 20:46:10			'02430':4 '2001':3 '339':1 'p374m':2	291
+770	1361	\N	339 P374M 2001	\N	02490	0	\N	\N	0	\N	245	c59d4722-c168-416a-965b-8985987545c8		1	1	2	\N	2022-02-15 20:46:28	2022-02-15 20:46:28			'02490':4 '2001':3 '339':1 'p374m':2	291
+771	1362	\N	069 M667G	\N	00292	0	\N	\N	0	\N	245	a4d37290-a19e-40a3-8e1e-4c6142b976b2		1	1	2	\N	2022-02-15 20:58:21	2022-02-15 20:58:21			'00292':3 '069':1 'm667g':2	118
+772	1363	\N	069.0683 K685E	\N	00293	0	\N	\N	0	\N	245	59e28309-0e10-4bbc-85d8-8aab3bd871d1		1	1	2	\N	2022-02-16 13:30:36	2022-02-16 13:30:36			'00293':3 '069.0683':1 'k685e':2	127
+773	1364	\N	069.09 P474E	\N	00295	0	\N	\N	0	\N	245	e1f6be18-833d-4437-b862-b438f8b80e77		1	1	2	\N	2022-02-16 13:33:03	2022-02-16 13:33:03			'00295':3 '069.09':1 'p474e':2	126
+774	1365	\N	069.22 B452O	\N	00296	0	\N	\N	0	\N	245	debec7fa-e017-407c-a537-558a3420c006		1	1	2	\N	2022-02-16 13:34:26	2022-02-16 13:34:26			'00296':3 '069.22':1 'b452o':2	123
+775	1366	\N	100 D534D	\N	00301	0	\N	\N	0	\N	245	4158c444-9bf8-4501-9b8a-a7be6ce33cb7		1	1	2	\N	2022-02-16 13:39:35	2022-02-16 13:39:35			'00301':3 '100':1 'd534d':2	39
+776	1367	\N	100 M378I	\N	00303	0	\N	\N	0	\N	245	394dc9ac-370c-4c51-8c2a-a6827c43ab92		1	1	2	\N	2022-02-16 13:40:59	2022-02-16 13:40:59			'00303':3 '100':1 'm378i':2	44
+777	1368	\N	111 N526L	\N	00309	0	\N	\N	0	\N	245	ea970329-fd78-4e1f-a5b6-a295ddb96238		1	1	2	\N	2022-02-16 13:42:24	2022-02-16 13:42:24			'00309':3 '111':1 'n526l':2	38
+778	1368	\N	111 N526L	\N	00310	0	\N	\N	0	\N	245	4bd912d9-67ef-4eba-a8b3-d326b5bfd8de		1	1	2	\N	2022-02-16 13:42:37	2022-02-16 13:42:37			'00310':3 '111':1 'n526l':2	38
+779	1369	\N	121 H488T	\N	00315	0	\N	\N	0	\N	178	9cc21c04-e6d5-41e3-95a0-918c33cbd070		1	1	2	\N	2022-02-16 13:44:56	2022-02-16 13:44:56			'00315':3 '121':1 'h488t':2	49
+780	1370	\N	121 T677S	\N	\N	0	\N	\N	0	\N	245	8b148811-c18e-4654-a654-d40f15cd706d		1	1	2	\N	2022-02-16 13:46:13	2022-02-16 13:46:13			'121':1 't677s':2	50
+781	1370	\N	121 T677S	\N	00317	0	\N	\N	0	\N	245	9ef74bd3-7097-48d7-8e71-356bff0a0228		1	1	2	\N	2022-02-16 13:46:28	2022-02-16 13:46:28			'00317':3 '121':1 't677s':2	50
+782	1371	\N	121.686 H475	\N	00318	0	\N	\N	0	\N	245	e2413863-db56-4d2d-a529-5211d42eb47f		1	1	2	\N	2022-02-16 13:48:12	2022-02-16 13:48:12			'00318':3 '121.686':1 'h475':2	47
+783	1371	\N	121.686 H475	\N	00319	0	\N	\N	0	\N	245	2a124747-f82d-44c5-ab67-b931203f3bf7		1	1	2	\N	2022-02-16 13:48:23	2022-02-16 13:48:23			'00319':3 '121.686':1 'h475':2	47
+784	1372	\N	121.686 P478	\N	00320	0	\N	\N	0	\N	245	bcd56a26-b551-46db-9ffc-74d4988a9177		1	1	2	\N	2022-02-16 13:50:06	2022-02-16 13:50:06			'00320':3 '121.686':1 'p478':2	48
+785	1372	\N	121.686 P478	\N	00321	0	\N	\N	0	\N	245	b4b23669-0439-4233-ac11-a32289ccd4c3		1	1	2	\N	2022-02-16 13:50:19	2022-02-16 13:50:19			'00321':3 '121.686':1 'p478':2	48
+786	1373	\N	128 B482T	\N	00322	0	\N	\N	0	\N	179	3b030e32-dc22-4f62-97b2-1a27da67670a		1	1	2	\N	2022-02-16 13:52:16	2022-02-16 13:52:16			'00322':3 '128':1 'b482t':2	53
+787	1373	\N	128 B482T	\N	00323	0	\N	\N	0	\N	179	f9616e1c-7828-4a93-a88c-c7e373fe0dcc		1	1	2	\N	2022-02-16 13:52:28	2022-02-16 13:52:28			'00323':3 '128':1 'b482t':2	53
+788	1374	\N	128 E385F	\N	00324	0	\N	\N	0	\N	179	79d0b6cc-d43b-4001-8c59-203fdbff650d		1	1	2	\N	2022-02-16 13:54:00	2022-02-16 13:54:00			'00324':3 '128':1 'e385f':2	89
+789	1374	\N	128 E385F	\N	00325	0	\N	\N	0	\N	179	b9b91e47-a0e0-48db-b200-745217836582		1	1	2	\N	2022-02-16 13:54:11	2022-02-16 13:54:11			'00325':3 '128':1 'e385f':2	89
+790	1375	\N	128 F475	\N	00326	0	\N	\N	0	\N	179	456c605a-f1d7-48b0-9760-5af65c00d41b		1	1	2	\N	2022-02-16 13:58:57	2022-02-16 13:58:57			'00326':3 '128':1 'f475':2	88
+792	1375	\N	128 F475	\N	00327	0	\N	\N	0	\N	179	3f40847a-0e51-4926-8faf-f205cecb3e55		1	1	2	\N	2022-02-16 13:59:17	2022-02-16 13:59:17			'00327':3 '128':1 'f475':2	88
+793	1376	\N	128.2 C888L	\N	00328	0	\N	\N	0	\N	73	74316627-57b6-4149-8814-62db6544fcac		1	1	2	\N	2022-02-16 14:00:34	2022-02-16 14:00:34			'00328':3 '128.2':1 'c888l':2	51
+794	1377	\N	158.1 C684H	\N	00385	0	\N	\N	0	\N	15	9aa7dd79-3c28-407c-bb8d-cf7475a36637		1	1	2	\N	2022-02-16 14:05:13	2022-02-16 14:05:13			'00385':3 '158.1':1 'c684h':2	1061
+795	1377	\N	158.1 C684H	\N	00386	0	\N	\N	0	\N	15	3c0d74d9-a230-4fa4-83e4-34133388f690		1	1	2	\N	2022-02-16 14:05:29	2022-02-16 14:05:29			'00386':3 '158.1':1 'c684h':2	1061
+796	1378	\N	158.1 C684H	\N	00387	0	\N	\N	0	\N	245	9a2e5669-845e-401d-9edf-b2a4d33e6b60		1	1	2	\N	2022-02-16 14:07:05	2022-02-16 14:07:05			'00387':3 '158.1':1 'c684h':2	1118
+797	1378	\N	158.1 C684H	\N	00388	0	\N	\N	0	\N	245	c2652b57-25f3-49a6-a121-978f56ed1f38		1	1	2	\N	2022-02-16 14:07:16	2022-02-16 14:07:16			'00388':3 '158.1':1 'c684h':2	1118
+798	1379	\N	158.1 C684N	\N	00389	0	\N	\N	0	\N	245	36264096-d26b-471e-9995-a7b3dc3cfe9f		1	1	2	\N	2022-02-16 14:09:06	2022-02-16 14:09:06			'00389':3 '158.1':1 'c684n':2	1062
+799	1379	\N	158.1 C684N	\N	00390	0	\N	\N	0	\N	245	3363fd5d-1171-421e-9e97-d80ac3dd56c3		1	1	2	\N	2022-02-16 14:09:22	2022-02-16 14:09:22			'00390':3 '158.1':1 'c684n':2	1062
+800	1380	\N	121 D477P	\N	03416	0	\N	\N	0	\N	245	298cc29d-7af3-4e87-863a-8d72ee0337ae		1	1	2	\N	2022-02-16 14:11:07	2022-02-16 14:11:07			'03416':3 '121':1 'd477p':2	1280
+801	1380	\N	121 D477P	\N	03417	0	\N	\N	0	\N	245	1aa78746-fa14-4000-8155-57c2c5d0debf		1	1	2	\N	2022-02-16 14:11:55	2022-02-16 14:11:55			'03417':3 '121':1 'd477p':2	1280
+804	1381	\N	371.302'8 B388C 1995	\N	02747	0	\N	\N	0	\N	57	1a8c27d0-1093-4325-8ea2-07e3f0261827		1	1	2	\N	2022-02-16 15:31:12	2022-02-16 15:31:12			'02747':5 '1995':4 '371.302':1 '8':2 'b388c':3	310
+805	1381	\N	371.302'8 B388C 1995	\N	02748	0	\N	\N	0	\N	57	080c9025-efed-45a9-9c3f-20ca6340d9a7		1	1	2	\N	2022-02-16 15:31:29	2022-02-16 15:31:29			'02748':5 '1995':4 '371.302':1 '8':2 'b388c':3	310
+806	1382	\N	371.3 A537R 2007	\N	02741	0	\N	\N	0	\N	57	88618135-e24b-48ce-bfcc-e91472a0dc68		1	1	2	\N	2022-02-16 15:42:55	2022-02-16 15:43:01			'02741':4 '2007':3 '371.3':1 'a537r':2	1086
+807	1382	\N	371.3 A537R 2007	\N	02742	0	\N	\N	0	\N	57	605b14a3-c6c6-4dcc-b15a-6cb5d002e9ed		1	1	2	\N	2022-02-16 15:43:12	2022-02-16 15:43:12			'02742':4 '2007':3 '371.3':1 'a537r':2	1086
+808	1382	\N	371.3 A537R 2007	\N	02743	0	\N	\N	0	\N	57	7cd0b87a-32fc-49af-b8b7-2aea16bcd3ba		1	1	2	\N	2022-02-16 15:43:22	2022-02-16 15:43:22			'02743':4 '2007':3 '371.3':1 'a537r':2	1086
+809	1382	\N	371.3 A537R 2007	\N	02744	0	\N	\N	0	\N	57	abf0fdcc-c8af-4a55-8bd5-09ea215200f2		1	1	2	\N	2022-02-16 15:43:34	2022-02-16 15:43:34			'02744':4 '2007':3 '371.3':1 'a537r':2	1086
+810	1382	\N	1086	\N	02745	0	\N	\N	0	\N	57	1126e4d2-7fef-491d-ade0-6febd33c5943		1	1	2	\N	2022-02-16 15:43:48	2022-02-16 15:43:48			'02745':2 '1086':1	371.3 A537R 2007
+811	1382	\N	371.3 A537R 2007	\N	02746	0	\N	\N	0	\N	57	81649cab-b4d9-4a33-90e1-0ce96dc8bc5c		1	1	2	\N	2022-02-16 15:43:59	2022-02-16 15:43:59			'02746':4 '2007':3 '371.3':1 'a537r':2	1086
+812	1382	\N	1086	\N	03462	0	\N	\N	0	\N	57	d61e41fb-860d-4aef-8669-9de7c5e9ae9d		1	1	2	\N	2022-02-16 15:44:08	2022-02-16 15:44:08			'03462':2 '1086':1	371.3 A537R 2007
+813	1382	\N	1086	\N	03463	0	\N	\N	0	\N	57	77a7403d-c885-4e74-8b4d-875bc19b8ac2		1	1	2	\N	2022-02-16 15:44:19	2022-02-16 15:44:19			'03463':2 '1086':1	371.3 A537R 2007
+815	1382	\N	1086	\N	03814	0	\N	\N	0	\N	57	91787b36-6d8a-42e9-b684-905b327e7b03		1	1	2	\N	2022-02-16 15:44:46	2022-02-16 15:44:46			'03814':2 '1086':1	371.3 A537R 2007
+814	1382	\N	1086	\N	03766	0	\N	\N	0	\N	57	0c6bc050-f6c7-4f5e-8934-e818c7005337		1	1	2	\N	2022-02-16 15:44:38	2022-02-16 15:45:46			'03766':2 '1086':1	371.3 A537R 2007
+816	1382	\N	371.3 A537R 2007	\N	04178	0	\N	\N	0	\N	57	f7ff1ad0-0533-496d-93d0-4460963ff44f		1	1	2	\N	2022-02-16 15:46:01	2022-02-16 15:46:01			'04178':4 '2007':3 '371.3':1 'a537r':2	1086
+817	1383	\N	371.302'8 C644R 2004	\N	02749	0	\N	\N	0	\N	32	94e3d9ba-340a-4203-8015-7e9af3610694		1	1	2	\N	2022-02-16 15:51:55	2022-02-16 15:51:55			'02749':5 '2004':4 '371.302':1 '8':2 'c644r':3	308
+818	1383	\N	371.302'8 C644R 2004	\N	02751	0	\N	\N	0	\N	32	3d53de51-e78b-4f9e-8ee4-29b6ef153194		1	1	2	\N	2022-02-16 15:52:15	2022-02-16 15:52:15			'02751':5 '2004':4 '371.302':1 '8':2 'c644r':3	308
+819	1384	\N	371.3028 M489R 1985	\N	02763	0	\N	\N	0	\N	60	b4dedeb6-726f-4ef7-90da-2b8bf1a7a802		1	1	2	\N	2022-02-16 15:53:54	2022-02-16 15:53:54			'02763':4 '1985':3 '371.3028':1 'm489r':2	1074
+820	1384	\N	371.3028 M489R 1985	\N	02764	0	\N	\N	0	\N	60	da461d19-f7a3-417c-bdec-f1b8baba0e7d		1	1	2	\N	2022-02-16 15:54:07	2022-02-16 15:54:07			'02764':4 '1985':3 '371.3028':1 'm489r':2	1074
+821	1384	\N	371.3028 M489R 1985	\N	02765	0	\N	\N	0	\N	60	39b9b7b6-731d-48dc-8c00-c42a1aa209c2		1	1	2	\N	2022-02-16 15:54:18	2022-02-16 15:54:18			'02765':4 '1985':3 '371.3028':1 'm489r':2	1074
+822	1384	\N	371.3028 M489R 1985	\N	02766	0	\N	\N	0	\N	60	c82d0eb9-fe47-4266-ad7b-e0fd4cbcc468		1	1	2	\N	2022-02-16 15:54:29	2022-02-16 15:54:29			'02766':4 '1985':3 '371.3028':1 'm489r':2	1074
+824	1385	\N	371.302'8 Q848A	\N	02767	0	\N	\N	0	\N	57	901594d2-a8df-4a2a-90d5-0de78ae0bc26		1	1	2	\N	2022-02-16 17:00:56	2022-02-16 17:00:56			'02767':4 '371.302':1 '8':2 'q848a':3	212
+825	1386	\N	371.3028 Q848E	\N	02768	0	\N	\N	0	\N	57	462c9ad5-3e7e-46be-ae04-386c6a000e25		1	1	2	\N	2022-02-17 13:58:06	2022-02-17 13:58:06			'02768':3 '371.3028':1 'q848e':2	202
+826	1387	\N	371.302'8 Q848E	\N	02771	0	\N	\N	0	\N	57	670275f6-0bd1-4a15-96fa-5cfb237cd989		1	1	2	\N	2022-02-17 13:59:57	2022-02-17 13:59:57			'02771':4 '371.302':1 '8':2 'q848e':3	205
+827	1388	\N	371.302'8 Q848E	\N	02772	0	\N	\N	0	\N	57	dd8a9d13-d6bd-4201-b054-381b5d33c1a8		1	1	2	\N	2022-02-17 14:10:57	2022-02-17 14:10:57			'02772':4 '371.302':1 '8':2 'q848e':3	206
+828	1389	\N	371.302'8 Q848E	\N	02773	0	\N	\N	0	\N	57	431763fa-cd77-422b-9c90-02206ff3328a		1	1	2	\N	2022-02-17 14:15:18	2022-02-17 14:15:18			'02773':4 '371.302':1 '8':2 'q848e':3	213
+829	1390	\N	371.302'8 Q848E	\N	02774	0	\N	\N	0	\N	57	cd98c9b8-5d8d-4f9d-9634-441f666656e5		1	1	2	\N	2022-02-17 14:17:45	2022-02-17 14:17:45			'02774':4 '371.302':1 '8':2 'q848e':3	214
+830	1391	\N	371.302'8 Q848F	\N	02775	0	\N	\N	0	\N	57	a958b0ca-eaef-4d0f-b325-d74ad05470c7		1	1	2	\N	2022-02-17 14:28:51	2022-02-17 14:28:51			'02775':4 '371.302':1 '8':2 'q848f':3	210
+831	1392	\N	371.302'8 Q848L	\N	02776	0	\N	\N	0	\N	57	593e7bfc-5466-4b0b-bf36-259d3a01c180		1	1	2	\N	2022-02-17 14:31:59	2022-02-17 14:31:59			'02776':4 '371.302':1 '8':2 'q848l':3	204
+832	1393	\N	371.302'8 Q848P	\N	02787	0	\N	\N	0	\N	57	1527b7dd-2b95-4f7f-9eea-ef1c8cd6783b		1	1	2	\N	2022-02-17 14:33:24	2022-02-17 14:33:24			'02787':4 '371.302':1 '8':2 'q848p':3	207
+833	1394	\N	371.302'8 Q848P	\N	02788	0	\N	\N	0	\N	57	43f43e84-a923-481b-a463-4683198b6c0e		1	1	2	\N	2022-02-17 14:34:53	2022-02-17 14:34:53			'02788':4 '371.302':1 '8':2 'q848p':3	208
+834	1395	\N	371.302'8 Q848P	\N	02789	0	\N	\N	0	\N	57	a2d198f1-cadd-4f9a-9ac3-8f8a01bcd788		1	1	2	\N	2022-02-17 14:36:11	2022-02-17 14:36:11			'02789':4 '371.302':1 '8':2 'q848p':3	209
+835	1396	\N	371.302'8 Q848U	\N	02790	0	\N	\N	0	\N	57	a1ecdda1-3ff1-404e-b769-ea2fc570e907		1	1	2	\N	2022-02-17 14:37:31	2022-02-17 14:37:31			'02790':4 '371.302':1 '8':2 'q848u':3	211
+836	1397	\N	371.302'8 Q858M	\N	02792	0	\N	\N	0	\N	57	2e70e7b0-4acc-4ae5-9a03-6c0dc5818ed5		1	1	2	\N	2022-02-17 14:38:49	2022-02-17 14:38:49			'02792':4 '371.302':1 '8':2 'q858m':3	203
+837	1398	\N	371.3028 S333R	\N	02793	0	\N	\N	0	\N	245	b221c4c9-4d05-46f7-9a87-ececffd790b8		1	1	2	\N	2022-02-17 14:40:43	2022-02-17 14:40:43			'02793':3 '371.3028':1 's333r':2	1079
+838	1398	\N	371.3028 S333R	\N	02794	0	\N	\N	0	\N	245	8a289157-39a0-4e41-bbc8-6e8f3bb5d957		1	1	2	\N	2022-02-17 14:40:57	2022-02-17 14:40:57			'02794':3 '371.3028':1 's333r':2	1079
+839	1398	\N	371.3028 S333R	\N	02795	0	\N	\N	0	\N	245	69ef6720-9599-460d-abaf-c5665fa68cc6		1	1	2	\N	2022-02-17 14:41:09	2022-02-17 14:41:09			'02795':3 '371.3028':1 's333r':2	1079
+840	1398	\N	371.3028 S333R	\N	02796	0	\N	\N	0	\N	245	ddf1677a-d867-4c2e-8f67-ae91e6bcec31		1	1	2	\N	2022-02-17 14:41:22	2022-02-17 14:41:22			'02796':3 '371.3028':1 's333r':2	1079
+842	1398	\N	371.3028 S333R	\N	02798	0	\N	\N	0	\N	245	e6d962bf-55f8-4a36-9884-bb96274afb81		1	1	2	\N	2022-02-17 14:41:47	2022-02-17 14:41:47			'02798':3 '371.3028':1 's333r':2	1079
+841	1398	\N	371.3028 S333R	\N	02797	0	\N	\N	0	\N	245	54b4f875-8211-458f-a633-9d11ad1fd545		1	1	2	\N	2022-02-17 14:41:37	2022-02-17 14:42:06			'02797':3 '371.3028':1 's333r':2	1079
+843	1399	\N	371.302'8 S333R	\N	02799	0	\N	\N	0	\N	166	70202a1f-6fe9-4ddd-9964-e03d677876f8		1	1	2	\N	2022-02-17 14:43:53	2022-02-17 14:43:53			'02799':4 '371.302':1 '8':2 's333r':3	307
+844	1399	\N	371.302'8 S333R	\N	02810	0	\N	\N	0	\N	166	7950ea34-58d0-4700-b8ba-b92bd072f8f1		1	1	2	\N	2022-02-17 14:44:04	2022-02-17 14:44:04			'02810':4 '371.302':1 '8':2 's333r':3	307
+845	1399	\N	371.302'8 S333R	\N	02811	0	\N	\N	0	\N	166	82115a22-2876-41b0-a08b-58b6a9f148fe		1	1	2	\N	2022-02-17 14:44:13	2022-02-17 14:44:13			'02811':4 '371.302':1 '8':2 's333r':3	307
+846	1399	\N	371.302'8 S333R	\N	02812	0	\N	\N	0	\N	166	1bb35a01-8c76-47cb-b31c-c3ad74e5bfde		1	1	2	\N	2022-02-17 14:44:21	2022-02-17 14:44:21			'02812':4 '371.302':1 '8':2 's333r':3	307
+847	1399	\N	371.302'8 S333R	\N	02813	0	\N	\N	0	\N	166	e57a5cd2-0d33-40d1-b48c-919456d5dcd3		1	1	2	\N	2022-02-17 14:44:31	2022-02-17 14:44:31			'02813':4 '371.302':1 '8':2 's333r':3	307
+848	1399	\N	371.302'8 S333R	\N	02814	0	\N	\N	0	\N	166	17b1af5e-0c5c-4b4f-ab82-dd024ceed247		1	1	2	\N	2022-02-17 14:44:44	2022-02-17 14:44:44			'02814':4 '371.302':1 '8':2 's333r':3	307
+849	1399	\N	371.302'8 S333R	\N	03978	0	\N	\N	0	\N	166	a14afcbf-5b4c-44c6-a361-619b9e222676		1	1	2	\N	2022-02-17 14:44:53	2022-02-17 14:44:53			'03978':4 '371.302':1 '8':2 's333r':3	307
+850	1399	\N	371.302'8 S333R	\N	03979	0	\N	\N	0	\N	166	338f0433-cdcf-4a79-9700-3ba68dfca530		1	1	2	\N	2022-02-17 14:45:04	2022-02-17 14:45:04			'03979':4 '371.302':1 '8':2 's333r':3	307
+851	1399	\N	371.302'8 S333R	\N	03980	0	\N	\N	0	\N	166	ae6a59cc-207c-431c-8dc9-d4213636bb7d		1	1	2	\N	2022-02-17 14:45:13	2022-02-17 14:45:13			'03980':4 '371.302':1 '8':2 's333r':3	307
+852	1399	\N	371.302'8 S333R	\N	03981	0	\N	\N	0	\N	166	e77b9666-3d6a-4883-900e-e83ba8b15122		1	1	2	\N	2022-02-17 14:45:22	2022-02-17 14:45:22			'03981':4 '371.302':1 '8':2 's333r':3	307
+853	1399	\N	371.302'8 S333R	\N	03982	0	\N	\N	0	\N	166	7963f228-c11a-4c73-8d39-2528d3a6666e		1	1	2	\N	2022-02-17 14:45:33	2022-02-17 14:45:33			'03982':4 '371.302':1 '8':2 's333r':3	307
+854	1399	\N	371.302'8 S333R	\N	03983	0	\N	\N	0	\N	166	8abaa298-c1a0-478c-958e-0f10fe951c21		1	1	2	\N	2022-02-17 14:45:43	2022-02-17 14:45:43			'03983':4 '371.302':1 '8':2 's333r':3	307
+855	1400	\N	371.302'8C A784C 2004	\N	02815	0	\N	\N	0	\N	245	7d9d3619-2770-4e77-97fd-0be51e21eb0f		1	1	2	\N	2022-02-17 15:11:53	2022-02-17 15:11:53			'02815':5 '2004':4 '371.302':1 '8c':2 'a784c':3	309
+856	1400	\N	371.302'8C A784C 2004	\N	02816	0	\N	\N	0	\N	245	2b75333f-d7c1-4905-968c-4c721ab6224c		1	1	2	\N	2022-02-17 15:12:06	2022-02-17 15:12:06			'02816':5 '2004':4 '371.302':1 '8c':2 'a784c':3	309
+857	1401	\N	371.302 8 M358	\N	04644	0	\N	\N	0	\N	245	755a4c2a-0806-456d-b262-cb1e78b58c33		1	1	2	\N	2022-02-17 15:15:22	2022-02-17 15:15:22			'04644':4 '371.302':1 '8':2 'm358':3	1507
+858	1401	\N	371.302 8 M358	\N	04645	0	\N	\N	0	\N	245	c2f6a3e1-68f9-4fc4-a763-e559983364ee		1	1	2	\N	2022-02-17 15:15:32	2022-02-17 15:15:32			'04645':4 '371.302':1 '8':2 'm358':3	1507
+859	1401	\N	371.302 8 M358	\N	04646	0	\N	\N	0	\N	245	08506723-14bf-405f-8232-a6a74c5350c9		1	1	2	\N	2022-02-17 15:15:41	2022-02-17 15:15:41			'04646':4 '371.302':1 '8':2 'm358':3	1507
+860	1401	\N	371.302 8 M358	\N	04647	0	\N	\N	0	\N	245	58978caf-dcf0-4642-8b32-c402243d1b4a		1	1	2	\N	2022-02-17 15:15:50	2022-02-17 15:15:50			'04647':4 '371.302':1 '8':2 'm358':3	1507
+870	1401	\N	371. 26 M358	\N	04648	0	\N	\N	0	\N	245	26af615c-0ba1-42ae-971d-22ec85714e4f		1	1	2	\N	2022-02-17 15:45:12	2022-02-17 15:45:12			'04648':4 '26':2 '371':1 'm358':3	1508
+871	1401	\N	371. 26 M358	\N	04649	0	\N	\N	0	\N	245	da7f0ebc-0419-43be-bb3b-3530a4ccc09f		1	1	2	\N	2022-02-17 15:46:41	2022-02-17 15:46:41			'04649':4 '26':2 '371':1 'm358':3	1508
+872	1401	\N	371. 26 M358	\N	04650	0	\N	\N	0	\N	245	582b755d-de66-4c83-a444-5a6212bade11		1	1	2	\N	2022-02-17 15:46:52	2022-02-17 15:46:52			'04650':4 '26':2 '371':1 'm358':3	1508
+873	1401	\N	371. 26 M358	\N	04651	0	\N	\N	0	\N	245	c70d9298-57e6-4928-b4bc-1df7dc7bdb41		1	1	2	\N	2022-02-17 15:47:02	2022-02-17 15:47:02			'04651':4 '26':2 '371':1 'm358':3	1508
+874	1401	\N	371. 26 M358	\N	04652	0	\N	\N	0	\N	245	4ed7a404-1eea-4a6a-b1e4-bb63543aa395		1	1	2	\N	2022-02-17 15:47:12	2022-02-17 15:47:12			'04652':4 '26':2 '371':1 'm358':3	1508
+875	1401	\N	371. 26 M358	\N	04653	0	\N	\N	0	\N	245	68611b5e-ed72-4abb-b113-74f198b48f41		1	1	2	\N	2022-02-17 15:47:25	2022-02-17 15:47:25			'04653':4 '26':2 '371':1 'm358':3	1508
+876	1401	\N	371. 26 M358	\N	04654	0	\N	\N	0	\N	245	dae0ea15-42b7-4d77-8a95-d8e8ea4eec0c		1	1	2	\N	2022-02-17 15:47:36	2022-02-17 15:47:36			'04654':4 '26':2 '371':1 'm358':3	1508
+877	1401	\N	371. 26 M358	\N	04655	0	\N	\N	0	\N	245	1909d397-e550-463a-b17a-f6141a39d17c		1	1	2	\N	2022-02-17 15:47:49	2022-02-17 15:47:49			'04655':4 '26':2 '371':1 'm358':3	1508
+878	1403	\N	152.4 M453D	\N	05253	0	\N	\N	0	\N	245	92ff562f-7998-4596-b286-eaec9277f887		1	1	2	\N	2022-02-17 15:50:27	2022-02-17 15:50:27			'05253':3 '152.4':1 'm453d':2	1757
+879	1404	\N	152.4 M453D	\N	05252	0	\N	\N	0	\N	245	7e17accb-7d1c-42da-8b4c-7f0133e3becf		1	1	2	\N	2022-02-17 15:52:09	2022-02-17 15:52:09			'05252':3 '152.4':1 'm453d':2	1756
+880	1405	\N	144 D422	\N	00333	0	\N	\N	0	\N	179	af88bce3-d32a-4e7e-bd34-9a6b6af58ef8		1	1	2	\N	2022-02-17 16:02:25	2022-02-17 16:02:25			'00333':3 '144':1 'd422':2	54
+881	1405	\N	144 D422	\N	04222	0	\N	\N	0	\N	179	d7bd82d7-abf5-4daf-ab31-3f8d2b6dbca4		1	1	2	\N	2022-02-17 16:02:38	2022-02-17 16:02:38			'04222':3 '144':1 'd422':2	54
+882	1406	\N	153.42 H388H	\N	00363	0	\N	\N	0	\N	83	5c981a2c-b6af-406e-b360-2789255a5c45		1	1	2	\N	2022-02-17 16:06:39	2022-02-17 16:06:39			'00363':3 '153.42':1 'h388h':2	58
+883	1406	\N	153.42 H388H	\N	04212	0	\N	\N	0	\N	83	e1f3d2c0-d838-4aed-93a8-699e4e062e3c		1	1	2	\N	2022-02-17 16:06:50	2022-02-17 16:06:50			'04212':3 '153.42':1 'h388h':2	58
+884	1407	\N	120 C524D	\N	00311	0	\N	\N	0	\N	245	999a2b10-9e26-403a-8498-25566043aa28		1	1	2	\N	2022-02-17 16:10:27	2022-02-17 16:10:27			'00311':3 '120':1 'c524d':2	46
+885	1407	\N	120 C524D	\N	00312	0	\N	\N	0	\N	245	20bcb6c8-81b9-4b51-b1a1-7ac1c71f7459		1	1	2	\N	2022-02-17 16:10:51	2022-02-17 16:10:51			'00312':3 '120':1 'c524d':2	46
+886	1407	\N	120 C524D	\N	00313	0	\N	\N	0	\N	245	3ea3f041-268e-41cf-accc-138bda2eaa5e		1	1	2	\N	2022-02-17 16:11:03	2022-02-17 16:11:03			'00313':3 '120':1 'c524d':2	46
+887	1407	\N	120 C524D	\N	00314	0	\N	\N	0	\N	245	3e950614-6384-4280-9b33-23e162140797		1	1	2	\N	2022-02-17 16:11:12	2022-02-17 16:11:12			'00314':3 '120':1 'c524d':2	46
+888	1408	\N	141 M456	\N	00330	0	\N	\N	0	\N	245	931536c6-6dd9-4f70-b2ad-2e0e78217855		1	1	2	\N	2022-02-17 16:15:20	2022-02-17 16:15:20			'00330':3 '141':1 'm456':2	136
+889	1408	\N	141 M456	\N	136	0	\N	\N	0	\N	245	4bf8013f-9035-451e-8aa6-07a009f29353		1	1	2	\N	2022-02-17 16:15:39	2022-02-17 16:15:39			'136':3 '141':1 'm456':2	00331
+890	1409	\N	142.78 S378E 1985	\N	00332	0	\N	\N	0	\N	245	a0e8bd94-ebb4-4a9f-9ed1-e642393c821e		1	1	2	\N	2022-02-17 16:19:08	2022-02-17 16:19:08			'00332':4 '142.78':1 '1985':3 's378e':2	86
+891	1410	\N	144 V473D	\N	00334	0	\N	\N	0	\N	179	df58138e-0680-402e-bf15-eafb4fb1350b		1	1	2	\N	2022-02-17 16:20:34	2022-02-17 16:20:34			'00334':3 '144':1 'v473d':2	87
+892	1410	\N	144 V473D	\N	00335	0	\N	\N	0	\N	179	d6e176bc-94a1-4207-b46a-b561bca93727		1	1	2	\N	2022-02-17 16:20:45	2022-02-17 16:20:45			'00335':3 '144':1 'v473d':2	87
+893	1411	\N	146 G372N	\N	00336	0	\N	\N	0	\N	179	4a086618-d670-4ac7-8ca7-fc441cde8b81		1	1	2	\N	2022-02-17 16:22:21	2022-02-17 16:22:21			'00336':3 '146':1 'g372n':2	82
+894	1411	\N	146 G372N	\N	00337	0	\N	\N	0	\N	179	1ea0b13b-1e9c-4c36-9b1b-051229fa6474		1	1	2	\N	2022-02-17 16:22:31	2022-02-17 16:22:31			'00337':3 '146':1 'g372n':2	82
+895	1412	\N	146 G372N 1993	\N	00338	0	\N	\N	0	\N	179	0c5c0c91-92b7-4b64-a0d6-40dc4590c9ff		1	1	2	\N	2022-02-17 16:26:51	2022-02-17 16:26:51			'00338':4 '146':1 '1993':3 'g372n':2	81
+896	1412	\N	146 G372N 1993	\N	00339	0	\N	\N	0	\N	179	d9101e09-9bb8-4f6d-84bb-a1b55b95b6c8		1	1	2	\N	2022-02-17 16:27:01	2022-02-17 16:27:01			'00339':4 '146':1 '1993':3 'g372n':2	81
+897	1413	\N	146 I885	\N	00340	0	\N	\N	0	\N	179	11a94b42-8aac-4282-aa6f-ad065b2ed1eb		1	1	2	\N	2022-02-17 16:29:10	2022-02-17 16:29:10			'00340':3 '146':1 'i885':2	80
+898	1413	\N	146 I885	\N	00341	0	\N	\N	0	\N	179	918a2130-5bec-4c6e-83df-89b1dae16880		1	1	2	\N	2022-02-17 16:29:22	2022-02-17 16:29:22			'00341':3 '146':1 'i885':2	80
+899	1414	\N	150 C878D	\N	00344	0	\N	\N	0	\N	245	2f8c04f8-7b13-42c0-b27f-2d80b88e16f5		1	1	2	\N	2022-02-17 16:33:39	2022-02-17 16:33:39			'00344':3 '150':1 'c878d':2	71
+900	1415	\N	150.195 7 F765E	\N	00353	0	\N	\N	0	\N	245	fec0d1fd-acc4-42b2-bb6d-cafa941141fc		1	1	2	\N	2022-02-17 16:38:26	2022-02-17 16:38:26			'00353':4 '150.195':1 '7':2 'f765e':3	83
+901	1416	\N	152 B693I	\N	00355	0	\N	\N	0	\N	245	a738cf08-ef99-41be-b05f-4607b694e3e9		1	1	2	\N	2022-02-17 16:41:36	2022-02-17 16:41:36			'00355':3 '152':1 'b693i':2	1068
+902	1417	\N	152.41 D494T	\N	00357	0	\N	\N	0	\N	245	285aa1ed-f67c-4d1d-a2cc-b85f763567b5		1	1	2	\N	2022-02-17 16:43:09	2022-02-17 16:43:09			'00357':3 '152.41':1 'd494t':2	69
+903	1417	\N	152.41 D494T	\N	00358	0	\N	\N	0	\N	245	9280b3ed-2ff1-4ff3-968c-3412d002c1e0		1	1	2	\N	2022-02-17 16:43:22	2022-02-17 16:43:22			'00358':3 '152.41':1 'd494t':2	69
+904	1418	\N	153 P458	\N	00359	0	\N	\N	0	\N	179	0c117bb0-38d4-49c3-bbc3-3cdabf62d6f5		1	1	2	\N	2022-02-17 16:45:27	2022-02-17 16:45:27			'00359':3 '153':1 'p458':2	\N
+905	1418	\N	153 P458	\N	00360	0	\N	\N	0	\N	179	ae4857b1-1728-43ed-ba04-851b10c2ff8f		1	1	2	\N	2022-02-17 16:46:01	2022-02-17 16:46:01			'00360':3 '153':1 'p458':2	67
+906	1419	\N	153.42 C477I	\N	00362	0	\N	\N	0	\N	245	c9500f54-9791-4400-b3ef-b6f91e5bbb71		1	1	2	\N	2022-02-17 16:47:26	2022-02-17 16:47:26			'00362':3 '153.42':1 'c477i':2	70
+907	1420	\N	153.42 H453E	\N	00364	0	\N	\N	0	\N	245	adcb7dd3-6f7c-4584-a16b-be831c6f891c		1	1	2	\N	2022-02-17 16:49:35	2022-02-17 16:49:35			'00364':3 '153.42':1 'h453e':2	57
+908	1422	\N	153.42 R884E	\N	00367	0	\N	\N	0	\N	245	1f149f6d-f8f9-4e46-b587-db4b3851014a		1	1	2	\N	2022-02-17 17:14:45	2022-02-17 17:14:45			'00367':3 '153.42':1 'r884e':2	55
+909	1423	\N	153.42 S352D	\N	04095	0	\N	\N	0	\N	60	667bc7f4-2ed5-4116-8a78-7231d872d20e		1	1	2	\N	2022-02-17 17:51:29	2022-02-17 17:51:29			'04095':3 '153.42':1 's352d':2	1410
+910	1423	\N	153.42 S352D	\N	04096	0	\N	\N	0	\N	60	ec19afc2-2424-45dc-b93f-f40398db6eb1		1	1	2	\N	2022-02-17 17:51:53	2022-02-17 17:51:53			'04096':3 '153.42':1 's352d':2	1410
+911	1423	\N	153.42 S352D	\N	04097	0	\N	\N	0	\N	60	c3c30add-3894-456d-b72e-b53725105956		1	1	2	\N	2022-02-17 17:52:14	2022-02-17 17:52:14			'04097':3 '153.42':1 's352d':2	1410
+912	1423	\N	153.42 S352D	\N	04098	0	\N	\N	0	\N	60	3e2bc1f9-0540-4c4d-8d21-69f42505c8f6		1	1	2	\N	2022-02-17 17:52:35	2022-02-17 17:52:45			'04098':3 '153.42':1 's352d':2	1410
+913	1423	\N	153.42 S352D	\N	04099	0	\N	\N	0	\N	60	461548c1-c0cc-435b-9442-d52b92437f1b		1	1	2	\N	2022-02-17 17:53:25	2022-02-17 17:53:25			'04099':3 '153.42':1 's352d':2	1410
+914	1423	\N	153.42 S352D	\N	04100	0	\N	\N	0	\N	60	6c38e5b5-6143-4d56-b431-622c0c9800ce		1	1	2	\N	2022-02-17 17:53:46	2022-02-17 17:53:46			'04100':3 '153.42':1 's352d':2	1410
+917	1424	\N	153.42 S353	\N	00370	0	\N	\N	0	\N	60	bdbb2b5f-ff53-4779-a13f-490c8b2f35c1		1	1	2	\N	2022-02-17 19:16:53	2022-02-17 19:16:53			'00370':3 '153.42':1 's353':2	59
+918	1424	\N	153.42 S353	\N	00371	0	\N	\N	0	\N	60	842d8359-1545-4604-91ff-c37ca6c67c03		1	1	2	\N	2022-02-17 19:17:05	2022-02-17 19:17:05			'00371':3 '153.42':1 's353':2	59
+919	1424	\N	153.42 S353	\N	00372	0	\N	\N	0	\N	60	c7c23c7e-1df8-48d6-a1fd-c12a11463fce		1	1	2	\N	2022-02-17 19:17:14	2022-02-17 19:17:14			'00372':3 '153.42':1 's353':2	59
+920	1424	\N	153.42 S353	\N	00373	0	\N	\N	0	\N	60	3d874e6d-e379-4430-b4f5-18b66fb2745b		1	1	2	\N	2022-02-17 19:17:27	2022-02-17 19:17:27			'00373':3 '153.42':1 's353':2	59
+921	1424	\N	153.42 S353	\N	00374	0	\N	\N	0	\N	60	6f1a7d8c-baf4-4331-986d-365e93fbad40		1	1	2	\N	2022-02-17 19:17:38	2022-02-17 19:17:38			'00374':3 '153.42':1 's353':2	59
+922	1424	\N	153.42 S353	\N	00375	0	\N	\N	0	\N	60	8cce37ad-e0f3-442e-8491-7088d80daa7c		1	1	2	\N	2022-02-17 19:17:52	2022-02-17 19:17:52			'00375':3 '153.42':1 's353':2	59
+923	1424	\N	153.42 S353	\N	00376	0	\N	\N	0	\N	60	59a9e809-c42a-43c2-b92d-c5417a0ea044		1	1	2	\N	2022-02-17 19:18:02	2022-02-17 19:18:02			'00376':3 '153.42':1 's353':2	59
+924	1425	\N	153.9 D553	\N	03765	0	\N	\N	0	\N	245	c284a615-faf8-4690-a4fc-77c016218d49		1	1	2	\N	2022-02-17 19:20:42	2022-02-17 19:20:42			'03765':3 '153.9':1 'd553':2	1363
+925	1425	\N	153.9 D553	\N	03767	0	\N	\N	0	\N	245	17608feb-a795-403e-ba6b-3d1447756e03		1	1	2	\N	2022-02-17 19:20:56	2022-02-17 19:20:56			'03767':3 '153.9':1 'd553':2	1363
+926	1425	\N	153.9 D553	\N	03768	0	\N	\N	0	\N	245	45616a51-4cb5-4e75-9292-03f11d63ca77		1	1	2	\N	2022-02-17 19:21:07	2022-02-17 19:21:07			'03768':3 '153.9':1 'd553':2	1363
+927	1425	\N	153.9 D553	\N	03769	0	\N	\N	0	\N	245	8b0d3d3d-740b-4b22-aa0c-99727d3dc01e		1	1	2	\N	2022-02-17 19:21:16	2022-02-17 19:21:16			'03769':3 '153.9':1 'd553':2	1363
+928	1425	\N	153.9 D553	\N	03770	0	\N	\N	0	\N	245	6e31ec88-a144-4ed9-b90e-540599b98370		1	1	2	\N	2022-02-17 19:21:36	2022-02-17 19:21:36			'03770':3 '153.9':1 'd553':2	1363
+929	1186	\N	154.63 L853 F887	\N	00378	0	\N	\N	0	\N	179	a98786d5-8791-432d-a8e6-e9ed5ed42c9b		1	1	2	\N	2022-02-17 19:32:30	2022-02-17 19:32:30			'00378':4 '154.63':1 'f887':3 'l853':2	66
+930	1426	\N	415 H477N	\N	03177	0	\N	\N	0	\N	179	18f2fa00-5bad-4dac-9ed4-c2a7c458141a		1	1	2	\N	2022-02-17 19:34:20	2022-02-17 19:34:20			'03177':3 '415':1 'h477n':2	356
+931	1426	\N	415 H477N	\N	03178	0	\N	\N	0	\N	179	9c1bf7a3-ca77-4225-abe1-7b64e931d21b		1	1	2	\N	2022-02-17 19:34:30	2022-02-17 19:34:30			'03178':3 '415':1 'h477n':2	356
+932	1427	\N	155.9 E887C 2007	\N	00379	0	\N	\N	0	\N	15	698ae3fe-afc1-4808-99c5-936a91bec4a9		1	1	2	\N	2022-02-17 19:36:38	2022-02-17 19:36:38			'00379':4 '155.9':1 '2007':3 'e887c':2	1072
+933	1427	\N	155.9 E887C 2007	\N	00380	0	\N	\N	0	\N	15	1f4b8f24-e7d8-42cc-a4ec-eaa302b4313e		1	1	2	\N	2022-02-17 19:36:49	2022-02-17 19:36:49			'00380':4 '155.9':1 '2007':3 'e887c':2	1072
+934	1427	\N	155.9 E887C 2007	\N	00381	0	\N	\N	0	\N	15	5f32981c-194d-446a-ab2c-6d0a84b2b934		1	1	2	\N	2022-02-17 19:36:58	2022-02-17 19:36:58			'00381':4 '155.9':1 '2007':3 'e887c':2	1072
+935	1427	\N	155.9 E887C 2007	\N	00382	0	\N	\N	0	\N	15	41ae5fe6-20b1-4a53-9629-9166724fd3a4		1	1	2	\N	2022-02-17 19:37:11	2022-02-17 19:37:11			'00382':4 '155.9':1 '2007':3 'e887c':2	1072
+936	1427	\N	155.9 E887C 2007	\N	00383	0	\N	\N	0	\N	15	e32535ba-e351-4a5c-8714-b2a739a11548		1	1	2	\N	2022-02-17 19:37:22	2022-02-17 19:37:22			'00383':4 '155.9':1 '2007':3 'e887c':2	1072
+937	1427	\N	155.9 E887C 2007	\N	00384	0	\N	\N	0	\N	15	1927b9b5-4b2c-42c6-b1b6-2297e71e0cbe		1	1	2	\N	2022-02-17 19:37:48	2022-02-17 19:37:48			'00384':4 '155.9':1 '2007':3 'e887c':2	1072
+938	1428	\N	153.42 S352D	\N	04068	0	\N	\N	0	\N	60	88590eb1-fa68-4ed4-a296-ebd718cff31c		1	1	2	\N	2022-02-17 19:40:29	2022-02-17 19:40:29			'04068':3 '153.42':1 's352d':2	1404
+939	1428	\N	153.42 S352D	\N	04069	0	\N	\N	0	\N	60	c18dcaa6-adfe-41fe-911d-74df527e8c33		1	1	2	\N	2022-02-17 19:40:39	2022-02-17 19:40:39			'04069':3 '153.42':1 's352d':2	1404
+940	1428	\N	153.42 S352D	\N	04070	0	\N	\N	0	\N	60	8380a1e1-6f36-488d-9a03-412dbc0a5ba3		1	1	2	\N	2022-02-17 19:40:48	2022-02-17 19:40:48			'04070':3 '153.42':1 's352d':2	1404
+941	1428	\N	153.42 S352D	\N	04071	0	\N	\N	0	\N	60	8d3dca58-a48b-4ee1-9160-35afd21d052d		1	1	2	\N	2022-02-17 19:40:58	2022-02-17 19:40:58			'04071':3 '153.42':1 's352d':2	1404
+942	1428	\N	153.42 S352D	\N	04072	0	\N	\N	0	\N	60	2e7b92f8-0d7b-4c24-9d5c-5c53e8e5517d		1	1	2	\N	2022-02-17 19:41:27	2022-02-17 19:41:27			'04072':3 '153.42':1 's352d':2	1404
+943	1429	\N	153.42 S352D	\N	04364	0	\N	\N	0	\N	60	95b15ba5-47e6-4680-8d01-4ba5f5a6d772		1	1	2	\N	2022-02-17 19:46:10	2022-02-17 19:46:10			'04364':3 '153.42':1 's352d':2	1410
+944	1430	\N	155.2 M453D	\N	05254	0	\N	\N	0	\N	245	ab2887b6-7ce0-41d3-a361-f1897ab744c9		1	1	2	\N	2022-02-17 19:49:26	2022-02-17 19:49:26			'05254':3 '155.2':1 'm453d':2	1758
+945	1431	\N	158.7 R637A 1988	\N	00397	0	\N	\N	0	\N	249	978252ab-52e6-47ba-9fd5-34a1c16c3e65		1	1	2	\N	2022-02-17 20:12:46	2022-02-17 20:12:46			'00397':4 '158.7':1 '1988':3 'r637a':2	1054
+946	1431	\N	158.7 R637A 1988	\N	00398	0	\N	\N	0	\N	249	2b862283-b607-414a-adf3-6b12929775b7		1	1	2	\N	2022-02-17 20:12:59	2022-02-17 20:12:59			'00398':4 '158.7':1 '1988':3 'r637a':2	1054
+947	1431	\N	158.7 R637A 1988	\N	05233	0	\N	\N	0	\N	249	742ae190-e059-4393-8e43-d122c7d8f0eb		1	1	2	\N	2022-02-17 20:13:08	2022-02-17 20:13:08			'05233':4 '158.7':1 '1988':3 'r637a':2	1054
+948	1431	\N	158.7 R637A 1988	\N	05234	0	\N	\N	0	\N	249	c00cee4b-c9d8-4662-a87a-ca17d1e9160c		1	1	2	\N	2022-02-17 20:13:18	2022-02-17 20:13:18			'05234':4 '158.7':1 '1988':3 'r637a':2	1054
+949	1431	\N	158.7 R637A 1988	\N	05235	0	\N	\N	0	\N	249	14e32b56-dedf-4c30-9457-16a18d97b3a7		1	1	2	\N	2022-02-17 20:13:29	2022-02-17 20:13:29			'05235':4 '158.7':1 '1988':3 'r637a':2	1054
+950	1432	\N	158.7 R637P 1988	\N	00399	0	\N	\N	0	\N	245	6714c6e1-5067-4fa3-b482-4be9926e6214		1	1	2	\N	2022-02-17 20:18:54	2022-02-17 20:18:54			'00399':4 '158.7':1 '1988':3 'r637p':2	1055
+951	1432	\N	158.7 R637P 1988	\N	00400	0	\N	\N	0	\N	245	eba4f4f6-162a-4c7d-a5ba-eb9b8fb49c19		1	1	2	\N	2022-02-17 20:19:22	2022-02-17 20:19:22			'00400':4 '158.7':1 '1988':3 'r637p':2	1055
+952	1433	\N	158.7 R637P 1988	\N	00401	0	\N	\N	0	\N	245	512d3402-ad6a-447e-b20c-6ade5a59d42b		1	1	2	\N	2022-02-17 20:21:40	2022-02-17 20:21:40			'00401':4 '158.7':1 '1988':3 'r637p':2	1056
+953	1433	\N	158.7 R637P 1988	\N	00402	0	\N	\N	0	\N	245	4d24feb6-95ce-4c07-8e45-4d9f4c4342ff		1	1	2	\N	2022-02-17 20:21:59	2022-02-17 20:21:59			'00402':4 '158.7':1 '1988':3 'r637p':2	1056
+954	1434	\N	160 M856S	\N	00404	0	\N	\N	0	\N	179	eda35bba-d056-4c0c-b9da-a4991c2c732a		1	1	2	\N	2022-02-17 20:23:36	2022-02-17 20:23:36			'00404':3 '160':1 'm856s':2	64
+955	1434	\N	160 M856S	\N	00405	0	\N	\N	0	\N	179	4cf443f3-fa1c-4183-a8a4-85def629c2c7		1	1	2	\N	2022-02-17 20:23:49	2022-02-17 20:23:49			'00405':3 '160':1 'm856s':2	64
+956	1435	\N	170 B372E 1935	\N	00406	0	\N	\N	0	\N	245	ecb9e78a-f5d2-45d6-8d5e-909ef66a624e		1	1	2	\N	2022-02-17 20:29:56	2022-02-17 20:29:56			'00406':4 '170':1 '1935':3 'b372e':2	63
+957	1435	\N	170 B372E 1935	\N	00407	0	\N	\N	0	\N	245	cb64f4e1-24ef-464b-b3c3-3ffb6efd3ad2		1	1	2	\N	2022-02-17 20:30:16	2022-02-17 20:30:16			'00407':4 '170':1 '1935':3 'b372e':2	63
+958	1437	\N	170 S352E	\N	00412	0	\N	\N	0	\N	179	950797c0-0f6f-4e9f-8cf4-e83f3f6a7442		1	1	2	\N	2022-02-17 20:32:51	2022-02-17 20:32:51			'00412':3 '170':1 's352e':2	\N
+959	1437	\N	170 S352E	\N	00413	0	\N	\N	0	\N	179	7162dd5e-6741-4d59-b54b-8ec0a662bd2c		1	1	2	\N	2022-02-17 20:33:12	2022-02-17 20:33:12			'00413':3 '170':1 's352e':2	92
+960	1438	\N	174 P353E	\N	00414	0	\N	\N	0	\N	179	0f9d6203-1036-49dc-a810-2eac80cd70c2		1	1	2	\N	2022-02-17 20:35:51	2022-02-17 20:35:51			'00414':3 '174':1 'p353e':2	98
+961	1439	\N	178 B785E	\N	00415	0	\N	\N	0	\N	253	004183d1-af83-421e-ba28-5bb939a50fba		1	1	2	\N	2022-02-17 20:42:31	2022-02-17 20:42:31			'00415':3 '178':1 'b785e':2	1058
+962	1439	\N	178 B785E	\N	00416	0	\N	\N	0	\N	253	01d5371f-014a-465f-82e4-d6e43bacd652		1	1	2	\N	2022-02-17 20:42:42	2022-02-17 20:42:42			'00416':3 '178':1 'b785e':2	1058
+963	1439	\N	178 B785E	\N	00417	0	\N	\N	0	\N	253	84bacf3e-5852-4903-a738-48387377bf18		1	1	2	\N	2022-02-17 20:42:55	2022-02-17 20:42:55			'00417':3 '178':1 'b785e':2	1058
+964	1439	\N	178 B785E	\N	00418	0	\N	\N	0	\N	253	b8f427cb-b4af-4cdb-89a0-7b6fc7e7a4c6		1	1	2	\N	2022-02-17 20:43:24	2022-02-17 20:43:24			'00418':3 '178':1 'b785e':2	1058
+965	1439	\N	178 B785E	\N	00419	0	\N	\N	0	\N	253	23d55c88-f117-49ff-8136-67de52cea3da		1	1	2	\N	2022-02-17 20:43:57	2022-02-17 20:43:57			'00419':3 '178':1 'b785e':2	1058
+966	1439	\N	178 B785E	\N	00420	0	\N	\N	0	\N	253	3f12d6d8-6882-4fca-bab9-6ecb8d9b17b1		1	1	2	\N	2022-02-17 20:44:19	2022-02-17 20:44:19			'00420':3 '178':1 'b785e':2	1058
+967	1440	\N	185 B482 2004	\N	00425	0	\N	\N	0	\N	245	c08b9859-31d4-434a-81fe-28597c95b180		1	1	2	\N	2022-02-17 20:46:21	2022-02-17 20:46:21			'00425':4 '185':1 '2004':3 'b482':2	90
+968	1440	\N	185 B482 2004	\N	00426	0	\N	\N	0	\N	245	4d85333e-41a9-4207-a72f-6a460a7da80e		1	1	2	\N	2022-02-17 20:46:30	2022-02-17 20:46:30			'00426':4 '185':1 '2004':3 'b482':2	90
+969	1441	\N	189.4 B482E	\N	00427	0	\N	\N	0	\N	179	b5ac4555-81ff-4a8c-ba54-57c685791d57		1	1	2	\N	2022-02-17 20:48:33	2022-02-17 20:48:33			'00427':3 '189.4':1 'b482e':2	91
+970	1441	\N	189.4 B482E	\N	00428	0	\N	\N	0	\N	179	1acea7bf-b019-4bd1-986f-0396b02fc273		1	1	2	\N	2022-02-17 20:48:47	2022-02-17 20:48:47			'00428':3 '189.4':1 'b482e':2	91
+971	1442	\N	190 Y346F	\N	00430	0	\N	\N	0	\N	245	96177124-957a-4348-9456-72f4a70f41a8		1	1	2	\N	2022-02-17 20:54:33	2022-02-17 20:54:33			'00430':3 '190':1 'y346f':2	103
+972	1443	\N	158.7 A886 1988	\N	00391	0	\N	\N	0	\N	254	ea183896-f6fa-4201-a1fc-a9e972e9b4c0		1	1	2	\N	2022-02-17 20:57:13	2022-02-17 20:57:13			'00391':4 '158.7':1 '1988':3 'a886':2	1057
+973	1443	\N	158.7 A886 1988	\N	00392	0	\N	\N	0	\N	254	99cb0f79-46fb-409d-b6e0-52b990b31b93		1	1	2	\N	2022-02-17 20:57:23	2022-02-17 20:57:23			'00392':4 '158.7':1 '1988':3 'a886':2	1057
+974	1443	\N	158.7 A886 1988	\N	00393	0	\N	\N	0	\N	254	8c6e1eb2-b201-485d-9670-733708e545d9		1	1	2	\N	2022-02-17 20:57:33	2022-02-17 20:57:33			'00393':4 '158.7':1 '1988':3 'a886':2	1057
+975	1443	\N	158.7 A886 1988	\N	00394	0	\N	\N	0	\N	254	6a4d8763-e9e5-475e-8448-6359f8c715d0		1	1	2	\N	2022-02-17 20:57:46	2022-02-17 20:57:46			'00394':4 '158.7':1 '1988':3 'a886':2	1057
+976	1443	\N	158.7 A886 1988	\N	00395	0	\N	\N	0	\N	254	1aff5004-52ef-46dc-82ea-6edea5c0366b		1	1	2	\N	2022-02-17 20:57:58	2022-02-17 20:57:58			'00395':4 '158.7':1 '1988':3 'a886':2	1057
+977	1443	\N	158.7 A886 1988	\N	00396	0	\N	\N	0	\N	254	e27794a6-74d0-446f-9fb0-717bea71c17e		1	1	2	\N	2022-02-17 20:58:08	2022-02-17 20:58:08			'00396':4 '158.7':1 '1988':3 'a886':2	1057
+978	1443	\N	158.7 A886 1988	\N	03919	0	\N	\N	0	\N	254	a1b8ca33-8001-472d-85d7-b8c93b097e96		1	1	2	\N	2022-02-17 20:58:20	2022-02-17 20:58:20			'03919':4 '158.7':1 '1988':3 'a886':2	1057
+979	1443	\N	158.7 A886 1988	\N	03920	0	\N	\N	0	\N	254	88299ec5-0397-4522-b38d-c3cf119f2f86		1	1	2	\N	2022-02-17 20:58:28	2022-02-17 20:58:28			'03920':4 '158.7':1 '1988':3 'a886':2	1057
+981	1444	\N	158.2 C375C 2006	\N	04077	0	\N	\N	0	\N	255	8c3d60bd-95d6-498b-8df8-e850fb65a274		1	1	2	\N	2022-02-17 21:28:04	2022-02-17 21:28:04			'04077':4 '158.2':1 '2006':3 'c375c':2	1406
+982	1444	\N	158.2 C375C 2006	\N	04078	0	\N	\N	0	\N	255	26bff00b-110a-4342-9866-dd19ec10e385		1	1	2	\N	2022-02-17 21:28:15	2022-02-17 21:28:15			'04078':4 '158.2':1 '2006':3 'c375c':2	1406
+983	1444	\N	158.2 C375C 2006	\N	04079	0	\N	\N	0	\N	255	bac90323-6342-4032-b0a1-690c69acdd79		1	1	2	\N	2022-02-17 21:28:24	2022-02-17 21:28:24			'04079':4 '158.2':1 '2006':3 'c375c':2	1406
+984	1444	\N	158.2 C375C 2006	\N	04080	0	\N	\N	0	\N	255	0e12a6fb-f0eb-4744-a71a-fd65546268fa		1	1	2	\N	2022-02-17 21:28:33	2022-02-17 21:28:33			'04080':4 '158.2':1 '2006':3 'c375c':2	1406
+985	1444	\N	158.2 C375C 2006	\N	04081	0	\N	\N	0	\N	255	431db5d8-726e-4d49-8654-ec24d3e991a9		1	1	2	\N	2022-02-17 21:28:48	2022-02-17 21:28:48			'04081':4 '158.2':1 '2006':3 'c375c':2	1406
+986	1444	\N	158.2 C375C 2006	\N	04082	0	\N	\N	0	\N	255	c3ea1bf4-ddbc-4bd1-b3ca-de4cbc5135ee		1	1	2	\N	2022-02-17 21:28:59	2022-02-17 21:28:59			'04082':4 '158.2':1 '2006':3 'c375c':2	1406
+987	1445	\N	179.9 H524G	\N	04227	0	\N	\N	0	\N	245	ac1027ba-1a3a-4561-a42c-fbfd3f344e9c		1	1	2	\N	2022-02-17 21:30:28	2022-02-17 21:30:28			'04227':3 '179.9':1 'h524g':2	1442
+125	1004	\N	001.539 K323L 1997	\N	00037	0	\N	2022-02-20 00:00:00	1	2022-02-17 00:00:00	245	4ec7147b-0505-4074-8b0c-ca2bc0b12eda	PRUEBA DE RESERVATION...	1	2	1	\N	2022-01-05 14:33:48	2022-02-17 23:33:04			'00037':4 '001.539':1 '1997':3 'k323l':2	7
 \.
 
 
 --
--- TOC entry 2825 (class 0 OID 58483)
--- Dependencies: 250
+-- TOC entry 4194 (class 0 OID 19388)
+-- Dependencies: 218
 -- Data for Name: libro_portada; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -3293,7 +3926,6 @@ COPY public.libro_portada (id, libro_id, portada_id, deleted_at, created_at, upd
 323	1183	323	\N	\N	\N
 324	1184	324	\N	\N	\N
 325	1185	325	\N	\N	\N
-326	1186	326	\N	\N	\N
 327	1187	327	\N	\N	\N
 328	1188	328	\N	\N	\N
 330	1189	330	\N	\N	\N
@@ -3422,12 +4054,138 @@ COPY public.libro_portada (id, libro_id, portada_id, deleted_at, created_at, upd
 459	1317	459	\N	\N	\N
 460	1318	460	\N	\N	\N
 461	1319	461	\N	\N	\N
+462	1320	462	\N	\N	\N
+463	1321	463	\N	\N	\N
+464	1322	464	\N	\N	\N
+465	1323	465	\N	\N	\N
+466	1324	466	\N	\N	\N
+467	1325	467	\N	\N	\N
+468	1326	468	\N	\N	\N
+469	1327	469	\N	\N	\N
+470	1328	470	\N	\N	\N
+471	1329	471	\N	\N	\N
+472	1330	472	\N	\N	\N
+473	1331	473	\N	\N	\N
+474	1332	474	\N	\N	\N
+475	1333	475	\N	\N	\N
+476	1334	476	\N	\N	\N
+477	1335	477	\N	\N	\N
+478	1336	478	\N	\N	\N
+479	1337	479	\N	\N	\N
+480	1338	480	\N	\N	\N
+481	1339	481	\N	\N	\N
+482	1340	482	\N	\N	\N
+483	1341	483	\N	\N	\N
+484	1342	484	\N	\N	\N
+485	1343	485	\N	\N	\N
+486	1344	486	\N	\N	\N
+487	1346	487	\N	\N	\N
+488	1347	488	\N	\N	\N
+489	1348	489	\N	\N	\N
+491	1349	491	\N	\N	\N
+492	1350	492	\N	\N	\N
+493	1351	493	\N	\N	\N
+494	1352	494	\N	\N	\N
+495	1353	495	\N	\N	\N
+496	1354	496	\N	\N	\N
+498	1355	498	\N	\N	\N
+499	1356	499	\N	\N	\N
+500	1357	500	\N	\N	\N
+501	1358	501	\N	\N	\N
+502	1359	502	\N	\N	\N
+503	1360	503	\N	\N	\N
+504	1361	504	\N	\N	\N
+505	1362	505	\N	\N	\N
+506	1363	506	\N	\N	\N
+507	1364	507	\N	\N	\N
+508	1365	508	\N	\N	\N
+509	1366	509	\N	\N	\N
+510	1367	510	\N	\N	\N
+511	1368	511	\N	\N	\N
+512	1369	512	\N	\N	\N
+513	1370	513	\N	\N	\N
+514	1371	514	\N	\N	\N
+515	1372	515	\N	\N	\N
+516	1373	516	\N	\N	\N
+517	1374	517	\N	\N	\N
+518	1375	518	\N	\N	\N
+519	1376	519	\N	\N	\N
+520	1377	520	\N	\N	\N
+521	1378	521	\N	\N	\N
+522	1379	522	\N	\N	\N
+523	1380	523	\N	\N	\N
+525	1381	525	\N	\N	\N
+526	1382	526	\N	\N	\N
+527	1383	527	\N	\N	\N
+528	1384	528	\N	\N	\N
+529	1385	529	\N	\N	\N
+530	1386	530	\N	\N	\N
+531	1387	531	\N	\N	\N
+532	1388	532	\N	\N	\N
+533	1389	533	\N	\N	\N
+534	1390	534	\N	\N	\N
+535	1391	535	\N	\N	\N
+536	1392	536	\N	\N	\N
+537	1393	537	\N	\N	\N
+538	1394	538	\N	\N	\N
+539	1395	539	\N	\N	\N
+540	1396	540	\N	\N	\N
+541	1397	541	\N	\N	\N
+542	1398	542	\N	\N	\N
+543	1399	543	\N	\N	\N
+544	1400	544	\N	\N	\N
+545	1401	545	\N	\N	\N
+547	1401	547	\N	\N	\N
+548	1403	548	\N	\N	\N
+549	1404	549	\N	\N	\N
+550	1405	550	\N	\N	\N
+551	1406	551	\N	\N	\N
+552	1407	552	\N	\N	\N
+553	1408	553	\N	\N	\N
+554	1409	554	\N	\N	\N
+555	1410	555	\N	\N	\N
+556	1411	556	\N	\N	\N
+557	1412	557	\N	\N	\N
+558	1413	558	\N	\N	\N
+559	1414	559	\N	\N	\N
+560	1415	560	\N	\N	\N
+561	1416	561	\N	\N	\N
+562	1417	562	\N	\N	\N
+563	1418	563	\N	\N	\N
+564	1419	564	\N	\N	\N
+565	1420	565	\N	\N	\N
+566	1421	566	\N	\N	\N
+567	1422	567	\N	\N	\N
+568	1423	568	\N	\N	\N
+569	1424	569	\N	\N	\N
+570	1425	570	\N	\N	\N
+571	1186	571	\N	\N	\N
+572	1426	572	\N	\N	\N
+573	1427	573	\N	\N	\N
+574	1428	574	\N	\N	\N
+575	1429	575	\N	\N	\N
+576	1430	576	\N	\N	\N
+577	1431	577	\N	\N	\N
+578	1432	578	\N	\N	\N
+579	1433	579	\N	\N	\N
+580	1434	580	\N	\N	\N
+581	1435	581	\N	\N	\N
+582	1436	582	\N	\N	\N
+583	1437	583	\N	\N	\N
+584	1438	584	\N	\N	\N
+585	1439	585	\N	\N	\N
+586	1440	586	\N	\N	\N
+587	1441	587	\N	\N	\N
+588	1442	588	\N	\N	\N
+589	1443	589	\N	\N	\N
+590	1444	590	\N	\N	\N
+592	1445	592	\N	\N	\N
 \.
 
 
 --
--- TOC entry 2813 (class 0 OID 44245)
--- Dependencies: 238
+-- TOC entry 4196 (class 0 OID 19395)
+-- Dependencies: 220
 -- Data for Name: libros; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -3458,6 +4216,7 @@ COPY public.libros (id, ficha_no, titulo, autor, datos_fijos, codebar, observaci
 1083	365	SIETE ESTUDIOS SOBRE EL ESPANOL DE AMERICA	GUITARTE, GUILLERMO L.			3193,3194	1	1	1	245	2			\N	2022-01-18 15:40:56	2022-01-18 15:41:49	'amer':7 'espanol':5 'estudi':2 'guillerm':9 'guitart':8 'l':10 'siet':1
 1085	1488	GESTION DE DESTINOS TURISTICOS: COMO ATRAER PERSON	VIGNATI SCARPATI, FEDERICO			4575,4576,4577,4779,4780,4781	1	1	1	245	2			\N	2022-01-18 18:01:37	2022-01-18 18:01:37	'atra':6 'destin':3 'feder':10 'gestion':1 'person':7 'scarpati':9 'turist':4 'vignati':8
 1086	1496	AGENCIAS DE VIAJES: ESTRUCTURA Y OPERACION	TORRE, FRANCISCO DE LA			4600,4601,4602	1	1	1	60	2			\N	2022-01-19 15:22:20	2022-01-19 15:22:20	'agenci':1 'estructur':4 'francisc':8 'operacion':6 'torr':7 'viaj':3
+1108	381	DICCIONARIO DE LITERATURA MEXICANA SIGLO XX	PEREIRA, ARMANDO Y ALBARRAN,CLAUDIA			764,765	1	1	1	245	2			\N	2022-01-24 15:53:26	2022-01-24 15:53:26	'albarr':10 'armand':8 'claudi':11 'diccionari':1 'literatur':3 'mexican':4 'pereir':7 'sigl':5 'xx':6
 934	1146	¡PORQUE! PORQUERIA LAS HORMONAS: SOBRE GRANITOS, CRECIMIENTO, SEXO Y OTRAS SEÑALES EN EL CUERPO	CALVA, JUAN CARLOS				1	1	1	40	2			\N	2021-11-08 14:24:25	2021-11-08 14:24:25	'calv':15 'carl':17 'crecimient':7 'cuerp':14 'granit':6 'hormon':4 'juan':16 'porqueri':2 'sex':8 'señal':11
 869	822	¿ERES PERFECCIONISTA?: DESCUBRE LO MALO DE SER DEMASIADO BUENO	ADDERHOLDT ELLIOT, MIRIAM				1	1	1	88	2			\N	2021-10-18 19:41:22	2021-11-30 14:34:24	'adderholdt':10 'buen':9 'demasi':8 'descubr':3 'elliot':11 'mal':5 'miriam':12 'perfeccion':2 'ser':7
 963	1478	31 WAYS TO CHANGE THE WORLD: BY 4,381 CHILDREN, WE	STANHOPE, NICK				1	1	1	235	2			\N	2021-12-07 14:21:32	2021-12-07 14:22:18	'31':1 '381':9 '4':8 'by':7 'chang':4 'childr':10 'nick':13 'stanhop':12 'the':5 'to':3 'ways':2 'we':11 'world':6
@@ -3516,7 +4275,6 @@ COPY public.libros (id, ficha_no, titulo, autor, datos_fijos, codebar, observaci
 1066	431	SKYLINE 1 WORKBOOK	FUSCOE, KATE			864,865,866,867,868	1	1	1	245	2			\N	2022-01-14 23:55:34	2022-01-14 23:55:34	'1':2 'fusco':4 'kat':5 'skylin':1 'workbook':3
 1089	1731	PROYECTOS TURISTICOS: FORMULACION Y EVALUACION	HERNANDEZ DIAZ, EDGAR ALFONSO			5223	1	1	1	60	2			\N	2022-01-19 21:02:29	2022-01-19 21:02:29	'alfons':9 'diaz':7 'edgar':8 'evaluacion':5 'formulacion':3 'hernandez':6 'proyect':1 'turist':2
 1101	403	INDICE DE REVISTAS LITERARIAS DEL SIGLO XIX (CIUDA	RUIZ CASTANEDA, MARIA DEL CARMEN			816,817	1	1	1	245	2			\N	2022-01-24 14:38:40	2022-01-24 14:38:40	'carm':13 'castaned':10 'ciud':8 'indic':1 'literari':4 'mari':11 'revist':3 'ruiz':9 'sigl':6 'xix':7
-1108	381	DICCIONARIO DE LITERATURA MEXICANA SIGLO XX	PEREIRA, ARMANDO Y ALBARRAN,CLAUDIA			764,765	1	1	1	245	2			\N	2022-01-24 15:53:26	2022-01-24 15:53:26	'albarr':10 'armand':8 'claudi':11 'diccionari':1 'literatur':3 'mexican':4 'pereir':7 'sigl':5 'xx':6
 1110	384	BOCABULARIO DE MAYA THAN	UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO			772,773,774,775	1	1	1	245	2			\N	2022-01-24 16:05:37	2022-01-24 16:05:37	'autonom':7 'bocabulari':1 'may':3 'mexic':9 'nacional':6 'than':4 'univers':5
 936	2652	¡VIVA LA REVOLUCIÓN!: THE MONEY OF THE MEXICAN REVOLUTION	BAILEY, DON				1	1	1	220	2			\N	2021-11-08 15:30:51	2021-11-08 15:30:51	'bailey':10 'don':11 'mexic':8 'money':5 'of':6 'revolu':3 'revolution':9 'the':4,7 'viv':1
 757	712	¿PORQUÉ ES TAN DIFICIL SER PADRE HOY?. SIMETRIA INCONCIENTE DE NIÑOS Y JOVENES. CONSTRUCCIÓN DE NUEVOS MODELOS DE AUTORIDAD	MESSING, CLAUDIA				1	1	1	114	2			\N	2021-10-15 18:40:18	2021-11-30 15:05:00	'autor':19 'claudi':21 'construccion':14 'dificil':4 'hoy':7 'inconcient':9 'joven':13 'messing':20 'model':17 'niñ':11 'nuev':16 'padr':6 'porqu':1 'ser':5 'simetri':8 'tan':3
@@ -3692,6 +4450,7 @@ COPY public.libros (id, ficha_no, titulo, autor, datos_fijos, codebar, observaci
 946	1755	¿QUIÉN DIJO POMODORO?	STREPPONI, BLANCA				1	1	1	82	2			\N	2021-11-30 20:32:24	2021-11-30 20:32:24	'blanc':5 'dij':2 'pomodor':3 'quien':1 'strepponi':4
 972	1386	A PRÁCTICAR MATEMÁTICAS: CUADERNO DE TRABAJO 1	OJEDA ANIMAS, LUIS FERNANDO				1	1	1	237	2			\N	2021-12-09 14:31:19	2021-12-09 14:31:41	'1':7 'anim':9 'cuadern':4 'fern':11 'luis':10 'matemat':3 'ojed':8 'practic':2 'trabaj':6
 1022	398	LA LITERATURA Y LA SOCIEDAD DE FIN DE SIGLO	BARBOSA, JOAO ALEXANDRE			807,808	1	1	1	245	2			\N	2022-01-07 14:48:07	2022-01-07 14:48:07	'alexandr':12 'barbos':10 'fin':7 'joa':11 'literatur':2 'sigl':9 'socied':5
+68	67	ESPANOL 2	REYES HERRERA, SARA				1	1	1	48	2			\N	2021-10-04 18:03:11	2021-10-04 18:03:11	'2':2 'espanol':1 'herrer':4 'rey':3 'sar':5
 6	6	TALLER DE LECTURA Y REDACCION 1	QUINTERO JARA, CARLOS VALENTE				1	1	1	48	2			\N	2021-10-04 13:14:42	2021-10-04 16:28:45	'1':6 'carl':9 'jar':8 'lectur':3 'quinter':7 'redaccion':5 'tall':1 'valent':10
 29	30	LECTURAS PARA ADOLESCENTES	LOZANO, LUCERO				1	1	1	62	2			\N	2021-10-04 16:20:36	2021-10-04 16:33:22	'adolescent':3 'lectur':1 'lozan':4 'lucer':5
 1052	1543	CALIDAD TOTAL EN LAS EMPRESAS TURISTICAS	RAMIREZ CAVASSA, CESAR			4793,4794,4795	1	1	1	60	2			\N	2022-01-11 20:12:58	2022-01-11 20:12:58	'calid':1 'cavass':8 'ces':9 'empres':5 'ramirez':7 'total':2 'turist':6
@@ -3750,6 +4509,7 @@ COPY public.libros (id, ficha_no, titulo, autor, datos_fijos, codebar, observaci
 1293	18	NET WARE NETWORK COMPUTING PRODUCTS	NOVELL			00200	1	1	1	245	2			\N	2022-02-09 15:11:00	2022-02-09 15:11:00	'computing':4 'net':1 'network':3 'novell':6 'products':5 'war':2
 1296	17	GUIA VISUAL DE DISENO DE PAGINAS WEB	PENA TRESANCOS, JAIME			00209	1	1	1	111	2			\N	2022-02-09 15:18:19	2022-02-09 15:18:30	'disen':4 'gui':1 'jaim':10 'pagin':6 'pen':8 'tresanc':9 'visual':2 'web':7
 1297	28	NAVEGAR EN INTERNET FRONTPAGE 2000 DISENO Y CR	PASCUAL GONZALEZ FRANCISCO			00206,00207,00208	1	1	1	213	2			\N	2022-02-09 15:23:50	2022-02-09 15:23:50	'2000':5 'cr':8 'disen':6 'francisc':11 'frontpag':4 'gonzalez':10 'internet':3 'naveg':1 'pascual':9
+1337	27	MICROSOFT WORKS REFERENCIA	MICROSOFT CORPORATION			00196	1	1	1	245	2			\N	2022-02-11 14:35:01	2022-02-11 14:35:01	'corporation':5 'microsoft':1,4 'referent':3 'works':2
 1298	16	NAVEGAR EN INTERNET MICROSOFT INTERNET EXPLORER 6	PASCUAL GONZALEZ, FRANCISCO			00204,00205	1	1	1	213	2			\N	2022-02-09 15:28:51	2022-02-09 15:28:51	'6':7 'explor':6 'francisc':10 'gonzalez':9 'internet':3,5 'microsoft':4 'naveg':1 'pascual':8
 1300	1043	LOS DELITOS EN EL TURISMO	LOPEZ RODRIGUEZ, JOSE ALBERTO			02668,02669,02670,02671,02672,02673,02674,02675,02676,02677	1	1	1	245	2			\N	2022-02-09 15:45:07	2022-02-09 21:06:11	'albert':9 'delit':2 'jos':8 'lopez':6 'rodriguez':7 'turism':5
 1301	264	CONTRATOS CIVILES AYUDA DE MEMORIA	C. MEJAN, LUIS MANUEL			02678,02679	1	1	1	64	2			\N	2022-02-10 13:27:33	2022-02-10 13:27:33	'ayud':3 'c':6 'civil':2 'contrat':1 'luis':8 'manuel':9 'mej':7 'memori':5
@@ -3778,6 +4538,7 @@ COPY public.libros (id, ficha_no, titulo, autor, datos_fijos, codebar, observaci
 1302	298	TEORIA GENERAL DE LAS OBLIGACIONES	BORJA SORIANO, MANUEL			02680	1	1	1	82	2			\N	2022-02-10 13:30:43	2022-02-10 13:30:43	'borj':6 'general':2 'manuel':8 'oblig':5 'sorian':7 'teori':1
 1319	263	AGENCIAS DE VIAJES: ORGANIZACION Y OPERACION	ACERENZA,MIGUEL ANGEL			02690,02691,02712,02713,02714,02715,	1	1	1	60	2			\N	2022-02-10 23:57:15	2022-02-10 23:57:15	'acerenz':7 'agenci':1 'angel':9 'miguel':8 'operacion':6 'organizacion':4 'viaj':3
 950	2106	¿SON O SE HACEN? EL CAMPO DE LA DISCAPACIDAD INTELECTUAL ESTUDIADA A TRAVEZ DE RECORRIDOS MULTIPLES	AZNER, ANDREA S.				1	1	1	165	2			\N	2021-12-01 14:49:00	2021-12-01 14:49:00	'andre':18 'azner':17 'camp':6 'discapac':9 'estudi':11 'hac':4 'intelectual':10 'multipl':16 'recorr':15 's':19 'travez':13
+66	66	CAMINOS DEL ESPANOL 2	MUNGUIA ZATARAIN , IRMA				1	1	1	48	2			\N	2021-10-04 18:00:47	2021-10-04 18:00:47	'2':4 'camin':1 'espanol':3 'irma':7 'mungui':5 'zatarain':6
 976	2296	ABUSOS Y ADMONICIONES: ÉTICA Y ESCRITURA EN LA NARRATIVA HISPANOAMERICANA MODERNA	GONZALEZ, ANIBAL				1	1	1	40	2			\N	2021-12-09 14:51:35	2021-12-09 14:51:35	'abus':1 'admonicion':3 'anibal':13 'escritur':6 'etic':4 'gonzalez':12 'hispanoamerican':10 'modern':11 'narrat':9
 1078	227	DIRECCION DE PRODUCTOS SELECCION DE TEXTOS	PHELPS,D.MAYNARD			2853,2854	1	1	1	245	2			\N	2022-01-15 00:37:59	2022-01-15 00:37:59	'd.maynard':8 'direccion':1 'phelps':7 'product':3 'seleccion':4 'text':6
 1147	325	DICCIONARIO ANALITICO DEL POPOLUCA DE TEXISTEPEC	WICHMANN, SOREN			3051,3052	1	1	1	179	2			\N	2022-01-26 15:29:35	2022-01-26 15:29:35	'analit':2 'diccionari':1 'popoluc':4 'sor':8 'texistepec':6 'wichmann':7
@@ -3789,6 +4550,12 @@ COPY public.libros (id, ficha_no, titulo, autor, datos_fijos, codebar, observaci
 1288	14	GUIA VISUAL DE MICROSOFT INTERNET EXPLORER 6	RODRIGUEZ FERNANDEZ, OSCARRODRIGUEZ FERNANDEZ, OSCAR			00190,00191	1	1	1	245	2			\N	2022-02-09 13:47:21	2022-02-09 13:47:21	'6':7 'explor':6 'fernandez':9,11 'gui':1 'internet':5 'microsoft':4 'oscar':12 'oscarrodriguez':10 'rodriguez':8 'visual':2
 1295	33	DOMINE MICROSOFT OFFICE 2000 PROFESSIONAL	PACUAL GONZALEZ, FRANCISCO			00202,00203	1	1	1	213	2			\N	2022-02-09 15:16:32	2022-02-09 15:16:32	'2000':4 'domin':1 'francisc':8 'gonzalez':7 'microsoft':2 'offic':3 'pacual':6 'professional':5
 1303	1075	CODIGO FISCAL DE LA FEDERACION 2008	CODIGO FISCAL DE LA FEDERACION 2008			02687,02688	1	1	1	60	2			\N	2022-02-10 13:33:07	2022-02-10 13:33:07	'2008':6,12 'codig':1,7 'federacion':5,11 'fiscal':2,8
+1320		PROBLEMAS SOCIALES, POLITICOS Y ECONOMICOS DE MEXI	BAENA PAZ, GUILLERMINA			02716,02717	1	1	1	245	2			\N	2022-02-11 00:00:04	2022-02-11 00:00:04	'baen':8 'econom':5 'guillermin':10 'mexi':7 'paz':9 'polit':3 'problem':1 'social':2
+1340	1458	HACIA LA UNIVERSIDAD DEL SIGLO XXI	UNIVERSIDAD JUAREZ AUTONOMA DE TABASCO			04248	1	1	1	245	2			\N	2022-02-11 15:49:29	2022-02-11 15:49:29	'autonom':9 'haci':1 'juarez':8 'sigl':5 'tabasc':11 'univers':3,7 'xxi':6
+1341	1457	EDUCARC CON VALOR: EL DESAFIO DE LA EDUCACION SUPE	PALACIOS BLANCO, JOSE LUIS			04246,04247	1	1	1	245	2			\N	2022-02-11 16:04:12	2022-02-11 16:04:12	'blanc':11 'desafi':5 'educacion':8 'educarc':1 'jos':12 'luis':13 'palaci':10 'sup':9 'valor':3
+1342	304	LA UNIVERSIDAD EN LA ERA DE LA GLOBALIZACION NEOLI	OLMEDO, RAUL			02737	1	1	1	245	2			\N	2022-02-11 16:05:43	2022-02-11 16:05:43	'globalizacion':8 'neoli':9 'olmed':10 'raul':11 'univers':2
+1343	154	JORNADA ACADEMICA CHIAPAS A PARTIR DE ACTEAL	IZQUIERDO,ANA LUISA			02735,02736	1	1	1	179	2			\N	2022-02-11 16:06:50	2022-02-11 16:06:50	'academ':2 'acteal':7 'ana':9 'chiap':3 'izquierd':8 'jorn':1 'luis':10 'part':5
+1344	300	FERNANDEZ DE LIZARDI. UN EDUCADOR PARA UN PUEBLO	HERNANDEZ GARCIA, JESUS			02731,02732,02733,02734	1	1	1	245	2			\N	2022-02-11 16:08:46	2022-02-11 16:08:46	'educ':5 'fernandez':1 'garci':10 'hernandez':9 'jesus':11 'lizardi':3 'puebl':8
 977	904	ACCIONES Y REFLEXIONES PARA LA RECONSTRUCCIÓN DE LA POLÍTICA SOCIAL EN MÉXICO. UNA MIRADA DESDE LO LOCAL	COGCO CALDERON, ADOLFO ROGELIO				1	1	1	239	2			\N	2021-12-09 14:54:03	2021-12-09 14:54:39	'accion':1 'adolf':20 'calderon':19 'cogc':18 'local':17 'mexic':12 'mir':14 'polit':9 'reconstruccion':6 'reflexion':3 'rogeli':21 'social':10
 1079	1490	PROMOCION TURISTICA: UN ENFOQUE METODOLOGICO.	ACERENZA, MIGUEL ANGEL			4581,4582,4583	1	1	1	245	2			\N	2022-01-15 00:40:32	2022-01-15 00:40:32	'acerenz':6 'angel':8 'enfoqu':4 'metodolog':5 'miguel':7 'promocion':1 'turist':2
 1148	370	EL KANJOBAL DE SAN MIGUEL ACATAN	ZABALA, ROBERTO			3203,3204	1	1	1	179	2			\N	2022-01-26 15:34:32	2022-01-26 15:34:32	'acat':6 'kanjobal':2 'miguel':5 'robert':8 'san':4 'zabal':7
@@ -3798,49 +4565,67 @@ COPY public.libros (id, ficha_no, titulo, autor, datos_fijos, codebar, observaci
 1304	737	ADMINISTRACION MODERNA DE HOTELES Y MOTELES	LATTIN, GERALD W.			02681,02682,02683,02684,02685,02686	1	1	1	60	2			\N	2022-02-10 13:40:03	2022-02-10 13:40:03	'administracion':1 'gerald':8 'hotel':4 'lattin':7 'modern':2 'motel':6 'w':9
 35	35	ESPANOL 1	CARRUS TREVINO, LUZ AMELIA				1	1	1	51	2			\N	2021-10-04 16:40:29	2021-10-04 16:40:29	'1':2 'ameli':6 'carrus':3 'espanol':1 'luz':5 'trevin':4
 36	36	ESPANOL 1	CARRASCO, ALMA				1	1	1	66	2			\N	2021-10-04 16:45:35	2021-10-04 16:45:35	'1':2 'alma':4 'carrasc':3 'espanol':1
+1321	1078	PROBLEMAS SOCIOECONOMICOS DE MEXICO Y SUS SOLUCION	PAZOS, LUIS			02718,02719,02720,02721,02722,02723,02724,	1	1	1	245	2			\N	2022-02-11 00:02:19	2022-02-11 00:02:19	'luis':9 'mexic':4 'paz':8 'problem':1 'socioeconom':2 'solucion':7
+1346	299	CICERON: CUESTIONES ACADEMICAS	UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO			02729,02730	1	1	1	245	2			\N	2022-02-12 00:53:44	2022-02-12 00:53:44	'academ':3 'autonom':6 'ciceron':1 'cuestion':2 'mexic':8 'nacional':5 'univers':4
 978	2618	ACERCA DEL ARTE POPULAR	POMAR, MARIA TERESA				1	1	1	136	2			\N	2021-12-09 15:01:56	2021-12-09 15:01:56	'acerc':1 'arte':3 'mari':6 'pom':5 'popul':4 'teres':7
 1080	1493	AGENCIAS DE VIAJES: OPERACION Y PLAN DE NEGOCIOS	ACERENZA, MIGUEL ANGEL			4590,4591,4592,4773,4774,4775,	1	1	1	60	2			\N	2022-01-15 00:43:15	2022-01-15 00:43:15	'acerenz':9 'agenci':1 'angel':11 'miguel':10 'negoci':8 'operacion':4 'plan':6 'viaj':3
 1254	446	A COMMUNICATIVE COURSE IN ENGLISH STUDENT BOOK 4	WARSHAWSKY, DIANE WITH H. BYRD, DONALD R.			904,905	1	1	1	245	2			\N	2022-02-04 14:23:59	2022-02-04 14:23:59	'4':8 'book':7 'byrd':13 'communicativ':2 'cours':3 'dian':10 'donald':14 'english':5 'h':12 'in':4 'r':15 'student':6 'warshawsky':9 'with':11
 1290	19	DBASE III PLUS HERRAMIENTAS PODEROSAS	KRUMM, ROB			00195	1	1	1	245	2			\N	2022-02-09 14:10:50	2022-02-09 14:10:50	'dbas':1 'herramient':4 'iii':2 'krumm':6 'plus':3 'poder':5 'rob':7
 1305	312	CONTRATOS MERCANTILES	LEON TOVAR, SOYLA H.			03043,03044	1	1	1	64	2			\N	2022-02-10 13:46:47	2022-02-10 13:46:47	'contrat':1 'h':6 'leon':3 'mercantil':2 'soyl':5 'tov':4
+1322	275	ANTROPOLOGIA DE LA POBREZA CINCO FAMILIAS	FONDO DE CULTURA ECONOMICA			02725	1	1	1	245	2			\N	2022-02-11 00:05:58	2022-02-11 00:05:58	'antropologi':1 'cinc':5 'cultur':9 'econom':10 'famili':6 'fond':7 'pobrez':4
 37	37	ESPANOL 1	HERNANDEZ SANDOVAL , ADRIANA				1	1	1	52	2			\N	2021-10-04 16:48:30	2021-10-04 16:48:30	'1':2 'adrian':5 'espanol':1 'hernandez':3 'sandoval':4
+1347	305	LA EDUCACION TECNICA EN PUEBLA: LA ENSENANZA DE LA	BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA			02727	1	1	1	245	2			\N	2022-02-12 00:55:26	2022-02-12 00:56:01	'autonom':12 'benemerit':10 'educacion':2 'ensen':7 'puebl':5,14 'tecnic':3 'univers':11
 979	1209	ACNÉ JUVENIL: PUNTO Y APARTE	SCHWARSTZBERG, JESSE SNOWFLAKE				1	1	1	240	2			\N	2021-12-09 15:12:45	2021-12-09 15:13:12	'acne':1 'apart':5 'jess':7 'juvenil':2 'punt':3 'schwarstzberg':6 'snowflak':8
 1255	441	A COMMUNICATIVE COURSE IN ENGLISH WORKBOOK 1	ABRAMS, SHARON / P. REIN, DAVID / H. BYRD, DONALD			894,895	1	1	1	245	2			\N	2022-02-04 14:26:18	2022-02-04 14:26:18	'1':7 'abrams':8 'byrd':14 'communicativ':2 'cours':3 'dav':12 'donald':15 'english':5 'h':13 'in':4 'p':10 'rein':11 'sharon':9 'workbook':6
 1291	12	ARQUITECTURA DE COMPUTADORAS	MORRIS MANO, M.			00197,00198	1	1	1	245	2			\N	2022-02-09 14:23:33	2022-02-09 14:23:33	'arquitectur':1 'comput':3 'm':6 'man':5 'morris':4
 1306	1365	CODIGO DE COMERCIO LEYES Y REGLAMENTOS COMPLEMENTA	CODIGO DE COMERCIO LEYES Y REGLAMENTOS COMPLEMENTA			03803,03804,03805,03806,03807,04148	1	1	1	245	2			\N	2022-02-10 14:17:08	2022-02-10 14:17:08	'codig':1,8 'comerci':3,10 'complement':7,14 'ley':4,11 'reglament':6,13
+1323	1378	CONTAMINACION AMBIENTAL POR METALES PESADOS IMPECT	CERVANTES, CARLOS Y MORENO SANCHEZ, RAFAEL			02726,03895,03896,03897,03898,	1	1	1	245	2			\N	2022-02-11 00:07:34	2022-02-11 00:07:34	'ambiental':2 'carl':8 'cervant':7 'contaminacion':1 'impect':6 'metal':4 'moren':10 'pes':5 'rafael':12 'sanchez':11
 38	38	ESPANOL 1	PASTOR, BLANCA				1	1	1	48	2			\N	2021-10-04 16:49:26	2021-10-04 16:49:26	'1':2 'blanc':4 'espanol':1 'pastor':3
 39	39	ESPANOL 1: CUADERNO DE TRABAJO	RIVERA LOPEZ SARA				1	1	1	66	2			\N	2021-10-04 16:50:05	2021-10-04 16:50:05	'1':2 'cuadern':3 'espanol':1 'lopez':7 'river':6 'sar':8 'trabaj':5
 980	2804	ACRÍLICO: EJERCICIOS PARRAMÓN	CANAL, MARIA FERNANDA				1	1	1	234	2			\N	2021-12-09 18:35:27	2021-12-09 18:35:27	'acril':1 'canal':4 'ejercici':2 'fernand':6 'mari':5 'parramon':3
 1256	443	A COMMUNICATIVE COURSE IN ENGLISH WORKBOOK 2	ABRAMS, SHARON / P. REIN, DAVID / H. BYRD DONALD R			898,899	1	1	1	245	2			\N	2022-02-04 14:28:39	2022-02-04 14:28:39	'2':7 'abrams':8 'byrd':14 'communicativ':2 'cours':3 'dav':12 'donald':15 'english':5 'h':13 'in':4 'p':10 'r':16 'rein':11 'sharon':9 'workbook':6
 1292	15	MICROSOFT INTERNET EXPLORER 5.0	STEPHEN L. NELSON			00199	1	1	1	245	2			\N	2022-02-09 14:26:43	2022-02-09 14:26:43	'5.0':4 'explor':3 'internet':2 'l':6 'microsoft':1 'nelson':7 'steph':5
 1307	1366	LEYES Y CODIGOS DE MEXICO LEY DEL IMPUESTO SOBRE L	LEYES Y CODIGOS DE MEXICO LEY DEL IMPUESTO SOBRE L			03808,03809,03810,03811,03812	1	1	1	82	2			\N	2022-02-10 14:30:59	2022-02-10 14:31:36	'codig':3,13 'impuest':8,18 'l':10,20 'ley':1,6,11,16 'mexic':5,15
+1324	891	NORMA OFICIAL MEXICANA NOM-001-SEDE-1999	ALFAOMEGA			04394,04395	2	1	1	245	2			\N	2022-02-11 00:09:56	2022-02-11 00:09:56	'-001':5 '-1999':7 'alfaomeg':8 'mexican':3 'nom':4 'norm':1 'oficial':2 'sed':6
 40	40	EL NUEVO UNIVERSO DE LAS LETRAS 1	CHAVEZ GONZALEZ PEDRO TEOBALDO				1	1	1	65	2			\N	2021-10-04 16:50:54	2021-10-04 16:50:54	'1':7 'chavez':8 'gonzalez':9 'letr':6 'nuev':2 'pedr':10 'teobald':11 'univers':3
 981	2803	ACUARELA: 101 TECNICAS	CANAL, MARIA FERNANDA				1	1	1	234	2			\N	2021-12-09 18:44:19	2021-12-09 18:44:19	'101':2 'acuarel':1 'canal':4 'fernand':6 'mari':5 'tecnic':3
 1257	444	A COMMUNICATIVE COURSE IN ENGLISH WORKBOOK 3	P. REIN, DAVID Y H. BYRD, DONALD R.			900,901	1	1	1	245	2			\N	2022-02-04 15:24:34	2022-02-08 14:11:20	'3':7 'byrd':13 'communicativ':2 'cours':3 'dav':10 'donald':14 'english':5 'h':12 'in':4 'p':8 'r':15 'rein':9 'workbook':6
 1308	1737	LEY 2013 ISR E IETU	LEY 2013 ISR E IETU			05229,05230	1	1	1	245	2			\N	2022-02-10 14:37:35	2022-02-10 14:37:35	'2013':2,7 'ietu':5,10 'isr':3,8 'ley':1,6
+1325	1646	SEGURIDAD INDUSTRIAL Y ADMINISTRACION DE LA SALUD	ASFAHL,C. RAY			05015,05016,05017	1	1	1	245	2			\N	2022-02-11 00:11:47	2022-02-11 00:11:47	'administracion':4 'asfahl':8 'c':9 'industrial':2 'ray':10 'salud':7 'segur':1
 41	41	PALABRAS SIN FRONTERA 1	RIVERO REYNA,FRANCISCO				1	1	1	65	2			\N	2021-10-04 16:51:46	2021-10-04 16:51:46	'1':4 'francisc':7 'fronter':3 'palabr':1 'reyn':6 'river':5
 982	2108	ADDH. NIÑOS CON DEFICIT DE ATENCIÓN E HIPERACTIVIDAD: ¿UNA PATOLOGÍA DE MERCADO?	BENASAYAG, LEON				1	1	1	165	2			\N	2021-12-09 18:54:17	2021-12-09 18:54:17	'addh':1 'atencion':6 'benasayag':13 'deficit':4 'hiperact':8 'leon':14 'merc':12 'niñ':2 'patolog':10
 1309	1733	REDES LOCALES	RAYAS, JOSE LUIS			05225	1	1	1	213	2			\N	2022-02-10 15:12:42	2022-02-10 15:12:42	'jos':4 'local':2 'luis':5 'ray':3 'red':1
 42	42	ESPANOL 1 : NUEVOS HORIZONTES	ARCINIEGA RANGEL, MA. ESTELA				1	1	1	65	2			\N	2021-10-04 16:52:14	2021-10-04 16:52:14	'1':2 'arcinieg':5 'espanol':1 'estel':8 'horizont':4 'ma':7 'nuev':3 'rangel':6
+1326	1744	COMO NEGOCIAN LAS MUJERES SUS DERECHOS EN EL MUNDO	COMO NEGOCIAN LAS MUJERES SUS DERECHOS EN EL MUNDO			05240	1	1	1	245	2			\N	2022-02-11 00:13:34	2022-02-11 00:13:34	'derech':6,15 'mujer':4,13 'mund':9,18 'negoci':2,11
 43	43	ESPANOL 1	LOZANO,  LUCERO				1	1	1	62	2			\N	2021-10-04 16:53:13	2021-10-04 16:53:13	'1':2 'espanol':1 'lozan':3 'lucer':4
 186	201	IMAGEN COOL	GORDOA,  ALVARO				1	1	1	84	2			\N	2021-10-05 16:53:09	2021-10-05 16:53:26	'alvar':4 'cool':2 'gordo':3 'imag':1
 983	2405	ADMINISTRACION	STONERSTONER, JAMES A. F., JAMES A. F.				1	1	1	75	2			\N	2021-12-09 19:09:52	2021-12-09 19:09:52	'administracion':1 'f':5,8 'jam':3,6 'stonerston':2
+1327	1631	CRIMINALISTICA ACTUAL: LEY, CIENCIA Y ARTE	CRIMINALISTICA ACTUAL: LEY, CIENCIA Y ARTE			04965,04966,04967,04968,	1	1	1	245	2			\N	2022-02-11 00:15:22	2022-02-11 00:15:22	'actual':2,8 'arte':6,12 'cienci':4,10 'criminalist':1,7 'ley':3,9
 44	44	ESPANOL 1: VERSION PRELIMINAR	VITAL, ALBERTO				1	1	1	62	2			\N	2021-10-04 16:54:29	2021-10-04 16:54:29	'1':2 'albert':6 'espanol':1 'prelimin':4 'version':3 'vital':5
 45	45	ESPANOL 1	VALLE GUERRERO,  ESTELA DEL				1	1	1	66	2			\N	2021-10-04 16:57:37	2021-10-04 16:57:37	'1':2 'espanol':1 'estel':5 'guerrer':4 'vall':3
 984	2390	ADMINISTRACIÓN DE RECURSOS HUMANOS: ENFOQUE LATINOAMERICANO	DESSLER, GARY				1	1	1	55	2			\N	2021-12-09 19:12:56	2021-12-09 19:12:56	'administr':1 'dessl':7 'enfoqu':5 'gary':8 'human':4 'latinoamerican':6 'recurs':3
+1328	1632	ENCICLOPEDIA CRIMINALISTICA, CRIMINOLOGIA E INVEST	ENCICLOPEDIA CRIMINALISTICA, CRIMINOLOGIA E INVEST			04969,04970,04971,04972,	1	1	1	245	2			\N	2022-02-11 00:19:33	2022-02-11 00:19:33	'criminalist':2,7 'criminologi':3,8 'enciclopedi':1,6 'invest':5,10
 215	229	SOCIOLOGIA	.				1	1	1	61	2			\N	2021-10-05 17:42:26	2021-10-05 17:42:26	'sociologi':1
 985	2404	ADMINISTRACIÓN: ESCUELAS, PROCESO ADMINISTRATIVO, ÁREAS FUNCIONALES Y DESARROLLO EMPRENDEDOR	MUNCH, LOURDES				1	1	1	75	2			\N	2021-12-09 20:02:07	2021-12-09 20:02:07	'administr':1,4 'are':5 'desarroll':8 'emprendedor':9 'escuel':2 'funcional':6 'lourd':11 'munch':10 'proces':3
+1329	1673	ENCICLOPEDIA PRACTICA DE VENTAS	GRUPO CULRURAL			05093	1	1	1	245	2			\N	2022-02-11 13:32:57	2022-02-11 13:32:57	'culrural':6 'enciclopedi':1 'grup':5 'practic':2 'vent':4
 205	220	SOCIOLOGIA 2	AMEZCUA CARDIEL,HECTOR				1	1	1	49	2			\N	2021-10-05 17:21:50	2021-10-05 17:21:50	'2':2 'amezcu':3 'cardiel':4 'hector':5 'sociologi':1
 986	899	ADOLESCENCIA ENTRE MUROS: ESCUELA SECUNDARIA Y LA CONSTRUCCIÓN DE IDENTIDADES JUVENILES	REYES JUAREZ, ALEJANDRO				1	1	1	113	2			\N	2021-12-09 20:09:12	2021-12-09 20:09:12	'adolescent':1 'alejandr':14 'construccion':8 'escuel':4 'ident':10 'juarez':13 'juvenil':11 'mur':3 'rey':12 'secundari':5
+1330	1636	ENCICLOPEDIA DEL EMPRESARIO	GRUPO OCEANO			04978	1	1	1	106	2			\N	2022-02-11 13:38:16	2022-02-11 13:38:16	'empresari':3 'enciclopedi':1 'grup':4 'ocean':5
 987	2135	ADOLESCENCIA, TUTORIAS Y ESCUELA: TRABAJO PARTICIPATIVO Y PROMOCIÓN DE LA SALUD	JUNGMAN, EVA				1	1	1	165	2			\N	2021-12-09 20:20:16	2021-12-09 20:20:16	'adolescent':1 'escuel':4 'eva':13 'jungm':12 'particip':6 'promocion':8 'salud':11 'trabaj':5 'tutori':2
+1331	1634	ENCICLOPEDIA DE LA AUDITORIA	GRUPO OCEANO			04976	1	1	1	245	2			\N	2022-02-11 13:42:34	2022-02-11 13:42:34	'auditori':4 'enciclopedi':1 'grup':5 'ocean':6
 46	46	ESPANOL 1: PRIMER GRADO	PRAXEDIS MONTES, NIEVES				1	1	1	67	2			\N	2021-10-04 16:58:39	2021-10-04 16:58:39	'1':2 'espanol':1 'grad':4 'mont':6 'niev':7 'praxedis':5 'prim':3
 47	47	ESPANOL 1	GARCIA CARDENAS, LIDIA				1	1	1	67	2			\N	2021-10-04 17:03:16	2021-10-04 17:03:16	'1':2 'carden':4 'espanol':1 'garci':3 'lidi':5
 853	806	ADOLESCENTES 50 CASOS PROBLEMÁTICOS: ANÁLISIS PSICOLÓGICO Y PROPUESTAS EDUCATIVAS	NUEVO GONZALEZ, ELISEO				1	1	1	192	2			\N	2021-10-18 19:27:29	2021-12-09 20:37:30	'50':2 'adolescent':1 'analisis':5 'cas':3 'educ':9 'elise':12 'gonzalez':11 'nuev':10 'problemat':4 'propuest':8 'psicolog':6
+1332	1327	MASTER BIBLIOTECA PRACTICA DE COMUNICACION: AUTODO	GRUPO OCEANO			04400,04401,04402	1	1	1	106	2			\N	2022-02-11 13:46:32	2022-02-11 13:46:32	'autod':6 'bibliotec':2 'comunicacion':5 'grup':7 'mast':1 'ocean':8 'practic':3
 826	780	ADOLESCENTES, MALOS ROLLOS, COMPLEJOS Y COMEDURAS DE LOCO	MARCELLI, DANIEL				2	1	1	182	2			\N	2021-10-18 18:36:10	2021-12-09 20:51:25	'adolescent':1 'comedur':6 'complej':4 'daniel':10 'loc':8 'mal':2 'marcelli':9 'roll':3
+1333	1140	ENCICLOPEDIA DE LA CIENCIA Y DE LA TECNICA	ENCICLOPEDIA DE LA CIENCIA Y DE LA TECNICA			00264,00264,00265,00266,00267,00268,00269,00270,	1	1	1	245	2			\N	2022-02-11 13:52:06	2022-02-11 13:52:06	'cienci':4,12 'enciclopedi':1,9 'tecnic':8,16
 988	2695	ADOLFO BARNATAN	SIN AUTOR				1	1	1	108	2			\N	2021-12-09 20:56:46	2021-12-09 20:56:46	'adolf':1 'autor':4 'barnat':2
+1334	1144	ALFA NAUTA	ALFA NAUTA: PROGRAMA EDUCATIVO TEMATICO			00256,00257,00258,00259,00260,00261,00262,00263,04250	1	1	1	245	2			\N	2022-02-11 14:00:35	2022-02-11 14:04:25	'alfa':1,3 'educ':6 'naut':2,4 'program':5 'temat':7
+1335	1142	ENCICLOPEDIA ILUSTRADA PARA EL ESTUDIANTE	ENCICLOPEDIA ILUSTRADA PARA EL ESTUDIANTE			00255	1	1	1	64	2			\N	2022-02-11 14:10:32	2022-02-11 14:10:32	'enciclopedi':1,6 'estudi':5,10 'ilustr':2,7
 112	113	COMUNICATE EN ESPANOL 3	DIAZ DE LEON, SANDRA				1	1	1	65	2			\N	2021-10-05 13:21:47	2021-10-05 13:21:47	'3':4 'comunicat':1 'diaz':5 'espanol':3 'leon':7 'sandr':8
 990	2541	ADVERTENCIAS AMORALES AL LECTOR Y CIERTO TIPO DE CUENTOS SUMAMENTE INOCENTES	LILLE FUENTES, MARIO DE				1	1	1	242	2			\N	2021-12-10 13:34:28	2021-12-10 13:37:32	'advertent':1 'amoral':2 'ciert':6 'cuent':9 'fuent':13 'inocent':11 'lector':4 'lill':12 'mari':14 'sum':10 'tip':7
 101	100	REDACCION Y ORTOGRAFIA 1 ; CUADERNO DE TRABAJO	LOZANO, LUCERO				1	1	1	62	2			\N	2021-10-05 12:53:19	2021-10-05 13:19:01	'1':4 'cuadern':5 'lozan':8 'lucer':9 'ortografi':3 'redaccion':1 'trabaj':7
+1336	34	DICCIONARIO DE LA LENGUA ESPANOLA	REAL ACADEMIA ESPANOLA			00221,00222,00223,00224,00225,00226,00227,00228,00229,00230,	1	1	1	245	2			\N	2022-02-11 14:26:24	2022-02-11 14:26:24	'academi':7 'diccionari':1 'espanol':5,8 'lengu':4 'real':6
 991	1327	AGUA QUEMADA: CUARTETO	FUENTES, CARLOS				1	1	1	5	2			\N	2021-12-10 13:48:04	2021-12-10 13:48:04	'agu':1 'carl':5 'cuartet':3 'fuent':4 'quem':2
 48	48	ESPANOL 2:CUADERNO DE TRABAJO	FERNANDEZ FUENTES, MARIA ISABEL				1	1	1	66	2			\N	2021-10-04 17:05:22	2021-10-04 17:05:22	'2':2 'cuadern':3 'espanol':1 'fernandez':6 'fuent':7 'isabel':9 'mari':8 'trabaj':5
 49	49	ESPANOL : CODIGO 1	OCHOA, DE TERESA ADRIANA				1	1	1	50	2			\N	2021-10-04 17:07:16	2021-10-04 17:07:16	'1':3 'adrian':7 'codig':2 'espanol':1 'ocho':4 'teres':6
@@ -3849,7 +4634,9 @@ COPY public.libros (id, ficha_no, titulo, autor, datos_fijos, codebar, observaci
 269	282	QUIMICA I:UN ENFOQUE CONSTRUCTIVISTA	SIN AUTOR				1	1	1	75	2			\N	2021-10-06 12:34:13	2021-10-06 14:00:54	'autor':7 'constructiv':5 'enfoqu':4 'i':2 'quimic':1
 345	337	DICCIONARIO ESCOLAR DE LA LENGUA ESPANOLA	SIN AUTOR				1	1	1	48	2			\N	2021-10-06 17:13:56	2021-10-06 17:13:56	'autor':8 'diccionari':1 'escol':2 'espanol':6 'lengu':5
 992	2631	AH, LAS HISTORIAS CONOCIDAS	SOLIS CALVILLO, ANTONIO				1	1	1	136	2			\N	2021-12-10 13:52:28	2021-12-10 13:52:28	'ah':1 'antoni':7 'calvill':6 'conoc':4 'histori':3 'solis':5
+1338	22	EL ARTE DE PROGRAMAR ORDENADORES ALGORITMOS FUNDAM	KNUTH, DONALD E.			00193,00194	1	1	1	251	2			\N	2022-02-11 14:41:46	2022-02-11 14:41:46	'algoritm':6 'arte':2 'donald':9 'fundam':7 'knuth':8 'orden':5 'program':4
 993	2214	AHI VIENE LA PLAGA: VIRUS EMERGENTES, EPIDEMIAS Y PANDEMIAS	LOZANO, MARIO E.				1	1	1	40	2			\N	2021-12-10 14:03:03	2021-12-10 14:03:03	'ahi':1 'emergent':6 'epidemi':7 'lozan':10 'mari':11 'pandemi':9 'plag':4 'vien':2 'virus':5
+1339	9	APLICACION PRACTICA DE LA COMPUTADORA	CENTRO DE COMPUTACION PROFESIONAL DE MEXICO			00184	2	1	1	245	2			\N	2022-02-11 15:05:05	2022-02-11 15:05:05	'aplicacion':1 'centr':6 'comput':5 'computacion':8 'mexic':11 'practic':2 'profesional':9
 994	2684	ALAS DE PAPEL: OBRA COMPARTIDA CON OCTAVIO PAZ Y OTROS	ROJO, VICENTE				1	1	1	243	2			\N	2021-12-10 14:06:40	2021-12-10 14:07:11	'alas':1 'compart':5 'obra':4 'octavi':7 'papel':3 'paz':8 'roj':11 'vicent':12
 995	2614	AJK´ ECH BUCH: EL PESCADOR	SANCHEZ CHABLE, TORIBIO				1	1	1	136	2			\N	2021-12-10 14:09:37	2021-12-10 14:09:37	'ajk':1 'buch':3 'chabl':7 'ech':2 'pescador':5 'sanchez':6 'toribi':8
 996	1433	ALBERT EINSTEIN: CARTAS PROBABLES	CHIRINOS, JUAN CARLOS				1	1	1	56	2			\N	2021-12-10 14:13:48	2021-12-10 14:13:48	'albert':1 'carl':7 'cart':3 'chirin':5 'einstein':2 'juan':6 'probabl':4
@@ -3872,8 +4659,6 @@ COPY public.libros (id, ficha_no, titulo, autor, datos_fijos, codebar, observaci
 63	63	ESPANOL 1 : CUADERNO DE TRABAJO	FERNANDEZ FUENTES, MARIA ISABEL				1	1	1	66	2			\N	2021-10-04 17:57:21	2021-10-04 17:57:21	'1':2 'cuadern':3 'espanol':1 'fernandez':6 'fuent':7 'isabel':9 'mari':8 'trabaj':5
 64	64	ESPANOL : PALABRAS Y COMUNICACION	MURILLO, GRACIELA				1	1	1	68	2			\N	2021-10-04 17:58:20	2021-10-04 17:58:20	'comunicacion':4 'espanol':1 'graciel':6 'murill':5 'palabr':2
 65	65	MATERIAL DE APOYO COMPLEMENTARIO DE ESPANOL 1	LOZANO , LUCERO				1	1	1	62	2			\N	2021-10-04 18:00:01	2021-10-04 18:00:01	'1':7 'apoy':3 'complementari':4 'espanol':6 'lozan':8 'lucer':9 'material':1
-66	66	CAMINOS DEL ESPANOL 2	MUNGUIA ZATARAIN , IRMA				1	1	1	48	2			\N	2021-10-04 18:00:47	2021-10-04 18:00:47	'2':4 'camin':1 'espanol':3 'irma':7 'mungui':5 'zatarain':6
-68	67	ESPANOL 2	REYES HERRERA, SARA				1	1	1	48	2			\N	2021-10-04 18:03:11	2021-10-04 18:03:11	'2':2 'espanol':1 'herrer':4 'rey':3 'sar':5
 69	68	ESPANOL 2: CUADERNO DE TRABAJO	ARREDONDO VARGAS, LUIS RODRIGO				1	1	1	66	2			\N	2021-10-04 18:06:33	2021-10-04 18:06:33	'2':2 'arredond':6 'cuadern':3 'espanol':1 'luis':8 'rodrig':9 'trabaj':5 'varg':7
 70	69	ESPANOL 2	TOLEDO GUERRERO, ANTONIO				1	1	1	48	2			\N	2021-10-04 18:07:19	2021-10-04 18:07:19	'2':2 'antoni':5 'espanol':1 'guerrer':4 'toled':3
 71	70	COMPETENCIAS LECTORAS : LECTURA DE COMPRENSION 2	GOMEZ Z. JUAN FRANCISCO				1	1	1	56	2			\N	2021-10-04 18:08:05	2021-10-04 18:08:05	'2':6 'competent':1 'comprension':5 'francisc':10 'gomez':7 'juan':9 'lector':2 'lectur':3 'z':8
@@ -3908,6 +4693,7 @@ COPY public.libros (id, ficha_no, titulo, autor, datos_fijos, codebar, observaci
 775	730	EL FRACASO ESCOLAR: FACTORES QUE CONDICIONAN EL DE	PONCE LEON, OLIVIA				1	1	1	89	2			\N	2021-10-18 12:22:43	2021-10-18 12:22:43	'condicion':6 'escol':3 'factor':4 'fracas':2 'leon':10 'olivi':11 'ponc':9
 776	731	LA PREGUNTA COMO INTERVENCION COGNITIVA: ¿QUE? ¿CO	GARCIA CANCINO, EVERARDO				1	1	1	89	2			\N	2021-10-18 12:23:18	2021-10-18 12:23:18	'cancin':9 'co':7 'cognit':5 'everard':10 'garci':8 'intervencion':4 'pregunt':2
 777	732	COMO SOBREVIVIR A ENLACE Y FORTALECERSE EN EL INTE	ROMAN, SERGIO				1	1	1	89	2			\N	2021-10-18 12:23:50	2021-10-18 12:23:50	'enlac':4 'fortalec':6 'inte':9 'rom':10 'sergi':11 'sobreviv':2
+796	751	ETICA DE URGENCIA	SAVATER, FERNANDO				1	1	1	10	2			\N	2021-10-18 12:50:19	2021-10-28 19:41:27	'etic':1 'fern':5 'savat':4 'urgenci':3
 780	735	EDUCACION DIFERENCIADA: LA PROPUESTA DE CAROL ANN	DURAN, VERONICA				1	1	1	89	2			\N	2021-10-18 12:26:29	2021-10-18 12:26:29	'ann':7 'carol':6 'diferenci':2 'dur':8 'educacion':1 'propuest':4 'veron':9
 781	736	DIALOGO 1: FORMACION CIVICA Y ETICA. SECUNDARIA SE	HERNANDEZ AVENDANO, MAITE				1	1	1	50	2			\N	2021-10-18 12:27:13	2021-10-18 12:27:13	'1':2 'avendan':10 'civic':4 'dialog':1 'etic':6 'formacion':3 'hernandez':9 'mait':11 'secundari':7
 782	737	ETICA Y VALORES IETICA Y VALORES I	ESCOBAR VALENZUELA, GUSTAVO				1	1	1	67	2			\N	2021-10-18 12:28:01	2021-10-18 12:28:01	'escob':8 'etic':1 'gustav':10 'i':7 'ietic':4 'valenzuel':9 'valor':3,6
@@ -3975,7 +4761,6 @@ COPY public.libros (id, ficha_no, titulo, autor, datos_fijos, codebar, observaci
 930	882	UNA VISITA AL MUSEO NACIONAL DE HISTORIA CASTILLO	FRANCO, MARIA TERESA				1	1	1	208	2			\N	2021-10-21 12:42:47	2021-10-21 12:43:26	'castill':8 'franc':9 'histori':7 'mari':10 'muse':4 'nacional':5 'teres':11 'visit':2
 932	883	UNA VISITA AL PALACIO DE BELLAS ARTES	FRANCO, MARIA TERESA				1	1	1	208	2			\N	2021-10-21 12:48:17	2021-10-21 12:48:17	'artes':7 'bell':6 'franc':8 'mari':9 'palaci':4 'teres':10 'visit':2
 398	389	ATLAS DE HISTORIA DE MEXICO	GONZALEZ DE LEMOINE, GUILLERMINA				1	1	1	117	2			\N	2021-10-06 18:48:41	2021-10-26 18:20:00	'atlas':1 'gonzalez':6 'guillermin':9 'histori':3 'lemoin':8 'mexic':5
-796	751	ETICA DE URGENCIA	SAVATER, FERNANDO				1	1	1	10	2			\N	2021-10-18 12:50:19	2021-10-28 19:41:27	'etic':1 'fern':5 'savat':4 'urgenci':3
 795	750	ETICA PARA  AMADOR	SAVATER, FERNANDO				1	1	1	10	2			\N	2021-10-18 12:49:48	2021-10-28 19:42:21	'amador':3 'etic':1 'fern':5 'savat':4
 794	749	ETICA PARA AMADOR	SAVATER, FERNANDO				1	1	1	10	2			\N	2021-10-18 12:46:07	2021-10-28 19:42:39	'amador':3 'etic':1 'fern':5 'savat':4
 113	114	COMPETENCIAS LECTORAS 3 : LECTURAS DE COMPRENSION	BELLO C., OSCAR HENYER				1	1	1	56	2			\N	2021-10-05 13:22:49	2021-10-05 13:22:49	'3':3 'bell':7 'c':8 'competent':1 'comprension':6 'heny':10 'lector':2 'lectur':4 'oscar':9
@@ -4109,6 +4894,7 @@ COPY public.libros (id, ficha_no, titulo, autor, datos_fijos, codebar, observaci
 236	251	ETIMOLOGIAS:INTRODUCCION A LA HISTORIA DEL LEXICO	SANTIAGO MARTINEZ,MARIA DE LOURDES  SANTIAGO MAR				1	1	1	75	2			\N	2021-10-05 19:01:16	2021-10-05 19:03:55	'etimologi':1 'histori':5 'introduccion':2 'lexic':7 'lourd':12 'mar':14 'mari':10 'martinez':9 'santiag':8,13
 241	255	FISICA 1	HERNANDEZ ACOSTA,ROSA ELISA T.				1	1	1	48	2			\N	2021-10-05 19:05:50	2021-10-05 19:05:50	'1':2 'acost':4 'elis':6 'fisic':1 'hernandez':3 'ros':5 't':7
 242	256	FISICA 1:UN ENFOQUE CONSTRUCTIVISTA	LARA-BARRAGAN GOMEZ,ANTONIO.				1	1	1	75	2			\N	2021-10-05 19:06:34	2021-10-05 19:06:34	'1':2 'antoni':10 'barrag':8 'constructiv':5 'enfoqu':4 'fisic':1 'gomez':9 'lar':7 'lara-barrag':6
+594	574	EDAD MEDIA EN EUROPA	FRIAS, JORGE				1	1	1	48	2			\N	2021-10-13 13:55:01	2021-10-13 13:55:01	'edad':1 'europ':4 'fri':5 'jorg':6 'medi':2
 243	257	EL ABC DEL APRENDIZAJE COOPERATIVO:TRABAJO EN EQUI	FERREIRO GRAVIE,  RAMON.				1	1	1	60	2			\N	2021-10-05 19:12:44	2021-10-05 19:12:44	'abc':2 'aprendizaj':4 'cooper':5 'equi':8 'ferreir':9 'gravi':10 'ramon':11 'trabaj':6
 377	368	QUIMICA: DICCIONARIO ESENCIAL LAROUSSE	SIN AUTOR				1	1	1	59	2			\N	2021-10-06 18:02:14	2021-10-06 18:02:14	'autor':6 'diccionari':2 'esencial':3 'larouss':4 'quimic':1
 245	259	ESTRATEGIAS NO VERBALES PARA LA ENSENANZA:GUIA PER	GRINDER,MICHAEL				1	1	1	88	2			\N	2021-10-05 19:16:25	2021-10-05 19:17:51	'ensen':6 'estrategi':1 'grind':9 'gui':7 'michael':10 'per':8 'verbal':3
@@ -4424,7 +5210,6 @@ COPY public.libros (id, ficha_no, titulo, autor, datos_fijos, codebar, observaci
 591	570	LA QUIMICA DE LA VIDA Y EL AMBIENTE	IRAZOQUE, GLINDA				1	1	1	48	2			\N	2021-10-13 13:53:22	2021-10-13 13:53:22	'ambient':8 'glind':10 'irazoqu':9 'quimic':2 'vid':5
 592	571	LA QUIMICA DE LOS FLUIDOS NATURALES	IRAZOQUE, GLINDA				1	1	1	48	2			\N	2021-10-13 13:53:51	2021-10-13 13:53:51	'flu':5 'glind':8 'irazoqu':7 'natural':6 'quimic':2
 593	573	EL UNIVERSO DE LA QUIMICA	GARCIA, HORACIO				1	1	1	48	2			\N	2021-10-13 13:54:23	2021-10-13 13:54:23	'garci':6 'horaci':7 'quimic':5 'univers':2
-594	574	EDAD MEDIA EN EUROPA	FRIAS, JORGE				1	1	1	48	2			\N	2021-10-13 13:55:01	2021-10-13 13:55:01	'edad':1 'europ':4 'fri':5 'jorg':6 'medi':2
 595	575	DE LA PREHISTORIA A LAS CIVILIZACIONES AGRICOLAS	LUISELLI, DANIELA				1	1	1	48	2			\N	2021-10-13 13:55:29	2021-10-13 13:55:29	'agricol':7 'civiliz':6 'daniel':9 'luiselli':8 'prehistori':3
 596	576	LAS TRANSFORMACIONES DEL SIGLO XX	GAMBOA RAMIREZ, RICARDO				1	1	1	48	2			\N	2021-10-13 13:56:16	2021-10-13 13:56:16	'gambo':6 'ramirez':7 'ricard':8 'sigl':4 'transform':2 'xx':5
 597	577	EL SIGLO XIX A VUELO DE PAJARO	POBLETT, MARTHA				1	1	1	48	2			\N	2021-10-13 13:57:11	2021-10-13 13:57:11	'marth':9 'pajar':7 'poblett':8 'sigl':2 'vuel':5 'xix':3
@@ -4647,12 +5432,109 @@ COPY public.libros (id, ficha_no, titulo, autor, datos_fijos, codebar, observaci
 926	878	DIDACTICA DE LAS CIENCIAS SOCIALES ¿COMO ENSENAR?	CALDAROLA, GABRIEL CARLOS				1	1	1	207	2			\N	2021-10-21 12:36:25	2021-10-21 12:36:25	'caldarol':8 'carl':10 'cienci':4 'didact':1 'ensen':7 'gabriel':9 'social':5
 927	879	NUEVAS TECNOLOGIAS EN LA BIBLIOTECA ESCOLAR	BORSANI, ZELMA				1	1	1	206	2			\N	2021-10-21 12:37:36	2021-10-21 12:37:36	'bibliotec':5 'borsani':7 'escol':6 'nuev':1 'tecnologi':2 'zelm':8
 928	880	LECTURA Y ESCRITURA: TEORIAS Y PROMOCION, 60 ACTIV	ESPINOZA ARANGO, CAROLINA				1	1	1	206	2			\N	2021-10-21 12:38:16	2021-10-21 12:38:16	'60':7 'activ':8 'arang':10 'carolin':11 'escritur':3 'espinoz':9 'lectur':1 'promocion':6 'teori':4
+1348	1749	ACERCA DEL HOMBRE EN VIKTOR FRANKAL	FREIRE, JOSE BENIGNO			05245	1	1	1	245	2			\N	2022-02-15 15:34:16	2022-02-15 15:34:16	'acerc':1 'benign':9 'frankal':6 'freir':7 'hombr':3 'jos':8 'viktor':5
+1349	1755	RELACIONES HUMANAS: POSITIVAS-EL ARTE DE LLEVARSE	PEREYRA, MARIO				1	1	1	245	2			\N	2022-02-15 15:36:17	2022-02-15 15:36:17	'arte':6 'human':2 'llev':8 'mari':10 'pereyr':9 'posit':4 'positivas-el':3 'relacion':1
+1350	1065	PROGRAMACION EN C	GOTTFRIED, BYRON S.			00272,00273,00274,00275,00276,00277,00278,00279,	1	1	1	245	2			\N	2022-02-15 15:41:50	2022-02-15 15:41:50	'byron':5 'c':3 'gottfri':4 'programacion':1 's':6
+1351	1754	EL CAMINO DE LA FELICIDAD: ESTRATEGIAS PARA EL EXI	VALDIVIA, MIGUEL A.			05250	2	1	1	245	2			\N	2022-02-15 15:45:47	2022-02-15 15:45:47	'camin':2 'estrategi':6 'exi':9 'felic':5 'miguel':11 'valdivi':10
+1352	05249	VIVIR PARA TRIUNFAR: HACIA LA CUMBRE DEL EXITO	CORTES A., FELIX			05249	1	1	1	245	2			\N	2022-02-15 19:03:37	2022-02-15 19:03:37	'cort':9 'cumbr':6 'exit':8 'felix':11 'haci':4 'triunf':3 'viv':1
+1353	1795	ESTRES POSTRAUMATICO	DOMINGUEZ TREJO, BENJAMIN			05337,05338	1	1	1	60	2			\N	2022-02-15 19:05:31	2022-02-15 19:05:31	'benjamin':5 'dominguez':3 'estres':1 'postraumat':2 'trej':4
+1354	1311	MEMORIA XXX ANIVERSARIO DEL CENTRO DE ESTUDIOS CLA	UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO			04548,04549	1	1	1	179	2			\N	2022-02-15 19:08:35	2022-02-15 19:08:35	'aniversari':3 'autonom':11 'centr':5 'cla':8 'estudi':7 'memori':1 'mexic':13 'nacional':10 'univers':9 'xxx':2
+1355	1456	ESCENARIO DEL DUQUE JOB	UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO			04244,04245	1	1	1	179	2			\N	2022-02-15 19:11:16	2022-02-15 19:11:16	'autonom':7 'duqu':3 'escenari':1 'job':4 'mexic':9 'nacional':6 'univers':5
+1356	1449	TRES SIGLOS: MEMORIA DEL PRIMER COLOQUIO "LETRAS D	UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO			04234,04235	1	1	1	179	2			\N	2022-02-15 19:15:56	2022-02-15 19:15:56	'autonom':11 'coloqui':6 'd':8 'letr':7 'memori':3 'mexic':13 'nacional':10 'prim':5 'sigl':2 'tres':1 'univers':9
+1357	414	MEMORIA XX ANIVERSARIO DEL SEMINARIO DE POETICA	UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO			00282,00283	1	1	1	179	2			\N	2022-02-15 19:18:37	2022-02-15 19:18:37	'aniversari':3 'autonom':10 'memori':1 'mexic':12 'nacional':9 'poetic':7 'seminari':5 'univers':8 'xx':2
+1358	128	TERCER CONGRESO INTERNACIONAL DE MAYISTAS MEMORIA	UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO UNIVERSIDA			00284,00285	1	1	1	179	2			\N	2022-02-15 19:20:46	2022-02-15 19:20:46	'autonom':9 'congres':2 'internacional':3 'mayist':5 'memori':6 'mexic':11 'nacional':8 'terc':1 'univers':7,12
+1359	125	MISCELANEA MUSEOLOGICA	UNIVERSIDAD DEL PAIS VASCO			00288	1	1	1	245	2			\N	2022-02-15 19:24:24	2022-02-15 19:24:24	'miscelane':1 'museolog':2 'pais':5 'univers':3 'vasc':6
+1360	121	EL MUSEO Y SUS FETICHES	GUIDIERI, REMO			00289	1	1	1	245	2			\N	2022-02-15 20:36:58	2022-02-15 20:36:58	'fetich':5 'guidieri':6 'muse':2 'rem':7
+1361	291	MACROECONOMIA, VERSION PARA LATINOAMERICA	PARKIN, MICHAEL			02422,02423,02424,02425,02426,02427,02428,02429,02430,02490,	1	1	1	245	2			\N	2022-02-15 20:42:53	2022-02-15 20:42:53	'latinoamer':4 'macroeconomi':1 'michael':6 'parkin':5 'version':2
+1362	118	LA GESTION DEL MUSEO	MOORE, KEVIN			00292	1	1	1	245	2			\N	2022-02-15 20:57:52	2022-02-15 20:57:52	'gestion':2 'kevin':6 'moor':5 'muse':4
+1363	127	ESTRATEGIAS Y MARKETING DE MUSEOS	KOTLER,NEIL Y PHILIP			00293	1	1	1	245	2			\N	2022-02-16 13:29:45	2022-02-16 13:29:51	'estrategi':1 'kotl':6 'marketing':3 'muse':5 'neil':7 'philip':9
+1364	126	ESTUDIOS DE VISITANTES EN MUSEOS: METODOLOGIA Y AP	PEREZ SANTOS,ELOISA			00295	1	1	1	245	2			\N	2022-02-16 13:32:22	2022-02-16 13:32:22	'ap':8 'elois':11 'estudi':1 'metodologi':6 'muse':5 'perez':9 'sant':10 'visit':3
+1365	123	ORAGANIZACION Y DISENO DE EXPOSICIONES	BELCHER, MICHAEL			00296	1	1	1	245	2			\N	2022-02-16 13:33:52	2022-02-16 13:33:52	'belch':6 'disen':3 'exposicion':5 'michael':7 'oraganizacion':1
+1366	39	DISCURSO PRELIMINAR DE LA ENCICLOPEDIA , INVESTIGA	D&#039;ALEMBERT, JEAN LE ROND			00301	1	1	1	245	2			\N	2022-02-16 13:38:50	2022-02-16 13:38:58	'alembert':8 'd':7 'discurs':1 'enciclopedi':5 'investig':6 'jean':9 'prelimin':2 'rond':11
+1367	44	INTERPRETA EN FILOSOFIA, UN ESTUDIO CONTEMPORANEO	MARTINEZ DE LA ESCALERA, ANA MARIA			00303,00304	1	1	1	245	2			\N	2022-02-16 13:40:34	2022-02-16 13:40:34	'ana':11 'contemporane':6 'escaler':10 'estudi':5 'filosofi':3 'interpret':1 'mari':12 'martinez':7
+1368	38	LA AGONIA DE PROTEO	NICOL, EDUARDO			00309,00310	1	1	1	245	2			\N	2022-02-16 13:41:56	2022-02-16 13:41:56	'agoni':2 'eduard':6 'nicol':5 'prote':4
+1369	49	TEORIA DEL CONOCIMIENTO	HESSEN, J.			00315	1	1	1	178	2			\N	2022-02-16 13:44:16	2022-02-16 13:44:16	'conoc':3 'hess':4 'j':5 'teori':1
+1370	50	SEDIENTA SOLEDAD TREINTA Y SEIS CARTAS A BERNARDO	TORRES BODET, JAIME			00316,00317	1	1	1	245	2			\N	2022-02-16 13:45:46	2022-02-16 13:45:46	'bernard':8 'bodet':10 'cart':6 'jaim':11 'sedient':1 'seis':5 'soled':2 'torr':9 'treint':3
+1371	47	HERMENEUTICA, PSICOANALISIS Y LITERATURA	UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO			00318,00319	1	1	1	245	2			\N	2022-02-16 13:47:41	2022-02-16 13:47:41	'autonom':7 'hermeneut':1 'literatur':4 'mexic':9 'nacional':6 'psicoanalisis':2 'univers':5
+1372	48	PERSPECTIVAS Y HORIZONTES DE LA HERMENEUTICA EN LA	UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO			00320,00321	1	1	1	179	2			\N	2022-02-16 13:49:39	2022-02-16 13:51:06	'autonom':11 'hermeneut':6 'horizont':3 'mexic':13 'nacional':10 'perspect':1 'univers':9
+1373	53	TOPICOS DE FILOSOFIA Y LENGUAJE	BEUCHOT, MAURICIO			00322,00323	1	1	1	179	2			\N	2022-02-16 13:51:48	2022-02-16 13:51:48	'beuchot':6 'filosofi':3 'lenguaj':5 'maurici':7 'topic':1
+1374	89	LA FILOSOFIA DE LA TRANSCENDENCIA ( SELECTAE DISSE	EGUIARA Y EGUREN, JUAN JOSE			00324,00325	1	1	1	179	2			\N	2022-02-16 13:53:27	2022-02-16 13:53:27	'diss':7 'egui':8 'egur':10 'filosofi':2 'jos':12 'juan':11 'selecta':6 'transcendent':5
+1375	88	LECCIONES DE FILOSOFIA	FERNANDEZ DEL RINCON, JOSE IGNACIO			00326,00327	1	1	1	179	2			\N	2022-02-16 13:58:32	2022-02-16 13:58:32	'fernandez':4 'filosofi':3 'ignaci':8 'jos':7 'leccion':1 'rincon':6
+1376	51	LA MENTE EN LAS RELACIONES HUMANAS	CUSTER, DAN			00328	1	1	1	73	2			\N	2022-02-16 14:00:08	2022-02-16 14:00:08	'cust':7 'dan':8 'human':6 'ment':2 'relacion':5
+1377	1061	LOS 7 HABITOS DE LOS ADOLESCENTES ALTAMENTE EFECTI	COBEY, SEAN			00385,00386	1	1	1	15	2			\N	2022-02-16 14:04:46	2022-02-16 14:04:46	'7':2 'adolescent':6 'alt':7 'cobey':9 'efecti':8 'habit':3
+1378	1118	EL 8º HABITO DE LA EFECTIVIDAD A LA GRANDEZA	COVEY, STEPHEN R.			00387,00388	1	1	1	245	2			\N	2022-02-16 14:06:35	2022-02-16 14:06:35	'8º':2 'covey':10 'efect':6 'grandez':9 'habit':3 'r':12 'steph':11
+1379	1062	LOS 7 HABITOS DE LA GENTE ALTAMENTE EFECTIVA	COVEY, STEPHEN R.			00389,00389	1	1	1	245	2			\N	2022-02-16 14:08:24	2022-02-16 14:08:24	'7':2 'alt':7 'covey':9 'efect':8 'gent':6 'habit':3 'r':11 'steph':10
+1380	1280	PALABRAS DE AGRADECIMIENTO PREMIO ADORNO	DERRIDA, JACQUES			03416,03417	1	1	1	245	2			\N	2022-02-16 14:10:38	2022-02-16 14:10:38	'adorn':5 'agradec':3 'derr':6 'jacqu':7 'palabr':1 'premi':4
+1381	310	CURSO DE REDACCION DINAMICA	BASULTO, HILDA			02747,02748	1	1	1	57	2			\N	2022-02-16 15:27:14	2022-02-16 15:27:14	'basult':5 'curs':1 'dinam':4 'hild':6 'redaccion':3
+1382	2741	REDACCION PARA UNIVERSITARIOS	AMARO, MANUEL JAVIER			02741,02742,02743,02744,02745,02746,03462,03463,03766,03814,04178,02741,02742,02743,02744,02745,02746,03462,03463,03766,03814,04178,	1	1	1	57	2			\N	2022-02-16 15:41:57	2022-02-16 15:41:57	'amar':4 'javi':6 'manuel':5 'redaccion':1 'universitari':3
+1383	308	REDACCION SIN DOLOR, APRENDA A ESCRIBIR CON CLARID	COHEN, SANDRO			02749,02751	1	1	1	32	2			\N	2022-02-16 15:51:21	2022-02-16 15:51:21	'aprend':4 'clar':8 'coh':9 'dolor':3 'escrib':6 'redaccion':1 'sandr':10
+1384	1074	REDACCION Y ESTILO: UNA GUIA PARA EVITAR LOS ERROR	METZ, M.L.			02763,02764,02765,02766,	1	1	1	60	2			\N	2022-02-16 15:53:24	2022-02-16 15:53:24	'error':9 'estil':3 'evit':7 'gui':5 'm.l':11 'metz':10 'redaccion':1
+1385	212	ADMINISTRAR EL TIEMPO	QUESADA CASTILLO.ROCIO			02767	1	1	1	57	2			\N	2022-02-16 15:55:59	2022-02-16 15:55:59	'administr':1 'castillo.rocio':5 'ques':4 'tiemp':3
+1386	202	ELABORAR MAPAS CONCEPTUALES	QUESADA CASTILLO,ROCIO			02768	1	1	1	57	2			\N	2022-02-17 13:57:19	2022-02-17 13:57:19	'castill':5 'conceptual':3 'elabor':1 'map':2 'ques':4 'roci':6
+1387	205	ESCUCHAR CON ATENCION Y TOMAR APUNTES	QUESADA CASTILLO,ROCIO				1	1	1	57	2			\N	2022-02-17 13:59:04	2022-02-17 13:59:04	'apunt':6 'atencion':3 'castill':8 'escuch':1 'ques':7 'roci':9 'tom':5
+1388	206	ELABORAR GUIAS DE ESTUDIO	QUESADA CASTILLO,ROCIO			02772	1	1	1	57	2			\N	2022-02-17 14:10:05	2022-02-17 14:10:05	'castill':6 'elabor':1 'estudi':4 'gui':2 'ques':5 'roci':7
+1389	213	ELABORAR RESUMENES Y CUADROS SINOPTICOS	QUESADA CASTILLO,ROCIO			02773	1	1	1	57	2			\N	2022-02-17 14:14:45	2022-02-17 14:14:45	'castill':7 'cuadr':4 'elabor':1 'ques':6 'resumen':2 'roci':8 'sinopt':5
+1390	214	ELABORAR MAPAS MENTALES	QUESADA CASTILLO,ROCIO			02774	1	1	1	57	2			\N	2022-02-17 14:17:02	2022-02-17 14:17:02	'castill':5 'elabor':1 'map':2 'mental':3 'ques':4 'roci':6
+1391	210	FOMENTAR LA AUTORREGULACION	QUESADA CASTILLO,ROCIO			02775	1	1	1	57	2			\N	2022-02-17 14:19:21	2022-02-17 14:19:30	'autorregulacion':3 'castill':5 'foment':1 'ques':4 'roci':6
+1392	204	LEER PARA APRENDER	QUESADA CASTILLO,ROCIO			02776	1	1	1	57	2			\N	2022-02-17 14:30:40	2022-02-17 14:30:40	'aprend':3 'castill':5 'leer':1 'ques':4 'roci':6
+1393	207	PREPARAR EXAMENES	QUESADA CASTILLO,ROCIO			02787	1	1	1	57	2			\N	2022-02-17 14:32:52	2022-02-17 14:32:52	'castill':4 'examen':2 'prepar':1 'ques':3 'roci':5
+1394	208	PREPARAR INFORMES ESCRITOS	QUESADA CASTILLO, ROCIO			02788	1	1	1	57	2			\N	2022-02-17 14:34:23	2022-02-17 14:34:23	'castill':5 'escrit':3 'inform':2 'prepar':1 'ques':4 'roci':6
+1395	209	PREPARAR INFORMES ORALES	QUESADA CASTILLO,ROCIO			02789	1	1	1	57	2			\N	2022-02-17 14:35:36	2022-02-17 14:35:36	'castill':5 'inform':2 'oral':3 'prepar':1 'ques':4 'roci':6
+1396	211	USAR LA BIBLIOTECA Y OTROS RECURSOS DE APRENDIZAJE	QUESADA CASTILLO,ROCIO			02790	1	1	1	57	2			\N	2022-02-17 14:37:04	2022-02-17 14:37:04	'aprendizaj':8 'bibliotec':3 'castill':10 'ques':9 'recurs':6 'roci':11 'usar':1
+1397	203	MEJORAR LA MEMORIA	QUESADA CASTILLO,ROCIO			02792	1	1	1	57	2			\N	2022-02-17 14:38:24	2022-02-17 14:38:24	'castill':5 'mejor':1 'memori':3 'ques':4 'roci':6
+1398	1079	REDACCION	SAAD, ANTONIO MIGUEL			02793,02794,02795,02796,02797,02798	1	1	1	245	2			\N	2022-02-17 14:40:18	2022-02-17 14:40:18	'antoni':3 'miguel':4 'redaccion':1 'saad':2
+1399	307	REDACCION DESDE CUESTIONES GRAMATICALES HASTA EL I	SAAD, ANTONIO MIGUEL			02799,02810,02811,02812,02813,02814,03978,03979,03980,03981,03982,03983,	1	1	1	166	2			\N	2022-02-17 14:43:22	2022-02-17 14:43:22	'antoni':9 'cuestion':3 'gramatical':4 'i':7 'miguel':10 'redaccion':1 'saad':8
+1400	309	CURSO DE REDACCION	VIVALDI,GONZALO MARTIN			02815,02816	1	1	1	245	2			\N	2022-02-17 15:11:22	2022-02-17 15:11:22	'curs':1 'gonzal':5 'martin':6 'redaccion':3 'vivaldi':4
+1401	1507	MANUAL DE PUBLICACIONES DE LA AMERICAN PSYCHOLOGIC	MANUAL DE PUBLICACIONES DE LA AMERICAN PSYCHOLOGIC			04644,04645,04646,04647,	1	1	1	245	2			\N	2022-02-17 15:14:57	2022-02-17 15:14:57	'americ':6,13 'manual':1,8 'psychologic':7,14 'public':3,10
+1403	1757	MENTE POSITIVA: GUIA PRACTICA PARA CUALQUIER SITUA	MENTE POSITIVA: GUIA PRACTICA PARA CUALQUIER SITUA			05253	1	1	1	245	2			\N	2022-02-17 15:49:22	2022-02-17 15:49:22	'cualqui':6,13 'gui':3,10 'ment':1,8 'posit':2,9 'practic':4,11 'situ':7,14
+1404	1756	DISFRUTA LA VIDA: GUIA PRACTICA PARA VIVIR MAS Y M	MELGOSA, JULIA			05252	1	1	1	245	2			\N	2022-02-17 15:51:16	2022-02-17 15:51:16	'disfrut':1 'gui':4 'juli':12 'm':10 'mas':8 'melgos':11 'practic':5 'vid':3 'viv':7
+1405	54	DICCIONARIO DE HUMANISTAS CLASICOS DE MEXICO	UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO			00333,04222	1	1	1	179	2			\N	2022-02-17 16:01:29	2022-02-17 16:01:29	'autonom':9 'clasic':4 'diccionari':1 'human':3 'mexic':6,11 'nacional':8 'univers':7
+1406	58	HISTORIA DEL TIEMPO	W. HAWKING, STEPHEN			00363,04212	1	1	1	83	2			\N	2022-02-17 16:06:07	2022-02-17 16:06:07	'hawking':5 'histori':1 'steph':6 'tiemp':3 'w':4
+1407	46	DISPUTAS TUSCULANAS	TULIO CICERON, MARCO			00311,00312,00313,00314,	1	1	1	245	2			\N	2022-02-17 16:09:51	2022-02-17 16:09:51	'ciceron':4 'disput':1 'marc':5 'tuli':3 'tusculan':2
+1408	136	ENCUENTRO NACIONAL DE INVESTIGACIONES DE LA FILOSOFIA	UNIVERSIDAD AUTONOMA DE AGUASCALIENTES INSTITUTO DE INVESTIGACIONES FILOLOGICAS			00330,00331	1	1	1	245	2			\N	2022-02-17 16:14:52	2022-02-17 16:16:31	'aguascalient':11 'autonom':9 'encuentr':1 'filolog':15 'filosofi':7 'institut':12 'investig':4,14 'nacional':2 'univers':8
+1409	86	EL EXISTENCIALISMO ES UN HUMANISMO	PAUL SARTRE,JEAN			00332	1	1	1	245	2			\N	2022-02-17 16:18:37	2022-02-17 16:18:37	'existencial':2 'human':5 'jean':8 'paul':6 'sartr':7
+1410	87	DE DOMINIO INFIDELIUM ET IUSTO BELLO, I II	VERA CRUZ, FRAY ALONSO DE LA			00334,00335	1	1	1	179	2			\N	2022-02-17 16:20:02	2022-02-17 16:20:02	'alons':12 'bell':6 'cruz':10 'domini':2 'et':4 'fray':11 'i':7 'ii':8 'infidelium':3 'iust':5 'ver':9
+1411	82	EL NATURALISMO EN MEXICO	GARCIA BARRAGAN,MARIA GUADALUPE			00336,00337	1	1	1	179	2			\N	2022-02-17 16:21:54	2022-02-17 16:21:54	'barrag':6 'garci':5 'guadalup':8 'mari':7 'mexic':4 'natural':2
+1412	81	EL NATURALISMO LITERARIO EN MEXICO	GARCIA BARRAGAN, MARIA GUADALUPE			00338,00339	1	1	1	179	2			\N	2022-02-17 16:25:52	2022-02-17 16:25:52	'barrag':7 'garci':6 'guadalup':9 'literari':3 'mari':8 'mexic':5 'natural':2
+1413	80	IUSNATURALISTAS Y IUSPOSITIVISTAS MEXICANOS	UNIVERSIDAD NACIONAL AUTONOMA DE MEXICO			00340,00341	1	1	1	179	2			\N	2022-02-17 16:28:37	2022-02-17 16:28:37	'autonom':7 'iusnatural':1 'iuspositiv':3 'mexic':9 'mexican':4 'nacional':6 'univers':5
+1414	71	LA DROGA	CURTET, FRANCIS			00344	1	1	1	245	2			\N	2022-02-17 16:30:59	2022-02-17 16:30:59	'curtet':3 'drog':2 'francis':4
+1415	83	EL MIEDO A LA LIBERTAD	FROMM, ERICH			00353	1	1	1	245	2			\N	2022-02-17 16:37:15	2022-02-17 16:37:15	'erich':7 'fromm':6 'libert':5 'mied':2
+1416	1068	LIDERAZGO EMOCIONAL	VBOYATZIS, RICHARD Y MCKEE, ANNIE			00355	1	1	1	245	2			\N	2022-02-17 16:41:03	2022-02-17 16:41:03	'anni':7 'emocional':2 'liderazg':1 'mcke':6 'richard':4 'vboyatzis':3
+1417	69	TRADICIONES Y PUNTOS DE VISTA EN LA FICCION SENTIM	DEYERMOND, ALAN D.			00357,00358	1	1	1	245	2			\N	2022-02-17 16:42:40	2022-02-17 16:42:40	'alan':11 'd':12 'deyermond':10 'ficcion':8 'punt':3 'sentim':9 'tradicion':1 'vist':5
+1418	67	PENSAMIENTO Y REALIDAD EN FRAY ALONSO DE LA VERA C	REDMOND, WALTER Y BEUCHOT, MAURICIO			00359,00360	1	1	1	179	2			\N	2022-02-17 16:44:52	2022-02-17 16:44:52	'alons':6 'beuchot':14 'c':10 'fray':5 'maurici':15 'pensamient':1 'realid':3 'redmond':11 'ver':9 'walt':12
+1419	70	INTRODUCCION AL PENSAMIENTO POLITICO	CERRONI UMBERTO			00362	1	1	1	245	2			\N	2022-02-17 16:46:57	2022-02-17 16:46:57	'cerroni':5 'introduccion':1 'pensamient':3 'polit':4 'umbert':6
+1420	57	EL SER Y EL TIEMPO	HEIDEGGER, MARTIN			00364	1	1	1	245	2			\N	2022-02-17 16:49:09	2022-02-17 16:49:09	'heidegg':6 'martin':7 'ser':2 'tiemp':5
+1421	56	MAGIA, CIENCIA Y RELIGION	MALINOWSKI, BRONISLAW			00366	1	1	1	245	2			\N	2022-02-17 16:51:44	2022-02-17 16:51:44	'bronislaw':6 'cienci':2 'magi':1 'malinowski':5 'religion':4
+1422	55	EL CONOCIMIENTO HUMANO SU ALCANCE Y SUS LIMITES	RUSELL,BERTRAND			00367	1	1	1	245	2			\N	2022-02-17 16:56:19	2022-02-17 16:56:26	'alcanc':5 'bertrand':10 'conoc':2 'human':3 'limit':8 'rusell':9
+1423	1410	DESARROLLO DE HABILIDADES DEL PENSAMIENTO	SANCHEZ, MARGARITA A. DE			04095,04096,04097,04098,04099,04100,04364,	1	1	1	60	2			\N	2022-02-17 17:48:08	2022-02-17 17:48:08	'desarroll':1 'habil':3 'margarit':7 'pensamient':5 'sanchez':6
+1424	59	DESARROLLO DE HABILIDADES DEL PENSAMIENTO PROCESOS	SANCHEZ, MARGARITA A. DE			00370,00371,00372,00373,00374,00375,00376,	1	1	1	60	2			\N	2022-02-17 19:15:52	2022-02-17 19:15:52	'desarroll':1 'habil':3 'margarit':8 'pensamient':5 'proces':6 'sanchez':7
+1425	1363	DINAMICA DE GRUPOS TECNICAS Y TACTICAS	GONZALEZ NUNEZ, J. JESUS, MONROY, ANAMELY; SILBERS			03765,03767,03768,03769,03770,	1	1	1	245	2			\N	2022-02-17 19:20:06	2022-02-17 19:20:06	'anamely':12 'dinam':1 'gonzalez':7 'grup':3 'j':9 'jesus':10 'monroy':11 'nunez':8 'silbers':13 'tactic':6 'tecnic':4
+1426	356	LOS NEXOS SUBORDINANTES ADVERBIALES EN EL HABLA PO	HERRERA LIMA,MARIA EUGENIA			03177,03178	1	1	1	179	2			\N	2022-02-17 19:33:50	2022-02-17 19:33:50	'adverbial':4 'eugeni':12 'habl':7 'herrer':9 'lim':10 'mari':11 'nex':2 'po':8 'subordin':3
+1427	1072	EL CICLO VITAL DE LA FAMILIA	ESTRADA INDA, LAURO			00379,00380,00381,00382,00383,00384,	1	1	1	15	2			\N	2022-02-17 19:36:02	2022-02-17 19:36:02	'cicl':2 'estrad':7 'famili':6 'inda':8 'laur':9 'vital':3
+1428	1404	DESARROLLO DE HABILIDADES DEL PENSAMIENTO: DISCERN	SANCHEZ, MARGARITA A. DE			04068,04068,04069,04070,04071,	1	1	1	60	2			\N	2022-02-17 19:39:50	2022-02-17 19:39:50	'desarroll':1 'discern':6 'habil':3 'margarit':8 'pensamient':5 'sanchez':7
+1429	1410	DESARROLLO DE HABILIDADES DEL PENSAMIENTO RAZONAMIENTO VERBAL Y SOLUCION DE PROBLEMAS	SANCHEZ, MARGARITA A. DE			GUIA DEL INSTRUCTOR	1	1	1	60	2			\N	2022-02-17 19:45:41	2022-02-17 19:45:41	'desarroll':1 'habil':3 'margarit':13 'pensamient':5 'problem':11 'razon':6 'sanchez':12 'solucion':9 'verbal':7
+1430	1758	DESCUBRE TU VALOR Y SE FELIZ: LA IMPORTANCIA DE LA	MELGOSA, JULIAN			05254	1	1	1	245	2			\N	2022-02-17 19:47:41	2022-02-17 19:47:41	'descubr':1 'feliz':6 'import':8 'juli':12 'melgos':11 'valor':3
+1431	1054	ADMINISTRACION DEL TIEMPO	RODRIGUEZ ESTRADA, MAURO			00397,00398,05233,05234,05235	1	1	1	249	2			\N	2022-02-17 20:12:04	2022-02-17 20:12:04	'administracion':1 'estrad':5 'maur':6 'rodriguez':4 'tiemp':3
+1432	1055	MANEJO DE PROBLEMAS Y TOMA DE DECISIONES	RODRIGUEZ ESTRADA, MAURO			00399,00400	1	1	1	245	2			\N	2022-02-17 20:17:20	2022-02-17 20:17:20	'decision':7 'estrad':9 'manej':1 'maur':10 'problem':3 'rodriguez':8 'tom':5
+1433	1056	PLANEACION DE VIDA Y TRABAJO	RODRIGUEZ ESTRADA, MAURO			00401,00402	1	1	1	245	2			\N	2022-02-17 20:21:11	2022-02-17 20:21:11	'estrad':7 'maur':8 'planeacion':1 'rodriguez':6 'trabaj':5 'vid':3
+1434	64	SEIS PREGUNTAS A LA LOGICA MEDIEVAL	MUNOZ GARCIA, ANGEL			00404,00405	1	1	1	179	2			\N	2022-02-17 20:23:12	2022-02-17 20:23:12	'angel':9 'garci':8 'logic':5 'medieval':6 'munoz':7 'pregunt':2 'seis':1
+1435	63	ETICA O FILOSOFIA MORAL, CONFORME AL PENSAMIENTO D	BARBEDETTE, D.			00406,00407	1	1	1	245	2			\N	2022-02-17 20:29:31	2022-02-17 20:29:31	'barbedett':9 'conform':5 'd':8,10 'etic':1 'filosofi':3 'moral':4 'pensamient':7
+1436	61	ETICA Y DERECHO EN TOMAS DE AQUINO	BEUCHOT, MAURICIO			00408,00409	1	1	1	179	2			\N	2022-02-17 20:31:20	2022-02-17 20:31:20	'aquin':7 'beuchot':8 'derech':3 'etic':1 'maurici':9 'tom':5
+1437	92	ETICA	SANCHEZ VAZQUEZ,ADOLFO			00412,00413	1	1	1	179	2			\N	2022-02-17 20:32:23	2022-02-17 20:32:23	'adolf':4 'etic':1 'sanchez':2 'vazquez':3
+1438	98	LAS ETICAS DEL EXEMPLUM LOS CASTIGOS DEL REY DON S	PALAFOX,ELOISA			00414	1	1	1	179	2			\N	2022-02-17 20:35:24	2022-02-17 20:35:24	'castig':6 'don':9 'elois':12 'etic':2 'exemplum':4 'palafox':11 'rey':8 's':10
+1439	1058	ETICA PARA TODOS	BRUNET, GRACIELA			00415,00416,00417,00418,00419,00420,	1	1	1	253	2			\N	2022-02-17 20:41:46	2022-02-17 20:41:46	'brunet':4 'etic':1 'graciel':5
+1440	90	ENSAYOS MARGINALES SOBRE ARISTOTELES	BEUCHOT,MAURICIO			00425,00426	1	1	1	245	2			\N	2022-02-17 20:45:51	2022-02-17 20:45:51	'aristotel':4 'beuchot':5 'ensay':1 'marginal':2 'maurici':6
+1441	91	LA ESENCIA Y LA EXISTENCIA EN LA FILOSOFIA ESCOLAS	BEUCHOT PUENTE,MAURICIO			00427,00428	1	1	1	179	2			\N	2022-02-17 20:47:58	2022-02-17 20:47:58	'beuchot':10 'escol':9 'esenci':2 'existent':5 'filosofi':8 'maurici':12 'puent':11
+1442	103	CURSO DE FILOSOFIA	YAJOT,O. Y SPIRKIN A.			00430	1	1	1	245	2			\N	2022-02-17 20:53:46	2022-02-17 20:53:46	'curs':1 'filosofi':3 'spirkin':7 'yajot':4
+1443	1057	AUTOESTIMA: CLAVE DEL EXITO PERSONAL	RODRIGUEZ ESTRADA, MAURO			00391,00392,00393,00394,00395,00396,03919,03920,	1	1	1	254	2			\N	2022-02-17 20:55:53	2022-02-17 20:56:41	'autoestim':1 'clav':2 'estrad':7 'exit':4 'maur':8 'personal':5 'rodriguez':6
+1444	1406	EL CAMINO FACIL Y RAPIDO PARA HABLAR EFICAZMENTE	CARNEGIE,DALE Y DOROTHY			04077,04077,04078,04079,04080,04081,	1	1	1	255	2			\N	2022-02-17 21:26:17	2022-02-17 21:26:53	'camin':2 'carnegi':9 'dal':10 'dorothy':12 'eficaz':8 'facil':3 'habl':7 'rap':5
+1445	1442	GRUPOS DE TRABAJO AUTODIRIGIDOS	HICKS, ROBERT Y BONE, DIANE			04227	1	1	1	245	2			\N	2022-02-17 21:30:04	2022-02-17 21:30:04	'autodirig':4 'bon':8 'dian':9 'grup':1 'hicks':5 'robert':6 'trabaj':3
 \.
 
 
 --
--- TOC entry 2772 (class 0 OID 40728)
--- Dependencies: 197
+-- TOC entry 4198 (class 0 OID 19416)
+-- Dependencies: 222
 -- Data for Name: migrations; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -4672,8 +5554,8 @@ COPY public.migrations (id, migration, batch) FROM stdin;
 
 
 --
--- TOC entry 2796 (class 0 OID 44051)
--- Dependencies: 221
+-- TOC entry 4200 (class 0 OID 19421)
+-- Dependencies: 224
 -- Data for Name: model_has_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -4687,8 +5569,8 @@ COPY public.model_has_permissions (permission_id, model_type, model_id) FROM std
 
 
 --
--- TOC entry 2797 (class 0 OID 44063)
--- Dependencies: 222
+-- TOC entry 4201 (class 0 OID 19424)
+-- Dependencies: 225
 -- Data for Name: model_has_roles; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -4697,8 +5579,8 @@ COPY public.model_has_roles (role_id, model_type, model_id) FROM stdin;
 
 
 --
--- TOC entry 2789 (class 0 OID 43997)
--- Dependencies: 214
+-- TOC entry 4202 (class 0 OID 19427)
+-- Dependencies: 226
 -- Data for Name: password_resets; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -4707,8 +5589,8 @@ COPY public.password_resets (email, token, created_at) FROM stdin;
 
 
 --
--- TOC entry 2804 (class 0 OID 44131)
--- Dependencies: 229
+-- TOC entry 4203 (class 0 OID 19433)
+-- Dependencies: 227
 -- Data for Name: permission_role; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -4717,8 +5599,8 @@ COPY public.permission_role (id, role_id, permission_id, deleted_at, created_at,
 
 
 --
--- TOC entry 2802 (class 0 OID 44111)
--- Dependencies: 227
+-- TOC entry 4205 (class 0 OID 19438)
+-- Dependencies: 229
 -- Data for Name: permission_user; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -4729,8 +5611,8 @@ COPY public.permission_user (id, user_id, permission_id, deleted_at, created_at,
 
 
 --
--- TOC entry 2793 (class 0 OID 44020)
--- Dependencies: 218
+-- TOC entry 4207 (class 0 OID 19443)
+-- Dependencies: 231
 -- Data for Name: permissions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -4750,8 +5632,8 @@ COPY public.permissions (id, name, descripcion, color, guard_name, created_at, u
 
 
 --
--- TOC entry 2817 (class 0 OID 44349)
--- Dependencies: 242
+-- TOC entry 4209 (class 0 OID 19453)
+-- Dependencies: 233
 -- Data for Name: portadas; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5031,7 +5913,6 @@ COPY public.portadas (id, root, filename, filename_png, filename_thumb, pie_de_f
 321		23856615fedd8ac08aadae2bd3d30315a72d5aa9-1182-321.jpg	1	_thumb_23856615fedd8ac08aadae2bd3d30315a72d5aa9-1182-321.png		1	1	2			\N	2022-01-27 16:42:32	2022-01-27 16:42:33
 323		324540f4c3f06159e9e019dd2255ea2de2fecfbc-1183-323.jpg	1	_thumb_324540f4c3f06159e9e019dd2255ea2de2fecfbc-1183-323.png		1	1	2			\N	2022-01-27 16:46:48	2022-01-27 16:46:48
 325		bb253d26b12fdbba57684ed3fd42d8d17561af6f-1185-325.jpg	1	_thumb_bb253d26b12fdbba57684ed3fd42d8d17561af6f-1185-325.png		1	1	2			\N	2022-01-27 16:53:29	2022-01-27 16:53:29
-326		44cf3ef9697d1e3f31523ab93fdb949cf4dbc8a8-1186-326.jpg	1	_thumb_44cf3ef9697d1e3f31523ab93fdb949cf4dbc8a8-1186-326.png		1	1	2			\N	2022-01-27 16:55:55	2022-01-27 16:55:55
 327		e9999a1273dfcb8ec54b3a0e17f2308c7fb4cb51-1187-327.jpg	1	_thumb_e9999a1273dfcb8ec54b3a0e17f2308c7fb4cb51-1187-327.png		1	1	2			\N	2022-01-31 13:54:11	2022-01-31 13:54:11
 328		a812b16b2b3f94f77f5a269a755adefd74d9e671-1188-328.jpg	1	_thumb_a812b16b2b3f94f77f5a269a755adefd74d9e671-1188-328.png		1	1	2			\N	2022-01-31 18:26:40	2022-01-31 18:26:40
 330		16e72a7cd68e751cc4e3eb0a5602c22c76e3637c-1189-330.jpg	1	_thumb_16e72a7cd68e751cc4e3eb0a5602c22c76e3637c-1189-330.png		1	1	2			\N	2022-01-31 18:52:50	2022-01-31 18:52:50
@@ -5160,12 +6041,138 @@ COPY public.portadas (id, root, filename, filename_png, filename_thumb, pie_de_f
 459		a3939deabce2177b38adbbfb2b0b40692091bd83-1317-459.jpg	1	_thumb_a3939deabce2177b38adbbfb2b0b40692091bd83-1317-459.png		1	1	2			\N	2022-02-10 19:34:31	2022-02-10 19:34:31
 460		da7f796f3f8d37f7478295a78342aea9425aca8b-1318-460.jpg	1	_thumb_da7f796f3f8d37f7478295a78342aea9425aca8b-1318-460.png		1	1	2			\N	2022-02-10 19:36:58	2022-02-10 19:36:58
 461		5831cac6425a890b8fbef114e64db8a6c6cb64b3-1319-461.jpg	1	_thumb_5831cac6425a890b8fbef114e64db8a6c6cb64b3-1319-461.png		1	1	2			\N	2022-02-10 23:57:32	2022-02-10 23:57:32
+462		20f4752708ac2b203d5abf124dba0535495fec45-1320-462.jpg	1	_thumb_20f4752708ac2b203d5abf124dba0535495fec45-1320-462.png		1	1	2			\N	2022-02-11 00:00:16	2022-02-11 00:00:16
+463		ed0e8ea1050de774c10a243cc4a8069aa918b356-1321-463.jpg	1	_thumb_ed0e8ea1050de774c10a243cc4a8069aa918b356-1321-463.png		1	1	2			\N	2022-02-11 00:02:31	2022-02-11 00:02:31
+464		2588110a155f4aa3b68f3abf15b7cf55f25ffb45-1322-464.jpg	1	_thumb_2588110a155f4aa3b68f3abf15b7cf55f25ffb45-1322-464.png		1	1	2			\N	2022-02-11 00:06:09	2022-02-11 00:06:09
+465		938671e27c307f37a986dde507a2fa7cca4a7dd6-1323-465.jpg	1	_thumb_938671e27c307f37a986dde507a2fa7cca4a7dd6-1323-465.png		1	1	2			\N	2022-02-11 00:07:48	2022-02-11 00:07:48
+466		1815582b1b485cbf2de40acd3c5f749fa1c2b81d-1324-466.jpg	1	_thumb_1815582b1b485cbf2de40acd3c5f749fa1c2b81d-1324-466.png		1	1	2			\N	2022-02-11 00:10:14	2022-02-11 00:10:14
+467		de99c19b8faed2160229b9fce53d99b052fe505d-1325-467.jpg	1	_thumb_de99c19b8faed2160229b9fce53d99b052fe505d-1325-467.png		1	1	2			\N	2022-02-11 00:12:09	2022-02-11 00:12:10
+468		c2718ee766b93275b6954423bd0b97a7cb2c5fc5-1326-468.jpg	1	_thumb_c2718ee766b93275b6954423bd0b97a7cb2c5fc5-1326-468.png		1	1	2			\N	2022-02-11 00:13:55	2022-02-11 00:13:55
+469		1f208b8a8c8e9cc85c1f0bb6756a7bce2ffa3e15-1327-469.jpg	1	_thumb_1f208b8a8c8e9cc85c1f0bb6756a7bce2ffa3e15-1327-469.png		1	1	2			\N	2022-02-11 00:15:33	2022-02-11 00:15:33
+470		b292b4fac9d2e9e85e5fcd5ca0fe0cba900f5f55-1328-470.jpg	1	_thumb_b292b4fac9d2e9e85e5fcd5ca0fe0cba900f5f55-1328-470.png		1	1	2			\N	2022-02-11 00:20:06	2022-02-11 00:20:06
+471		c9793da615d4ccad187f2ad59e23287d6b57ce32-1329-471.jpg	1	_thumb_c9793da615d4ccad187f2ad59e23287d6b57ce32-1329-471.png		1	1	2			\N	2022-02-11 13:33:43	2022-02-11 13:33:43
+472		8eceeb134c66f89aa950115d024c3ebee1a49c6e-1330-472.jpg	1	_thumb_8eceeb134c66f89aa950115d024c3ebee1a49c6e-1330-472.png		1	1	2			\N	2022-02-11 13:38:45	2022-02-11 13:38:45
+473		8332e5b5edc1a697c4e39c22d9275934b8165ad0-1331-473.jpg	1	_thumb_8332e5b5edc1a697c4e39c22d9275934b8165ad0-1331-473.png		1	1	2			\N	2022-02-11 13:43:36	2022-02-11 13:43:36
+474		917807af727b84596e00c95b0811e2a578c823c5-1332-474.jpg	1	_thumb_917807af727b84596e00c95b0811e2a578c823c5-1332-474.png		1	1	2			\N	2022-02-11 13:46:57	2022-02-11 13:46:57
+475		91fa6b797fbde1d696fecd06b53d59ae76500ac1-1333-475.jpg	1	_thumb_91fa6b797fbde1d696fecd06b53d59ae76500ac1-1333-475.png		1	1	2			\N	2022-02-11 13:53:10	2022-02-11 13:53:10
+476		bfa479f03fcc958b3f9188e1ea51911f90b22625-1334-476.jpg	1	_thumb_bfa479f03fcc958b3f9188e1ea51911f90b22625-1334-476.png		1	1	2			\N	2022-02-11 14:00:47	2022-02-11 14:00:47
+477		be46f4ec892801ba23fbb63ad4ca5e4458d44cd7-1335-477.jpg	1	_thumb_be46f4ec892801ba23fbb63ad4ca5e4458d44cd7-1335-477.png		1	1	2			\N	2022-02-11 14:10:47	2022-02-11 14:10:47
+478		3ed694d07c87efa951a5220b8251fd97ed70a25b-1336-478.jpg	1	_thumb_3ed694d07c87efa951a5220b8251fd97ed70a25b-1336-478.png		1	1	2			\N	2022-02-11 14:26:40	2022-02-11 14:26:40
+479		029847820867f0755d1b407c8576217b3625fb3b-1337-479.jpg	1	_thumb_029847820867f0755d1b407c8576217b3625fb3b-1337-479.png		1	1	2			\N	2022-02-11 14:35:51	2022-02-11 14:35:51
+480		f755de60a21f4a6844dfcc845cec306272d744e4-1338-480.jpg	1	_thumb_f755de60a21f4a6844dfcc845cec306272d744e4-1338-480.png		1	1	2			\N	2022-02-11 14:42:06	2022-02-11 14:42:06
+481		ae95799d2548fac8e67746adb22033f23e73d2a2-1339-481.jpg	1	_thumb_ae95799d2548fac8e67746adb22033f23e73d2a2-1339-481.png		1	1	2			\N	2022-02-11 15:05:20	2022-02-11 15:05:20
+482		75ba8256a32a0c608f2def8cbd584849f55c9803-1340-482.jpg	1	_thumb_75ba8256a32a0c608f2def8cbd584849f55c9803-1340-482.png		1	1	2			\N	2022-02-11 15:50:14	2022-02-11 15:50:14
+483		6660ccc80b711283adfd67a88acff1ef2fdbc060-1341-483.jpg	1	_thumb_6660ccc80b711283adfd67a88acff1ef2fdbc060-1341-483.png		1	1	2			\N	2022-02-11 16:04:23	2022-02-11 16:04:24
+484		46a34d0f60cd93ab9588f7114106a4d1f6eef4ab-1342-484.jpg	1	_thumb_46a34d0f60cd93ab9588f7114106a4d1f6eef4ab-1342-484.png		1	1	2			\N	2022-02-11 16:05:56	2022-02-11 16:05:56
+485		0a9f38df4935cacfd6d795642d9b4b364e1c6e07-1343-485.jpg	1	_thumb_0a9f38df4935cacfd6d795642d9b4b364e1c6e07-1343-485.png		1	1	2			\N	2022-02-11 16:07:03	2022-02-11 16:07:03
+486		7a19c76a09647c85674a9423506d1e8704ac0983-1344-486.jpg	1	_thumb_7a19c76a09647c85674a9423506d1e8704ac0983-1344-486.png		1	1	2			\N	2022-02-11 16:09:00	2022-02-11 16:09:00
+487		b2e61965904acff967bb1aaa01e34c439e75b8bd-1346-487.jpg	1	_thumb_b2e61965904acff967bb1aaa01e34c439e75b8bd-1346-487.png		1	1	2			\N	2022-02-12 00:53:56	2022-02-12 00:53:56
+488		b1ac91e2d4d12d95d3552af3b4485e42bfa0cfbc-1347-488.jpg	1	_thumb_b1ac91e2d4d12d95d3552af3b4485e42bfa0cfbc-1347-488.png		1	1	2			\N	2022-02-12 00:55:36	2022-02-12 00:55:36
+489		f4ec728f0656e6a7a90a373f9ecd3ae82438cd6b-1348-489.jpg	1	_thumb_f4ec728f0656e6a7a90a373f9ecd3ae82438cd6b-1348-489.png		1	1	2			\N	2022-02-15 15:34:49	2022-02-15 15:34:49
+491		c1688e7a6fa6f4d2197d5e3bfa194a5d29934134-1349-491.jpg	1	_thumb_c1688e7a6fa6f4d2197d5e3bfa194a5d29934134-1349-491.png		1	1	2			\N	2022-02-15 15:37:12	2022-02-15 15:37:12
+492		2747778be6042a3050a3be3da04b4e9f859d7f24-1350-492.jpg	1	_thumb_2747778be6042a3050a3be3da04b4e9f859d7f24-1350-492.png		1	1	2			\N	2022-02-15 15:42:02	2022-02-15 15:42:02
+493		c2e4e2d16a4bb9ebae1c3f732576c74248ca42b9-1351-493.jpg	1	_thumb_c2e4e2d16a4bb9ebae1c3f732576c74248ca42b9-1351-493.png		1	1	2			\N	2022-02-15 15:50:04	2022-02-15 15:50:04
+494		89d5b7dde3f43021b98964bd57b1a8e7bbc1fd80-1352-494.jpg	1	_thumb_89d5b7dde3f43021b98964bd57b1a8e7bbc1fd80-1352-494.png		1	1	2			\N	2022-02-15 19:04:08	2022-02-15 19:04:08
+495		f90937d8163b60265d6a35721c5085bc97d74221-1353-495.jpg	1	_thumb_f90937d8163b60265d6a35721c5085bc97d74221-1353-495.png		1	1	2			\N	2022-02-15 19:06:06	2022-02-15 19:06:06
+496		1df84f7615d07fbf34f764a2b46eee555d853f34-1354-496.jpg	1	_thumb_1df84f7615d07fbf34f764a2b46eee555d853f34-1354-496.png		1	1	2			\N	2022-02-15 19:08:53	2022-02-15 19:08:53
+498		5bc8229a10b78da159526e6a66a80256ea76c930-1355-498.jpg	1	_thumb_5bc8229a10b78da159526e6a66a80256ea76c930-1355-498.png		1	1	2			\N	2022-02-15 19:12:22	2022-02-15 19:12:22
+499		af20c7723a2cff356e42a71d405690b117ffd3d3-1356-499.jpg	1	_thumb_af20c7723a2cff356e42a71d405690b117ffd3d3-1356-499.png		1	1	2			\N	2022-02-15 19:16:19	2022-02-15 19:16:19
+500		ef64af77a5d05f5a47dd905973fb4d62aa2b8aad-1357-500.jpg	1	_thumb_ef64af77a5d05f5a47dd905973fb4d62aa2b8aad-1357-500.png		1	1	2			\N	2022-02-15 19:18:51	2022-02-15 19:18:51
+501		d3f7cb77108229bd96121e0118d3c142c14dd024-1358-501.jpg	1	_thumb_d3f7cb77108229bd96121e0118d3c142c14dd024-1358-501.png		1	1	2			\N	2022-02-15 19:21:00	2022-02-15 19:21:00
+502		eaac82c96a568fe69087a034a885e059058b4b26-1359-502.jpg	1	_thumb_eaac82c96a568fe69087a034a885e059058b4b26-1359-502.png		1	1	2			\N	2022-02-15 19:24:49	2022-02-15 19:24:49
+503		02216a1aa65cedcc20879750e860da2e4de02d97-1360-503.jpg	1	_thumb_02216a1aa65cedcc20879750e860da2e4de02d97-1360-503.png		1	1	2			\N	2022-02-15 20:39:15	2022-02-15 20:39:15
+504		48259c93f6e8d2055fbbf6277a979df6bcf1bc0b-1361-504.jpg	1	_thumb_48259c93f6e8d2055fbbf6277a979df6bcf1bc0b-1361-504.png		1	1	2			\N	2022-02-15 20:43:18	2022-02-15 20:43:18
+505		431bd01fc22d8a277c7168db6751441449b43605-1362-505.jpg	1	_thumb_431bd01fc22d8a277c7168db6751441449b43605-1362-505.png		1	1	2			\N	2022-02-15 20:58:04	2022-02-15 20:58:04
+506		3f2ee40db9cf84566a70aaa9b512ea6d8eaaff03-1363-506.jpg	1	_thumb_3f2ee40db9cf84566a70aaa9b512ea6d8eaaff03-1363-506.png		1	1	2			\N	2022-02-16 13:30:22	2022-02-16 13:30:22
+507		32a90220608e56a61c49347be6f75245a9708668-1364-507.jpg	1	_thumb_32a90220608e56a61c49347be6f75245a9708668-1364-507.png		1	1	2			\N	2022-02-16 13:32:45	2022-02-16 13:32:45
+508		8dbec3c3dd4deace9635d2b12dc50eb8591dde6c-1365-508.jpg	1	_thumb_8dbec3c3dd4deace9635d2b12dc50eb8591dde6c-1365-508.png		1	1	2			\N	2022-02-16 13:34:08	2022-02-16 13:34:08
+509		911c239396c1055e690a8e7f29b3c3c00bd7f218-1366-509.jpg	1	_thumb_911c239396c1055e690a8e7f29b3c3c00bd7f218-1366-509.png		1	1	2			\N	2022-02-16 13:39:18	2022-02-16 13:39:18
+510		d5df2ef6969358b6c3b2371717c46a32ef3bd7e5-1367-510.jpg	1	_thumb_d5df2ef6969358b6c3b2371717c46a32ef3bd7e5-1367-510.png		1	1	2			\N	2022-02-16 13:40:46	2022-02-16 13:40:46
+511		cebff39b42eb754cc8d22a8c6c335e24eeb564a6-1368-511.jpg	1	_thumb_cebff39b42eb754cc8d22a8c6c335e24eeb564a6-1368-511.png		1	1	2			\N	2022-02-16 13:42:08	2022-02-16 13:42:08
+512		840eef91129fade78ea728fbf6924e5fb823ac8f-1369-512.jpg	1	_thumb_840eef91129fade78ea728fbf6924e5fb823ac8f-1369-512.png		1	1	2			\N	2022-02-16 13:44:35	2022-02-16 13:44:35
+513		c82b44f0b04811cec7f5a167c14b67bb7ddf0a16-1370-513.jpg	1	_thumb_c82b44f0b04811cec7f5a167c14b67bb7ddf0a16-1370-513.png		1	1	2			\N	2022-02-16 13:45:58	2022-02-16 13:45:58
+514		cc135b2cb4308c776b8c282e726922533c1101fe-1371-514.jpg	1	_thumb_cc135b2cb4308c776b8c282e726922533c1101fe-1371-514.png		1	1	2			\N	2022-02-16 13:47:51	2022-02-16 13:47:52
+515		a2db2820b7a32fcddd11ea46ba9bced392131eb5-1372-515.jpg	1	_thumb_a2db2820b7a32fcddd11ea46ba9bced392131eb5-1372-515.png		1	1	2			\N	2022-02-16 13:49:50	2022-02-16 13:49:50
+516		61314a9c2e8245fe8eff1767b0c1afccd3b40002-1373-516.jpg	1	_thumb_61314a9c2e8245fe8eff1767b0c1afccd3b40002-1373-516.png		1	1	2			\N	2022-02-16 13:51:59	2022-02-16 13:51:59
+517		a9ea793ae9359cb1c250a54fe6bf48862ce9811b-1374-517.jpg	1	_thumb_a9ea793ae9359cb1c250a54fe6bf48862ce9811b-1374-517.png		1	1	2			\N	2022-02-16 13:53:45	2022-02-16 13:53:45
+518		b56ee42ab1793425259c9b1da5d96e38cd7aa82b-1375-518.jpg	1	_thumb_b56ee42ab1793425259c9b1da5d96e38cd7aa82b-1375-518.png		1	1	2			\N	2022-02-16 13:58:43	2022-02-16 13:58:43
+519		deaede9edc5a5f8f7267ccc9d701fd34af08180b-1376-519.jpg	1	_thumb_deaede9edc5a5f8f7267ccc9d701fd34af08180b-1376-519.png		1	1	2			\N	2022-02-16 14:00:21	2022-02-16 14:00:21
+520		4b192107e53f73d5f3456248917cda7694fee145-1377-520.jpg	1	_thumb_4b192107e53f73d5f3456248917cda7694fee145-1377-520.png		1	1	2			\N	2022-02-16 14:04:59	2022-02-16 14:04:59
+521		0cb878751fd08ee641f0a9a0efea8a1a8cb1d5ad-1378-521.jpg	1	_thumb_0cb878751fd08ee641f0a9a0efea8a1a8cb1d5ad-1378-521.png		1	1	2			\N	2022-02-16 14:06:47	2022-02-16 14:06:47
+522		cc9c9eaf4ad561119904f4d2b639326da4235226-1379-522.jpg	1	_thumb_cc9c9eaf4ad561119904f4d2b639326da4235226-1379-522.png		1	1	2			\N	2022-02-16 14:08:43	2022-02-16 14:08:43
+523		3dbc5743d0bfd85264cd23e2d1304cf868d7f117-1380-523.jpg	1	_thumb_3dbc5743d0bfd85264cd23e2d1304cf868d7f117-1380-523.png		1	1	2			\N	2022-02-16 14:10:49	2022-02-16 14:10:49
+525		f7634ba4353aa014125a7a2f837984c446a376b1-1381-525.jpg	1	_thumb_f7634ba4353aa014125a7a2f837984c446a376b1-1381-525.png		1	1	2			\N	2022-02-16 15:30:53	2022-02-16 15:30:53
+526		dc7162ded36bbec645290d914e5eb6cd4d6e3152-1382-526.jpg	1	_thumb_dc7162ded36bbec645290d914e5eb6cd4d6e3152-1382-526.png		1	1	2			\N	2022-02-16 15:42:39	2022-02-16 15:42:39
+527		bf6d708ed605ee28f4d640fb138c25bddf3f301d-1383-527.jpg	1	_thumb_bf6d708ed605ee28f4d640fb138c25bddf3f301d-1383-527.png		1	1	2			\N	2022-02-16 15:51:38	2022-02-16 15:51:38
+528		4b36d142900362373cdae86d492fb34d85b92408-1384-528.jpg	1	_thumb_4b36d142900362373cdae86d492fb34d85b92408-1384-528.png		1	1	2			\N	2022-02-16 15:53:38	2022-02-16 15:53:38
+529		5cea3e367572dbf3eb7f21ca69d3d7853e131fd1-1385-529.jpg	1	_thumb_5cea3e367572dbf3eb7f21ca69d3d7853e131fd1-1385-529.png		1	1	2			\N	2022-02-16 16:57:10	2022-02-16 16:57:10
+530		06fc2db12b32cfcd043810b4feb8f5ca61fa5d82-1386-530.jpg	1	_thumb_06fc2db12b32cfcd043810b4feb8f5ca61fa5d82-1386-530.png		1	1	2			\N	2022-02-17 13:57:46	2022-02-17 13:57:46
+531		0867e51c424216575490aa835e72ea386680375b-1387-531.jpg	1	_thumb_0867e51c424216575490aa835e72ea386680375b-1387-531.png		1	1	2			\N	2022-02-17 13:59:16	2022-02-17 13:59:16
+532		fbce56a6eb9558b5ac8be62fe2eaf1071fa2b98f-1388-532.jpg	1	_thumb_fbce56a6eb9558b5ac8be62fe2eaf1071fa2b98f-1388-532.png		1	1	2			\N	2022-02-17 14:10:21	2022-02-17 14:10:21
+533		32e474c04f7c3492f4ab7093fc48f0113a79a890-1389-533.jpg	1	_thumb_32e474c04f7c3492f4ab7093fc48f0113a79a890-1389-533.png		1	1	2			\N	2022-02-17 14:14:59	2022-02-17 14:14:59
+534		7550c725751726ca0e0b7c4f262a9a7af00591e0-1390-534.jpg	1	_thumb_7550c725751726ca0e0b7c4f262a9a7af00591e0-1390-534.png		1	1	2			\N	2022-02-17 14:17:23	2022-02-17 14:17:24
+535		a545f3d7f427d70d1661b396f7f82a6c1b40a419-1391-535.jpg	1	_thumb_a545f3d7f427d70d1661b396f7f82a6c1b40a419-1391-535.png		1	1	2			\N	2022-02-17 14:19:58	2022-02-17 14:19:58
+536		548be84e3a3f646612b0aa2eeedd530b5d818b87-1392-536.jpg	1	_thumb_548be84e3a3f646612b0aa2eeedd530b5d818b87-1392-536.png		1	1	2			\N	2022-02-17 14:31:14	2022-02-17 14:31:14
+537		d9d56572d19cedf7714a123cabd6c88184c43050-1393-537.jpg	1	_thumb_d9d56572d19cedf7714a123cabd6c88184c43050-1393-537.png		1	1	2			\N	2022-02-17 14:33:10	2022-02-17 14:33:10
+538		76fdb461cc0fa303d8b9b26179ec3f3194f41463-1394-538.jpg	1	_thumb_76fdb461cc0fa303d8b9b26179ec3f3194f41463-1394-538.png		1	1	2			\N	2022-02-17 14:34:39	2022-02-17 14:34:39
+539		51cdf998b96a29e631f7bb4927d46257c5499682-1395-539.jpg	1	_thumb_51cdf998b96a29e631f7bb4927d46257c5499682-1395-539.png		1	1	2			\N	2022-02-17 14:35:55	2022-02-17 14:35:55
+540		5e027456421b9feb795bbc1544d050dff9604fe9-1396-540.jpg	1	_thumb_5e027456421b9feb795bbc1544d050dff9604fe9-1396-540.png		1	1	2			\N	2022-02-17 14:37:16	2022-02-17 14:37:16
+541		618fbba58977d9d089f0e326c149d3da2a6dd9eb-1397-541.jpg	1	_thumb_618fbba58977d9d089f0e326c149d3da2a6dd9eb-1397-541.png		1	1	2			\N	2022-02-17 14:38:36	2022-02-17 14:38:36
+542		e7362e6c03f180f89af3157e3730731a69a8991d-1398-542.jpg	1	_thumb_e7362e6c03f180f89af3157e3730731a69a8991d-1398-542.png		1	1	2			\N	2022-02-17 14:40:30	2022-02-17 14:40:30
+543		d932fafe9b395fcd7b45d241a1bfb91c702a9f69-1399-543.jpg	1	_thumb_d932fafe9b395fcd7b45d241a1bfb91c702a9f69-1399-543.png		1	1	2			\N	2022-02-17 14:43:34	2022-02-17 14:43:34
+544		8a57214192fa3b94b62068729ce8b218ef8bff2b-1400-544.jpg	1	_thumb_8a57214192fa3b94b62068729ce8b218ef8bff2b-1400-544.png		1	1	2			\N	2022-02-17 15:11:39	2022-02-17 15:11:39
+545		a95101cf9562286b475856b94233b2000e051eab-1401-545.jpg	1	_thumb_a95101cf9562286b475856b94233b2000e051eab-1401-545.png		1	1	2			\N	2022-02-17 15:15:08	2022-02-17 15:15:08
+547		c7ed6258b43e46ca5706303337d07581192124cf-1401-547.jpg	1	_thumb_c7ed6258b43e46ca5706303337d07581192124cf-1401-547.png		1	1	2			\N	2022-02-17 15:44:47	2022-02-17 15:44:47
+548		e125766e049e8a03945e0a3cc5fe8e686947b17b-1403-548.jpg	1	_thumb_e125766e049e8a03945e0a3cc5fe8e686947b17b-1403-548.png		1	1	2			\N	2022-02-17 15:50:07	2022-02-17 15:50:07
+549		bfeb6320871cf6acf6de53ce4e596e75b8f303d8-1404-549.jpg	1	_thumb_bfeb6320871cf6acf6de53ce4e596e75b8f303d8-1404-549.png		1	1	2			\N	2022-02-17 15:51:53	2022-02-17 15:51:53
+550		ed4a2b0b32ddaffdd4a19885689f55b05e9444c1-1405-550.jpg	1	_thumb_ed4a2b0b32ddaffdd4a19885689f55b05e9444c1-1405-550.png		1	1	2			\N	2022-02-17 16:01:51	2022-02-17 16:01:51
+551		df3c611fe5aa25ec5a70f8e5a94656e88e9aa7e7-1406-551.jpg	1	_thumb_df3c611fe5aa25ec5a70f8e5a94656e88e9aa7e7-1406-551.png		1	1	2			\N	2022-02-17 16:06:22	2022-02-17 16:06:22
+552		dc56371f9ff82d590c68fa71a2afc2d423d7ff97-1407-552.jpg	1	_thumb_dc56371f9ff82d590c68fa71a2afc2d423d7ff97-1407-552.png		1	1	2			\N	2022-02-17 16:10:06	2022-02-17 16:10:06
+553		2b92518131582e71a16096f0710c8d6d122872fe-1408-553.jpg	1	_thumb_2b92518131582e71a16096f0710c8d6d122872fe-1408-553.png		1	1	2			\N	2022-02-17 16:15:05	2022-02-17 16:15:05
+554		17cf9ef21e84ca01e39dd98dfdad3f14ae52c5df-1409-554.jpg	1	_thumb_17cf9ef21e84ca01e39dd98dfdad3f14ae52c5df-1409-554.png		1	1	2			\N	2022-02-17 16:18:53	2022-02-17 16:18:54
+555		66d2ddffca88e46cf5dbd37ca475b388c74fe096-1410-555.jpg	1	_thumb_66d2ddffca88e46cf5dbd37ca475b388c74fe096-1410-555.png		1	1	2			\N	2022-02-17 16:20:15	2022-02-17 16:20:15
+556		59cbeafeda06e6c698d964eebaa675bbf63dafbe-1411-556.jpg	1	_thumb_59cbeafeda06e6c698d964eebaa675bbf63dafbe-1411-556.png		1	1	2			\N	2022-02-17 16:22:05	2022-02-17 16:22:05
+557		57e5342a5b2e8fd73348fae63560975d64099935-1412-557.jpg	1	_thumb_57e5342a5b2e8fd73348fae63560975d64099935-1412-557.png		1	1	2			\N	2022-02-17 16:26:36	2022-02-17 16:26:36
+558		d8a6613502929cc9872757a211da5e4e7e97b75d-1413-558.jpg	1	_thumb_d8a6613502929cc9872757a211da5e4e7e97b75d-1413-558.png		1	1	2			\N	2022-02-17 16:28:55	2022-02-17 16:28:55
+559		4a663b22a8426693b9b8c72c7a2d2dc6c3de2f9c-1414-559.jpg	1	_thumb_4a663b22a8426693b9b8c72c7a2d2dc6c3de2f9c-1414-559.png		1	1	2			\N	2022-02-17 16:33:20	2022-02-17 16:33:20
+560		dfca30b35456b47db5123fd1878009952d95b6ba-1415-560.jpg	1	_thumb_dfca30b35456b47db5123fd1878009952d95b6ba-1415-560.png		1	1	2			\N	2022-02-17 16:38:11	2022-02-17 16:38:11
+561		c0f7253a362de6b82add0df4690be9d768e074b3-1416-561.jpg	1	_thumb_c0f7253a362de6b82add0df4690be9d768e074b3-1416-561.png		1	1	2			\N	2022-02-17 16:41:15	2022-02-17 16:41:15
+562		7f174e64735b61cfc717a924dc1d538194c1c557-1417-562.jpg	1	_thumb_7f174e64735b61cfc717a924dc1d538194c1c557-1417-562.png		1	1	2			\N	2022-02-17 16:42:52	2022-02-17 16:42:52
+563		a22bf6652cd9de8742634a004b92c355e683114a-1418-563.jpg	1	_thumb_a22bf6652cd9de8742634a004b92c355e683114a-1418-563.png		1	1	2			\N	2022-02-17 16:45:04	2022-02-17 16:45:04
+564		f72441f39d09b646ea703d550422b6de6196ce4c-1419-564.jpg	1	_thumb_f72441f39d09b646ea703d550422b6de6196ce4c-1419-564.png		1	1	2			\N	2022-02-17 16:47:09	2022-02-17 16:47:09
+565		d98162e3fa2d613e96c78fd00b22df8a4c38abcd-1420-565.jpg	1	_thumb_d98162e3fa2d613e96c78fd00b22df8a4c38abcd-1420-565.png		1	1	2			\N	2022-02-17 16:49:21	2022-02-17 16:49:21
+566		6443278a472711eaaa6b37c79fbadeb5dae1f2f9-1421-566.jpg	1	_thumb_6443278a472711eaaa6b37c79fbadeb5dae1f2f9-1421-566.png		1	1	2			\N	2022-02-17 16:54:45	2022-02-17 16:54:45
+567		36dd76d9fa5ca1c90acada3f3f07ec092fa03d89-1422-567.jpg	1	_thumb_36dd76d9fa5ca1c90acada3f3f07ec092fa03d89-1422-567.png		1	1	2			\N	2022-02-17 16:56:38	2022-02-17 16:56:38
+568		fc2668bbf81e24eafe3e99f3d3673391ccd1fd19-1423-568.jpg	1	_thumb_fc2668bbf81e24eafe3e99f3d3673391ccd1fd19-1423-568.png		1	1	2			\N	2022-02-17 17:48:35	2022-02-17 17:48:35
+569		a0841e91d133b35b2d737006ad4c35a6448db926-1424-569.jpg	1	_thumb_a0841e91d133b35b2d737006ad4c35a6448db926-1424-569.png		1	1	2			\N	2022-02-17 19:16:39	2022-02-17 19:16:39
+570		1d513f51ea17ff5055321cb70c70c29526f21ff0-1425-570.jpg	1	_thumb_1d513f51ea17ff5055321cb70c70c29526f21ff0-1425-570.png		1	1	2			\N	2022-02-17 19:20:26	2022-02-17 19:20:26
+571		d9c90dab2c5c55da89389732c26de7999eb18d79-1186-571.jpg	1	_thumb_d9c90dab2c5c55da89389732c26de7999eb18d79-1186-571.png		1	1	2			\N	2022-02-17 19:32:16	2022-02-17 19:32:17
+572		e8ec374ce5e7b37ad28481b67df48fa1be1cb2c8-1426-572.jpg	1	_thumb_e8ec374ce5e7b37ad28481b67df48fa1be1cb2c8-1426-572.png		1	1	2			\N	2022-02-17 19:34:06	2022-02-17 19:34:06
+573		3b11513caa30e122321da1ba10b2107fda8c77c5-1427-573.jpg	1	_thumb_3b11513caa30e122321da1ba10b2107fda8c77c5-1427-573.png		1	1	2			\N	2022-02-17 19:36:23	2022-02-17 19:36:23
+574		61c5a64f84d7165cc9ee97a46f152cee46a94f13-1428-574.jpg	1	_thumb_61c5a64f84d7165cc9ee97a46f152cee46a94f13-1428-574.png		1	1	2			\N	2022-02-17 19:40:12	2022-02-17 19:40:12
+575		ee20a1cdcc6fc3864e8330fc63f6ca8cc1463c69-1429-575.jpg	1	_thumb_ee20a1cdcc6fc3864e8330fc63f6ca8cc1463c69-1429-575.png		1	1	2			\N	2022-02-17 19:45:56	2022-02-17 19:45:56
+576		b93e2e00528344cb0d20ea2bd91bcfa67ffc1350-1430-576.jpg	1	_thumb_b93e2e00528344cb0d20ea2bd91bcfa67ffc1350-1430-576.png		1	1	2			\N	2022-02-17 19:49:10	2022-02-17 19:49:10
+577		dda2f792b045ed01d776ebc5fe7f24cd198541a4-1431-577.jpg	1	_thumb_dda2f792b045ed01d776ebc5fe7f24cd198541a4-1431-577.png		1	1	2			\N	2022-02-17 20:12:28	2022-02-17 20:12:28
+578		de780d7f4529fc93ea2e9d277351afd4b4bc40e3-1432-578.jpg	1	_thumb_de780d7f4529fc93ea2e9d277351afd4b4bc40e3-1432-578.png		1	1	2			\N	2022-02-17 20:18:41	2022-02-17 20:18:41
+579		57e9731da036bc4196ea27317413e7068436020c-1433-579.jpg	1	_thumb_57e9731da036bc4196ea27317413e7068436020c-1433-579.png		1	1	2			\N	2022-02-17 20:21:24	2022-02-17 20:21:24
+580		a0d04b8de9516789796ab2c2545548be5fd4069f-1434-580.jpg	1	_thumb_a0d04b8de9516789796ab2c2545548be5fd4069f-1434-580.png		1	1	2			\N	2022-02-17 20:23:23	2022-02-17 20:23:23
+581		c7cb4814e8b135d193e49ba9ae7612304f295cc2-1435-581.jpg	1	_thumb_c7cb4814e8b135d193e49ba9ae7612304f295cc2-1435-581.png		1	1	2			\N	2022-02-17 20:29:43	2022-02-17 20:29:43
+582		8180ae64508a0ba8f2dcc45bee4b18ef7e900ebd-1436-582.jpg	1	_thumb_8180ae64508a0ba8f2dcc45bee4b18ef7e900ebd-1436-582.png		1	1	2			\N	2022-02-17 20:31:31	2022-02-17 20:31:31
+583		8f07cf3199b6a635a006960cb53054a51c4a5199-1437-583.jpg	1	_thumb_8f07cf3199b6a635a006960cb53054a51c4a5199-1437-583.png		1	1	2			\N	2022-02-17 20:32:37	2022-02-17 20:32:37
+584		bf2a5227b764e511177c7f56773972e2c8e06d85-1438-584.jpg	1	_thumb_bf2a5227b764e511177c7f56773972e2c8e06d85-1438-584.png		1	1	2			\N	2022-02-17 20:35:38	2022-02-17 20:35:38
+585		8b3a3d920b4593f88e2fe10346c1de2085cbf059-1439-585.jpg	1	_thumb_8b3a3d920b4593f88e2fe10346c1de2085cbf059-1439-585.png		1	1	2			\N	2022-02-17 20:42:02	2022-02-17 20:42:02
+586		c5311d65e460974d100402163e224fe9e72b378a-1440-586.jpg	1	_thumb_c5311d65e460974d100402163e224fe9e72b378a-1440-586.png		1	1	2			\N	2022-02-17 20:46:02	2022-02-17 20:46:02
+587		41133617b52f8bd46ac91de129d460c395fb7e4a-1441-587.jpg	1	_thumb_41133617b52f8bd46ac91de129d460c395fb7e4a-1441-587.png		1	1	2			\N	2022-02-17 20:48:20	2022-02-17 20:48:20
+588		8e09bd5569716ea854b0202c835ace54c7c51e94-1442-588.jpg	1	_thumb_8e09bd5569716ea854b0202c835ace54c7c51e94-1442-588.png		1	1	2			\N	2022-02-17 20:54:15	2022-02-17 20:54:15
+589		8791a05c77624b8773c996eac6131f96476a4b8d-1443-589.jpg	1	_thumb_8791a05c77624b8773c996eac6131f96476a4b8d-1443-589.png		1	1	2			\N	2022-02-17 20:56:53	2022-02-17 20:56:53
+590		3e2ff46ca2c3146b24f6c5a17b43338a88c41b9a-1444-590.jpg	1	_thumb_3e2ff46ca2c3146b24f6c5a17b43338a88c41b9a-1444-590.png		1	1	2			\N	2022-02-17 21:27:07	2022-02-17 21:27:07
+592		0ac8e9e8b1c6776b9fef46e911bbaeb8c71c7795-1445-592.jpg	1	_thumb_0ac8e9e8b1c6776b9fef46e911bbaeb8c71c7795-1445-592.png		1	1	2			\N	2022-02-17 21:30:15	2022-02-17 21:30:16
 \.
 
 
 --
--- TOC entry 2798 (class 0 OID 44074)
--- Dependencies: 223
+-- TOC entry 4211 (class 0 OID 19471)
+-- Dependencies: 235
 -- Data for Name: role_has_permissions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5174,8 +6181,8 @@ COPY public.role_has_permissions (permission_id, role_id) FROM stdin;
 
 
 --
--- TOC entry 2800 (class 0 OID 44091)
--- Dependencies: 225
+-- TOC entry 4212 (class 0 OID 19474)
+-- Dependencies: 236
 -- Data for Name: role_user; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5186,8 +6193,8 @@ COPY public.role_user (id, user_id, role_id, deleted_at, created_at, updated_at)
 
 
 --
--- TOC entry 2795 (class 0 OID 44035)
--- Dependencies: 220
+-- TOC entry 4214 (class 0 OID 19479)
+-- Dependencies: 238
 -- Data for Name: roles; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5201,8 +6208,8 @@ COPY public.roles (id, name, descripcion, color, abreviatura, guard_name, create
 
 
 --
--- TOC entry 2805 (class 0 OID 44149)
--- Dependencies: 230
+-- TOC entry 4216 (class 0 OID 19490)
+-- Dependencies: 240
 -- Data for Name: sessions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5211,8 +6218,8 @@ COPY public.sessions (id, user_id, ip_address, user_agent, payload, last_activit
 
 
 --
--- TOC entry 2811 (class 0 OID 44222)
--- Dependencies: 236
+-- TOC entry 4217 (class 0 OID 19496)
+-- Dependencies: 241
 -- Data for Name: tipomaterial; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5225,8 +6232,8 @@ COPY public.tipomaterial (id, tipo_material, empresa_id, creado_por_id, deleted_
 
 
 --
--- TOC entry 2778 (class 0 OID 43873)
--- Dependencies: 203
+-- TOC entry 4219 (class 0 OID 19507)
+-- Dependencies: 243
 -- Data for Name: user_adress; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5237,8 +6244,8 @@ COPY public.user_adress (id, calle, num_ext, num_int, colonia, localidad, munici
 
 
 --
--- TOC entry 2780 (class 0 OID 43898)
--- Dependencies: 205
+-- TOC entry 4221 (class 0 OID 19524)
+-- Dependencies: 245
 -- Data for Name: user_extend; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5249,8 +6256,8 @@ COPY public.user_extend (id, ocupacion, profesion, lugar_trabajo, lugar_nacimien
 
 
 --
--- TOC entry 2782 (class 0 OID 43918)
--- Dependencies: 207
+-- TOC entry 4223 (class 0 OID 19536)
+-- Dependencies: 247
 -- Data for Name: user_social; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5261,8 +6268,8 @@ COPY public.user_social (id, red_social, username_red_social, alias_red_social, 
 
 
 --
--- TOC entry 2776 (class 0 OID 43830)
--- Dependencies: 201
+-- TOC entry 4225 (class 0 OID 19544)
+-- Dependencies: 249
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -5273,8 +6280,8 @@ COPY public.users (id, username, email, password, nombre, ap_paterno, ap_materno
 
 
 --
--- TOC entry 2859 (class 0 OID 0)
--- Dependencies: 208
+-- TOC entry 4260 (class 0 OID 0)
+-- Dependencies: 197
 -- Name: categorias_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5282,8 +6289,8 @@ SELECT pg_catalog.setval('public.categorias_id_seq', 1, false);
 
 
 --
--- TOC entry 2860 (class 0 OID 0)
--- Dependencies: 231
+-- TOC entry 4261 (class 0 OID 0)
+-- Dependencies: 199
 -- Name: codigopaises_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5291,8 +6298,8 @@ SELECT pg_catalog.setval('public.codigopaises_id_seq', 1, false);
 
 
 --
--- TOC entry 2861 (class 0 OID 0)
--- Dependencies: 243
+-- TOC entry 4262 (class 0 OID 0)
+-- Dependencies: 201
 -- Name: editoriale_libro_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5300,17 +6307,17 @@ SELECT pg_catalog.setval('public.editoriale_libro_id_seq', 1, false);
 
 
 --
--- TOC entry 2862 (class 0 OID 0)
--- Dependencies: 233
+-- TOC entry 4263 (class 0 OID 0)
+-- Dependencies: 203
 -- Name: editoriales_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.editoriales_id_seq', 250, true);
+SELECT pg_catalog.setval('public.editoriales_id_seq', 255, true);
 
 
 --
--- TOC entry 2863 (class 0 OID 0)
--- Dependencies: 198
+-- TOC entry 4264 (class 0 OID 0)
+-- Dependencies: 205
 -- Name: empresas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5318,8 +6325,8 @@ SELECT pg_catalog.setval('public.empresas_id_seq', 1, true);
 
 
 --
--- TOC entry 2864 (class 0 OID 0)
--- Dependencies: 215
+-- TOC entry 4265 (class 0 OID 0)
+-- Dependencies: 207
 -- Name: failed_jobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5327,17 +6334,17 @@ SELECT pg_catalog.setval('public.failed_jobs_id_seq', 1, false);
 
 
 --
--- TOC entry 2865 (class 0 OID 0)
--- Dependencies: 247
+-- TOC entry 4266 (class 0 OID 0)
+-- Dependencies: 209
 -- Name: historiallibros_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.historiallibros_id_seq', 1, false);
+SELECT pg_catalog.setval('public.historiallibros_id_seq', 1, true);
 
 
 --
--- TOC entry 2866 (class 0 OID 0)
--- Dependencies: 212
+-- TOC entry 4267 (class 0 OID 0)
+-- Dependencies: 211
 -- Name: imagen_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5345,8 +6352,8 @@ SELECT pg_catalog.setval('public.imagen_user_id_seq', 1, false);
 
 
 --
--- TOC entry 2867 (class 0 OID 0)
--- Dependencies: 210
+-- TOC entry 4268 (class 0 OID 0)
+-- Dependencies: 213
 -- Name: imagenes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5354,44 +6361,44 @@ SELECT pg_catalog.setval('public.imagenes_id_seq', 1, false);
 
 
 --
--- TOC entry 2868 (class 0 OID 0)
--- Dependencies: 245
+-- TOC entry 4269 (class 0 OID 0)
+-- Dependencies: 215
 -- Name: inventariolibro_portada_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.inventariolibro_portada_id_seq', 608, true);
+SELECT pg_catalog.setval('public.inventariolibro_portada_id_seq', 941, true);
 
 
 --
--- TOC entry 2869 (class 0 OID 0)
--- Dependencies: 239
+-- TOC entry 4270 (class 0 OID 0)
+-- Dependencies: 217
 -- Name: inventariolibros_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.inventariolibros_id_seq', 645, true);
+SELECT pg_catalog.setval('public.inventariolibros_id_seq', 987, true);
 
 
 --
--- TOC entry 2870 (class 0 OID 0)
--- Dependencies: 249
+-- TOC entry 4271 (class 0 OID 0)
+-- Dependencies: 219
 -- Name: libro_portada_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.libro_portada_id_seq', 461, true);
+SELECT pg_catalog.setval('public.libro_portada_id_seq', 592, true);
 
 
 --
--- TOC entry 2871 (class 0 OID 0)
--- Dependencies: 237
+-- TOC entry 4272 (class 0 OID 0)
+-- Dependencies: 221
 -- Name: libros_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.libros_id_seq', 1319, true);
+SELECT pg_catalog.setval('public.libros_id_seq', 1445, true);
 
 
 --
--- TOC entry 2872 (class 0 OID 0)
--- Dependencies: 196
+-- TOC entry 4273 (class 0 OID 0)
+-- Dependencies: 223
 -- Name: migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5399,7 +6406,7 @@ SELECT pg_catalog.setval('public.migrations_id_seq', 37, true);
 
 
 --
--- TOC entry 2873 (class 0 OID 0)
+-- TOC entry 4274 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: permission_role_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -5408,8 +6415,8 @@ SELECT pg_catalog.setval('public.permission_role_id_seq', 1, false);
 
 
 --
--- TOC entry 2874 (class 0 OID 0)
--- Dependencies: 226
+-- TOC entry 4275 (class 0 OID 0)
+-- Dependencies: 230
 -- Name: permission_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5417,8 +6424,8 @@ SELECT pg_catalog.setval('public.permission_user_id_seq', 2, true);
 
 
 --
--- TOC entry 2875 (class 0 OID 0)
--- Dependencies: 217
+-- TOC entry 4276 (class 0 OID 0)
+-- Dependencies: 232
 -- Name: permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5426,17 +6433,17 @@ SELECT pg_catalog.setval('public.permissions_id_seq', 11, true);
 
 
 --
--- TOC entry 2876 (class 0 OID 0)
--- Dependencies: 241
+-- TOC entry 4277 (class 0 OID 0)
+-- Dependencies: 234
 -- Name: portadas_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.portadas_id_seq', 461, true);
+SELECT pg_catalog.setval('public.portadas_id_seq', 592, true);
 
 
 --
--- TOC entry 2877 (class 0 OID 0)
--- Dependencies: 224
+-- TOC entry 4278 (class 0 OID 0)
+-- Dependencies: 237
 -- Name: role_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5444,8 +6451,8 @@ SELECT pg_catalog.setval('public.role_user_id_seq', 2, true);
 
 
 --
--- TOC entry 2878 (class 0 OID 0)
--- Dependencies: 219
+-- TOC entry 4279 (class 0 OID 0)
+-- Dependencies: 239
 -- Name: roles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5453,8 +6460,8 @@ SELECT pg_catalog.setval('public.roles_id_seq', 5, true);
 
 
 --
--- TOC entry 2879 (class 0 OID 0)
--- Dependencies: 235
+-- TOC entry 4280 (class 0 OID 0)
+-- Dependencies: 242
 -- Name: tipomaterial_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5462,8 +6469,8 @@ SELECT pg_catalog.setval('public.tipomaterial_id_seq', 4, true);
 
 
 --
--- TOC entry 2880 (class 0 OID 0)
--- Dependencies: 202
+-- TOC entry 4281 (class 0 OID 0)
+-- Dependencies: 244
 -- Name: user_adress_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5471,8 +6478,8 @@ SELECT pg_catalog.setval('public.user_adress_id_seq', 2, true);
 
 
 --
--- TOC entry 2881 (class 0 OID 0)
--- Dependencies: 204
+-- TOC entry 4282 (class 0 OID 0)
+-- Dependencies: 246
 -- Name: user_extend_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5480,8 +6487,8 @@ SELECT pg_catalog.setval('public.user_extend_id_seq', 2, true);
 
 
 --
--- TOC entry 2882 (class 0 OID 0)
--- Dependencies: 206
+-- TOC entry 4283 (class 0 OID 0)
+-- Dependencies: 248
 -- Name: user_social_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5489,8 +6496,8 @@ SELECT pg_catalog.setval('public.user_social_id_seq', 2, true);
 
 
 --
--- TOC entry 2883 (class 0 OID 0)
--- Dependencies: 200
+-- TOC entry 4284 (class 0 OID 0)
+-- Dependencies: 250
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -5498,7 +6505,7 @@ SELECT pg_catalog.setval('public.users_id_seq', 2, true);
 
 
 --
--- TOC entry 2484 (class 2606 OID 43940)
+-- TOC entry 3866 (class 2606 OID 19594)
 -- Name: categorias categorias_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5507,7 +6514,7 @@ ALTER TABLE ONLY public.categorias
 
 
 --
--- TOC entry 2538 (class 2606 OID 44172)
+-- TOC entry 3871 (class 2606 OID 19596)
 -- Name: codigopaises codigopaises_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5516,7 +6523,7 @@ ALTER TABLE ONLY public.codigopaises
 
 
 --
--- TOC entry 2579 (class 2606 OID 44405)
+-- TOC entry 3873 (class 2606 OID 19598)
 -- Name: editoriale_libro editoriale_libro_editoriale_id_libro_id_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5525,7 +6532,7 @@ ALTER TABLE ONLY public.editoriale_libro
 
 
 --
--- TOC entry 2581 (class 2606 OID 44403)
+-- TOC entry 3875 (class 2606 OID 19600)
 -- Name: editoriale_libro editoriale_libro_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5534,7 +6541,7 @@ ALTER TABLE ONLY public.editoriale_libro
 
 
 --
--- TOC entry 2541 (class 2606 OID 44219)
+-- TOC entry 3878 (class 2606 OID 19602)
 -- Name: editoriales editoriales_editorial_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5543,7 +6550,7 @@ ALTER TABLE ONLY public.editoriales
 
 
 --
--- TOC entry 2544 (class 2606 OID 44204)
+-- TOC entry 3881 (class 2606 OID 19604)
 -- Name: editoriales editoriales_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5552,7 +6559,7 @@ ALTER TABLE ONLY public.editoriales
 
 
 --
--- TOC entry 2467 (class 2606 OID 40749)
+-- TOC entry 3885 (class 2606 OID 19606)
 -- Name: empresas empresas_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5561,7 +6568,7 @@ ALTER TABLE ONLY public.empresas
 
 
 --
--- TOC entry 2497 (class 2606 OID 44015)
+-- TOC entry 3887 (class 2606 OID 19608)
 -- Name: failed_jobs failed_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5570,7 +6577,7 @@ ALTER TABLE ONLY public.failed_jobs
 
 
 --
--- TOC entry 2499 (class 2606 OID 44017)
+-- TOC entry 3889 (class 2606 OID 19610)
 -- Name: failed_jobs failed_jobs_uuid_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5579,7 +6586,7 @@ ALTER TABLE ONLY public.failed_jobs
 
 
 --
--- TOC entry 2591 (class 2606 OID 44462)
+-- TOC entry 3895 (class 2606 OID 19612)
 -- Name: historiallibros historiallibros_libro_id_inventariolibro_id_user_id_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5588,7 +6595,7 @@ ALTER TABLE ONLY public.historiallibros
 
 
 --
--- TOC entry 2593 (class 2606 OID 44455)
+-- TOC entry 3897 (class 2606 OID 19614)
 -- Name: historiallibros historiallibros_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5597,7 +6604,7 @@ ALTER TABLE ONLY public.historiallibros
 
 
 --
--- TOC entry 2491 (class 2606 OID 43982)
+-- TOC entry 3901 (class 2606 OID 19616)
 -- Name: imagen_user imagen_user_imagen_id_user_id_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5606,7 +6613,7 @@ ALTER TABLE ONLY public.imagen_user
 
 
 --
--- TOC entry 2493 (class 2606 OID 43980)
+-- TOC entry 3903 (class 2606 OID 19618)
 -- Name: imagen_user imagen_user_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5615,7 +6622,7 @@ ALTER TABLE ONLY public.imagen_user
 
 
 --
--- TOC entry 2487 (class 2606 OID 43958)
+-- TOC entry 3907 (class 2606 OID 19620)
 -- Name: imagenes imagenes_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5624,7 +6631,7 @@ ALTER TABLE ONLY public.imagenes
 
 
 --
--- TOC entry 2583 (class 2606 OID 44427)
+-- TOC entry 3910 (class 2606 OID 19622)
 -- Name: inventariolibro_portada inventariolibro_portada_inventariolibro_id_portada_id_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5633,7 +6640,7 @@ ALTER TABLE ONLY public.inventariolibro_portada
 
 
 --
--- TOC entry 2585 (class 2606 OID 44425)
+-- TOC entry 3912 (class 2606 OID 19624)
 -- Name: inventariolibro_portada inventariolibro_portada_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5642,7 +6649,7 @@ ALTER TABLE ONLY public.inventariolibro_portada
 
 
 --
--- TOC entry 2563 (class 2606 OID 44320)
+-- TOC entry 3915 (class 2606 OID 19626)
 -- Name: inventariolibros inventariolibros_codebar_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5651,7 +6658,7 @@ ALTER TABLE ONLY public.inventariolibros
 
 
 --
--- TOC entry 2568 (class 2606 OID 44318)
+-- TOC entry 3920 (class 2606 OID 19628)
 -- Name: inventariolibros inventariolibros_isbn_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5660,7 +6667,7 @@ ALTER TABLE ONLY public.inventariolibros
 
 
 --
--- TOC entry 2570 (class 2606 OID 44316)
+-- TOC entry 3922 (class 2606 OID 19630)
 -- Name: inventariolibros inventariolibros_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5669,7 +6676,7 @@ ALTER TABLE ONLY public.inventariolibros
 
 
 --
--- TOC entry 2596 (class 2606 OID 58492)
+-- TOC entry 3927 (class 2606 OID 19632)
 -- Name: libro_portada libro_portada_libro_id_portada_id_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5678,7 +6685,7 @@ ALTER TABLE ONLY public.libro_portada
 
 
 --
--- TOC entry 2598 (class 2606 OID 58490)
+-- TOC entry 3929 (class 2606 OID 19634)
 -- Name: libro_portada libro_portada_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5687,7 +6694,7 @@ ALTER TABLE ONLY public.libro_portada
 
 
 --
--- TOC entry 2556 (class 2606 OID 44268)
+-- TOC entry 3934 (class 2606 OID 19636)
 -- Name: libros libros_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5696,7 +6703,7 @@ ALTER TABLE ONLY public.libros
 
 
 --
--- TOC entry 2560 (class 2606 OID 58462)
+-- TOC entry 3938 (class 2606 OID 19638)
 -- Name: libros libros_titulo_autor_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5705,7 +6712,7 @@ ALTER TABLE ONLY public.libros
 
 
 --
--- TOC entry 2465 (class 2606 OID 40733)
+-- TOC entry 3940 (class 2606 OID 19640)
 -- Name: migrations migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5714,7 +6721,7 @@ ALTER TABLE ONLY public.migrations
 
 
 --
--- TOC entry 2512 (class 2606 OID 44062)
+-- TOC entry 3943 (class 2606 OID 19642)
 -- Name: model_has_permissions model_has_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5723,7 +6730,7 @@ ALTER TABLE ONLY public.model_has_permissions
 
 
 --
--- TOC entry 2515 (class 2606 OID 44073)
+-- TOC entry 3946 (class 2606 OID 19644)
 -- Name: model_has_roles model_has_roles_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5732,7 +6739,7 @@ ALTER TABLE ONLY public.model_has_roles
 
 
 --
--- TOC entry 2527 (class 2606 OID 44136)
+-- TOC entry 3949 (class 2606 OID 19646)
 -- Name: permission_role permission_role_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5741,7 +6748,7 @@ ALTER TABLE ONLY public.permission_role
 
 
 --
--- TOC entry 2529 (class 2606 OID 44138)
+-- TOC entry 3951 (class 2606 OID 19648)
 -- Name: permission_role permission_role_role_id_permission_id_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5750,7 +6757,7 @@ ALTER TABLE ONLY public.permission_role
 
 
 --
--- TOC entry 2523 (class 2606 OID 44116)
+-- TOC entry 3953 (class 2606 OID 19650)
 -- Name: permission_user permission_user_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5759,7 +6766,7 @@ ALTER TABLE ONLY public.permission_user
 
 
 --
--- TOC entry 2525 (class 2606 OID 44118)
+-- TOC entry 3955 (class 2606 OID 19652)
 -- Name: permission_user permission_user_user_id_permission_id_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5768,7 +6775,7 @@ ALTER TABLE ONLY public.permission_user
 
 
 --
--- TOC entry 2501 (class 2606 OID 44032)
+-- TOC entry 3957 (class 2606 OID 19654)
 -- Name: permissions permissions_name_guard_name_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5777,7 +6784,7 @@ ALTER TABLE ONLY public.permissions
 
 
 --
--- TOC entry 2503 (class 2606 OID 44030)
+-- TOC entry 3959 (class 2606 OID 19656)
 -- Name: permissions permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5786,7 +6793,7 @@ ALTER TABLE ONLY public.permissions
 
 
 --
--- TOC entry 2577 (class 2606 OID 44369)
+-- TOC entry 3963 (class 2606 OID 19658)
 -- Name: portadas portadas_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5795,7 +6802,7 @@ ALTER TABLE ONLY public.portadas
 
 
 --
--- TOC entry 2517 (class 2606 OID 44088)
+-- TOC entry 3965 (class 2606 OID 19660)
 -- Name: role_has_permissions role_has_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5804,7 +6811,7 @@ ALTER TABLE ONLY public.role_has_permissions
 
 
 --
--- TOC entry 2519 (class 2606 OID 44096)
+-- TOC entry 3967 (class 2606 OID 19662)
 -- Name: role_user role_user_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5813,7 +6820,7 @@ ALTER TABLE ONLY public.role_user
 
 
 --
--- TOC entry 2521 (class 2606 OID 44098)
+-- TOC entry 3969 (class 2606 OID 19664)
 -- Name: role_user role_user_user_id_role_id_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5822,7 +6829,7 @@ ALTER TABLE ONLY public.role_user
 
 
 --
--- TOC entry 2505 (class 2606 OID 44050)
+-- TOC entry 3971 (class 2606 OID 19666)
 -- Name: roles roles_abreviatura_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5831,7 +6838,7 @@ ALTER TABLE ONLY public.roles
 
 
 --
--- TOC entry 2507 (class 2606 OID 44048)
+-- TOC entry 3973 (class 2606 OID 19668)
 -- Name: roles roles_name_guard_name_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5840,7 +6847,7 @@ ALTER TABLE ONLY public.roles
 
 
 --
--- TOC entry 2509 (class 2606 OID 44046)
+-- TOC entry 3975 (class 2606 OID 19670)
 -- Name: roles roles_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5849,7 +6856,7 @@ ALTER TABLE ONLY public.roles
 
 
 --
--- TOC entry 2532 (class 2606 OID 44156)
+-- TOC entry 3978 (class 2606 OID 19672)
 -- Name: sessions sessions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5858,7 +6865,7 @@ ALTER TABLE ONLY public.sessions
 
 
 --
--- TOC entry 2550 (class 2606 OID 44230)
+-- TOC entry 3983 (class 2606 OID 19674)
 -- Name: tipomaterial tipomaterial_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5867,7 +6874,7 @@ ALTER TABLE ONLY public.tipomaterial
 
 
 --
--- TOC entry 2478 (class 2606 OID 43890)
+-- TOC entry 3986 (class 2606 OID 19676)
 -- Name: user_adress user_adress_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5876,7 +6883,7 @@ ALTER TABLE ONLY public.user_adress
 
 
 --
--- TOC entry 2480 (class 2606 OID 43910)
+-- TOC entry 3988 (class 2606 OID 19678)
 -- Name: user_extend user_extend_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5885,7 +6892,7 @@ ALTER TABLE ONLY public.user_extend
 
 
 --
--- TOC entry 2482 (class 2606 OID 43926)
+-- TOC entry 3990 (class 2606 OID 19680)
 -- Name: user_social user_social_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5894,7 +6901,7 @@ ALTER TABLE ONLY public.user_social
 
 
 --
--- TOC entry 2473 (class 2606 OID 43854)
+-- TOC entry 3996 (class 2606 OID 19682)
 -- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5903,7 +6910,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- TOC entry 2476 (class 2606 OID 43866)
+-- TOC entry 3999 (class 2606 OID 19684)
 -- Name: users users_username_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -5912,7 +6919,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- TOC entry 2534 (class 1259 OID 44184)
+-- TOC entry 3867 (class 1259 OID 19685)
 -- Name: codigopaises_creado_por_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -5920,7 +6927,7 @@ CREATE INDEX codigopaises_creado_por_id_index ON public.codigopaises USING btree
 
 
 --
--- TOC entry 2535 (class 1259 OID 44173)
+-- TOC entry 3868 (class 1259 OID 19686)
 -- Name: codigopaises_empresa_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -5928,7 +6935,7 @@ CREATE INDEX codigopaises_empresa_id_index ON public.codigopaises USING btree (e
 
 
 --
--- TOC entry 2536 (class 1259 OID 44185)
+-- TOC entry 3869 (class 1259 OID 19687)
 -- Name: codigopaises_migration_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -5936,7 +6943,7 @@ CREATE INDEX codigopaises_migration_id_index ON public.codigopaises USING btree 
 
 
 --
--- TOC entry 2539 (class 1259 OID 44207)
+-- TOC entry 3876 (class 1259 OID 19688)
 -- Name: editoriales_creado_por_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -5944,7 +6951,7 @@ CREATE INDEX editoriales_creado_por_id_index ON public.editoriales USING btree (
 
 
 --
--- TOC entry 2542 (class 1259 OID 44206)
+-- TOC entry 3879 (class 1259 OID 19689)
 -- Name: editoriales_empresa_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -5952,7 +6959,7 @@ CREATE INDEX editoriales_empresa_id_index ON public.editoriales USING btree (emp
 
 
 --
--- TOC entry 2545 (class 1259 OID 44205)
+-- TOC entry 3882 (class 1259 OID 19690)
 -- Name: editoriales_predeterminado_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -5960,7 +6967,7 @@ CREATE INDEX editoriales_predeterminado_index ON public.editoriales USING btree 
 
 
 --
--- TOC entry 2546 (class 1259 OID 44497)
+-- TOC entry 3883 (class 1259 OID 19691)
 -- Name: editoriales_searchtext_gin; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -5968,7 +6975,7 @@ CREATE INDEX editoriales_searchtext_gin ON public.editoriales USING gin (searcht
 
 
 --
--- TOC entry 2586 (class 1259 OID 44460)
+-- TOC entry 3890 (class 1259 OID 19692)
 -- Name: historiallibros_creado_por_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -5976,7 +6983,7 @@ CREATE INDEX historiallibros_creado_por_id_index ON public.historiallibros USING
 
 
 --
--- TOC entry 2587 (class 1259 OID 44459)
+-- TOC entry 3891 (class 1259 OID 19693)
 -- Name: historiallibros_empresa_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -5984,7 +6991,7 @@ CREATE INDEX historiallibros_empresa_id_index ON public.historiallibros USING bt
 
 
 --
--- TOC entry 2588 (class 1259 OID 44457)
+-- TOC entry 3892 (class 1259 OID 19694)
 -- Name: historiallibros_inventariolibro_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -5992,7 +6999,7 @@ CREATE INDEX historiallibros_inventariolibro_id_index ON public.historiallibros 
 
 
 --
--- TOC entry 2589 (class 1259 OID 44456)
+-- TOC entry 3893 (class 1259 OID 19695)
 -- Name: historiallibros_libro_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6000,7 +7007,7 @@ CREATE INDEX historiallibros_libro_id_index ON public.historiallibros USING btre
 
 
 --
--- TOC entry 2594 (class 1259 OID 44458)
+-- TOC entry 3898 (class 1259 OID 19696)
 -- Name: historiallibros_user_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6008,7 +7015,7 @@ CREATE INDEX historiallibros_user_id_index ON public.historiallibros USING btree
 
 
 --
--- TOC entry 2489 (class 1259 OID 43993)
+-- TOC entry 3899 (class 1259 OID 19697)
 -- Name: imagen_user_imagen_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6016,7 +7023,7 @@ CREATE INDEX imagen_user_imagen_id_index ON public.imagen_user USING btree (imag
 
 
 --
--- TOC entry 2494 (class 1259 OID 43994)
+-- TOC entry 3904 (class 1259 OID 19698)
 -- Name: imagen_user_user_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6024,7 +7031,7 @@ CREATE INDEX imagen_user_user_id_index ON public.imagen_user USING btree (user_i
 
 
 --
--- TOC entry 2485 (class 1259 OID 43960)
+-- TOC entry 3905 (class 1259 OID 19699)
 -- Name: imagenes_creado_por_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6032,7 +7039,7 @@ CREATE INDEX imagenes_creado_por_id_index ON public.imagenes USING btree (creado
 
 
 --
--- TOC entry 2488 (class 1259 OID 43959)
+-- TOC entry 3908 (class 1259 OID 19700)
 -- Name: imagenes_user_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6040,7 +7047,7 @@ CREATE INDEX imagenes_user_id_index ON public.imagenes USING btree (user_id);
 
 
 --
--- TOC entry 2561 (class 1259 OID 44323)
+-- TOC entry 3913 (class 1259 OID 19701)
 -- Name: inventariolibros_apartado_user_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6048,7 +7055,7 @@ CREATE INDEX inventariolibros_apartado_user_id_index ON public.inventariolibros 
 
 
 --
--- TOC entry 2564 (class 1259 OID 44326)
+-- TOC entry 3916 (class 1259 OID 19702)
 -- Name: inventariolibros_creado_por_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6056,7 +7063,7 @@ CREATE INDEX inventariolibros_creado_por_id_index ON public.inventariolibros USI
 
 
 --
--- TOC entry 2565 (class 1259 OID 44324)
+-- TOC entry 3917 (class 1259 OID 19703)
 -- Name: inventariolibros_editorial_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6064,7 +7071,7 @@ CREATE INDEX inventariolibros_editorial_id_index ON public.inventariolibros USIN
 
 
 --
--- TOC entry 2566 (class 1259 OID 44325)
+-- TOC entry 3918 (class 1259 OID 19704)
 -- Name: inventariolibros_empresa_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6072,7 +7079,7 @@ CREATE INDEX inventariolibros_empresa_id_index ON public.inventariolibros USING 
 
 
 --
--- TOC entry 2571 (class 1259 OID 44322)
+-- TOC entry 3923 (class 1259 OID 19705)
 -- Name: inventariolibros_prestado_user_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6080,7 +7087,7 @@ CREATE INDEX inventariolibros_prestado_user_id_index ON public.inventariolibros 
 
 
 --
--- TOC entry 2572 (class 1259 OID 58522)
+-- TOC entry 3924 (class 1259 OID 19706)
 -- Name: inventariolibros_searchtext_gin; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6088,7 +7095,7 @@ CREATE INDEX inventariolibros_searchtext_gin ON public.inventariolibros USING gi
 
 
 --
--- TOC entry 2573 (class 1259 OID 44321)
+-- TOC entry 3925 (class 1259 OID 19707)
 -- Name: inventariolibros_uuid_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6096,7 +7103,7 @@ CREATE INDEX inventariolibros_uuid_index ON public.inventariolibros USING btree 
 
 
 --
--- TOC entry 2552 (class 1259 OID 44272)
+-- TOC entry 3930 (class 1259 OID 19708)
 -- Name: libros_creado_por_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6104,7 +7111,7 @@ CREATE INDEX libros_creado_por_id_index ON public.libros USING btree (creado_por
 
 
 --
--- TOC entry 2553 (class 1259 OID 44271)
+-- TOC entry 3931 (class 1259 OID 19709)
 -- Name: libros_editorial_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6112,7 +7119,7 @@ CREATE INDEX libros_editorial_id_index ON public.libros USING btree (editorial_i
 
 
 --
--- TOC entry 2554 (class 1259 OID 44273)
+-- TOC entry 3932 (class 1259 OID 19710)
 -- Name: libros_empresa_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6120,7 +7127,7 @@ CREATE INDEX libros_empresa_id_index ON public.libros USING btree (empresa_id);
 
 
 --
--- TOC entry 2557 (class 1259 OID 58520)
+-- TOC entry 3935 (class 1259 OID 19711)
 -- Name: libros_searchtext_gin; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6128,7 +7135,7 @@ CREATE INDEX libros_searchtext_gin ON public.libros USING gin (searchtext);
 
 
 --
--- TOC entry 2558 (class 1259 OID 44269)
+-- TOC entry 3936 (class 1259 OID 19712)
 -- Name: libros_tipo_material_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6136,7 +7143,7 @@ CREATE INDEX libros_tipo_material_id_index ON public.libros USING btree (tipo_ma
 
 
 --
--- TOC entry 2510 (class 1259 OID 44054)
+-- TOC entry 3941 (class 1259 OID 19713)
 -- Name: model_has_permissions_model_id_model_type_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6144,7 +7151,7 @@ CREATE INDEX model_has_permissions_model_id_model_type_index ON public.model_has
 
 
 --
--- TOC entry 2513 (class 1259 OID 44066)
+-- TOC entry 3944 (class 1259 OID 19714)
 -- Name: model_has_roles_model_id_model_type_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6152,7 +7159,7 @@ CREATE INDEX model_has_roles_model_id_model_type_index ON public.model_has_roles
 
 
 --
--- TOC entry 2495 (class 1259 OID 44003)
+-- TOC entry 3947 (class 1259 OID 19715)
 -- Name: password_resets_email_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6160,7 +7167,7 @@ CREATE INDEX password_resets_email_index ON public.password_resets USING btree (
 
 
 --
--- TOC entry 2574 (class 1259 OID 44373)
+-- TOC entry 3960 (class 1259 OID 19716)
 -- Name: portadas_creado_por_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6168,7 +7175,7 @@ CREATE INDEX portadas_creado_por_id_index ON public.portadas USING btree (creado
 
 
 --
--- TOC entry 2575 (class 1259 OID 44372)
+-- TOC entry 3961 (class 1259 OID 19717)
 -- Name: portadas_empresa_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6176,7 +7183,7 @@ CREATE INDEX portadas_empresa_id_index ON public.portadas USING btree (empresa_i
 
 
 --
--- TOC entry 2468 (class 1259 OID 43995)
+-- TOC entry 3991 (class 1259 OID 19718)
 -- Name: searchtext_user_gin; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6184,7 +7191,7 @@ CREATE INDEX searchtext_user_gin ON public.users USING gin (searchtext);
 
 
 --
--- TOC entry 2530 (class 1259 OID 44158)
+-- TOC entry 3976 (class 1259 OID 19719)
 -- Name: sessions_last_activity_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6192,7 +7199,7 @@ CREATE INDEX sessions_last_activity_index ON public.sessions USING btree (last_a
 
 
 --
--- TOC entry 2533 (class 1259 OID 44157)
+-- TOC entry 3979 (class 1259 OID 19720)
 -- Name: sessions_user_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6200,7 +7207,7 @@ CREATE INDEX sessions_user_id_index ON public.sessions USING btree (user_id);
 
 
 --
--- TOC entry 2547 (class 1259 OID 44232)
+-- TOC entry 3980 (class 1259 OID 19721)
 -- Name: tipomaterial_creado_por_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6208,7 +7215,7 @@ CREATE INDEX tipomaterial_creado_por_id_index ON public.tipomaterial USING btree
 
 
 --
--- TOC entry 2548 (class 1259 OID 44231)
+-- TOC entry 3981 (class 1259 OID 19722)
 -- Name: tipomaterial_empresa_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6216,7 +7223,7 @@ CREATE INDEX tipomaterial_empresa_id_index ON public.tipomaterial USING btree (e
 
 
 --
--- TOC entry 2551 (class 1259 OID 44495)
+-- TOC entry 3984 (class 1259 OID 19723)
 -- Name: tm_searchtext_gin; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6224,7 +7231,7 @@ CREATE INDEX tm_searchtext_gin ON public.tipomaterial USING gin (searchtext);
 
 
 --
--- TOC entry 2469 (class 1259 OID 43869)
+-- TOC entry 3992 (class 1259 OID 19724)
 -- Name: users_logged_at_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6232,7 +7239,7 @@ CREATE INDEX users_logged_at_index ON public.users USING btree (logged_at);
 
 
 --
--- TOC entry 2470 (class 1259 OID 43868)
+-- TOC entry 3993 (class 1259 OID 19725)
 -- Name: users_logged_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6240,7 +7247,7 @@ CREATE INDEX users_logged_index ON public.users USING btree (logged);
 
 
 --
--- TOC entry 2471 (class 1259 OID 43870)
+-- TOC entry 3994 (class 1259 OID 19726)
 -- Name: users_logout_at_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6248,7 +7255,7 @@ CREATE INDEX users_logout_at_index ON public.users USING btree (logout_at);
 
 
 --
--- TOC entry 2474 (class 1259 OID 43867)
+-- TOC entry 3997 (class 1259 OID 19727)
 -- Name: users_user_id_anterior_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -6256,23 +7263,7 @@ CREATE INDEX users_user_id_anterior_index ON public.users USING btree (user_id_a
 
 
 --
--- TOC entry 2645 (class 2620 OID 43996)
--- Name: users ts_searchtext; Type: TRIGGER; Schema: public; Owner: postgres
---
-
-CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON public.users FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.spanish', 'ap_paterno', 'ap_materno', 'nombre', 'curp');
-
-
---
--- TOC entry 2647 (class 2620 OID 44496)
--- Name: tipomaterial ts_searchtext; Type: TRIGGER; Schema: public; Owner: postgres
---
-
-CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON public.tipomaterial FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.spanish', 'tipo_material');
-
-
---
--- TOC entry 2646 (class 2620 OID 44498)
+-- TOC entry 4046 (class 2620 OID 19730)
 -- Name: editoriales ts_searchtext; Type: TRIGGER; Schema: public; Owner: postgres
 --
 
@@ -6280,15 +7271,7 @@ CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON public.editoriales FOR E
 
 
 --
--- TOC entry 2648 (class 2620 OID 58521)
--- Name: libros ts_searchtext; Type: TRIGGER; Schema: public; Owner: postgres
---
-
-CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON public.libros FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.spanish', 'titulo', 'autor');
-
-
---
--- TOC entry 2649 (class 2620 OID 58523)
+-- TOC entry 4047 (class 2620 OID 19732)
 -- Name: inventariolibros ts_searchtext; Type: TRIGGER; Schema: public; Owner: postgres
 --
 
@@ -6296,7 +7279,31 @@ CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON public.inventariolibros 
 
 
 --
--- TOC entry 2619 (class 2606 OID 44179)
+-- TOC entry 4048 (class 2620 OID 19731)
+-- Name: libros ts_searchtext; Type: TRIGGER; Schema: public; Owner: postgres
+--
+
+CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON public.libros FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.spanish', 'titulo', 'autor');
+
+
+--
+-- TOC entry 4049 (class 2620 OID 19729)
+-- Name: tipomaterial ts_searchtext; Type: TRIGGER; Schema: public; Owner: postgres
+--
+
+CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON public.tipomaterial FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.spanish', 'tipo_material');
+
+
+--
+-- TOC entry 4050 (class 2620 OID 19728)
+-- Name: users ts_searchtext; Type: TRIGGER; Schema: public; Owner: postgres
+--
+
+CREATE TRIGGER ts_searchtext BEFORE INSERT OR UPDATE ON public.users FOR EACH ROW EXECUTE PROCEDURE tsvector_update_trigger('searchtext', 'pg_catalog.spanish', 'ap_paterno', 'ap_materno', 'nombre', 'curp');
+
+
+--
+-- TOC entry 4000 (class 2606 OID 19733)
 -- Name: codigopaises codigopaises_creado_por_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6305,7 +7312,7 @@ ALTER TABLE ONLY public.codigopaises
 
 
 --
--- TOC entry 2618 (class 2606 OID 44174)
+-- TOC entry 4001 (class 2606 OID 19738)
 -- Name: codigopaises codigopaises_empresa_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6314,7 +7321,7 @@ ALTER TABLE ONLY public.codigopaises
 
 
 --
--- TOC entry 2635 (class 2606 OID 44411)
+-- TOC entry 4002 (class 2606 OID 19743)
 -- Name: editoriale_libro editoriale_libro_editoriale_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6323,7 +7330,7 @@ ALTER TABLE ONLY public.editoriale_libro
 
 
 --
--- TOC entry 2634 (class 2606 OID 44406)
+-- TOC entry 4003 (class 2606 OID 19748)
 -- Name: editoriale_libro editoriale_libro_libro_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6332,7 +7339,7 @@ ALTER TABLE ONLY public.editoriale_libro
 
 
 --
--- TOC entry 2621 (class 2606 OID 44213)
+-- TOC entry 4004 (class 2606 OID 19753)
 -- Name: editoriales editoriales_creado_por_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6341,7 +7348,7 @@ ALTER TABLE ONLY public.editoriales
 
 
 --
--- TOC entry 2620 (class 2606 OID 44208)
+-- TOC entry 4005 (class 2606 OID 19758)
 -- Name: editoriales editoriales_empresa_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6350,7 +7357,7 @@ ALTER TABLE ONLY public.editoriales
 
 
 --
--- TOC entry 2642 (class 2606 OID 44483)
+-- TOC entry 4006 (class 2606 OID 19763)
 -- Name: historiallibros historiallibros_creado_por_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6359,7 +7366,7 @@ ALTER TABLE ONLY public.historiallibros
 
 
 --
--- TOC entry 2641 (class 2606 OID 44478)
+-- TOC entry 4007 (class 2606 OID 19768)
 -- Name: historiallibros historiallibros_empresa_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6368,7 +7375,7 @@ ALTER TABLE ONLY public.historiallibros
 
 
 --
--- TOC entry 2639 (class 2606 OID 44468)
+-- TOC entry 4008 (class 2606 OID 19773)
 -- Name: historiallibros historiallibros_inventariolibro_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6377,7 +7384,7 @@ ALTER TABLE ONLY public.historiallibros
 
 
 --
--- TOC entry 2638 (class 2606 OID 44463)
+-- TOC entry 4009 (class 2606 OID 19778)
 -- Name: historiallibros historiallibros_libro_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6386,7 +7393,7 @@ ALTER TABLE ONLY public.historiallibros
 
 
 --
--- TOC entry 2640 (class 2606 OID 44473)
+-- TOC entry 4010 (class 2606 OID 19783)
 -- Name: historiallibros historiallibros_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6395,7 +7402,7 @@ ALTER TABLE ONLY public.historiallibros
 
 
 --
--- TOC entry 2606 (class 2606 OID 43983)
+-- TOC entry 4011 (class 2606 OID 19788)
 -- Name: imagen_user imagen_user_imagen_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6404,7 +7411,7 @@ ALTER TABLE ONLY public.imagen_user
 
 
 --
--- TOC entry 2607 (class 2606 OID 43988)
+-- TOC entry 4012 (class 2606 OID 19793)
 -- Name: imagen_user imagen_user_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6413,7 +7420,7 @@ ALTER TABLE ONLY public.imagen_user
 
 
 --
--- TOC entry 2605 (class 2606 OID 43966)
+-- TOC entry 4013 (class 2606 OID 19798)
 -- Name: imagenes imagenes_creado_por_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6422,7 +7429,7 @@ ALTER TABLE ONLY public.imagenes
 
 
 --
--- TOC entry 2604 (class 2606 OID 43961)
+-- TOC entry 4014 (class 2606 OID 19803)
 -- Name: imagenes imagenes_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6431,7 +7438,7 @@ ALTER TABLE ONLY public.imagenes
 
 
 --
--- TOC entry 2636 (class 2606 OID 44428)
+-- TOC entry 4015 (class 2606 OID 19808)
 -- Name: inventariolibro_portada inventariolibro_portada_inventariolibro_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6440,7 +7447,7 @@ ALTER TABLE ONLY public.inventariolibro_portada
 
 
 --
--- TOC entry 2637 (class 2606 OID 44433)
+-- TOC entry 4016 (class 2606 OID 19813)
 -- Name: inventariolibro_portada inventariolibro_portada_portada_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6449,7 +7456,7 @@ ALTER TABLE ONLY public.inventariolibro_portada
 
 
 --
--- TOC entry 2631 (class 2606 OID 44342)
+-- TOC entry 4017 (class 2606 OID 19818)
 -- Name: inventariolibros inventariolibros_creado_por_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6458,7 +7465,7 @@ ALTER TABLE ONLY public.inventariolibros
 
 
 --
--- TOC entry 2629 (class 2606 OID 44332)
+-- TOC entry 4018 (class 2606 OID 19823)
 -- Name: inventariolibros inventariolibros_editorial_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6467,7 +7474,7 @@ ALTER TABLE ONLY public.inventariolibros
 
 
 --
--- TOC entry 2630 (class 2606 OID 44337)
+-- TOC entry 4019 (class 2606 OID 19828)
 -- Name: inventariolibros inventariolibros_empresa_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6476,7 +7483,7 @@ ALTER TABLE ONLY public.inventariolibros
 
 
 --
--- TOC entry 2628 (class 2606 OID 44327)
+-- TOC entry 4020 (class 2606 OID 19833)
 -- Name: inventariolibros inventariolibros_libro_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6485,7 +7492,7 @@ ALTER TABLE ONLY public.inventariolibros
 
 
 --
--- TOC entry 2643 (class 2606 OID 58493)
+-- TOC entry 4021 (class 2606 OID 19838)
 -- Name: libro_portada libro_portada_libro_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6494,7 +7501,7 @@ ALTER TABLE ONLY public.libro_portada
 
 
 --
--- TOC entry 2644 (class 2606 OID 58498)
+-- TOC entry 4022 (class 2606 OID 19843)
 -- Name: libro_portada libro_portada_portada_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6503,7 +7510,7 @@ ALTER TABLE ONLY public.libro_portada
 
 
 --
--- TOC entry 2627 (class 2606 OID 44289)
+-- TOC entry 4023 (class 2606 OID 19848)
 -- Name: libros libros_creado_por_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6512,7 +7519,7 @@ ALTER TABLE ONLY public.libros
 
 
 --
--- TOC entry 2624 (class 2606 OID 44274)
+-- TOC entry 4024 (class 2606 OID 19853)
 -- Name: libros libros_editorial_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6521,7 +7528,7 @@ ALTER TABLE ONLY public.libros
 
 
 --
--- TOC entry 2626 (class 2606 OID 44284)
+-- TOC entry 4025 (class 2606 OID 19858)
 -- Name: libros libros_empresa_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6530,7 +7537,7 @@ ALTER TABLE ONLY public.libros
 
 
 --
--- TOC entry 2625 (class 2606 OID 44279)
+-- TOC entry 4026 (class 2606 OID 19863)
 -- Name: libros libros_tipo_material_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6539,7 +7546,7 @@ ALTER TABLE ONLY public.libros
 
 
 --
--- TOC entry 2608 (class 2606 OID 44056)
+-- TOC entry 4027 (class 2606 OID 19868)
 -- Name: model_has_permissions model_has_permissions_permission_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6548,7 +7555,7 @@ ALTER TABLE ONLY public.model_has_permissions
 
 
 --
--- TOC entry 2609 (class 2606 OID 44067)
+-- TOC entry 4028 (class 2606 OID 19873)
 -- Name: model_has_roles model_has_roles_role_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6557,7 +7564,7 @@ ALTER TABLE ONLY public.model_has_roles
 
 
 --
--- TOC entry 2617 (class 2606 OID 44144)
+-- TOC entry 4029 (class 2606 OID 19878)
 -- Name: permission_role permission_role_permission_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6566,7 +7573,7 @@ ALTER TABLE ONLY public.permission_role
 
 
 --
--- TOC entry 2616 (class 2606 OID 44139)
+-- TOC entry 4030 (class 2606 OID 19883)
 -- Name: permission_role permission_role_role_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6575,7 +7582,7 @@ ALTER TABLE ONLY public.permission_role
 
 
 --
--- TOC entry 2615 (class 2606 OID 44124)
+-- TOC entry 4031 (class 2606 OID 19888)
 -- Name: permission_user permission_user_permission_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6584,7 +7591,7 @@ ALTER TABLE ONLY public.permission_user
 
 
 --
--- TOC entry 2614 (class 2606 OID 44119)
+-- TOC entry 4032 (class 2606 OID 19893)
 -- Name: permission_user permission_user_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6593,7 +7600,7 @@ ALTER TABLE ONLY public.permission_user
 
 
 --
--- TOC entry 2633 (class 2606 OID 44389)
+-- TOC entry 4033 (class 2606 OID 19898)
 -- Name: portadas portadas_creado_por_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6602,7 +7609,7 @@ ALTER TABLE ONLY public.portadas
 
 
 --
--- TOC entry 2632 (class 2606 OID 44384)
+-- TOC entry 4034 (class 2606 OID 19903)
 -- Name: portadas portadas_empresa_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6611,7 +7618,7 @@ ALTER TABLE ONLY public.portadas
 
 
 --
--- TOC entry 2610 (class 2606 OID 44077)
+-- TOC entry 4035 (class 2606 OID 19908)
 -- Name: role_has_permissions role_has_permissions_permission_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6620,7 +7627,7 @@ ALTER TABLE ONLY public.role_has_permissions
 
 
 --
--- TOC entry 2611 (class 2606 OID 44082)
+-- TOC entry 4036 (class 2606 OID 19913)
 -- Name: role_has_permissions role_has_permissions_role_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6629,7 +7636,7 @@ ALTER TABLE ONLY public.role_has_permissions
 
 
 --
--- TOC entry 2613 (class 2606 OID 44104)
+-- TOC entry 4037 (class 2606 OID 19918)
 -- Name: role_user role_user_role_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6638,7 +7645,7 @@ ALTER TABLE ONLY public.role_user
 
 
 --
--- TOC entry 2612 (class 2606 OID 44099)
+-- TOC entry 4038 (class 2606 OID 19923)
 -- Name: role_user role_user_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6647,7 +7654,7 @@ ALTER TABLE ONLY public.role_user
 
 
 --
--- TOC entry 2623 (class 2606 OID 44238)
+-- TOC entry 4039 (class 2606 OID 19928)
 -- Name: tipomaterial tipomaterial_creado_por_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6656,7 +7663,7 @@ ALTER TABLE ONLY public.tipomaterial
 
 
 --
--- TOC entry 2622 (class 2606 OID 44233)
+-- TOC entry 4040 (class 2606 OID 19933)
 -- Name: tipomaterial tipomaterial_empresa_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6665,7 +7672,7 @@ ALTER TABLE ONLY public.tipomaterial
 
 
 --
--- TOC entry 2601 (class 2606 OID 43891)
+-- TOC entry 4041 (class 2606 OID 19938)
 -- Name: user_adress user_adress_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6674,7 +7681,7 @@ ALTER TABLE ONLY public.user_adress
 
 
 --
--- TOC entry 2602 (class 2606 OID 43911)
+-- TOC entry 4042 (class 2606 OID 19943)
 -- Name: user_extend user_extend_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6683,7 +7690,7 @@ ALTER TABLE ONLY public.user_extend
 
 
 --
--- TOC entry 2603 (class 2606 OID 43927)
+-- TOC entry 4043 (class 2606 OID 19948)
 -- Name: user_social user_social_user_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6692,7 +7699,7 @@ ALTER TABLE ONLY public.user_social
 
 
 --
--- TOC entry 2600 (class 2606 OID 43860)
+-- TOC entry 4044 (class 2606 OID 19953)
 -- Name: users users_creado_por_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6701,7 +7708,7 @@ ALTER TABLE ONLY public.users
 
 
 --
--- TOC entry 2599 (class 2606 OID 43855)
+-- TOC entry 4045 (class 2606 OID 19958)
 -- Name: users users_empresa_id_foreign; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -6709,7 +7716,7 @@ ALTER TABLE ONLY public.users
     ADD CONSTRAINT users_empresa_id_foreign FOREIGN KEY (empresa_id) REFERENCES public.empresas(id) ON DELETE CASCADE;
 
 
--- Completed on 2022-02-10 17:59:15 CST
+-- Completed on 2022-02-17 18:37:15 CST
 
 --
 -- PostgreSQL database dump complete

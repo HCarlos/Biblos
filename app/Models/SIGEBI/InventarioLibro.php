@@ -48,6 +48,10 @@ class InventarioLibro extends Model{
         return $this->belongsTo(User::class, 'creado_por_id');
     }
 
+    public function Apartado_Por(){
+        return $this->belongsTo(User::class, 'apartado_user_id');
+    }
+
     public function Editorial(){
         return $this->hasOne(Editoriale::class,'id','editorial_id');
 //        return $this->belongsToMany(Editoriale::class);
@@ -55,6 +59,8 @@ class InventarioLibro extends Model{
 
     public function getEstatusLibroAttribute(){
         //return intval($this->status_libro) == 1 ? 'DISPONIBLE' : 'NO DISPONIBLE';
+
+        // 16303
         switch( intval($this->status_libro) ){
             case 1:
                 return 'DISPONIBLE';

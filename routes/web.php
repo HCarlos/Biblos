@@ -154,7 +154,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('removeInventarioLibro/{Id}/{Dato1}/{Dato2}',[InventarioLibroController::class,'removeItem'])->name('removeInventarioLibro');
 
 
-    Route::get('find',[SearchIndexController::class,'index'])->name('find');
+    Route::get('find',[SearchIndexController::class,'buscarLibroApartado'])->name('find');
+    Route::get('listadoAprtados',[SearchIndexController::class,'listadoAprtados'])->name('listadoAprtados');
+    Route::get('showModalPrestar/{Id}',[InventarioLibroController::class,'showModalPrestar'])->name('showModalPrestar');
+    Route::post('savePrestar',[InventarioLibroController::class,'savePrestar'])->name('savePrestar');
 
 
 

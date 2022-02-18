@@ -16,8 +16,15 @@
 
                     <li class="nav-item {{ url()->current() == route('find') ? 'active': '' }}">
                         <a class="nav-link" href="{{route('find')}}">
-                            <i class="nav-icon fa fa-home"></i>
+                            <i class="nav-icon fa fa-search"></i>
                             <span class="nav-text fadeable">Buscar</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item {{ url()->current() == route('listadoAprtados') ? 'active': '' }}">
+                        <a class="nav-link" href="{{route('listadoAprtados')}}">
+                            <i class="nav-icon fa fa-clipboard-list"></i>
+                            <span class="nav-text fadeable">Apartados</span>
                         </a>
                     </li>
 
