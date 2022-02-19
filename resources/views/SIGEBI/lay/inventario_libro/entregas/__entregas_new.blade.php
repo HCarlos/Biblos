@@ -1,6 +1,7 @@
 <div class="form-group row">
-    <x-inputs.date-field cols="12" nombre="fecha_prestamo" nombrees="Fecha de Prestamo" valor="{{ old('fecha_apartado',$item->fecha_prestamo) }}" sololectura="true"></x-inputs.date-field>
-    <x-inputs.date-field cols="12" nombre="fecha_entrega" nombrees="Fecha de Entregado" valor="{{ \Carbon\Carbon::now() }}" ></x-inputs.date-field>
+    <x-inputs.date-field cols="12" nombre="fecha_prestamo" nombrees="Fecha Prestado" valor="{{ old('fecha_prestamo',$item->fecha_prestamo) }}" sololectura="true"></x-inputs.date-field>
+    <x-inputs.date-field cols="12" nombre="fecha_entrega" nombrees="Fecha Devolución" valor="{{ old('fecha_entrega',$item->fecha_entrega) }}" sololectura="true"></x-inputs.date-field>
+    <x-inputs.date-field cols="12" nombre="fecha_entrega_vencimiento" nombrees="Fecha Devolución Real" valor="{{ old('fecha_apartado',$item->fecha_entrega_vencimiento) }}" ></x-inputs.date-field>
     <div class="col-sm-12">
         <label class="col-form-label" for="observaciones">Observaciones</label>
         <textarea id="observaciones" name="observaciones" rows="2" class="form-control"> </textarea>

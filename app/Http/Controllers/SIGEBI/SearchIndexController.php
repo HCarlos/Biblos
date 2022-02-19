@@ -41,13 +41,14 @@ class SearchIndexController extends Controller{
 
         $request->session()->put('items', $items);
 
-        return view('SIGEBI.com.inventario_libro._apartado_list',[
-            'items'           => $items,
-            'user'            => $user,
-            'editItem'        => null,
-            'removeItem'      => null,
-            'IsModal'         => true,
-            'prestarLibro'    => 'showModalPrestar',
+        return view('SIGEBI.com.inventario_libro.apartados._apartado_list',[
+            'items'                     => $items,
+            'user'                      => $user,
+            'editItem'                  => null,
+            'removeItem'                => null,
+            'IsModal'                   => true,
+            'prestarLibro'              => 'showModalPrestar',
+            'showRestablecerDisponible' => 'showRestablecerDisponible',
         ]);
 
 
@@ -86,20 +87,18 @@ class SearchIndexController extends Controller{
 
         $request->session()->put('items', $items);
 
-        return view('SIGEBI.com.inventario_libro._prestados_list',[
-            'items'           => $items,
-            'user'            => $user,
-            'editItem'        => null,
-            'removeItem'      => null,
-            'IsModal'         => true,
-            'entregarLibro'    => 'showModalEntregar',
+        return view('SIGEBI.com.inventario_libro.prestamos._prestados_list',[
+            'items'                     => $items,
+            'user'                      => $user,
+            'editItem'                  => null,
+            'removeItem'                => null,
+            'IsModal'                   => true,
+            'entregarLibro'             => 'showModalEntregar',
+            'showRestablecerDisponible' => 'showRestablecerDisponible',
         ]);
 
 
     }
-
-
-
 
 
 }

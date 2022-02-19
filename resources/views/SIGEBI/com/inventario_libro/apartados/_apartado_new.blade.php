@@ -9,9 +9,9 @@
     @slot('item', $item ?? null)
     @slot('CuerpoModal')
         @if($IsNew)
-            @include('SIGEBI.lay.inventario_libro.__inventario_libro_reservar')
+            @include('SIGEBI.lay.inventario_libro.apartados.__apartado_new')
         @else
-            @include('SIGEBI.lay.inventario_libro.__inventario_libro_reservar')
+            @include('SIGEBI.lay.inventario_libro.apartados.__apartado_new')
         @endif
     @endslot
 </x-modals.blurred>

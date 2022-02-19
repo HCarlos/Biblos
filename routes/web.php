@@ -164,6 +164,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('showModalEntregar/{Id}',[InventarioLibroController::class,'showModalEntregar'])->name('showModalEntregar');
     Route::post('saveEntregar',[InventarioLibroController::class,'saveEntregar'])->name('saveEntregar');
 
+    Route::get('showRestablecerDisponible',[SearchIndexController::class,'showRestablecerDisponible'])->name('showRestablecerDisponible');
+    Route::get('saveRestablecerDisponible/{Id}',[InventarioLibroController::class,'saveRestablecerDisponible'])->name('saveRestablecerDisponible');
 
 
 

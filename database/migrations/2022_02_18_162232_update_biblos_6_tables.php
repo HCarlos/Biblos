@@ -17,9 +17,9 @@ class UpdateBiblos6Tables extends Migration
         $tableBiblos = config('ibt.table_names.biblos');
         if (Schema::hasTable($tableBiblos['inventariolibros'])) {
             Schema::table($tableBiblos['inventariolibros'], function (Blueprint $table) use ($tableBiblos){
-                $table->date('fecha_apartado_vencimiento')->nullable();
-                $table->date('fecha_prestamo_vencimiento')->nullable();
-                $table->date('fecha_entrega_vencimiento')->nullable();
+                $table->datetime('fecha_apartado_vencimiento')->nullable();
+                $table->datetime('fecha_prestamo_vencimiento')->nullable();
+                $table->datetime('fecha_entrega_vencimiento')->nullable();
             });
         }
 

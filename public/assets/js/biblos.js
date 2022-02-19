@@ -40,49 +40,9 @@ $(document).ready(function() {
         }
 
     }
-/*
-
-    $("#sugerencias").show();
-    $("#bajesTotalItems").hide();
-    if ($(".frmSearchLibro")) {
-        $(".frmSearchLibro").on('submit', function (event) {
-            event.preventDefault();
-
-            let dataObj = $(this).serialize();
-            let totalItems = 0;
-
-            $("#itemsLibros").empty();
-            $("#totalItems").empty();
-            $("#sugerencias").hide();
-            $("#bajesTotalItems").hide();
-
-            $.ajax({
-                method: "POST",
-                url: '/searchbook',
-                data: dataObj
-            }).done(function (data) {
-                if (parseInt(data.length) > 0){
-                    jQuery.each(data, function(i, response) {
-                            totalItems += parseInt(response.total);
-                            $.ajax({
-                                method: "GET",
-                                url: '/viewcard/'+response.id+'/'
-                            }).done(function (html) {
-                                $("#itemsLibros").append(html);
-                            }, "html");
-                    });
-                }else{
-                    alert(data.value);
-                    $("#itemsLibros").html(data.value);
-                }
-                $("#bajesTotalItems").show();
-                $("#totalItems").html(totalItems);
-            }, "json");
 
 
-        });
-    }
 
-*/
+
 
 });

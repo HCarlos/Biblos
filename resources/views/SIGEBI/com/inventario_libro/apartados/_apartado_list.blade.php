@@ -14,8 +14,9 @@
     @slot('breadcrumbs', $breadcrumbs ?? null)
     @slot('Id',$Id ?? 1)
     @slot('prestarLibro','showModalPrestar')
+    @slot('restablecerDisponible','restablecerDisponible')
     @slot('Content')
-        @include('SIGEBI.lay.inventario_libro.__apartado_list')
+        @include('SIGEBI.lay.inventario_libro.apartados.__apartado_list')
     @endslot
 </x-inline.apartados-list>
 

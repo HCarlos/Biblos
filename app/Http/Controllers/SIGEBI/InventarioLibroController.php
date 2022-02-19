@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\SIGEBI\InventarioLibroRequest;
 use App\Http\Requests\SIGEBI\InventarioLibroReservaRequest;
 use App\Models\SIGEBI\Editoriale;
+use App\Models\SIGEBI\HistorialLibro;
 use App\Models\SIGEBI\InventarioLibro;
 use App\Models\SIGEBI\Libro;
 use Illuminate\Http\Request;
@@ -187,7 +188,7 @@ class InventarioLibroController extends Controller{
 
         $Item = InventarioLibro::find($IL);
         $user  = Auth::user();
-        return view('SIGEBI.com.inventario_libro._inventario_libro_reservar',
+        return view('SIGEBI.com.inventario_libro.apartados._apartado_new',
             [
                 'TituloModal'     => 'Reservar '.$Item->id,
                 'RouteModal'      => 'saveReservation',
@@ -282,6 +283,35 @@ class InventarioLibroController extends Controller{
         return Response::json(['mensaje' => $msg, 'data' => $code, 'status' => '200'], 200);
     }
 
+
+    protected function saveRestablecerDisponible($Id){
+        $IL = InventarioLibro::find($Id);
+        $User = Auth::user();
+//        dd($IL);
+        $Item = [
+            "fecha_apartado"             => null,
+            "fecha_apartado_vencimiento" => null,
+            "fecha_prestamo"             => null,
+            "fecha_prestamo_vencimiento" => null,
+            "fecha_entrega"              => null,
+            "fecha_entrega_vencimiento"  => null,
+            "observaciones"              => "",
+            "status_libro"               => 1,
+        ];
+        $IL->update($Item);
+        HistorialLibro::create([
+            'libro_id'           => $IL->libro_id,
+            'inventariolibro_id' => $IL->id,
+            'user_id'            => $User->id,
+            'fecha'              => now(),
+            'tipo_movto'         => "RESTABLECIDO::DISPONIBLE",
+            'observaciones'      => "System",
+            'creado_por_id'      => $User->id,
+        ]);
+
+
+        return Response::json(['mensaje' => "Operación realizada con éxito", 'data' => "OK", 'status' => '200'], 200);
+    }
 
 
 

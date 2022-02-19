@@ -6,7 +6,7 @@
         <th>CODEBAR</th>
         <th>MATERIAL</th>
         <th>USUARIO</th>
-        <th>FECHA PRESTADO</th>
+        <th>FECHA APARTADO</th>
         <th>FECHA VENCIMIENTO</th>
         <th></th>
     </tr>
@@ -26,19 +26,20 @@
                 {{$item->Libro->titulo}}
             </td>
             <td class="text-600 ">
-                {{$item->Prestado_Por->full_name}}
+                {{$item->Apartado_Por->full_name}}
             </td>
             <td class="text-600 ">
-                {{ \Carbon\Carbon::createFromDate($item->fecha_prestado)->format('d-m-Y') }}
+                {{ \Carbon\Carbon::createFromDate($item->fecha_apartado)->format('d-m-Y') }}
             </td>
             <td class="text-600 text-center ">
-                {{ \Carbon\Carbon::createFromDate($item->fecha_entrega)->format('d-m-Y') }}
+                {{ \Carbon\Carbon::createFromDate($item->fecha_apartado_vencimiento)->format('d-m-Y') }}
             </td>
             <td>
                 <!-- action buttons -->
                 <div class='d-none d-lg-flex'>
-                    @include('share.bars.___entregar_button')
-                    {{--                    @include('share.bars.___removeItem')--}}
+                    @include('share.bars.___prestar_button')
+                    @include('share.bars.___restablecer_disponible_button')
+{{--                    @include('share.bars.___removeItem')--}}
                 </div>
 
                 <!-- show a dropdown in mobile -->
@@ -49,8 +50,9 @@
 
                     <div class="dropdown-menu dd-slide-up dd-slide-none-lg">
                         <div class="dropdown-inner">
-                            @include('share.bars.___entregar_button')
-                            {{--                            @include('share.bars.___removeItem')--}}
+                            @include('share.bars.___prestar_button')
+                            @include('share.bars.___restablecer_disponible_button')
+{{--                            @include('share.bars.___removeItem')--}}
                         </div>
                     </div>
                 </div>
@@ -60,3 +62,6 @@
     @endforeach
     </tbody>
 </table>
+@section('script-footer')
+@include('share.code.__alert_custom')
+@endsection
