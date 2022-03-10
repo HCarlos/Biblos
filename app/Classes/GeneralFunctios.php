@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Request;
 use Intervention\Image\Exception\NotWritableException;
 use Intervention\Image\Facades\Image;
 
+use Illuminate\Support\Facades\File;
 
 
 
@@ -216,6 +217,10 @@ class GeneralFunctios extends App {
                 $filePath = public_path(env($profile_root)).'/'.$filename;
                 $image->save($filePath);
                 Storage::disk($disk)->put($filename, $image);
+                if (File::exists($filePath)) {
+                    unlink($filePath);
+                }
+
             }else{
                 Storage::disk($disk)->put($filename, $image);
             }
