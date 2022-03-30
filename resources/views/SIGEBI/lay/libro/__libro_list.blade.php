@@ -5,6 +5,7 @@
         <th>ID</th>
         <th>TÍTULO</th>
         <th>AUTOR</th>
+        <th>TOTAL EJEMPLARES</th>
         <th></th>
     </tr>
     </thead>
@@ -21,6 +22,9 @@
             </td>
             <td class="text-600 ">
                 {{$item->autor}}
+            </td>
+            <td class="text-600 text-green-d1 text-center">
+                {{ $item->InventarioLibro->count() }}
             </td>
             <td>
                 <!-- action buttons -->
