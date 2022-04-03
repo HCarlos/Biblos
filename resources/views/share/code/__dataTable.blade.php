@@ -14,7 +14,7 @@
                 for (i = 0; i < nCols - 1; i++) {aCol[i] = {};}
                 aCol[nCols - 1] = {"sorting": false};
 
-                oTable = $('#tblCat').DataTable({
+                oTable = $('#table').DataTable({
                     "oLanguage": {
                         "sLengthMenu": "_MENU_ registros por página",
                         "oPaginate": {
@@ -35,6 +35,8 @@
                     "bRetrieve": true,
                     "bDestroy": false
                 });
+
+                // alert("hola mundo");
 
                 $('.btnAction1').on('click', function(event) {
                     event.preventDefault();

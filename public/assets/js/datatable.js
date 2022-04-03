@@ -18,25 +18,28 @@ $(document).ready(function() {
                 searching: true,
                 paging: true,
                 info: true,
-                "pageLength": 10,
+                "pageLength": localStorage.ItemsForTable,
                 "order": [[ 0, "desc" ]],
-                "language": {
-                    "lengthMenu":  "Mostrando _MENU_ entradas",
-                    "sInfo":       "del _START_ al _END_ de un total de _TOTAL_ entradas",
-                    "sInfoFiltered":  "(filtrado de un total de _MAX_ registros)",
-                    "sInfoEmpty":  "Mostrando registros del 0 al 0 de un total de 0 registros",
-                    "zeroRecords": "Busqueda sin resultados",
-                    "sSearch":     "Buscar:",
+                "oLanguage": {
+                    "sLengthMenu": "_MENU_ registros por página",
                     "oPaginate": {
-                        "sFirst":    "Primero",
-                        "sLast":     "Último",
-                        "sNext":     "Siguiente",
-                        "sPrevious": "Anterior"
+                        "sPrevious": "&lsaquo;",
+                        "sNext": "&rsaquo;"
                     },
-                    "info":        "Mostrando página _PAGE_ de _PAGES_"
+                    "sSearch": "Buscar",
+                    "sProcessing":"Procesando...",
+                    "sLoadingRecords":"Cargando...",
+                    "sZeroRecords": "No hay registros",
+                    "sInfo": "_START_ - _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "No existen datos",
+                    "sInfoFiltered": "(De _MAX_ registros)"
                 },
-                "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "Todos"]],
-                "aoColumns": aCol
+                "lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Todos"]],
+                "aaSorting": [[ 0, "desc" ]],
+                "aoColumns": aCol,
+                "bRetrieve": true,
+                "bDestroy": false
+
             });
         }
     }

@@ -24,14 +24,17 @@
 
 @section('script-footer')
 
+<script type="text/javascript">
+    localStorage.FullScreen = {{$FullScreen ?? 0}};
+    localStorage.ItemsForTable = {{ config('ibt.items_for_table')  }};
+</script>
+
 <script src="{{ asset('assets/js/datatable-plus/dataTables.fixedHeader.min.js') }}"></script>
 <script src="{{ asset('assets/js/datatable-plus/dataTables.responsive.js') }}"></script>
 <script src="{{ asset('assets/js/datatable-plus/dataTables-call.js') }}"></script>
 <script src="{{ asset('assets/js/datatable-plus/jquery.dataTables.js') }}"></script>
+
 <script src="{{ asset('assets/js/datatable.js') }}"></script>
 
-<script type="text/javascript">
-    localStorage.FullScreen = {{$FullScreen ?? 0}}
-</script>
 
-@stop
+@endsection

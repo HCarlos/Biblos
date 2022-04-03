@@ -19,10 +19,11 @@ return [
 
     'file_dropzone_mimetype' => 'image/jpg,image/jpeg,image/gif,image/png,image/JPG,image/JPEG,image/GIF,image/PNG,video/mp4,video/3gp,image/svg+xml,video/quicktime,video/quicktime',
 
-    'limite_maximo_registros' => 200,
-    'limite_minimo_registros' => 100,
-    'maximo_registros_consulta' => 200,
-    'minimo_registrios_consulta' => 100,
+    'limite_maximo_registros' => 1500,
+    'limite_minimo_registros' => 500,
+    'maximo_registros_consulta' => 2500,
+    'minimo_registrios_consulta' => 1000,
+    'items_for_table' => 100,
 
     // ------------------------,-----------------------------------
     // Aqui se deben configurar los formatos a utilizar.
