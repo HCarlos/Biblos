@@ -1,0 +1,23 @@
+*Requerimientos del Sistema*
+
+- Linux CentOS 7.0
+- Apache Web Server 2.4 ó superior
+- PHP 7.4
+- Python 2.7 ó superior
+- PostgreSQL 10.21
+- phppgadmin
+- URL de producción(dominio ó subdominio en línea)
+
+de Preferencia VirtualHost
+
+
+Para la conectividad
+
+Datos de Acceso(IP, Usuario y Contraseña*) como Administrador (root) para comunicación SSH 
+
+* Esta se debe cambiar cuando se haya terminado la instalación en implantación...
+
+=> Una persona para contacto técnico en caso de alguna duda o problema que se presente.
+
+
+
